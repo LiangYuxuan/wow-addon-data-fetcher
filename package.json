@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/LiangYuxuan/wow-addon-data-fetcher#readme",
   "dependencies": {
-    "csv-parser": "^3.0.0"
+    "csv-parser": "^3.0.0",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
