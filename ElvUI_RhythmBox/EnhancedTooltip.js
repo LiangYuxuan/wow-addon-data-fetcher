@@ -70,7 +70,7 @@ const buildProgressID = async (instanceID, mapID, name) => {
             encounters.push({
                 ID: encounter[i].ID,
                 Name: encounter[i].Name_lang,
-                OrderIndex: encounter[i].OrderIndex,
+                OrderIndex: parseInt(encounter[i].OrderIndex),
             });
         }
     }
@@ -78,7 +78,7 @@ const buildProgressID = async (instanceID, mapID, name) => {
     if (encounters.length === 0) throw new Error(`Failing to find encounters in instance ${instanceID}`);
 
     encounters.sort((left, right) => {
-        return parseInt(left.OrderIndex) > parseInt(right.OrderIndex);
+        return left.OrderIndex > right.OrderIndex;
     });
 
     const result = {
