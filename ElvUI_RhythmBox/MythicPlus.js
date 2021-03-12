@@ -13,12 +13,12 @@ const tierFix = (challengeMapID, expansionLevel) => {
     } else if (challengeMapID <= 244) {
         return 6;
     }
-}
+};
 
 const buildMapList = async () => {
     const [tier, map] = await Promise.all([
-        fetcher.fetchLatestVersion('JournalTier'),
-        fetcher.fetchLatestVersion('MapChallengeMode'),
+        fetcher.fetch('JournalTier'),
+        fetcher.fetch('MapChallengeMode'),
     ]);
 
     const result = [];
@@ -45,7 +45,7 @@ const buildMapList = async () => {
         }
     }
 
-    let text = 'challengeMapIDs = {'
+    let text = 'challengeMapIDs = {';
     for (let i = 0; i <= maxExpansion; ++i) {
         if (!result[i]) continue;
 
@@ -58,6 +58,6 @@ const buildMapList = async () => {
     text += '}';
 
     return text;
-}
+};
 
 module.exports.buildMapList = buildMapList;

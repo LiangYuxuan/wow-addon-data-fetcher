@@ -11,16 +11,16 @@ const searchSteps = (steps, scenarioID) => {
 const buildLFR = async (mapID, name) => {
     const [dungeons, scenarios, steps, criterias] =
         await Promise.all([
-            fetcher.fetchLatestVersion('LFGDungeons'),
-            fetcher.fetchLatestVersion('Scenario'),
-            fetcher.fetchLatestVersion('ScenarioStep'),
-            fetcher.fetchLatestVersion('CriteriaTree'),
+            fetcher.fetch('LFGDungeons'),
+            fetcher.fetch('Scenario'),
+            fetcher.fetch('ScenarioStep'),
+            fetcher.fetch('CriteriaTree'),
         ]);
 
     const instanceID = [];
     const wingName = [];
     for (let i = 0; i < dungeons.length; ++i) {
-        if (dungeons[i].DifficultyID == '17' && dungeons[i].MapID == mapID) {
+        if (dungeons[i].DifficultyID === '17' && dungeons[i].MapID === mapID) {
             instanceID.push(dungeons[i].ID);
             wingName.push(dungeons[i].Name_lang);
         }
@@ -34,17 +34,17 @@ const buildLFR = async (mapID, name) => {
         if (scenarios[i].Type === '3' && (flag & 0x8)) {
             if (scenarios[i].Name_lang === name) {
                 // use raid name but not wing name as scenario name
-                const {Title_lang: title, CriteriatreeID: treeID} = searchSteps(steps, scenarios[i].ID);
+                const {Title_lang: title, CriteriatreeID: treeID} =
+                    searchSteps(steps, scenarios[i].ID);
                 for (let j = 0; j < wingName.length; ++j) {
                     if (wingName[j] === title) {
                         wingID[j] = treeID;
                         break;
                     }
                 }
-            }
-            else {
+            } else {
                 for (let j = 0; j < wingName.length; ++j) {
-                    if (scenarios[i].Name_lang == wingName[j]) {
+                    if (scenarios[i].Name_lang === wingName[j]) {
                         wingID[j] = searchSteps(steps, scenarios[i].ID).CriteriatreeID;
                         break;
                     }
@@ -57,7 +57,7 @@ const buildLFR = async (mapID, name) => {
     for (let i = 0; i < wingID.length; ++i) {
         const encounters = [];
         for (let j = 0; j < criterias.length; ++j) {
-            if (criterias[j].Parent == wingID[i]) {
+            if (criterias[j].Parent === wingID[i]) {
                 encounters.push({
                     Name: criterias[j].Description_lang,
                     OrderIndex: parseInt(criterias[j].OrderIndex),
@@ -72,7 +72,7 @@ const buildLFR = async (mapID, name) => {
         result.push({
             instanceID: instanceID[i],
             wingName: wingName[i],
-            encounters: encounters.map(value => value.Name),
+            encounters: encounters.map((value) => value.Name),
         });
     }
 

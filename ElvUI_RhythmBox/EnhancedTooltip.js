@@ -3,9 +3,9 @@ const fetcher = require('../fetcher');
 const findLatestInstance = async () => {
     const [tier, tierXInstance, instance] =
         await Promise.all([
-            fetcher.fetchLatestVersion('JournalTier'),
-            fetcher.fetchLatestVersion('JournalTierXInstance'),
-            fetcher.fetchLatestVersion('JournalInstance'),
+            fetcher.fetch('JournalTier'),
+            fetcher.fetch('JournalTierXInstance'),
+            fetcher.fetch('JournalInstance'),
         ]);
 
     const lastTier = tier[tier.length - 1].ID;
@@ -17,7 +17,7 @@ const findLatestInstance = async () => {
         }
     }
 
-    let maxOrderIndex, maxInstanceID, maxMapID, maxName;
+    let maxOrderIndex; let maxInstanceID; let maxMapID; let maxName;
     for (let i = 0; i < instance.length; ++i) {
         if (instance[i].OrderIndex !== '0' && instance[i].Flags === '0') {
             // is raid && not world boss
@@ -43,14 +43,14 @@ const findLatestInstance = async () => {
         name: maxName,
         mapID: maxMapID,
     };
-}
+};
 
 const buildProgressID = async (instanceID, mapID, name) => {
     const [instance, encounter, achievement] =
         await Promise.all([
-            fetcher.fetchLatestVersion('JournalInstance'),
-            fetcher.fetchLatestVersion('JournalEncounter'),
-            fetcher.fetchLatestVersion('Achievement'),
+            fetcher.fetch('JournalInstance'),
+            fetcher.fetch('JournalEncounter'),
+            fetcher.fetch('Achievement'),
         ]);
 
     if (!mapID || !name) {
@@ -82,16 +82,16 @@ const buildProgressID = async (instanceID, mapID, name) => {
     });
 
     const result = {
-        "Raid Finder": [],
-        "Normal": [],
-        "Heroic": [],
-        "Mythic": [],
+        'Raid Finder': [],
+        'Normal': [],
+        'Heroic': [],
+        'Mythic': [],
     };
     const debugResult = {
-        "Raid Finder": [],
-        "Normal": [],
-        "Heroic": [],
-        "Mythic": [],
+        'Raid Finder': [],
+        'Normal': [],
+        'Heroic': [],
+        'Mythic': [],
     };
 
     const regex = new RegExp(`(.*) Kills \\((Raid Finder|Normal|Heroic|Mythic) ${name}\\)`);
@@ -120,7 +120,7 @@ const buildProgressID = async (instanceID, mapID, name) => {
     for (let i = 0; i < order.length; ++i) {
         const arr = result[order[i]];
         if (arr.length !== length) {
-            throw new Error(`Boss length (${arr.length}) don't match in ${key}`);
+            throw new Error(`Boss length (${arr.length}) don't match in ${order[i]}`);
         }
         for (let i = 0; i < length; ++i) {
             if (!arr[i]) {
@@ -137,7 +137,7 @@ const buildProgressID = async (instanceID, mapID, name) => {
         text: text,
         debug: debugResult,
     };
-}
+};
 
 module.exports.findLatestInstance = findLatestInstance;
 module.exports.buildProgressID = buildProgressID;

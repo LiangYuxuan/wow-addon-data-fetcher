@@ -1,21 +1,21 @@
 const fetcher = require('../fetcher');
 
 const fetchLatestExpansion = async () => {
-    const map = await fetcher.fetchLatestVersion('Map');
+    const map = await fetcher.fetch('Map');
 
-    let maxExpansion
+    let maxExpansion;
     for (let i = 0; i < map.length; ++i) {
-        const expansionID = parseInt(map[i].ExpansionID)
+        const expansionID = parseInt(map[i].ExpansionID);
         if (!maxExpansion || maxExpansion < expansionID) {
             maxExpansion = expansionID;
         }
     }
 
     return maxExpansion;
-}
+};
 
 const buildInstanceID = async (expansionID) => {
-    const map = await fetcher.fetchLatestVersion('Map');
+    const map = await fetcher.fetch('Map');
 
     const dungeons = [];
     const raids = [];
@@ -49,7 +49,7 @@ const buildInstanceID = async (expansionID) => {
     text += '\n}\n\n';
 
     return text;
-}
+};
 
 module.exports.fetchLatestExpansion = fetchLatestExpansion;
 module.exports.buildInstanceID = buildInstanceID;
