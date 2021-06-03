@@ -26,7 +26,7 @@ const buildInstanceID = async (expansionID) => {
 
     for (let i = 0; i < map.length; ++i) {
         if (map[i].ExpansionID === expansionID) {
-            if (map[i].InternalName.match(/\[(NOT USED|DEV|NYI)\]/i)) {
+            if (map[i].MapName_lang.match(/\[(NOT USED|DEV|NYI)\]/i)) {
                 continue;
             }
 
