@@ -98,7 +98,7 @@ const buildProgressID = async (instanceID, mapID, name) => {
     for (let i = 0; i < achievement.length; ++i) {
         const curr = achievement[i];
         if (curr.Instance_ID === mapID && curr.Flags === '1') {
-            const [title, bossName, difficulty] = curr.Title_lang.match(regex);
+            const [title, bossName, difficulty] = curr.Title_lang.match(regex) ?? [];
             if (title) {
                 for (let j = 0; j < encounters.length; ++j) {
                     if (encounters[j].Name === bossName) {
