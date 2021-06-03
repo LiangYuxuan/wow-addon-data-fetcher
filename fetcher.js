@@ -62,9 +62,9 @@ const fetchLatestPush = async (version) => {
 
 const CSVCache = new Map();
 const fetchDB2 = async (db, {
-    version = 'wow',
+    version = 'ptr',
     hotfix = false,
-}) => {
+} = {}) => {
     if (!/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/.test(version)) {
         version = await fetchLatestBuild(version);
     }
