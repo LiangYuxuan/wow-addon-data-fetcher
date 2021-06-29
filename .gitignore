@@ -108,3 +108,6 @@ dist
 
 # Project Cache files
 cache/
+
+# Build Types
+build/WoWDBDefs
