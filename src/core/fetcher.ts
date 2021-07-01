@@ -19,7 +19,7 @@ const headers = {
 };
 
 const buildCache: Map<string, string | undefined> = new Map();
-const fetchLatestBuild = async (version: string): Promise<string | undefined> => {
+export const fetchLatestBuild = async (version: string): Promise<string | undefined> => {
     if (buildCache.has(version)) {
         return buildCache.get(version);
     } else if (/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/.test(version)) {
@@ -49,7 +49,7 @@ const fetchLatestBuild = async (version: string): Promise<string | undefined> =>
 };
 
 const pushCache: Map<string, number> = new Map();
-const fetchLatestPush = async (version: string): Promise<number> => {
+export const fetchLatestPush = async (version: string): Promise<number> => {
     if (pushCache.has(version)) {
         return pushCache.get(version) ?? 0;
     }
