@@ -1,7 +1,7 @@
 /* eslint max-len: 0 */
 /* eslint camelcase: 0 */
 
-interface Achievement{
+interface AchievementDatabase{
     ID?: string;
     Faction?: string;
     Instance_ID?: string;
@@ -23,13 +23,7 @@ interface Achievement{
     Field_3_0_1_8471_007?: string;
     Field_3_0_1_8303_002?: string;
 }
-interface Achievement_Category{
-    ID?: string;
-    Parent?: string;
-    Name_lang?: string;
-    Ui_order?: string;
-}
-interface Achievement_Criteria{
+interface Achievement_CriteriaDatabase{
     ID?: string;
     Achievement_ID?: string;
     Type?: string;
@@ -50,7 +44,13 @@ interface Achievement_Criteria{
     WorldStateID?: string;
     RequiredWorldStateStatus?: string;
 }
-interface AdventureJournal{
+interface Achievement_CategoryDatabase{
+    ID?: string;
+    Parent?: string;
+    Name_lang?: string;
+    Ui_order?: string;
+}
+interface AdventureJournalDatabase{
     ID?: string;
     BattleMasterListID?: string;
     BonusPlayerConditionID?: string;
@@ -76,7 +76,7 @@ interface AdventureJournal{
     WorldMapAreaID?: string;
     UIMapID?: string;
 }
-interface AdventureMapPOI{
+interface AdventureMapPOIDatabase{
     ID?: string;
     AreaTableID?: string;
     Description_lang?: string;
@@ -93,15 +93,7 @@ interface AdventureMapPOI{
     WorldPosition?: string;
     MapID?: string;
 }
-interface AlliedRaceRacialAbility{
-    ID?: string;
-    AlliedRaceID?: string;
-    Description_lang?: string;
-    IconFileDataID?: string;
-    Name_lang?: string;
-    OrderIndex?: string;
-}
-interface AlliedRace{
+interface AlliedRaceDatabase{
     ID?: string;
     BannerColor?: string;
     CrestTextureID?: string;
@@ -112,7 +104,26 @@ interface AlliedRace{
     Ui_unlockAchievementID?: string;
     Ui_unlockSecondaryAchievementID?: string;
 }
-interface AnimKitBoneSet{
+interface AlliedRaceRacialAbilityDatabase{
+    ID?: string;
+    AlliedRaceID?: string;
+    Description_lang?: string;
+    IconFileDataID?: string;
+    Name_lang?: string;
+    OrderIndex?: string;
+}
+interface AnimKitDatabase{
+    ID?: string;
+    OneShotDuration?: string;
+    OneShotStopAnimKitID?: string;
+    LowDefAnimKitID?: string;
+}
+interface AnimKitBoneSetAliasDatabase{
+    ID?: string;
+    BoneDataID?: string;
+    AnimKitBoneSetID?: string;
+}
+interface AnimKitBoneSetDatabase{
     ID?: string;
     Name?: string;
     BoneDataID?: string;
@@ -121,32 +132,39 @@ interface AnimKitBoneSet{
     AltAnimKitBoneSetID?: string;
     AltBoneDataID?: string;
 }
-interface AnimKit{
-    ID?: string;
-    OneShotDuration?: string;
-    OneShotStopAnimKitID?: string;
-    LowDefAnimKitID?: string;
-}
-interface AnimKitBoneSetAlias{
-    ID?: string;
-    BoneDataID?: string;
-    AnimKitBoneSetID?: string;
-}
-interface AnimKitConfig{
+interface AnimKitConfigDatabase{
     ID?: string;
     ConfigFlags?: string;
 }
-interface AnimKitConfigBoneSet{
+interface AnimKitPriorityDatabase{
+    ID?: string;
+    Priority?: string;
+}
+interface AnimKitConfigBoneSetDatabase{
     ID?: string;
     ParentAnimKitConfigID?: string;
     AnimKitBoneSetID?: string;
     AnimKitPriorityID?: string;
 }
-interface AnimKitPriority{
+interface AnimKitReplacementDatabase{
     ID?: string;
-    Priority?: string;
+    DstAnimKitID?: string;
+    ConditionalFlags?: string;
+    ParentAnimReplacementSetID?: string;
+    SrcAnimKitID?: string;
 }
-interface AnimKitSegment{
+interface AnimReplacementDatabase{
+    ID?: string;
+    SrcAnimID?: string;
+    DstAnimID?: string;
+    ParentAnimReplacementSetID?: string;
+    ConditionalFlags?: string;
+}
+interface AnimReplacementSetDatabase{
+    ID?: string;
+    ExecOrder?: string;
+}
+interface AnimKitSegmentDatabase{
     ID?: string;
     ParentAnimKitID?: string;
     OrderIndex?: string;
@@ -168,69 +186,7 @@ interface AnimKitSegment{
     BlendOutTimeMs?: string;
     Field_9_0_1_34278_018?: string;
 }
-interface AnimKitReplacement{
-    ID?: string;
-    DstAnimKitID?: string;
-    ConditionalFlags?: string;
-    ParentAnimReplacementSetID?: string;
-    SrcAnimKitID?: string;
-}
-interface AnimReplacementSet{
-    ID?: string;
-    ExecOrder?: string;
-}
-interface AnimReplacement{
-    ID?: string;
-    SrcAnimID?: string;
-    DstAnimID?: string;
-    ParentAnimReplacementSetID?: string;
-    ConditionalFlags?: string;
-}
-interface AnimaCylinder{
-    ID?: string;
-    AnimaCableID?: string;
-    AnimaMaterialID?: string;
-    Field_9_0_1_33978_002?: string;
-    Field_9_0_1_33978_003?: string;
-    Field_9_0_1_33978_004?: string;
-    Order?: string;
-    Field_9_0_1_33978_006?: string;
-}
-interface AnimaMaterial{
-    ID?: string;
-    Field_9_0_1_33978_000?: string;
-    Field_9_0_1_33978_001?: string;
-    Field_9_0_1_33978_002?: string;
-    Field_9_0_1_33978_003?: string;
-    Field_9_0_1_33978_004?: string;
-    Field_9_0_1_33978_005?: string;
-    Field_9_0_1_33978_006?: string;
-    Field_9_0_1_33978_007?: string;
-    Field_9_0_1_33978_008?: string;
-    Field_9_0_1_33978_009?: string;
-    Field_9_0_1_33978_010?: string;
-    Field_9_0_1_33978_011?: string;
-    Field_9_0_1_33978_012?: string;
-    Field_9_0_1_33978_013?: string;
-    Field_9_0_1_33978_014?: string;
-    Field_9_0_1_33978_015?: string;
-    Field_9_0_1_33978_016?: string;
-    Field_9_0_1_33978_017?: string;
-    Field_9_0_1_33978_018?: string;
-    Field_9_0_1_33978_019?: string;
-    Field_9_0_1_33978_020?: string;
-    Field_9_0_1_33978_021?: string;
-    Field_9_0_1_33978_022?: string;
-    Field_9_0_1_33978_023?: string;
-    RibbonTexture?: string;
-    Field_9_0_1_33978_025?: string;
-    Field_9_0_1_33978_026?: string;
-    Flags?: string;
-    Field_9_0_1_33978_028?: string;
-    Field_9_0_1_33978_029?: string;
-    EffectTexture?: string;
-}
-interface AnimaCable{
+interface AnimaCableDatabase{
     ID?: string;
     ParticleModel?: string;
     Field_9_0_1_33978_001?: string;
@@ -270,7 +226,51 @@ interface AnimaCable{
     Field_9_0_1_34199_035?: string;
     Field_9_0_1_34972_034?: string;
 }
-interface AnimationData{
+interface AnimaMaterialDatabase{
+    ID?: string;
+    Field_9_0_1_33978_000?: string;
+    Field_9_0_1_33978_001?: string;
+    Field_9_0_1_33978_002?: string;
+    Field_9_0_1_33978_003?: string;
+    Field_9_0_1_33978_004?: string;
+    Field_9_0_1_33978_005?: string;
+    Field_9_0_1_33978_006?: string;
+    Field_9_0_1_33978_007?: string;
+    Field_9_0_1_33978_008?: string;
+    Field_9_0_1_33978_009?: string;
+    Field_9_0_1_33978_010?: string;
+    Field_9_0_1_33978_011?: string;
+    Field_9_0_1_33978_012?: string;
+    Field_9_0_1_33978_013?: string;
+    Field_9_0_1_33978_014?: string;
+    Field_9_0_1_33978_015?: string;
+    Field_9_0_1_33978_016?: string;
+    Field_9_0_1_33978_017?: string;
+    Field_9_0_1_33978_018?: string;
+    Field_9_0_1_33978_019?: string;
+    Field_9_0_1_33978_020?: string;
+    Field_9_0_1_33978_021?: string;
+    Field_9_0_1_33978_022?: string;
+    Field_9_0_1_33978_023?: string;
+    RibbonTexture?: string;
+    Field_9_0_1_33978_025?: string;
+    Field_9_0_1_33978_026?: string;
+    Flags?: string;
+    Field_9_0_1_33978_028?: string;
+    Field_9_0_1_33978_029?: string;
+    EffectTexture?: string;
+}
+interface AnimaCylinderDatabase{
+    ID?: string;
+    AnimaCableID?: string;
+    AnimaMaterialID?: string;
+    Field_9_0_1_33978_002?: string;
+    Field_9_0_1_33978_003?: string;
+    Field_9_0_1_33978_004?: string;
+    Order?: string;
+    Field_9_0_1_33978_006?: string;
+}
+interface AnimationDataDatabase{
     ID?: string;
     Name?: string;
     Flags?: string;
@@ -281,11 +281,7 @@ interface AnimationData{
     Bodyflags?: string;
     Field_0_7_0_3694_004?: string;
 }
-interface AnimationNames{
-    ID?: string;
-    Name?: string;
-}
-interface AoiBox{
+interface AoiBoxDatabase{
     ID?: string;
     Bounds?: string;
     Flags?: string;
@@ -294,45 +290,49 @@ interface AoiBox{
     MapID?: string;
     InternalName?: string;
 }
-interface AreaAssignment{
-    ID?: string;
-    MapID?: string;
-    AreaID?: string;
-    ChunkX?: string;
-    ChunkY?: string;
-}
-interface AreaFarClipOverride{
-    ID?: string;
-    AreaID?: string;
-    Flags?: string;
-    MinFarClip?: string;
-    MinHorizonStart?: string;
-}
-interface AreaConditionalData{
+interface AreaConditionalDataDatabase{
     AreaName_lang?: string;
     ID?: string;
     OrderIndex?: string;
     PlayerConditionID?: string;
     AreaID?: string;
 }
-interface AreaGroup{
+interface AnimationNamesDatabase{
+    ID?: string;
+    Name?: string;
+}
+interface AreaAssignmentDatabase{
+    ID?: string;
+    MapID?: string;
+    AreaID?: string;
+    ChunkX?: string;
+    ChunkY?: string;
+}
+interface AreaFarClipOverrideDatabase{
     ID?: string;
     AreaID?: string;
-    NextAreaID?: string;
+    Flags?: string;
+    MinFarClip?: string;
+    MinHorizonStart?: string;
 }
-interface AreaGroupMember{
+interface AreaGroupMemberDatabase{
     ID?: string;
     AreaGroupID?: string;
     AreaID?: string;
 }
-interface AreaMIDIAmbiences{
+interface AreaGroupDatabase{
+    ID?: string;
+    AreaID?: string;
+    NextAreaID?: string;
+}
+interface AreaMIDIAmbiencesDatabase{
     ID?: string;
     DaySequence?: string;
     NightSequence?: string;
     DLSFile?: string;
     Volume?: string;
 }
-interface AreaPOI{
+interface AreaPOIDatabase{
     ID?: string;
     Importance?: string;
     Icon?: string;
@@ -357,12 +357,12 @@ interface AreaPOI{
     Field_9_1_0_38783_011?: string;
     Field_9_1_0_38783_017?: string;
 }
-interface AreaPOISortedWorldState{
+interface AreaPOISortedWorldStateDatabase{
     ID?: string;
     WorldStateID?: string;
     CemeteryID?: string;
 }
-interface AreaPOIState{
+interface AreaPOIStateDatabase{
     ID?: string;
     AreaPoiID?: string;
     Description_lang?: string;
@@ -370,7 +370,7 @@ interface AreaPOIState{
     UiTextureAtlasMemberID?: string;
     WorldStateValue?: string;
 }
-interface AreaTable{
+interface AreaTableDatabase{
     ID?: string;
     ContinentID?: string;
     ParentAreaID?: string;
@@ -405,11 +405,11 @@ interface AreaTable{
     IntroPriority?: string;
     ContentTuningID?: string;
 }
-interface AreaTriggerActionSet{
+interface AreaTriggerActionSetDatabase{
     ID?: string;
     Flags?: string;
 }
-interface AreaTrigger{
+interface AreaTriggerDatabase{
     ID?: string;
     ContinentID?: string;
     Pos?: string;
@@ -428,31 +428,21 @@ interface AreaTrigger{
     PhaseShift?: string;
     Message_lang?: string;
 }
-interface AreaTriggerBox{
+interface AreaTriggerBoxDatabase{
     ID?: string;
     Extents?: string;
 }
-interface AreaTriggerCreateProperties{
+interface AreaTriggerSphereDatabase{
     ID?: string;
-    ShapeType?: string;
-    StartShapeID?: string;
+    MaxRadius?: string;
 }
-interface AreaTriggerCylinder{
+interface AreaTriggerCylinderDatabase{
     ID?: string;
     Radius?: string;
     Height?: string;
     ZOffset?: string;
 }
-interface AreaTriggerSphere{
-    ID?: string;
-    MaxRadius?: string;
-}
-interface ArenaCcItem{
-    ID?: string;
-    ItemID?: string;
-    SpellID?: string;
-}
-interface ArmorLocation{
+interface ArmorLocationDatabase{
     ID?: string;
     Clothmodifier?: string;
     Leathermodifier?: string;
@@ -460,7 +450,17 @@ interface ArmorLocation{
     Platemodifier?: string;
     Modifier?: string;
 }
-interface ArtifactAppearanceSet{
+interface ArenaCcItemDatabase{
+    ID?: string;
+    ItemID?: string;
+    SpellID?: string;
+}
+interface AreaTriggerCreatePropertiesDatabase{
+    ID?: string;
+    ShapeType?: string;
+    StartShapeID?: string;
+}
+interface ArtifactAppearanceSetDatabase{
     ID?: string;
     AltHandUICameraID?: string;
     ArtifactID?: string;
@@ -471,7 +471,12 @@ interface ArtifactAppearanceSet{
     Name_lang?: string;
     UiCameraID?: string;
 }
-interface Artifact{
+interface ArtifactCategoryDatabase{
+    ID?: string;
+    XpMultCurrencyID?: string;
+    XpMultCurveID?: string;
+}
+interface ArtifactDatabase{
     ID?: string;
     ArtifactCategoryID?: string;
     ChrSpecializationID?: string;
@@ -484,7 +489,7 @@ interface Artifact{
     UiNameColor?: string;
     UiTextureKitID?: string;
 }
-interface ArtifactAppearance{
+interface ArtifactAppearanceDatabase{
     ID?: string;
     ArtifactAppearanceSetID?: string;
     DisplayIndex?: string;
@@ -502,12 +507,7 @@ interface ArtifactAppearance{
     UnlockPlayerConditionID?: string;
     UsablePlayerConditionID?: string;
 }
-interface ArtifactCategory{
-    ID?: string;
-    XpMultCurrencyID?: string;
-    XpMultCurveID?: string;
-}
-interface ArtifactPower{
+interface ArtifactPowerDatabase{
     ID?: string;
     ArtifactID?: string;
     DisplayPos?: string;
@@ -516,13 +516,26 @@ interface ArtifactPower{
     MaxPurchasableRank?: string;
     Tier?: string;
 }
-interface ArtifactItemToTransmog{
+interface ArtifactItemToTransmogDatabase{
     ID?: string;
     ArtifactID?: string;
     ChildItemID?: string;
     ItemID?: string;
 }
-interface ArtifactPowerRank{
+interface ArtifactPowerLinkDatabase{
+    ID?: string;
+    PowerA?: string;
+    PowerB?: string;
+}
+interface ArtifactPowerPickerDatabase{
+    ID?: string;
+    PlayerConditionID?: string;
+}
+interface ArtifactQuestXPDatabase{
+    ID?: string;
+    Difficulty?: string;
+}
+interface ArtifactPowerRankDatabase{
     ID?: string;
     ArtifactPowerID?: string;
     AuraPointsOverride?: string;
@@ -530,28 +543,7 @@ interface ArtifactPowerRank{
     RankIndex?: string;
     SpellID?: string;
 }
-interface ArtifactPowerLink{
-    ID?: string;
-    PowerA?: string;
-    PowerB?: string;
-}
-interface ArtifactQuestXP{
-    ID?: string;
-    Difficulty?: string;
-}
-interface ArtifactPowerPicker{
-    ID?: string;
-    PlayerConditionID?: string;
-}
-interface ArtifactUnlock{
-    ID?: string;
-    ArtifactID?: string;
-    ItemBonusListID?: string;
-    PlayerConditionID?: string;
-    PowerID?: string;
-    PowerRank?: string;
-}
-interface ArtifactTier{
+interface ArtifactTierDatabase{
     ID?: string;
     ArtifactTier?: string;
     KnowledgePlayerCondition?: string;
@@ -559,31 +551,45 @@ interface ArtifactTier{
     MaxNumTraits?: string;
     MinimumEmpowerKnowledge?: string;
 }
-interface AuctionHouse{
-    ID?: string;
-    FactionID?: string;
-    DepositRate?: string;
-    ConsignmentRate?: string;
-    Name_lang?: string;
-}
-interface AttackAnimTypes{
-    AnimID?: string;
-    AnimName?: string;
-}
-interface AzeriteEssence{
-    Name_lang?: string;
-    Description_lang?: string;
-    ID?: string;
-    SpecSetID?: string;
-}
-interface AttackAnimKits{
+interface AttackAnimKitsDatabase{
     ID?: string;
     ItemSubclassID?: string;
     AnimTypeID?: string;
     AnimFrequency?: string;
     WhichHand?: string;
 }
-interface AzeriteEssencePower{
+interface ArtifactUnlockDatabase{
+    ID?: string;
+    ArtifactID?: string;
+    ItemBonusListID?: string;
+    PlayerConditionID?: string;
+    PowerID?: string;
+    PowerRank?: string;
+}
+interface AttackAnimTypesDatabase{
+    AnimID?: string;
+    AnimName?: string;
+}
+interface AuctionHouseDatabase{
+    ID?: string;
+    FactionID?: string;
+    DepositRate?: string;
+    ConsignmentRate?: string;
+    Name_lang?: string;
+}
+interface AzeriteEmpoweredItemDatabase{
+    ID?: string;
+    AzeritePowerSetID?: string;
+    AzeriteTierUnlockSetID?: string;
+    ItemID?: string;
+}
+interface AzeriteEssenceDatabase{
+    Name_lang?: string;
+    Description_lang?: string;
+    ID?: string;
+    SpecSetID?: string;
+}
+interface AzeriteEssencePowerDatabase{
     ID?: string;
     SourceAlliance_lang?: string;
     SourceHorde_lang?: string;
@@ -594,41 +600,21 @@ interface AzeriteEssencePower{
     MajorPowerActual?: string;
     MinorPowerActual?: string;
 }
-interface AzeriteEmpoweredItem{
-    ID?: string;
-    AzeritePowerSetID?: string;
-    AzeriteTierUnlockSetID?: string;
-    ItemID?: string;
-}
-interface AzeriteItemMilestonePower{
-    ID?: string;
-    AzeritePowerID?: string;
-    RequiredLevel?: string;
-    AzeriteEssenceType?: string;
-    IsHeartEssenceUnlock?: string;
-}
-interface AzeriteItem{
+interface AzeriteItemDatabase{
     ID?: string;
     ItemID?: string;
 }
-interface AzeriteLevelInfo{
+interface AzeriteLevelInfoDatabase{
     ID?: string;
     LevelXP?: string;
     TotalLevelXP?: string;
     ItemLevel?: string;
 }
-interface AzeriteKnowledgeMultiplier{
+interface AzeriteKnowledgeMultiplierDatabase{
     ID?: string;
     Multiplier?: string;
 }
-interface AzeritePower{
-    ID?: string;
-    ItemBonusListID?: string;
-    SpellID?: string;
-    SpecSetID?: string;
-    Flags?: string;
-}
-interface AzeritePowerSetMember{
+interface AzeritePowerSetMemberDatabase{
     ID?: string;
     Class?: string;
     AzeritePowerID?: string;
@@ -636,41 +622,25 @@ interface AzeritePowerSetMember{
     OrderIndex?: string;
     Tier?: string;
 }
-interface AzeriteTierUnlock{
+interface AzeriteItemMilestonePowerDatabase{
     ID?: string;
-    AzeriteLevel?: string;
-    AzeriteTierUnlockSetID?: string;
-    ItemCreationContext?: string;
-    Tier?: string;
+    AzeritePowerID?: string;
+    RequiredLevel?: string;
+    AzeriteEssenceType?: string;
+    IsHeartEssenceUnlock?: string;
 }
-interface AzeriteTierUnlockSet{
+interface AzeritePowerDatabase{
+    ID?: string;
+    ItemBonusListID?: string;
+    SpellID?: string;
+    SpecSetID?: string;
+    Flags?: string;
+}
+interface AzeriteTierUnlockSetDatabase{
     ID?: string;
     Flags?: string;
 }
-interface BannedAddons{
-    ID?: string;
-    NameMD5?: string;
-    VersionMD5?: string;
-    LastModified?: string;
-    Flags?: string;
-    Name?: string;
-    Version?: string;
-}
-interface BankBagSlotPrices{
-    ID?: string;
-    Cost?: string;
-}
-interface BarberShopStyle{
-    ID?: string;
-    Type?: string;
-    DisplayName_lang?: string;
-    Description_lang?: string;
-    Cost_Modifier?: string;
-    Race?: string;
-    Sex?: string;
-    Data?: string;
-}
-interface AzeriteUnlockMapping{
+interface AzeriteUnlockMappingDatabase{
     ID?: string;
     MinItemLevel?: string;
     HeadBonus?: string;
@@ -678,7 +648,14 @@ interface AzeriteUnlockMapping{
     ChestBonus?: string;
     SetID?: string;
 }
-interface BarrageEffect{
+interface AzeriteTierUnlockDatabase{
+    ID?: string;
+    AzeriteLevel?: string;
+    AzeriteTierUnlockSetID?: string;
+    ItemCreationContext?: string;
+    Tier?: string;
+}
+interface BarrageEffectDatabase{
     ID?: string;
     Field_8_1_0_28440_001?: string;
     Field_8_1_0_28440_002?: string;
@@ -695,7 +672,30 @@ interface BarrageEffect{
     Field_8_1_0_28616_001Max?: string;
     Field_8_1_0_28616_001Min?: string;
 }
-interface BattlePetAbility{
+interface BankBagSlotPricesDatabase{
+    ID?: string;
+    Cost?: string;
+}
+interface BannedAddonsDatabase{
+    ID?: string;
+    NameMD5?: string;
+    VersionMD5?: string;
+    LastModified?: string;
+    Flags?: string;
+    Name?: string;
+    Version?: string;
+}
+interface BarberShopStyleDatabase{
+    ID?: string;
+    Type?: string;
+    DisplayName_lang?: string;
+    Description_lang?: string;
+    Cost_Modifier?: string;
+    Race?: string;
+    Sex?: string;
+    Data?: string;
+}
+interface BattlePetAbilityDatabase{
     ID?: string;
     BattlePetVisualID?: string;
     Cooldown?: string;
@@ -705,21 +705,7 @@ interface BattlePetAbility{
     Name_lang?: string;
     PetTypeEnum?: string;
 }
-interface BattlePetAbilityState{
-    ID?: string;
-    BattlePetAbilityID?: string;
-    BattlePetStateID?: string;
-    Value?: string;
-}
-interface BattlePetAbilityTurn{
-    ID?: string;
-    BattlePetAbilityID?: string;
-    BattlePetVisualID?: string;
-    EventTypeEnum?: string;
-    OrderIndex?: string;
-    TurnTypeEnum?: string;
-}
-interface BattlePetAbilityEffect{
+interface BattlePetAbilityEffectDatabase{
     ID?: string;
     AuraBattlePetAbilityID?: string;
     BattlePetAbilityTurnID?: string;
@@ -728,29 +714,55 @@ interface BattlePetAbilityEffect{
     OrderIndex?: string;
     Param?: string;
 }
-interface BattlePetBreedQuality{
+interface BattlePetAbilityStateDatabase{
+    ID?: string;
+    BattlePetAbilityID?: string;
+    BattlePetStateID?: string;
+    Value?: string;
+}
+interface BattlePetAbilityTurnDatabase{
+    ID?: string;
+    BattlePetAbilityID?: string;
+    BattlePetVisualID?: string;
+    EventTypeEnum?: string;
+    OrderIndex?: string;
+    TurnTypeEnum?: string;
+}
+interface BattlePetBreedQualityDatabase{
     StateMultiplier?: string;
     ID?: string;
     QualityEnum?: string;
 }
-interface BattlePetNPCTeamMember{
-    Name_lang?: string;
+interface BattlePetBreedStateDatabase{
     ID?: string;
+    BattlePetBreedID?: string;
+    BattlePetStateID?: string;
+    Value?: string;
 }
-interface BattlePetEffectProperties{
-    ParamLabel?: string;
-    ParamTypeEnum?: string;
-    ID?: string;
-    BattlePetVisualID?: string;
-}
-interface BattlePetDisplayOverride{
+interface BattlePetDisplayOverrideDatabase{
     ID?: string;
     BattlePetSpeciesID?: string;
     CreatureDisplayInfoID?: string;
     PlayerConditionID?: string;
     PriorityCategory?: string;
 }
-interface BattlePetSpecies{
+interface BattlePetEffectPropertiesDatabase{
+    ParamLabel?: string;
+    ParamTypeEnum?: string;
+    ID?: string;
+    BattlePetVisualID?: string;
+}
+interface BattlePetNPCTeamMemberDatabase{
+    Name_lang?: string;
+    ID?: string;
+}
+interface BattlePetSpeciesStateDatabase{
+    ID?: string;
+    BattlePetSpeciesID?: string;
+    BattlePetStateID?: string;
+    Value?: string;
+}
+interface BattlePetSpeciesDatabase{
     ID?: string;
     CardUIModelSceneID?: string;
     CreatureID?: string;
@@ -764,31 +776,35 @@ interface BattlePetSpecies{
     SummonSpellID?: string;
     CovenantID?: string;
 }
-interface BattlePetBreedState{
+interface BattlePetSpeciesXCovenantDatabase{
     ID?: string;
-    BattlePetBreedID?: string;
-    BattlePetStateID?: string;
-    Value?: string;
-}
-interface BattlePetSpeciesState{
-    ID?: string;
+    CovenantID?: string;
     BattlePetSpeciesID?: string;
-    BattlePetStateID?: string;
-    Value?: string;
 }
-interface BattlePetSpeciesXAbility{
+interface BattlePetSpeciesXAbilityDatabase{
     ID?: string;
     BattlePetAbilityID?: string;
     BattlePetSpeciesID?: string;
     RequiredLevel?: string;
     SlotEnum?: string;
 }
-interface BattlePetSpeciesXCovenant{
+interface BattlePetStateDatabase{
+    LuaName?: string;
     ID?: string;
-    CovenantID?: string;
-    BattlePetSpeciesID?: string;
+    BattlePetVisualID?: string;
+    Flags?: string;
 }
-interface BattlemasterList{
+interface BattlePetVisualDatabase{
+    SceneScriptFunction?: string;
+    ID?: string;
+    CastMilliSeconds?: string;
+    Flags?: string;
+    ImpactMilliSeconds?: string;
+    RangeTypeEnum?: string;
+    SceneScriptPackageID?: string;
+    SpellVisualID?: string;
+}
+interface BattlemasterListDatabase{
     ID?: string;
     MapID?: string;
     InstanceType?: string;
@@ -812,44 +828,7 @@ interface BattlemasterList{
     Field_2_0_0_5610_006?: string;
     Field_2_0_0_5610_005?: string;
 }
-interface BattlePetState{
-    LuaName?: string;
-    ID?: string;
-    BattlePetVisualID?: string;
-    Flags?: string;
-}
-interface BeckonTrigger{
-    ID?: string;
-    Field_9_0_1_33978_001?: string;
-    QuestID?: string;
-    BroadcastTextID?: string;
-    WorldEffectID?: string;
-    Field_9_0_1_33978_005?: string;
-    Field_9_0_1_33978_006?: string;
-    PlayerConditionID?: string;
-    CreatureID?: string;
-}
-interface BattlePetVisual{
-    SceneScriptFunction?: string;
-    ID?: string;
-    CastMilliSeconds?: string;
-    Flags?: string;
-    ImpactMilliSeconds?: string;
-    RangeTypeEnum?: string;
-    SceneScriptPackageID?: string;
-    SpellVisualID?: string;
-}
-interface BoneWindModifiers{
-    ID?: string;
-    Multiplier?: string;
-    PhaseMultiplier?: string;
-}
-interface BoneWindModifierModel{
-    ID?: string;
-    BoneWindModifierID?: string;
-    FileDataID?: string;
-}
-interface BeamEffect{
+interface BeamEffectDatabase{
     ID?: string;
     BeamID?: string;
     DestAttachID?: string;
@@ -862,7 +841,35 @@ interface BeamEffect{
     SourceOffset?: string;
     SourcePositionerID?: string;
 }
-interface Bounty{
+interface BeckonTriggerDatabase{
+    ID?: string;
+    Field_9_0_1_33978_001?: string;
+    QuestID?: string;
+    BroadcastTextID?: string;
+    WorldEffectID?: string;
+    Field_9_0_1_33978_005?: string;
+    Field_9_0_1_33978_006?: string;
+    PlayerConditionID?: string;
+    CreatureID?: string;
+}
+interface BoneWindModifierModelDatabase{
+    ID?: string;
+    BoneWindModifierID?: string;
+    FileDataID?: string;
+}
+interface BoneWindModifiersDatabase{
+    ID?: string;
+    Multiplier?: string;
+    PhaseMultiplier?: string;
+}
+interface BonusRollDatabase{
+    ID?: string;
+    CurrencyCost?: string;
+    CurrencyTypesID?: string;
+    JournalEncounterID?: string;
+    JournalInstanceID?: string;
+}
+interface BountyDatabase{
     ID?: string;
     BountySetID?: string;
     FactionID?: string;
@@ -870,20 +877,12 @@ interface Bounty{
     QuestID?: string;
     TurninPlayerConditionID?: string;
 }
-interface BonusRoll{
+interface BountySetDatabase{
     ID?: string;
-    CurrencyCost?: string;
-    CurrencyTypesID?: string;
-    JournalEncounterID?: string;
-    JournalInstanceID?: string;
+    LockedQuestID?: string;
+    VisiblePlayerConditionID?: string;
 }
-interface BroadcastTextDuration{
-    ID?: string;
-    BroadcastTextID?: string;
-    Locale?: string;
-    DurationMS?: string;
-}
-interface BroadcastText{
+interface BroadcastTextDatabase{
     ID?: string;
     LanguageID?: string;
     EmoteID?: string;
@@ -897,35 +896,25 @@ interface BroadcastText{
     Text1_lang?: string;
     ChatBubbleDurationMs?: string;
 }
-interface BroadcastTextVOState{
+interface BroadcastTextDurationDatabase{
     ID?: string;
-    SoundStateID?: string;
+    BroadcastTextID?: string;
+    Locale?: string;
+    DurationMS?: string;
 }
-interface BountySet{
-    ID?: string;
-    LockedQuestID?: string;
-    VisiblePlayerConditionID?: string;
-}
-interface CameraEffect{
-    ID?: string;
-    Flags?: string;
-}
-interface BroadcastTextSoundState{
+interface BroadcastTextSoundStateDatabase{
     ID?: string;
     Name?: string;
 }
-interface CameraShakes{
+interface BroadcastTextVOStateDatabase{
     ID?: string;
-    ShakeType?: string;
-    Direction?: string;
-    Amplitude?: string;
-    Frequency?: string;
-    Duration?: string;
-    Phase?: string;
-    Coefficient?: string;
+    SoundStateID?: string;
+}
+interface CameraEffectDatabase{
+    ID?: string;
     Flags?: string;
 }
-interface CameraEffectEntry{
+interface CameraEffectEntryDatabase{
     ID?: string;
     Amplitude?: string;
     AmplitudeB?: string;
@@ -944,7 +933,7 @@ interface CameraEffectEntry{
     RadiusMax?: string;
     RadiusMin?: string;
 }
-interface CameraMode{
+interface CameraModeDatabase{
     ID?: string;
     Name?: string;
     Type?: string;
@@ -959,7 +948,18 @@ interface CameraMode{
     LockedTargetOffsetBase?: string;
     LockedTargetOffsetDirection?: string;
 }
-interface CampaignXCondition{
+interface CameraShakesDatabase{
+    ID?: string;
+    ShakeType?: string;
+    Direction?: string;
+    Amplitude?: string;
+    Frequency?: string;
+    Duration?: string;
+    Phase?: string;
+    Coefficient?: string;
+    Flags?: string;
+}
+interface CampaignXConditionDatabase{
     ID?: string;
     PlayerConditionID?: string;
     OrderIndex?: string;
@@ -967,7 +967,7 @@ interface CampaignXCondition{
     Flags?: string;
     FailureReason_lang?: string;
 }
-interface Campaign{
+interface CampaignDatabase{
     Title_lang?: string;
     InternalTitle?: string;
     Description_lang?: string;
@@ -981,18 +981,38 @@ interface Campaign{
     OnlyStallIf?: string;
     Field_9_0_1_35755_007?: string;
 }
-interface CastableRaidBuffs{
-    ID?: string;
-    SpellID?: string;
-    CastingSpellID?: string;
-}
-interface CampaignXQuestLine{
+interface CampaignXQuestLineDatabase{
     ID?: string;
     CampaignID?: string;
     QuestLineID?: string;
     OrderIndex?: string;
 }
-interface CelestialBody{
+interface CastableRaidBuffsDatabase{
+    ID?: string;
+    SpellID?: string;
+    CastingSpellID?: string;
+}
+interface Cfg_CategoriesDatabase{
+    ID?: string;
+    LocaleMask?: string;
+    Create_charsetMask?: string;
+    Existing_charsetMask?: string;
+    Flags?: string;
+    Name_lang?: string;
+    Order?: string;
+    Field_0_10_0_3892_000?: string;
+    Region_ID?: string;
+}
+interface Cfg_ConfigsDatabase{
+    ID?: string;
+    RealmType?: string;
+    PlayerKillingAllowed?: string;
+    Roleplaying?: string;
+    PlayerAttackSpeedBase?: string;
+    MaxDamageReductionPctPhysical?: string;
+    GeneratedID?: string;
+}
+interface CelestialBodyDatabase{
     ID?: string;
     AtmosphericMaskFileDataID?: string;
     AtmosphericMaskScale?: string;
@@ -1009,27 +1029,7 @@ interface CelestialBody{
     ScrollVRate?: string;
     SkyArrayBand?: string;
 }
-interface Cfg_Categories{
-    ID?: string;
-    LocaleMask?: string;
-    Create_charsetMask?: string;
-    Existing_charsetMask?: string;
-    Flags?: string;
-    Name_lang?: string;
-    Order?: string;
-    Field_0_10_0_3892_000?: string;
-    Region_ID?: string;
-}
-interface Cfg_Configs{
-    ID?: string;
-    RealmType?: string;
-    PlayerKillingAllowed?: string;
-    Roleplaying?: string;
-    PlayerAttackSpeedBase?: string;
-    MaxDamageReductionPctPhysical?: string;
-    GeneratedID?: string;
-}
-interface Cfg_Regions{
+interface Cfg_RegionsDatabase{
     ID?: string;
     Tag?: string;
     Region_group_mask?: string;
@@ -1039,14 +1039,7 @@ interface Cfg_Regions{
     Region_ID?: string;
     Field_8_1_0_28048_006?: string;
 }
-interface CharBaseInfo{
-    RaceID?: string;
-    ClassID?: string;
-    ID?: string;
-    Padding_4_0_0_11792_003?: string;
-    Proficiency?: string;
-}
-interface ChallengeModeItemBonusOverride{
+interface ChallengeModeItemBonusOverrideDatabase{
     ID?: string;
     OverrideItemBonusTreeID?: string;
     Type?: string;
@@ -1055,29 +1048,21 @@ interface ChallengeModeItemBonusOverride{
     PvPSeasonID?: string;
     ParentItemBonusTreeID?: string;
 }
-interface CharBaseSection{
+interface CharBaseInfoDatabase{
+    RaceID?: string;
+    ClassID?: string;
+    ID?: string;
+    Padding_4_0_0_11792_003?: string;
+    Proficiency?: string;
+}
+interface CharBaseSectionDatabase{
     ID?: string;
     FallbackID?: string;
     LayoutResType?: string;
     ResolutionVariationEnum?: string;
     VariationEnum?: string;
 }
-interface CharComponentTextureLayouts{
-    ID?: string;
-    Width?: string;
-    Height?: string;
-}
-interface CharHairTextures{
-    ID?: string;
-    Field_0_5_3_3368_001_race?: string;
-    Field_0_5_3_3368_002_gender?: string;
-    Field_0_5_3_3368_003?: string;
-    Field_0_5_3_3368_004_mayberacemask?: string;
-    Field_0_5_3_3368_005_the_x_in_hair_xy_blp?: string;
-    Field_0_5_3_3368_006?: string;
-    Field_0_5_3_3368_007?: string;
-}
-interface CharComponentTextureSections{
+interface CharComponentTextureSectionsDatabase{
     ID?: string;
     CharComponentTextureLayoutID?: string;
     SectionType?: string;
@@ -1087,16 +1072,22 @@ interface CharComponentTextureSections{
     Height?: string;
     OverlapSectionMask?: string;
 }
-interface CharSectionCondition{
+interface CharComponentTextureLayoutsDatabase{
     ID?: string;
-    BaseSection?: string;
-    Sex?: string;
-    VariationIndex?: string;
-    ColorIndex?: string;
-    AchievementID?: string;
-    RaceID?: string;
+    Width?: string;
+    Height?: string;
 }
-interface CharHairGeosets{
+interface CharHairTexturesDatabase{
+    ID?: string;
+    Field_0_5_3_3368_001_race?: string;
+    Field_0_5_3_3368_002_gender?: string;
+    Field_0_5_3_3368_003?: string;
+    Field_0_5_3_3368_004_mayberacemask?: string;
+    Field_0_5_3_3368_005_the_x_in_hair_xy_blp?: string;
+    Field_0_5_3_3368_006?: string;
+    Field_0_5_3_3368_007?: string;
+}
+interface CharHairGeosetsDatabase{
     ID?: string;
     RaceID?: string;
     SexID?: string;
@@ -1110,7 +1101,29 @@ interface CharHairGeosets{
     HdCustomGeoFileDataID?: string;
     Field_8_3_0_32044_010?: string;
 }
-interface CharSections{
+interface CharSectionConditionDatabase{
+    ID?: string;
+    BaseSection?: string;
+    Sex?: string;
+    VariationIndex?: string;
+    ColorIndex?: string;
+    AchievementID?: string;
+    RaceID?: string;
+}
+interface CharShipmentDatabase{
+    Field_6_0_1_18179_005?: string;
+    ID?: string;
+    ContainerID?: string;
+    DummyItemID?: string;
+    Duration?: string;
+    Flags?: string;
+    GarrFollowerID?: string;
+    MaxShipments?: string;
+    OnCompleteSpellID?: string;
+    SpellID?: string;
+    TreasureID?: string;
+}
+interface CharSectionsDatabase{
     ID?: string;
     RaceID?: string;
     SexID?: string;
@@ -1121,7 +1134,7 @@ interface CharSections{
     ColorIndex?: string;
     MaterialResourcesID?: string;
 }
-interface CharStartKit{
+interface CharStartKitDatabase{
     ID?: string;
     ZoneName_lang?: string;
     ChrClassesID?: string;
@@ -1142,17 +1155,7 @@ interface CharStartKit{
     ChrModel_9_0_1_35522_001Override_Female?: string;
     CharacterCreationAnimLoopWaitTimeMs?: string;
 }
-interface CharTextureVariationsV2{
-    ID?: string;
-    RaceID?: string;
-    SexID?: string;
-    SectionID?: string;
-    VariationID?: string;
-    ColorID?: string;
-    IsNPC?: string;
-    TextureName?: string;
-}
-interface CharShipmentContainer{
+interface CharShipmentContainerDatabase{
     ID?: string;
     BaseCapacity?: string;
     CompleteSpellVisualID?: string;
@@ -1171,33 +1174,7 @@ interface CharShipmentContainer{
     WorkingDisplayInfoID?: string;
     WorkingSpellVisualID?: string;
 }
-interface CharShipment{
-    Field_6_0_1_18179_005?: string;
-    ID?: string;
-    ContainerID?: string;
-    DummyItemID?: string;
-    Duration?: string;
-    Flags?: string;
-    GarrFollowerID?: string;
-    MaxShipments?: string;
-    OnCompleteSpellID?: string;
-    SpellID?: string;
-    TreasureID?: string;
-}
-interface CharVariations{
-    RaceID?: string;
-    SexID?: string;
-    TextureHoldLayer?: string;
-}
-interface CharTitles{
-    ID?: string;
-    Condition_ID?: string;
-    Name_lang?: string;
-    Name1_lang?: string;
-    Mask_ID?: string;
-    Flags?: string;
-}
-interface CharStartOutfit{
+interface CharStartOutfitDatabase{
     ID?: string;
     RaceID?: string;
     ClassID?: string;
@@ -1209,7 +1186,30 @@ interface CharStartOutfit{
     PetDisplayID?: string;
     PetFamilyID?: string;
 }
-interface CharacterCreateCameras{
+interface CharTextureVariationsV2Database{
+    ID?: string;
+    RaceID?: string;
+    SexID?: string;
+    SectionID?: string;
+    VariationID?: string;
+    ColorID?: string;
+    IsNPC?: string;
+    TextureName?: string;
+}
+interface CharVariationsDatabase{
+    RaceID?: string;
+    SexID?: string;
+    TextureHoldLayer?: string;
+}
+interface CharTitlesDatabase{
+    ID?: string;
+    Condition_ID?: string;
+    Name_lang?: string;
+    Name1_lang?: string;
+    Mask_ID?: string;
+    Flags?: string;
+}
+interface CharacterCreateCamerasDatabase{
     Race?: string;
     Sex?: string;
     Camera?: string;
@@ -1217,7 +1217,16 @@ interface CharacterCreateCameras{
     Radius?: string;
     Target?: string;
 }
-interface CharacterFacialHairStyles{
+interface CharacterFaceBoneSetDatabase{
+    ID?: string;
+    BoneSetFileDataID?: string;
+    FaceVariationIndex?: string;
+    RaceID?: string;
+    Resolution?: string;
+    SexID?: string;
+    ModelFileDataID?: string;
+}
+interface CharacterFacialHairStylesDatabase{
     ID?: string;
     RaceID?: string;
     SexID?: string;
@@ -1227,37 +1236,28 @@ interface CharacterFacialHairStyles{
     MoustacheGeoset?: string;
     SideburnGeoset?: string;
 }
-interface CharacterFaceBoneSet{
-    ID?: string;
-    BoneSetFileDataID?: string;
-    FaceVariationIndex?: string;
-    RaceID?: string;
-    Resolution?: string;
-    SexID?: string;
-    ModelFileDataID?: string;
-}
-interface CharacterLoadout{
+interface CharacterLoadoutDatabase{
     ID?: string;
     ChrClassID?: string;
     Purpose?: string;
     Racemask?: string;
     Field_2_5_1_38043_004?: string;
 }
-interface CharacterLoadoutPet{
+interface CharacterLoadoutPetDatabase{
     ID?: string;
     CreatureID?: string;
     PetDisplayID?: string;
     PetFamilyID?: string;
     CharacterLoadoutID?: string;
 }
-interface CharacterLoadoutItem{
+interface CharacterLoadoutItemDatabase{
     ID?: string;
     CharacterLoadoutID?: string;
     ItemID?: string;
     ItemDisplayInfoID?: string;
     ItemInventoryType?: string;
 }
-interface CharacterServiceInfo{
+interface CharacterServiceInfoDatabase{
     ID?: string;
     BoostLevel?: string;
     BoostType?: string;
@@ -1271,7 +1271,7 @@ interface CharacterServiceInfo{
     Priority?: string;
     ProfessionLevel?: string;
 }
-interface ChatChannels{
+interface ChatChannelsDatabase{
     ID?: string;
     Flags?: string;
     FactionGroup?: string;
@@ -1279,25 +1279,12 @@ interface ChatChannels{
     Shortcut_lang?: string;
     Ruleset?: string;
 }
-interface ChrClassTitle{
-    ID?: string;
-    ChrClassID?: string;
-    Name_female_lang?: string;
-    Name_male_lang?: string;
-}
-interface ChatProfanity{
+interface ChatProfanityDatabase{
     ID?: string;
     Text?: string;
     Language?: string;
 }
-interface ChrClassUIChrModelInfo{
-    ID?: string;
-    ChrModel_9_0_1_35522_001Override?: string;
-    ChrModelID?: string;
-    ChrClassesID?: string;
-    ChrCreateFacingOverride?: string;
-}
-interface ChrClassRaceSex{
+interface ChrClassRaceSexDatabase{
     ID?: string;
     ClassID?: string;
     Flags?: string;
@@ -1306,24 +1293,32 @@ interface ChrClassRaceSex{
     SoundID?: string;
     VoiceSoundFilterID?: string;
 }
-interface ChrClassUIDisplay{
+interface ChrClassTitleDatabase{
+    ID?: string;
+    ChrClassID?: string;
+    Name_female_lang?: string;
+    Name_male_lang?: string;
+}
+interface ChrClassUIChrModelInfoDatabase{
+    ID?: string;
+    ChrModel_9_0_1_35522_001Override?: string;
+    ChrModelID?: string;
+    ChrClassesID?: string;
+    ChrCreateFacingOverride?: string;
+}
+interface ChrClassUIDisplayDatabase{
     ID?: string;
     AdvGuidePlayerConditionID?: string;
     ChrClassesID?: string;
     SplashPlayerConditionID?: string;
 }
-interface ChrClassVillain{
+interface ChrClassVillainDatabase{
     ID?: string;
     ChrClassID?: string;
     Gender?: string;
     Name_lang?: string;
 }
-interface ChrClassesXPowerTypes{
-    ClassID?: string;
-    PowerType?: string;
-    ID?: string;
-}
-interface ChrCreateClassAnimTarget{
+interface ChrCreateClassAnimTargetDatabase{
     ID?: string;
     TargetPositionX?: string;
     TargetPositionY?: string;
@@ -1333,13 +1328,7 @@ interface ChrCreateClassAnimTarget{
     Field_9_0_1_34972_005?: string;
     ChrCreateClassAnimTargetInfoID?: string;
 }
-interface ChrCreateClassAnimTargetInfo{
-    ID?: string;
-    ChrRacesID?: string;
-    Sex?: string;
-    ChrClassesID?: string;
-}
-interface ChrClasses{
+interface ChrClassesDatabase{
     ID?: string;
     DisplayPower?: string;
     PetNameToken?: string;
@@ -1389,13 +1378,18 @@ interface ChrClasses{
     Hyphenated_name_female_lang?: string;
     Field_2_5_1_38043_011?: string;
 }
-interface ChrCustClientChoiceConversion{
+interface ChrCreateClassAnimTargetInfoDatabase{
     ID?: string;
-    Field_9_0_1_34365_001?: string;
-    ChrCustomizationReqID?: string;
-    Field_9_0_1_34365_003?: string;
+    ChrRacesID?: string;
+    Sex?: string;
+    ChrClassesID?: string;
 }
-interface ChrCustomization{
+interface ChrClassesXPowerTypesDatabase{
+    ClassID?: string;
+    PowerType?: string;
+    ID?: string;
+}
+interface ChrCustomizationDatabase{
     ID?: string;
     BaseSection?: string;
     ComponentSection?: string;
@@ -1405,18 +1399,29 @@ interface ChrCustomization{
     Sex?: string;
     UiCustomizationType?: string;
 }
-interface ChrCustItemGeoModify{
-    ID?: string;
-    GeosetType?: string;
-    Original?: string;
-    Override?: string;
-}
-interface ChrCustomizationBoneSet{
+interface ChrCustomizationBoneSetDatabase{
     ID?: string;
     BoneFileDataID?: string;
     ModelFileDataID?: string;
 }
-interface ChrCustomizationChoice{
+interface ChrCustClientChoiceConversionDatabase{
+    ID?: string;
+    Field_9_0_1_34365_001?: string;
+    ChrCustomizationReqID?: string;
+    Field_9_0_1_34365_003?: string;
+}
+interface ChrCustomizationCategoryDatabase{
+    CategoryName_lang?: string;
+    ID?: string;
+    CustomizeIcon?: string;
+    CustomizeIconSelected?: string;
+    OrderIndex?: string;
+    CameraZoomLevel?: string;
+    Flags?: string;
+    SpellShapeshiftFormID?: string;
+    CameraDistanceOffset?: string;
+}
+interface ChrCustomizationChoiceDatabase{
     Name_lang?: string;
     ID?: string;
     ChrCustomizationOptionID?: string;
@@ -1428,48 +1433,46 @@ interface ChrCustomizationChoice{
     SwatchColor2?: string;
     SwatchColor?: string;
 }
-interface ChrCustomizationCondModel{
-    ID?: string;
-    CreatureModelDataID?: string;
-    Field_9_0_1_34081_001?: string;
-}
-interface ChrCustomizationCategory{
-    CategoryName_lang?: string;
-    ID?: string;
-    CustomizeIcon?: string;
-    CustomizeIconSelected?: string;
-    OrderIndex?: string;
-    CameraZoomLevel?: string;
-    Flags?: string;
-    SpellShapeshiftFormID?: string;
-    CameraDistanceOffset?: string;
-}
-interface ChrCustomizationDisplayInfo{
+interface ChrCustomizationDisplayInfoDatabase{
     ID?: string;
     SpellShapeshiftFormID?: string;
     CreatureDisplayInfoID?: string;
     BarberShopMinCameraDistance?: string;
     BarberShopHeightOffset?: string;
 }
-interface ChrCustomizationElement{
+interface ChrCustItemGeoModifyDatabase{
     ID?: string;
-    ChrCustomizationChoiceID?: string;
-    RelatedChrCustomizationChoiceID?: string;
-    ChrCustomizationGeosetID?: string;
-    ChrCustomizationSkinnedModelID?: string;
-    ChrCustomizationMaterialID?: string;
-    ChrCustomizationBoneSetID?: string;
-    ChrCustomizationCondModelID?: string;
-    ChrCustomizationDisplayInfoID?: string;
-    ChrCustItemGeoModifyID?: string;
+    GeosetType?: string;
+    Original?: string;
+    Override?: string;
 }
-interface ChrCustomizationGeoset{
+interface ChrCustomizationCondModelDatabase{
+    ID?: string;
+    CreatureModelDataID?: string;
+    Field_9_0_1_34081_001?: string;
+}
+interface ChrCustomizationGeosetDatabase{
     ID?: string;
     GeosetType?: string;
     GeosetID?: string;
     Modifier?: string;
 }
-interface ChrCustomizationOption{
+interface ChrCustomizationConversionDatabase{
+    ID?: string;
+    ChrRacesID?: string;
+    Sex?: string;
+    OptionID?: string;
+    Data?: string;
+    ChrCustomizationChoiceID?: string;
+    DependentOptionID?: string;
+    DependentData?: string;
+}
+interface ChrCustomizationMaterialDatabase{
+    ID?: string;
+    ChrModelTextureTargetID?: string;
+    MaterialResourcesID?: string;
+}
+interface ChrCustomizationOptionDatabase{
     Name_lang?: string;
     ID?: string;
     SecondaryID?: string;
@@ -1483,19 +1486,40 @@ interface ChrCustomizationOption{
     BarberShopCostModifier?: string;
     Requirement?: string;
 }
-interface ChrCustomizationReqChoice{
+interface ChrCustomizationReqChoiceDatabase{
     ID?: string;
     ChrCustomizationChoiceID?: string;
     ChrCustomizationReqID?: string;
 }
-interface ChrCustomizationSkinnedModel{
+interface ChrCustomizationSkinnedModelDatabase{
     ID?: string;
     CollectionsFileDataID?: string;
     GeosetType?: string;
     GeosetID?: string;
     Modifier?: string;
 }
-interface ChrModel{
+interface ChrCustomizationElementDatabase{
+    ID?: string;
+    ChrCustomizationChoiceID?: string;
+    RelatedChrCustomizationChoiceID?: string;
+    ChrCustomizationGeosetID?: string;
+    ChrCustomizationSkinnedModelID?: string;
+    ChrCustomizationMaterialID?: string;
+    ChrCustomizationBoneSetID?: string;
+    ChrCustomizationCondModelID?: string;
+    ChrCustomizationDisplayInfoID?: string;
+    ChrCustItemGeoModifyID?: string;
+}
+interface ChrModelMaterialDatabase{
+    ID?: string;
+    CharComponentTextureLayoutsID?: string;
+    TextureType?: string;
+    Width?: string;
+    Height?: string;
+    SkinType?: string;
+    Field_9_0_1_34615_006?: string;
+}
+interface ChrModelDatabase{
     FaceCustomizationOffset?: string;
     ID?: string;
     Sex?: string;
@@ -1514,16 +1538,7 @@ interface ChrModel{
     BarberShopCameraRotationOffset?: string;
     Field_9_1_0_38312_015?: string;
 }
-interface ChrModelMaterial{
-    ID?: string;
-    CharComponentTextureLayoutsID?: string;
-    TextureType?: string;
-    Width?: string;
-    Height?: string;
-    SkinType?: string;
-    Field_9_0_1_34615_006?: string;
-}
-interface ChrModelTextureLayer{
+interface ChrModelTextureLayerDatabase{
     ID?: string;
     TextureType?: string;
     Layer?: string;
@@ -1534,17 +1549,25 @@ interface ChrModelTextureLayer{
     TextureSectionTypeBitMask?: string;
     CharComponentTextureLayoutsID?: string;
 }
-interface ChrModelTextureTarget{
+interface ChrModelTextureTargetDatabase{
     Field_9_0_1_34081_000?: string;
 }
-interface ChrProficiency{
+interface ChrCustomizationReqDatabase{
+    ID?: string;
+    ReqType?: string;
+    ClassMask?: string;
+    ReqAchievementID?: string;
+    OverrideArchive?: string;
+    ReqItemModifiedAppearanceID?: string;
+}
+interface ChrProficiencyDatabase{
     ID?: string;
     Proficiency_minLevel?: string;
     Proficiency_acquireMethod?: string;
     Proficiency_itemClass?: string;
     Proficiency_itemSubClassMask?: string;
 }
-interface ChrRaceRacialAbility{
+interface ChrRaceRacialAbilityDatabase{
     ID?: string;
     Name_lang?: string;
     Description_lang?: string;
@@ -1553,32 +1576,12 @@ interface ChrRaceRacialAbility{
     ChrRacesID?: string;
     DescriptionShort_lang?: string;
 }
-interface ChrRaceXChrModel{
+interface ChrRaceXChrModelDatabase{
     ID?: string;
     ChrModelID?: string;
     ChrRacesID?: string;
 }
-interface ChrSpecialization{
-    ID?: string;
-    BackgroundFile?: string;
-    ClassID?: string;
-    MasterySpellID?: string;
-    OrderIndex?: string;
-    PetTalentType?: string;
-    Role?: string;
-    SpellIconID?: string;
-    RaidBuffs?: string;
-    Flags?: string;
-    Name_lang?: string;
-    Description_lang?: string;
-    MaxBuffs?: string;
-    PrimaryStatOrder?: string;
-    AnimReplacements?: string;
-    FemaleName_lang?: string;
-    PrimaryStatPriority?: string;
-    SpellIconFileID?: string;
-}
-interface ChrRaces{
+interface ChrRacesDatabase{
     ID?: string;
     Flags?: string;
     FactionID?: string;
@@ -1671,64 +1674,57 @@ interface ChrRaces{
     Field_9_1_0_38783_049?: string;
     Field_9_1_0_38783_050?: string;
 }
-interface ChrUpgradeBucketSpell{
-    ID?: string;
-    ChrUpgradeBucketID?: string;
-    SpellID?: string;
-}
-interface ChrCustomizationConversion{
-    ID?: string;
-    ChrRacesID?: string;
-    Sex?: string;
-    OptionID?: string;
-    Data?: string;
-    ChrCustomizationChoiceID?: string;
-    DependentOptionID?: string;
-    DependentData?: string;
-}
-interface ChrCustomizationMaterial{
-    ID?: string;
-    ChrModelTextureTargetID?: string;
-    MaterialResourcesID?: string;
-}
-interface ChrCustomizationReq{
-    ID?: string;
-    ReqType?: string;
-    ClassMask?: string;
-    ReqAchievementID?: string;
-    OverrideArchive?: string;
-    ReqItemModifiedAppearanceID?: string;
-}
-interface ChrUpgradeBucket{
+interface ChrUpgradeBucketDatabase{
     ID?: string;
     ChrSpecializationID?: string;
     ChrUpgradeTierID?: string;
 }
-interface ChrUpgradeTier{
+interface ChrUpgradeBucketSpellDatabase{
+    ID?: string;
+    ChrUpgradeBucketID?: string;
+    SpellID?: string;
+}
+interface ChrUpgradeTierDatabase{
     ID?: string;
     DisplayName_lang?: string;
     NumTalents?: string;
     OrderIndex?: string;
 }
-interface Cinematic{
+interface CinematicDatabase{
     ID?: string;
     Type?: string;
     File?: string;
 }
-interface CinematicSequences{
+interface CinematicSequencesDatabase{
     ID?: string;
     SoundID?: string;
     Camera?: string;
 }
-interface CinematicCamera{
+interface ClientSceneEffectDatabase{
     ID?: string;
-    Model?: string;
-    SoundID?: string;
-    Origin?: string;
-    OriginFacing?: string;
-    FileDataID?: string;
+    SceneScriptPackageID?: string;
 }
-interface CloakDampening{
+interface ChrSpecializationDatabase{
+    ID?: string;
+    BackgroundFile?: string;
+    ClassID?: string;
+    MasterySpellID?: string;
+    OrderIndex?: string;
+    PetTalentType?: string;
+    Role?: string;
+    SpellIconID?: string;
+    RaidBuffs?: string;
+    Flags?: string;
+    Name_lang?: string;
+    Description_lang?: string;
+    MaxBuffs?: string;
+    PrimaryStatOrder?: string;
+    AnimReplacements?: string;
+    FemaleName_lang?: string;
+    PrimaryStatPriority?: string;
+    SpellIconFileID?: string;
+}
+interface CloakDampeningDatabase{
     ID?: string;
     Angle?: string;
     Dampening?: string;
@@ -1738,18 +1734,22 @@ interface CloakDampening{
     TailAngle?: string;
     TailDampening?: string;
 }
-interface ClientSceneEffect{
+interface CinematicCameraDatabase{
     ID?: string;
-    SceneScriptPackageID?: string;
+    Model?: string;
+    SoundID?: string;
+    Origin?: string;
+    OriginFacing?: string;
+    FileDataID?: string;
 }
-interface CinematicSubtitle{
+interface CinematicSubtitleDatabase{
     ID?: string;
     Flags?: string;
     StartTimestamp?: string;
     EndTimestamp?: string;
     Text_lang?: string;
 }
-interface CloneEffect{
+interface CloneEffectDatabase{
     ID?: string;
     DurationMs?: string;
     DelayMs?: string;
@@ -1760,7 +1760,7 @@ interface CloneEffect{
     OffsetMatrixID?: string;
     Flags?: string;
 }
-interface ColorBanding{
+interface ColorBandingDatabase{
     ID?: string;
     Field_9_0_1_34490_000?: string;
     Field_9_0_1_34490_001?: string;
@@ -1768,13 +1768,7 @@ interface ColorBanding{
     Field_9_0_1_34490_003?: string;
     Field_9_0_1_34490_004?: string;
 }
-interface CommentatorIndirectSpell{
-    ID?: string;
-    TalentSpellID?: string;
-    TriggeredAuraSpellID?: string;
-    ChrSpecID?: string;
-}
-interface CombatCondition{
+interface CombatConditionDatabase{
     ID?: string;
     WorldStateExpressionID?: string;
     SelfConditionID?: string;
@@ -1788,54 +1782,60 @@ interface CombatCondition{
     EnemyConditionCount?: string;
     EnemyConditionLogic?: string;
 }
-interface CommentatorStartLocation{
-    ID?: string;
-    MapID?: string;
-    Pos?: string;
-}
-interface CommentatorTrackedCooldown{
+interface CommentatorTrackedCooldownDatabase{
     ID?: string;
     ChrSpecID?: string;
     Flags?: string;
     Priority?: string;
     SpellID?: string;
 }
-interface CommunityIcon{
-    IconFileID?: string;
-    ID?: string;
-    OrderIndex?: string;
-}
-interface ComponentModelFileData{
+interface ComponentModelFileDataDatabase{
     ID?: string;
     ClassID?: string;
     GenderIndex?: string;
     PositionIndex?: string;
     RaceID?: string;
 }
-interface ConfigurationWarning{
+interface CommentatorIndirectSpellDatabase{
     ID?: string;
-    Type?: string;
-    Warning_lang?: string;
+    TalentSpellID?: string;
+    TriggeredAuraSpellID?: string;
+    ChrSpecID?: string;
 }
-interface ComponentTextureFileData{
+interface ComponentTextureFileDataDatabase{
     ID?: string;
     ClassID?: string;
     GenderIndex?: string;
     RaceID?: string;
 }
-interface ConditionalContentTuning{
+interface CommentatorStartLocationDatabase{
+    ID?: string;
+    MapID?: string;
+    Pos?: string;
+}
+interface CommunityIconDatabase{
+    IconFileID?: string;
+    ID?: string;
+    OrderIndex?: string;
+}
+interface ConditionalContentTuningDatabase{
     ID?: string;
     OrderIndex?: string;
     ReplacementTuning?: string;
     ConditionMask?: string;
     NormalTuning?: string;
 }
-interface ConsoleScripts{
+interface ConsoleScriptsDatabase{
     ID?: string;
     Name?: string;
     Script?: string;
 }
-interface ContentTuning{
+interface ConfigurationWarningDatabase{
+    ID?: string;
+    Type?: string;
+    Warning_lang?: string;
+}
+interface ContentTuningDatabase{
     ID?: string;
     Flags?: string;
     MaxLevel?: string;
@@ -1852,23 +1852,23 @@ interface ContentTuning{
     TargetLevelMax?: string;
     MinItemLevel?: string;
 }
-interface ContentTuningXExpectedStatMod{
+interface ContentTuningDescriptionDatabase{
     ID?: string;
-    ContentTuningID?: string;
-    ExpectedStatModID?: string;
+    Description?: string;
 }
-interface ContentTuningXExpected{
+interface ContentTuningXExpectedDatabase{
     ID?: string;
     ContentTuningID?: string;
     ExpectedStatModID?: string;
     MythicPlusSeasonID?: string;
     MythicPlusSeasonID_2?: string;
 }
-interface ContentTuningDescription{
+interface ContentTuningXExpectedStatModDatabase{
     ID?: string;
-    Description?: string;
+    ContentTuningID?: string;
+    ExpectedStatModID?: string;
 }
-interface ContributionStyle{
+interface ContributionStyleDatabase{
     ID?: string;
     StateName_lang?: string;
     TooltipLine_lang?: string;
@@ -1878,7 +1878,7 @@ interface ContributionStyle{
     BorderAtlas?: string;
     BannerAtlas?: string;
 }
-interface Contribution{
+interface ContributionDatabase{
     ID?: string;
     Description_lang?: string;
     ManagedWorldStateInputID?: string;
@@ -1887,29 +1887,11 @@ interface Contribution{
     UiTextureAtlasMemberID?: string;
     ContributionStyleContainer?: string;
 }
-interface ContributionStyleContainer{
+interface ContributionStyleContainerDatabase{
     ID?: string;
     ContributionStyleID?: string;
 }
-interface CorruptionEffects{
-    ID?: string;
-    MinimumCorruption?: string;
-    Aura?: string;
-    PlayerConditionID?: string;
-    Flags?: string;
-}
-interface ConversationLine{
-    ID?: string;
-    AdditionalDuration?: string;
-    AnimKitID?: string;
-    BroadcastTextID?: string;
-    EndAnimation?: string;
-    NextConversationLineID?: string;
-    SpeechType?: string;
-    SpellVisualKitID?: string;
-    StartAnimation?: string;
-}
-interface Creature{
+interface CreatureDatabase{
     Field_6_0_1_18179_008?: string;
     ID?: string;
     AlwaysItem?: string;
@@ -1936,7 +1918,41 @@ interface Creature{
     Field_5_0_1_15650_002?: string;
     Field_5_0_1_15650_003?: string;
 }
-interface CreatureDifficulty{
+interface CovenantDatabase{
+    Name_lang?: string;
+    Description_lang?: string;
+    ID?: string;
+    BountySetID?: string;
+    SkillLineID?: string;
+    DeathTeleportSpellID?: string;
+    Field_9_0_2_36165_006?: string;
+    Field_9_0_2_36165_007?: string;
+    Field_9_1_0_38783_007?: string;
+}
+interface CorruptionEffectsDatabase{
+    ID?: string;
+    MinimumCorruption?: string;
+    Aura?: string;
+    PlayerConditionID?: string;
+    Flags?: string;
+}
+interface ConversationLineDatabase{
+    ID?: string;
+    AdditionalDuration?: string;
+    AnimKitID?: string;
+    BroadcastTextID?: string;
+    EndAnimation?: string;
+    NextConversationLineID?: string;
+    SpeechType?: string;
+    SpellVisualKitID?: string;
+    StartAnimation?: string;
+}
+interface CreatureDispXUiCameraDatabase{
+    ID?: string;
+    CreatureDisplayInfoID?: string;
+    UiCameraID?: string;
+}
+interface CreatureDifficultyDatabase{
     ID?: string;
     CreatureID?: string;
     ExpansionID?: string;
@@ -1949,23 +1965,47 @@ interface CreatureDifficulty{
     Field_9_0_1_35522_003Max?: string;
     DifficultyID?: string;
 }
-interface Covenant{
-    Name_lang?: string;
-    Description_lang?: string;
+interface CreatureDisplayInfoDatabase{
     ID?: string;
-    BountySetID?: string;
-    SkillLineID?: string;
-    DeathTeleportSpellID?: string;
-    Field_9_0_2_36165_006?: string;
-    Field_9_0_2_36165_007?: string;
-    Field_9_1_0_38783_007?: string;
+    ModelID?: string;
+    SoundID?: string;
+    ExtendedDisplayInfoID?: string;
+    CreatureModelScale?: string;
+    CreatureModelAlpha?: string;
+    TextureVariation?: string;
+    PortraitTextureName?: string;
+    PortraitCreatureDisplayInfoID?: string;
+    SizeClass?: string;
+    BloodID?: string;
+    NPCSoundID?: string;
+    ParticleColorID?: string;
+    CreatureGeosetData?: string;
+    ObjectEffectPackageID?: string;
+    AnimReplacementSetID?: string;
+    Flags?: string;
+    Gender?: string;
+    StateSpellVisualKitID?: string;
+    DissolveEffectID?: string;
+    MountPoofSpellVisualKitID?: string;
+    PetInstanceScale?: string;
+    PlayerOverrideScale?: string;
+    PortraitTextureFileDataID?: string;
+    TextureVariationFileDataID?: string;
+    UnarmedWeaponType?: string;
+    CreatureModelMinLod?: string;
+    DissolveOutEffectID?: string;
+    Field_7_3_2_25549_010?: string;
+    Field_2_1_0_6692_010?: string;
+    Field_2_1_0_6692_011?: string;
+    Field_2_1_0_6692_012?: string;
+    Field_2_1_0_6692_013?: string;
+    Field_2_1_0_6692_014?: string;
+    Field_2_1_0_6692_015?: string;
+    Field_2_1_0_6692_016?: string;
+    Field_2_1_0_6692_017?: string;
+    Field_2_1_0_6692_018?: string;
 }
-interface CreatureDispXUiCamera{
-    ID?: string;
-    CreatureDisplayInfoID?: string;
-    UiCameraID?: string;
-}
-interface CreatureDisplayInfoCond{
+interface CreatureDisplayInfoCondDatabase{
     ID?: string;
     ClassMask?: string;
     CreatureDisplayInfoID?: string;
@@ -1983,12 +2023,28 @@ interface CreatureDisplayInfoCond{
     SkinColorMask?: string;
     TextureVariationFileDataID?: string;
 }
-interface CreatureDisplayInfoCondXChoice{
+interface CreatureDisplayInfoCondXChoiceDatabase{
     ID?: string;
     CreatureDisplayInfoCondID?: string;
     ChrCustomizationChoiceID?: string;
 }
-interface CreatureDisplayInfoExtra{
+interface CreatureDisplayInfoTrnDatabase{
+    ID?: string;
+    DissolveEffectID?: string;
+    DstCreatureDisplayInfoID?: string;
+    FinishVisualKitID?: string;
+    MaxTime?: string;
+    SrcCreatureDisplayInfoID?: string;
+    StartVisualKitID?: string;
+}
+interface CreatureDisplayInfoEvtDatabase{
+    ID?: string;
+    CreatureDisplayInfoID?: string;
+    Flags?: string;
+    Fourcc?: string;
+    SpellVisualKitID?: string;
+}
+interface CreatureDisplayInfoExtraDatabase{
     ID?: string;
     DisplayRaceID?: string;
     DisplaySexID?: string;
@@ -2007,43 +2063,19 @@ interface CreatureDisplayInfoExtra{
     DisplayClassID?: string;
     BakeName?: string;
 }
-interface CreatureDisplayInfoEvt{
-    ID?: string;
-    CreatureDisplayInfoID?: string;
-    Flags?: string;
-    Fourcc?: string;
-    SpellVisualKitID?: string;
-}
-interface CreatureFamily{
-    ID?: string;
-    MinScale?: string;
-    MinScaleLevel?: string;
-    MaxScale?: string;
-    MaxScaleLevel?: string;
-    SkillLine?: string;
-    PetFoodMask?: string;
-    PetTalentType?: string;
-    CategoryEnumID?: string;
-    Name_lang?: string;
-    IconFile?: string;
-    IconFileID?: string;
-}
-interface CreatureDisplayInfoGeosetData{
+interface CreatureDisplayInfoGeosetDataDatabase{
     ID?: string;
     CreatureDisplayInfoID?: string;
     GeosetIndex?: string;
     GeosetValue?: string;
 }
-interface CreatureDisplayInfoTrn{
+interface CreatureDisplayInfoOptionDatabase{
     ID?: string;
-    DissolveEffectID?: string;
-    DstCreatureDisplayInfoID?: string;
-    FinishVisualKitID?: string;
-    MaxTime?: string;
-    SrcCreatureDisplayInfoID?: string;
-    StartVisualKitID?: string;
+    ChrCustomizationOptionID?: string;
+    ChrCustomizationChoiceID?: string;
+    CreatureDisplayInfoExtraID?: string;
 }
-interface CreatureImmunities{
+interface CreatureImmunitiesDatabase{
     ID?: string;
     School?: string;
     DispelType?: string;
@@ -2055,11 +2087,7 @@ interface CreatureImmunities{
     State?: string;
     Flags?: string;
 }
-interface CreatureMovementInfo{
-    ID?: string;
-    SmoothFacingChaseRate?: string;
-}
-interface CreatureModelData{
+interface CreatureModelDataDatabase{
     ID?: string;
     Flags?: string;
     FileDataID?: string;
@@ -2105,53 +2133,11 @@ interface CreatureModelData{
     MountScaleSelf?: string;
     MountScaleOther?: string;
 }
-interface CreatureDisplayInfo{
+interface CreatureMovementInfoDatabase{
     ID?: string;
-    ModelID?: string;
-    SoundID?: string;
-    ExtendedDisplayInfoID?: string;
-    CreatureModelScale?: string;
-    CreatureModelAlpha?: string;
-    TextureVariation?: string;
-    PortraitTextureName?: string;
-    PortraitCreatureDisplayInfoID?: string;
-    SizeClass?: string;
-    BloodID?: string;
-    NPCSoundID?: string;
-    ParticleColorID?: string;
-    CreatureGeosetData?: string;
-    ObjectEffectPackageID?: string;
-    AnimReplacementSetID?: string;
-    Flags?: string;
-    Gender?: string;
-    StateSpellVisualKitID?: string;
-    DissolveEffectID?: string;
-    MountPoofSpellVisualKitID?: string;
-    PetInstanceScale?: string;
-    PlayerOverrideScale?: string;
-    PortraitTextureFileDataID?: string;
-    TextureVariationFileDataID?: string;
-    UnarmedWeaponType?: string;
-    CreatureModelMinLod?: string;
-    DissolveOutEffectID?: string;
-    Field_7_3_2_25549_010?: string;
-    Field_2_1_0_6692_010?: string;
-    Field_2_1_0_6692_011?: string;
-    Field_2_1_0_6692_012?: string;
-    Field_2_1_0_6692_013?: string;
-    Field_2_1_0_6692_014?: string;
-    Field_2_1_0_6692_015?: string;
-    Field_2_1_0_6692_016?: string;
-    Field_2_1_0_6692_017?: string;
-    Field_2_1_0_6692_018?: string;
+    SmoothFacingChaseRate?: string;
 }
-interface CreatureDisplayInfoOption{
-    ID?: string;
-    ChrCustomizationOptionID?: string;
-    ChrCustomizationChoiceID?: string;
-    CreatureDisplayInfoExtraID?: string;
-}
-interface CreatureSoundData{
+interface CreatureSoundDataDatabase{
     ID?: string;
     SoundExertionID?: string;
     SoundExertionCriticalID?: string;
@@ -2193,17 +2179,36 @@ interface CreatureSoundData{
     WindupCriticalSoundID?: string;
     WindupSoundID?: string;
 }
-interface CreatureSpellData{
+interface CreatureSpellDataDatabase{
     ID?: string;
     Spells?: string;
     Availability?: string;
 }
-interface CreatureXContribution{
+interface CreatureFamilyDatabase{
+    ID?: string;
+    MinScale?: string;
+    MinScaleLevel?: string;
+    MaxScale?: string;
+    MaxScaleLevel?: string;
+    SkillLine?: string;
+    PetFoodMask?: string;
+    PetTalentType?: string;
+    CategoryEnumID?: string;
+    Name_lang?: string;
+    IconFile?: string;
+    IconFileID?: string;
+}
+interface CreatureTypeDatabase{
+    ID?: string;
+    Name_lang?: string;
+    Flags?: string;
+}
+interface CreatureXContributionDatabase{
     ID?: string;
     ContributionID?: string;
     CreatureID?: string;
 }
-interface CreatureXDisplayInfo{
+interface CreatureXDisplayInfoDatabase{
     ID?: string;
     CreatureDisplayInfoID?: string;
     CreatureID?: string;
@@ -2211,23 +2216,13 @@ interface CreatureXDisplayInfo{
     Scale?: string;
     OrderIndex?: string;
 }
-interface CreatureType{
+interface CreatureXUiWidgetSetDatabase{
     ID?: string;
-    Name_lang?: string;
-    Flags?: string;
+    CreatureID?: string;
+    UiWidgetSetID?: string;
+    Field_9_0_1_34821_002?: string;
 }
-interface CriteriaTree{
-    ID?: string;
-    CriteriaID?: string;
-    Amount?: string;
-    Operator?: string;
-    Parent?: string;
-    Flags?: string;
-    Description_lang?: string;
-    OrderIndex?: string;
-    Padding_6_0_1_18179_008?: string;
-}
-interface Criteria{
+interface CriteriaDatabase{
     ID?: string;
     Type?: string;
     Asset?: string;
@@ -2241,18 +2236,40 @@ interface Criteria{
     Eligibility_world_state_ID?: string;
     Eligibility_world_state_value?: string;
 }
-interface CriteriaTreeXEffect{
+interface CriteriaTreeDatabase{
+    ID?: string;
+    CriteriaID?: string;
+    Amount?: string;
+    Operator?: string;
+    Parent?: string;
+    Flags?: string;
+    Description_lang?: string;
+    OrderIndex?: string;
+    Padding_6_0_1_18179_008?: string;
+}
+interface CriteriaTreeXEffectDatabase{
     ID?: string;
     CriteriaTreeID?: string;
     WorldEffectID?: string;
 }
-interface CreatureXUiWidgetSet{
+interface CurrencyCategoryDatabase{
     ID?: string;
-    CreatureID?: string;
-    UiWidgetSetID?: string;
-    Field_9_0_1_34821_002?: string;
+    Flags?: string;
+    Name_lang?: string;
+    ExpansionID?: string;
 }
-interface CurrencyTypes{
+interface CurrencyContainerDatabase{
+    ID?: string;
+    ContainerDescription_lang?: string;
+    ContainerIconID?: string;
+    ContainerName_lang?: string;
+    ContainerQuality?: string;
+    CurrencyTypeID?: string;
+    MaxAmount?: string;
+    MinAmount?: string;
+    OnLootSpellVisualKitID?: string;
+}
+interface CurrencyTypesDatabase{
     ID?: string;
     CategoryID?: string;
     Name_lang?: string;
@@ -2273,36 +2290,19 @@ interface CurrencyTypes{
     MaxQtyWorldStateID?: string;
     XpQuestDifficulty?: string;
 }
-interface CurrencyContainer{
-    ID?: string;
-    ContainerDescription_lang?: string;
-    ContainerIconID?: string;
-    ContainerName_lang?: string;
-    ContainerQuality?: string;
-    CurrencyTypeID?: string;
-    MaxAmount?: string;
-    MinAmount?: string;
-    OnLootSpellVisualKitID?: string;
-}
-interface CurvePoint{
+interface CurvePointDatabase{
     Pos?: string;
     ID?: string;
     CurveID?: string;
     OrderIndex?: string;
     PosPreSquish?: string;
 }
-interface Curve{
+interface CurveDatabase{
     ID?: string;
     Flags?: string;
     Type?: string;
 }
-interface CurrencyCategory{
-    ID?: string;
-    Flags?: string;
-    Name_lang?: string;
-    ExpansionID?: string;
-}
-interface DanceMoves{
+interface DanceMovesDatabase{
     ID?: string;
     Type?: string;
     Param?: string;
@@ -2312,14 +2312,14 @@ interface DanceMoves{
     Name_lang?: string;
     LockID?: string;
 }
-interface DeathThudLookups{
+interface DeathThudLookupsDatabase{
     ID?: string;
     SizeClass?: string;
     TerrainTypeSoundID?: string;
     SoundEntryID?: string;
     SoundEntryIDWater?: string;
 }
-interface DecalProperties{
+interface DecalPropertiesDatabase{
     ID?: string;
     BlendMode?: string;
     BotTextureBlendSetID?: string;
@@ -2343,22 +2343,17 @@ interface DecalProperties{
     Field_9_0_1_33978_020?: string;
     Field_9_0_1_33978_021?: string;
 }
-interface DeclinedWordCases{
+interface DeclinedWordDatabase{
+    ID?: string;
+    Word?: string;
+}
+interface DeclinedWordCasesDatabase{
     ID?: string;
     DeclinedWordID?: string;
     CaseIndex?: string;
     DeclinedWord?: string;
 }
-interface DeviceBlacklist{
-    ID?: string;
-    DeviceID?: string;
-    VendorID?: string;
-}
-interface DeclinedWord{
-    ID?: string;
-    Word?: string;
-}
-interface DestructibleModelData{
+interface DestructibleModelDataDatabase{
     ID?: string;
     State0WMO?: string;
     State0ImpactEffectDoodadSet?: string;
@@ -2384,7 +2379,18 @@ interface DestructibleModelData{
     HealEffect?: string;
     HealEffectSpeed?: string;
 }
-interface DissolveEffect{
+interface DeviceBlacklistDatabase{
+    ID?: string;
+    DeviceID?: string;
+    VendorID?: string;
+}
+interface DeviceDefaultSettingsDatabase{
+    ID?: string;
+    DefaultSetting?: string;
+    DeviceID?: string;
+    VendorID?: string;
+}
+interface DissolveEffectDatabase{
     ID?: string;
     AttachID?: string;
     CurveID?: string;
@@ -2401,13 +2407,7 @@ interface DissolveEffect{
     StartValue?: string;
     TextureBlendSetID?: string;
 }
-interface DeviceDefaultSettings{
-    ID?: string;
-    DefaultSetting?: string;
-    DeviceID?: string;
-    VendorID?: string;
-}
-interface Difficulty{
+interface DifficultyDatabase{
     ID?: string;
     FallbackDifficultyID?: string;
     InstanceType?: string;
@@ -2426,7 +2426,7 @@ interface Difficulty{
     Field_8_1_0_28151_012?: string;
     Field_8_1_0_28151_013?: string;
 }
-interface DriverBlacklist{
+interface DriverBlacklistDatabase{
     ID?: string;
     DeviceID?: string;
     DriverVersionHi?: string;
@@ -2436,7 +2436,7 @@ interface DriverBlacklist{
     OsVersion?: string;
     VendorID?: string;
 }
-interface DungeonEncounter{
+interface DungeonEncounterDatabase{
     ID?: string;
     MapID?: string;
     DifficultyID?: string;
@@ -2451,7 +2451,20 @@ interface DungeonEncounter{
     Faction?: string;
     IsEncounterComplete?: string;
 }
-interface DungeonMap{
+interface DungeonMapChunkDatabase{
+    ID?: string;
+    MapID?: string;
+    WMOGroupID?: string;
+    DungeonMapID?: string;
+    MinZ?: string;
+    DoodadPlacementID?: string;
+    Field_1_13_0_28211_000?: string;
+    Field_1_13_0_28211_001?: string;
+    Field_1_13_0_28211_002?: string;
+    Field_1_13_0_28211_003?: string;
+    Field_1_13_0_28211_004?: string;
+}
+interface DungeonMapDatabase{
     ID?: string;
     MapID?: string;
     FloorIndex?: string;
@@ -2465,24 +2478,21 @@ interface DungeonMap{
     MinY?: string;
     MaxY?: string;
 }
-interface DurabilityQuality{
+interface DurabilityCostsDatabase{
+    ID?: string;
+    WeaponSubClassCost?: string;
+    ArmorSubClassCost?: string;
+}
+interface EmoteAnimsDatabase{
+    ID?: string;
+    ProcessedAnimIndex?: string;
+    AnimName?: string;
+}
+interface DurabilityQualityDatabase{
     ID?: string;
     Data?: string;
 }
-interface DungeonMapChunk{
-    ID?: string;
-    MapID?: string;
-    WMOGroupID?: string;
-    DungeonMapID?: string;
-    MinZ?: string;
-    DoodadPlacementID?: string;
-    Field_1_13_0_28211_000?: string;
-    Field_1_13_0_28211_001?: string;
-    Field_1_13_0_28211_002?: string;
-    Field_1_13_0_28211_003?: string;
-    Field_1_13_0_28211_004?: string;
-}
-interface EdgeGlowEffect{
+interface EdgeGlowEffectDatabase{
     ID?: string;
     CurveID?: string;
     Duration?: string;
@@ -2498,17 +2508,7 @@ interface EdgeGlowEffect{
     InitialDelay?: string;
     Priority?: string;
 }
-interface DurabilityCosts{
-    ID?: string;
-    WeaponSubClassCost?: string;
-    ArmorSubClassCost?: string;
-}
-interface EmoteAnims{
-    ID?: string;
-    ProcessedAnimIndex?: string;
-    AnimName?: string;
-}
-interface Emotes{
+interface EmotesDatabase{
     ID?: string;
     EmoteSlashCommand?: string;
     AnimID?: string;
@@ -2521,20 +2521,19 @@ interface Emotes{
     RaceMask?: string;
     EmoteAnimID?: string;
 }
-interface EmotesText{
+interface EmotesTextDatabase{
     ID?: string;
     Name?: string;
     EmoteID?: string;
     EmoteText?: string;
 }
-interface EnumeratedString{
+interface EmotesTextDataDatabase{
     ID?: string;
-    Value?: string;
-    Index?: string;
-    Flags?: string;
-    EnumID?: string;
+    Text_lang?: string;
+    EmotesTextID?: string;
+    RelationshipFlags?: string;
 }
-interface EmotesTextSound{
+interface EmotesTextSoundDatabase{
     ID?: string;
     EmotesTextID?: string;
     RaceID?: string;
@@ -2542,7 +2541,14 @@ interface EmotesTextSound{
     SoundID?: string;
     ClassID?: string;
 }
-interface Exhaustion{
+interface EnumeratedStringDatabase{
+    ID?: string;
+    Value?: string;
+    Index?: string;
+    Flags?: string;
+    EnumID?: string;
+}
+interface ExhaustionDatabase{
     ID?: string;
     Xp?: string;
     Factor?: string;
@@ -2552,13 +2558,7 @@ interface Exhaustion{
     Threshold?: string;
     CombatLogText?: string;
 }
-interface EmotesTextData{
-    ID?: string;
-    Text_lang?: string;
-    EmotesTextID?: string;
-    RelationshipFlags?: string;
-}
-interface ExpectedStat{
+interface ExpectedStatDatabase{
     ID?: string;
     ArmorConstant?: string;
     CreatureArmor?: string;
@@ -2572,12 +2572,41 @@ interface ExpectedStat{
     PlayerSecondaryStat?: string;
     CreatureSpellDamage?: string;
 }
-interface EnvironmentalDamage{
+interface EnvironmentalDamageDatabase{
     ID?: string;
     EnumID?: string;
     VisualkitID?: string;
 }
-interface Faction{
+interface ExpectedStatModDatabase{
+    ID?: string;
+    ArmorConstantMod?: string;
+    CreatureArmorMod?: string;
+    CreatureAutoAttackDPSMod?: string;
+    CreatureHealthMod?: string;
+    CreatureSpellDamageMod?: string;
+    PlayerHealthMod?: string;
+    PlayerManaMod?: string;
+    PlayerPrimaryStatMod?: string;
+    PlayerSecondaryStatMod?: string;
+}
+interface ExtraAbilityInfoDatabase{
+    TutorialText_lang?: string;
+    ID?: string;
+    SpellID?: string;
+    ActionBarOverrideSpellID?: string;
+    SpellLabel?: string;
+    UiTextureKitID?: string;
+    UiPriority?: string;
+}
+interface FactionGroupDatabase{
+    ID?: string;
+    MaskID?: string;
+    InternalName?: string;
+    Name_lang?: string;
+    ConquestCurrencyTextureFileID?: string;
+    HonorCurrencyTextureFileID?: string;
+}
+interface FactionDatabase{
     ID?: string;
     ReputationIndex?: string;
     ReputationRaceMask?: string;
@@ -2595,36 +2624,7 @@ interface Faction{
     ParagonFactionID?: string;
     ReputationMax?: string;
 }
-interface ExtraAbilityInfo{
-    TutorialText_lang?: string;
-    ID?: string;
-    SpellID?: string;
-    ActionBarOverrideSpellID?: string;
-    SpellLabel?: string;
-    UiTextureKitID?: string;
-    UiPriority?: string;
-}
-interface ExpectedStatMod{
-    ID?: string;
-    ArmorConstantMod?: string;
-    CreatureArmorMod?: string;
-    CreatureAutoAttackDPSMod?: string;
-    CreatureHealthMod?: string;
-    CreatureSpellDamageMod?: string;
-    PlayerHealthMod?: string;
-    PlayerManaMod?: string;
-    PlayerPrimaryStatMod?: string;
-    PlayerSecondaryStatMod?: string;
-}
-interface FactionGroup{
-    ID?: string;
-    MaskID?: string;
-    InternalName?: string;
-    Name_lang?: string;
-    ConquestCurrencyTextureFileID?: string;
-    HonorCurrencyTextureFileID?: string;
-}
-interface FactionTemplate{
+interface FactionTemplateDatabase{
     ID?: string;
     Faction?: string;
     Flags?: string;
@@ -2634,43 +2634,43 @@ interface FactionTemplate{
     Enemies?: string;
     Friend?: string;
 }
-interface FileDataComplete{
+interface FileDataDatabase{
     ID?: string;
     Filename?: string;
     Filepath?: string;
 }
-interface FileData{
+interface FileDataCompleteDatabase{
     ID?: string;
     Filename?: string;
     Filepath?: string;
 }
-interface FilePaths{
+interface FilePathsDatabase{
     ID?: string;
     FileDataID?: string;
     FileName?: string;
     FilePath?: string;
 }
-interface FootprintTextures{
+interface FootprintTexturesDatabase{
     ID?: string;
     FootstepFilename?: string;
     FileDataID?: string;
     Flags?: string;
     TextureBlendsetID?: string;
 }
-interface FriendshipRepReaction{
+interface FriendshipRepReactionDatabase{
     ID?: string;
     FriendshipRepID?: string;
     ReactionThreshold?: string;
     Reaction_lang?: string;
 }
-interface FootstepTerrainLookup{
+interface FootstepTerrainLookupDatabase{
     ID?: string;
     CreatureFootstepID?: string;
     TerrainSoundID?: string;
     SoundID?: string;
     SoundIDSplash?: string;
 }
-interface FriendshipReputation{
+interface FriendshipReputationDatabase{
     ID?: string;
     FactionID?: string;
     TextureFileID?: string;
@@ -2679,7 +2679,7 @@ interface FriendshipReputation{
     StandingChangedText_lang?: string;
     Flags?: string;
 }
-interface FullScreenEffect{
+interface FullScreenEffectDatabase{
     ID?: string;
     BlurIntensity?: string;
     BlurMultiplier?: string;
@@ -2710,56 +2710,56 @@ interface FullScreenEffect{
     TextureBlendSetID?: string;
     OverlayTextureFileDataID?: string;
 }
-interface GMSurveyCurrentSurvey{
+interface GMSurveyCurrentSurveyDatabase{
     LANGID?: string;
     GMSURVEY_ID?: string;
     ID?: string;
 }
-interface GMSurveyAnswers{
+interface GMSurveyAnswersDatabase{
     ID?: string;
     Sort_Index?: string;
     GMSurveyQuestionID?: string;
     Answer_lang?: string;
 }
-interface GMSurveySurveys{
-    ID?: string;
-    Q?: string;
-}
-interface GMSurveyQuestions{
+interface GMSurveyQuestionsDatabase{
     ID?: string;
     Question_lang?: string;
     Question?: string;
 }
-interface GMTicketCategory{
+interface GMSurveySurveysDatabase{
+    ID?: string;
+    Q?: string;
+}
+interface GMTicketCategoryDatabase{
     ID?: string;
     Category_lang?: string;
 }
-interface GameClockDebug{
+interface GameClockDebugDatabase{
     ID?: string;
     Offset?: string;
 }
-interface GameObjectAnimGroupMember{
+interface GameObjectAnimGroupMemberDatabase{
     ID?: string;
     GameObjectAnimGroupID?: string;
     GameObjectID?: string;
     Flags?: string;
     AnimationID?: string;
 }
-interface GameObjectArtKit{
+interface GameObjectArtKitDatabase{
     ID?: string;
     TextureVariation?: string;
     AttachModel?: string;
     AttachModelFileID?: string;
     TextureVariationFileID?: string;
 }
-interface GameObjectDiffAnimMap{
+interface GameObjectDiffAnimMapDatabase{
     ID?: string;
     GameObjectDiffAnimID?: string;
     DifficultyID?: string;
     Animation?: string;
     AttachmentDisplayID?: string;
 }
-interface GameObjectDisplayInfo{
+interface GameObjectDisplayInfoDatabase{
     ID?: string;
     FileDataID?: string;
     Sound?: string;
@@ -2771,7 +2771,13 @@ interface GameObjectDisplayInfo{
     GeoBox?: string;
     ModelName?: string;
 }
-interface GameObjectsClient{
+interface GameObjectDisplayInfoXSoundKitDatabase{
+    ID?: string;
+    EventIndex?: string;
+    GameObjectDisplayInfoID?: string;
+    SoundKitID?: string;
+}
+interface GameObjectsClientDatabase{
     ID?: string;
     OwnerID?: string;
     DisplayID?: string;
@@ -2782,15 +2788,7 @@ interface GameObjectsClient{
     PropValue?: string;
     Name?: string;
 }
-interface GameParameter{
-    ID?: string;
-    Type?: string;
-    Field_9_0_1_33978_001?: string;
-    Field_9_0_1_33978_002?: string;
-    IndexIntoXXX?: string;
-    Field_9_0_1_33978_004?: string;
-}
-interface GameObjects{
+interface GameObjectsDatabase{
     ID?: string;
     DisplayID?: string;
     Name_lang?: string;
@@ -2804,19 +2802,21 @@ interface GameObjects{
     Scale?: string;
     TypeID?: string;
 }
-interface GameObjectDisplayInfoXSoundKit{
+interface GameParameterDatabase{
     ID?: string;
-    EventIndex?: string;
-    GameObjectDisplayInfoID?: string;
-    SoundKitID?: string;
+    Type?: string;
+    Field_9_0_1_33978_001?: string;
+    Field_9_0_1_33978_002?: string;
+    IndexIntoXXX?: string;
+    Field_9_0_1_33978_004?: string;
 }
-interface GameTables{
+interface GameTablesDatabase{
     Name?: string;
     NumRows?: string;
     NumColumns?: string;
     ID?: string;
 }
-interface GameTips{
+interface GameTipsDatabase{
     ID?: string;
     Text_lang?: string;
     Min_level?: string;
@@ -2824,7 +2824,21 @@ interface GameTips{
     SortIndex?: string;
     ContentTuningID?: string;
 }
-interface GarrAutoCombatant{
+interface GarrAbilityDatabase{
+    ID?: string;
+    Description_lang?: string;
+    FactionChangeGarrAbilityID?: string;
+    Flags?: string;
+    GarrAbilityCategoryID?: string;
+    GarrFollowerTypeID?: string;
+    IconFileDataID?: string;
+    Name_lang?: string;
+}
+interface GarrAbilityCategoryDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface GarrAutoCombatantDatabase{
     ID?: string;
     HealthBase?: string;
     HealthGainPerLevel?: string;
@@ -2836,31 +2850,17 @@ interface GarrAutoCombatant{
     PassiveSpellID?: string;
     Role?: string;
 }
-interface GarrAbilityCategory{
-    ID?: string;
+interface GarrAutoSpellDatabase{
     Name_lang?: string;
-}
-interface GarrAbility{
-    ID?: string;
     Description_lang?: string;
-    FactionChangeGarrAbilityID?: string;
-    Flags?: string;
-    GarrAbilityCategoryID?: string;
-    GarrFollowerTypeID?: string;
-    IconFileDataID?: string;
-    Name_lang?: string;
-}
-interface GarrAutoSpellEffect{
     ID?: string;
-    SpellID?: string;
-    EffectIndex?: string;
-    Effect?: string;
-    Points?: string;
-    TargetType?: string;
+    Cooldown?: string;
+    Duration?: string;
     Flags?: string;
-    Period?: string;
+    SchoolMask?: string;
+    IconFileDataID?: string;
 }
-interface GarrAbilityEffect{
+interface GarrAbilityEffectDatabase{
     Field_6_0_1_18179_005?: string;
     ID?: string;
     AbilityAction?: string;
@@ -2875,17 +2875,17 @@ interface GarrAbilityEffect{
     GarrAbilityID?: string;
     GarrMechanicTypeID?: string;
 }
-interface GarrAutoSpell{
-    Name_lang?: string;
-    Description_lang?: string;
+interface GarrAutoSpellEffectDatabase{
     ID?: string;
-    Cooldown?: string;
-    Duration?: string;
+    SpellID?: string;
+    EffectIndex?: string;
+    Effect?: string;
+    Points?: string;
+    TargetType?: string;
     Flags?: string;
-    SchoolMask?: string;
-    IconFileDataID?: string;
+    Period?: string;
 }
-interface GarrBuilding{
+interface GarrBuildingDatabase{
     Field_6_0_1_18179_003?: string;
     Field_6_0_1_18179_010?: string;
     Field_6_0_1_18179_012?: string;
@@ -2921,7 +2921,7 @@ interface GarrBuilding{
     Tooltip_lang?: string;
     UpgradeLevel?: string;
 }
-interface GarrBuildingDoodadSet{
+interface GarrBuildingDoodadSetDatabase{
     ID?: string;
     AllianceDoodadSet?: string;
     GarrBuildingID?: string;
@@ -2929,14 +2929,23 @@ interface GarrBuildingDoodadSet{
     SpecializationID?: string;
     Type?: string;
 }
-interface GarrBuildingPlotInst{
+interface GarrBuildingPlotInstDatabase{
     ID?: string;
     GarrBuildingID?: string;
     GarrSiteLevelPlotInstID?: string;
     MapOffset?: string;
     UiTextureAtlasMemberID?: string;
 }
-interface GarrClassSpec{
+interface GarrClassSpecPlayerCondDatabase{
+    ID?: string;
+    FlavorGarrStringID?: string;
+    GarrClassSpecID?: string;
+    IconFileDataID?: string;
+    Name_lang?: string;
+    OrderIndex?: string;
+    PlayerConditionID?: string;
+}
+interface GarrClassSpecDatabase{
     ID?: string;
     ClassSpec_lang?: string;
     ClassSpec_Female_lang?: string;
@@ -2946,7 +2955,7 @@ interface GarrClassSpec{
     GarrFollItemSetID?: string;
     UiTextureAtlasMemberID?: string;
 }
-interface GarrEncounter{
+interface GarrEncounterDatabase{
     ID?: string;
     CreatureID?: string;
     Name_lang?: string;
@@ -2957,38 +2966,46 @@ interface GarrEncounter{
     Flags?: string;
     AutoCombatantID?: string;
 }
-interface GarrClassSpecPlayerCond{
+interface GarrEncounterSetXEncounterDatabase{
     ID?: string;
-    FlavorGarrStringID?: string;
-    GarrClassSpecID?: string;
-    IconFileDataID?: string;
-    Name_lang?: string;
-    OrderIndex?: string;
-    PlayerConditionID?: string;
+    GarrEncounterID?: string;
+    GarrEncounterSetID?: string;
 }
-interface GarrFamilyName{
-    FamilyName?: string;
-    ID?: string;
-}
-interface GarrEncounterXMechanic{
+interface GarrEncounterXMechanicDatabase{
     ID?: string;
     GarrEncounterID?: string;
     GarrMechanicID?: string;
     GarrMechanicSetID?: string;
 }
-interface GarrEncounterSetXEncounter{
+interface GarrFamilyNameDatabase{
+    FamilyName?: string;
     ID?: string;
-    GarrEncounterID?: string;
-    GarrEncounterSetID?: string;
 }
-interface GarrFollItemSetMember{
+interface GarrFollItemSetDatabase{
+    ID?: string;
+}
+interface GarrFollItemSetMemberDatabase{
     ID?: string;
     GarrFollItemSetID?: string;
     ItemID?: string;
     ItemSlot?: string;
     MinItemLevel?: string;
 }
-interface GarrFollower{
+interface GarrFollSupportSpellDatabase{
+    ID?: string;
+    AllianceSpellID?: string;
+    GarrFollowerID?: string;
+    HordeSpellID?: string;
+    OrderIndex?: string;
+}
+interface GarrFollowerLevelXPDatabase{
+    ID?: string;
+    FollowerLevel?: string;
+    GarrFollowerTypeID?: string;
+    ShipmentXP?: string;
+    XpToNextLevel?: string;
+}
+interface GarrFollowerDatabase{
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
     Field_6_0_1_18179_003?: string;
@@ -3039,24 +3056,7 @@ interface GarrFollower{
     AutoCombatantID?: string;
     CovenantID?: string;
 }
-interface GarrFollItemSet{
-    ID?: string;
-}
-interface GarrFollowerLevelXP{
-    ID?: string;
-    FollowerLevel?: string;
-    GarrFollowerTypeID?: string;
-    ShipmentXP?: string;
-    XpToNextLevel?: string;
-}
-interface GarrFollowerSetXFollower{
-    ID?: string;
-    GarrFollowerID?: string;
-    GarrFollowerSetID?: string;
-    Field_7_3_2_25549_000?: string;
-    Field_7_3_2_25549_001?: string;
-}
-interface GarrFollowerQuality{
+interface GarrFollowerQualityDatabase{
     ID?: string;
     AbilityCount?: string;
     ClassSpecID?: string;
@@ -3066,7 +3066,14 @@ interface GarrFollowerQuality{
     TraitCount?: string;
     XpToNextQuality?: string;
 }
-interface GarrFollowerType{
+interface GarrFollowerSetXFollowerDatabase{
+    ID?: string;
+    GarrFollowerID?: string;
+    GarrFollowerSetID?: string;
+    Field_7_3_2_25549_000?: string;
+    Field_7_3_2_25549_001?: string;
+}
+interface GarrFollowerTypeDatabase{
     ID?: string;
     Flags?: string;
     GarrTypeID?: string;
@@ -3076,26 +3083,7 @@ interface GarrFollowerType{
     MaxFollowers?: string;
     MaxItemLevel?: string;
 }
-interface GarrFollSupportSpell{
-    ID?: string;
-    AllianceSpellID?: string;
-    GarrFollowerID?: string;
-    HordeSpellID?: string;
-    OrderIndex?: string;
-}
-interface GarrFollowerXAbility{
-    ID?: string;
-    FactionIndex?: string;
-    GarrAbilityID?: string;
-    GarrFollowerID?: string;
-    OrderIndex?: string;
-}
-interface GarrGivenName{
-    ID?: string;
-    Name?: string;
-    Field_6_0_1_18179_002?: string;
-}
-interface GarrFollowerUICreature{
+interface GarrFollowerUICreatureDatabase{
     ID?: string;
     CreatureID?: string;
     FactionIndex?: string;
@@ -3104,32 +3092,44 @@ interface GarrFollowerUICreature{
     OrderIndex?: string;
     Scale?: string;
 }
-interface GarrItemLevelUpgradeData{
+interface GarrFollowerXAbilityDatabase{
+    ID?: string;
+    FactionIndex?: string;
+    GarrAbilityID?: string;
+    GarrFollowerID?: string;
+    OrderIndex?: string;
+}
+interface GarrGivenNameDatabase{
+    ID?: string;
+    Name?: string;
+    Field_6_0_1_18179_002?: string;
+}
+interface GarrItemLevelUpgradeDataDatabase{
     ID?: string;
     FollowerTypeID?: string;
     MaxItemLevel?: string;
     MinItemLevel?: string;
     Operation?: string;
 }
-interface GarrMechanic{
+interface GarrMechanicSetXMechanicDatabase{
+    ID?: string;
+    GarrMechanicID?: string;
+    GarrMechanicSetID?: string;
+}
+interface GarrMechanicDatabase{
     ID?: string;
     Factor?: string;
     GarrAbilityID?: string;
     GarrMechanicTypeID?: string;
 }
-interface GarrMechanicSetXMechanic{
-    ID?: string;
-    GarrMechanicID?: string;
-    GarrMechanicSetID?: string;
-}
-interface GarrMechanicType{
+interface GarrMechanicTypeDatabase{
     ID?: string;
     Category?: string;
     Description_lang?: string;
     IconFileDataID?: string;
     Name_lang?: string;
 }
-interface GarrMissionSet{
+interface GarrMissionSetDatabase{
     ID?: string;
     GarrTypeID?: string;
     Field_9_0_2_36294_001?: string;
@@ -3138,7 +3138,7 @@ interface GarrMissionSet{
     Field_9_0_2_36294_004?: string;
     Field_9_0_2_36294_005?: string;
 }
-interface GarrMission{
+interface GarrMissionDatabase{
     Field_6_0_1_18179_002?: string;
     Field_6_0_1_18179_003?: string;
     Field_6_0_1_18179_004?: string;
@@ -3184,12 +3184,18 @@ interface GarrMission{
     AutoMissionScalarCurveID?: string;
     AutoCombatantEnvCasterID?: string;
 }
-interface GarrMissionTexture{
+interface GarrMissionTextureDatabase{
     ID?: string;
     Pos?: string;
     UiTextureKitID?: string;
 }
-interface GarrMissionXEncounter{
+interface GarrMissionTypeDatabase{
+    ID?: string;
+    Name_lang?: string;
+    UiTextureAtlasMemberID?: string;
+    UiTextureKitID?: string;
+}
+interface GarrMissionXEncounterDatabase{
     ID?: string;
     GarrEncounterID?: string;
     GarrEncounterSetID?: string;
@@ -3197,20 +3203,14 @@ interface GarrMissionXEncounter{
     OrderIndex?: string;
     Field_9_0_1_33978_004?: string;
 }
-interface GarrMissionXFollower{
+interface GarrMissionXFollowerDatabase{
     ID?: string;
     GarrFollowerID?: string;
     GarrFollowerSetID?: string;
     GarrMissionID?: string;
     Field_9_0_1_33978_002?: string;
 }
-interface GarrMissionType{
-    ID?: string;
-    Name_lang?: string;
-    UiTextureAtlasMemberID?: string;
-    UiTextureKitID?: string;
-}
-interface GarrMssnBonusAbility{
+interface GarrMssnBonusAbilityDatabase{
     ID?: string;
     DurationSecs?: string;
     GarrAbilityID?: string;
@@ -3218,7 +3218,7 @@ interface GarrMssnBonusAbility{
     GarrMissionTextureID?: string;
     Radius?: string;
 }
-interface GarrPlot{
+interface GarrPlotDatabase{
     Name?: string;
     UpgradeRequirement?: string;
     ID?: string;
@@ -3228,29 +3228,22 @@ interface GarrPlot{
     PlotType?: string;
     UiCategoryID?: string;
 }
-interface GarrPlotBuilding{
+interface GarrPlotBuildingDatabase{
     ID?: string;
     GarrBuildingID?: string;
     GarrPlotID?: string;
 }
-interface GarrPlotInstance{
+interface GarrPlotInstanceDatabase{
     Name?: string;
     ID?: string;
     GarrPlotID?: string;
 }
-interface GarrPlotUICategory{
+interface GarrPlotUICategoryDatabase{
     CategoryName_lang?: string;
     ID?: string;
     PlotType?: string;
 }
-interface GarrSiteLevelPlotInst{
-    ID?: string;
-    GarrPlotInstanceID?: string;
-    GarrSiteLevelID?: string;
-    UiMarkerPos?: string;
-    UiMarkerSize?: string;
-}
-interface GarrSiteLevel{
+interface GarrSiteLevelDatabase{
     ID?: string;
     GarrLevel?: string;
     GarrSiteID?: string;
@@ -3262,7 +3255,7 @@ interface GarrSiteLevel{
     UpgradeGoldCost?: string;
     UpgradeMovieID?: string;
 }
-interface GarrSpecialization{
+interface GarrSpecializationDatabase{
     ID?: string;
     BuildingType?: string;
     IconFileDataID?: string;
@@ -3272,28 +3265,60 @@ interface GarrSpecialization{
     SpecType?: string;
     Tooltip_lang?: string;
 }
-interface GarrString{
+interface GarrSiteLevelPlotInstDatabase{
+    ID?: string;
+    GarrPlotInstanceID?: string;
+    GarrSiteLevelID?: string;
+    UiMarkerPos?: string;
+    UiMarkerSize?: string;
+}
+interface GarrStringDatabase{
     ID?: string;
     Text_lang?: string;
 }
-interface GarrTalTreeXGarrTalResearch{
+interface GarrTalTreeXGarrTalResearchDatabase{
     ID?: string;
     GarrTalentTreeID?: string;
     GarrTalentResearchID?: string;
     OrderIndex?: string;
 }
-interface GarrTalentCost{
+interface GarrTalentRankDatabase{
     ID?: string;
-    GarrTalentTreeID?: string;
+    ResearchCost?: string;
+    ResearchDurationSecs?: string;
+    RespecCost?: string;
+    RespecDurationSecs?: string;
+    ResearchCostCurrencyTypesID?: string;
+    RespecCostCurrencyTypesID?: string;
     GarrTalentID?: string;
-    RankIndex?: string;
-    GarrTalentRankID?: string;
-    CostType?: string;
-    CurrencyTypesID?: string;
-    CurrencyQuantity?: string;
-    MoneyQuantity?: string;
+    PerkPlayerConditionID?: string;
+    PerkSpellID?: string;
+    Rank?: string;
+    ResearchGoldCost?: string;
+    RespecGoldCost?: string;
+    AlternateResearchCost?: string;
+    AlternateResearchCostCurrencyTypesID?: string;
+    AlternateResearchGoldCost?: string;
+    AlternateResearchDurationSecs?: string;
+    Field_9_1_0_38627_003?: string;
 }
-interface GarrTalent{
+interface GarrTalentResearchDatabase{
+    ID?: string;
+    GoldCost?: string;
+    CurrencyTypesID?: string;
+    CurrencyTypesCost?: string;
+    DurationSecs?: string;
+    RespecGoldCost?: string;
+    RespecCurrencyTypesID?: string;
+    RespecCurrencyTypesCost?: string;
+    RespecDurationSecs?: string;
+}
+interface GarrTalentMapPOIDatabase{
+    ID?: string;
+    Position?: string;
+    GarrTalentID?: string;
+}
+interface GarrTalentDatabase{
     ID?: string;
     Description_lang?: string;
     Flags?: string;
@@ -3320,59 +3345,23 @@ interface GarrTalent{
     ActiveDurationSecs?: string;
     GarrTalentSocketPropertiesID?: string;
 }
-interface GarrTalentRank{
+interface GarrTalentCostDatabase{
     ID?: string;
-    ResearchCost?: string;
-    ResearchDurationSecs?: string;
-    RespecCost?: string;
-    RespecDurationSecs?: string;
-    ResearchCostCurrencyTypesID?: string;
-    RespecCostCurrencyTypesID?: string;
+    GarrTalentTreeID?: string;
     GarrTalentID?: string;
-    PerkPlayerConditionID?: string;
-    PerkSpellID?: string;
-    Rank?: string;
-    ResearchGoldCost?: string;
-    RespecGoldCost?: string;
-    AlternateResearchCost?: string;
-    AlternateResearchCostCurrencyTypesID?: string;
-    AlternateResearchGoldCost?: string;
-    AlternateResearchDurationSecs?: string;
-    Field_9_1_0_38627_003?: string;
+    RankIndex?: string;
+    GarrTalentRankID?: string;
+    CostType?: string;
+    CurrencyTypesID?: string;
+    CurrencyQuantity?: string;
+    MoneyQuantity?: string;
 }
-interface GarrTalentMapPOI{
-    ID?: string;
-    Position?: string;
-    GarrTalentID?: string;
-}
-interface GarrTalentSocketProperties{
+interface GarrTalentSocketPropertiesDatabase{
     ID?: string;
     GarrTalentSocketType?: string;
     GarrTalentSocketSubtype?: string;
 }
-interface GarrTalentResearch{
-    ID?: string;
-    GoldCost?: string;
-    CurrencyTypesID?: string;
-    CurrencyTypesCost?: string;
-    DurationSecs?: string;
-    RespecGoldCost?: string;
-    RespecCurrencyTypesID?: string;
-    RespecCurrencyTypesCost?: string;
-    RespecDurationSecs?: string;
-}
-interface GarrType{
-    ID?: string;
-    ExpansionID?: string;
-    Flags?: string;
-    MapIDs?: string;
-    PrimaryCurrencyTypeID?: string;
-    SecondaryCurrencyTypeID?: string;
-    AutoFollowerHealRate?: string;
-    MissionCostCurveID?: string;
-    Field_9_0_2_36512_006?: string;
-}
-interface GarrTalentTree{
+interface GarrTalentTreeDatabase{
     ID?: string;
     ClassID?: string;
     GarrTypeID?: string;
@@ -3387,7 +3376,7 @@ interface GarrTalentTree{
     FeatureSubtypeIndex?: string;
     CurrencyID?: string;
 }
-interface GarrUiAnimClassInfo{
+interface GarrUiAnimClassInfoDatabase{
     ID?: string;
     GarrClassSpecID?: string;
     SpellVisualID?: string;
@@ -3397,7 +3386,18 @@ interface GarrUiAnimClassInfo{
     ImpactKit?: string;
     TargetImpactKit?: string;
 }
-interface GarrUiAnimRaceInfo{
+interface GarrTypeDatabase{
+    ID?: string;
+    ExpansionID?: string;
+    Flags?: string;
+    MapIDs?: string;
+    PrimaryCurrencyTypeID?: string;
+    SecondaryCurrencyTypeID?: string;
+    AutoFollowerHealRate?: string;
+    MissionCostCurveID?: string;
+    Field_9_0_2_36512_006?: string;
+}
+interface GarrUiAnimRaceInfoDatabase{
     ID?: string;
     ChrRaceID?: string;
     Scale?: string;
@@ -3418,12 +3418,27 @@ interface GarrUiAnimRaceInfo{
     MaleSingleModelHeight?: string;
     MaleSingleModelScale?: string;
 }
-interface GlobalCurve{
+interface GlobalPlayerConditionDatabase{
+    ID?: string;
+    PlayerConditionID?: string;
+    GlobalPlayerConditionSetID?: string;
+}
+interface GlobalCurveDatabase{
     ID?: string;
     CurveID?: string;
     Type?: string;
 }
-interface GemProperties{
+interface GlobalPlayerConditionSetDatabase{
+    ID?: string;
+    What?: string;
+}
+interface GlobalStringsDatabase{
+    ID?: string;
+    BaseTag?: string;
+    Flags?: string;
+    TagText_lang?: string;
+}
+interface GemPropertiesDatabase{
     ID?: string;
     Enchant_ID?: string;
     Maxcount_inv?: string;
@@ -3431,21 +3446,12 @@ interface GemProperties{
     Type?: string;
     Min_item_level?: string;
 }
-interface GlobalPlayerConditionSet{
-    ID?: string;
-    What?: string;
-}
-interface GlobalGameContentTuning{
+interface GlobalGameContentTuningDatabase{
     ID?: string;
     ContentTuningID?: string;
     ExpansionID?: string;
 }
-interface GlobalPlayerCondition{
-    ID?: string;
-    PlayerConditionID?: string;
-    GlobalPlayerConditionSetID?: string;
-}
-interface GlueScreenEmote{
+interface GlueScreenEmoteDatabase{
     ID?: string;
     ClassID?: string;
     RaceID?: string;
@@ -3455,43 +3461,22 @@ interface GlueScreenEmote{
     AnimKitID?: string;
     SpellVisualKitID?: string;
 }
-interface GlobalStrings{
-    ID?: string;
-    BaseTag?: string;
-    Flags?: string;
-    TagText_lang?: string;
-}
-interface GlyphBindableSpell{
-    ID?: string;
-    GlyphPropertiesID?: string;
-    SpellID?: string;
-}
-interface GlobalTable_PlayerCondition{
+interface GlobalTable_PlayerConditionDatabase{
     ID?: string;
     PlayerConditionID?: string;
     What?: string;
 }
-interface GlyphExclusiveCategory{
+interface GlyphBindableSpellDatabase{
     ID?: string;
-    Name_lang?: string;
+    GlyphPropertiesID?: string;
+    SpellID?: string;
 }
-interface GlyphRequiredSpec{
+interface GlyphRequiredSpecDatabase{
     ID?: string;
     ChrSpecializationID?: string;
     GlyphPropertiesID?: string;
 }
-interface GlyphSlot{
-    ID?: string;
-    Type?: string;
-    Tooltip?: string;
-}
-interface GossipXUIDisplayInfo{
-    ID?: string;
-    GossipMenuID?: string;
-    UiTextureKitID?: string;
-    CustomGossipDescriptionString_lang?: string;
-}
-interface GlyphProperties{
+interface GlyphPropertiesDatabase{
     ID?: string;
     SpellID?: string;
     GlyphType?: string;
@@ -3500,7 +3485,11 @@ interface GlyphProperties{
     GlyphSlotFlags?: string;
     SpellIconFileDataID?: string;
 }
-interface GradientEffect{
+interface GlyphExclusiveCategoryDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface GradientEffectDatabase{
     ID?: string;
     Colors0_r?: string;
     Colors0_g?: string;
@@ -3519,7 +3508,7 @@ interface GradientEffect{
     Field_8_1_0_28440_014?: string;
     Field_8_1_0_28440_015?: string;
 }
-interface GroundEffectDoodad{
+interface GroundEffectDoodadDatabase{
     ID?: string;
     Doodadpath?: string;
     Flags?: string;
@@ -3533,31 +3522,7 @@ interface GroundEffectDoodad{
     Rotation_variation_max?: string;
     TerrainColorGradingRampID?: string;
 }
-interface GroundEffectTexture{
-    ID?: string;
-    DoodadID?: string;
-    DoodadWeight?: string;
-    Density?: string;
-    Sound?: string;
-    ContinentID?: string;
-    ZoneID?: string;
-    TextureID?: string;
-    TextureName?: string;
-    Datestamp?: string;
-    SplatDensity?: string;
-}
-interface GroupFinderCategory{
-    Name_lang?: string;
-    ID?: string;
-    Flags?: string;
-    OrderIndex?: string;
-}
-interface GroupFinderActivityGrp{
-    ID?: string;
-    Name_lang?: string;
-    OrderIndex?: string;
-}
-interface GroupFinderActivity{
+interface GroupFinderActivityDatabase{
     Field_6_0_1_18179_006?: string;
     ID?: string;
     AreaID?: string;
@@ -3579,7 +3544,36 @@ interface GroupFinderActivity{
     Field_2_5_1_38043_005?: string;
     Field_2_5_1_38043_013?: string;
 }
-interface GuildColorBackground{
+interface GlyphSlotDatabase{
+    ID?: string;
+    Type?: string;
+    Tooltip?: string;
+}
+interface GossipXUIDisplayInfoDatabase{
+    ID?: string;
+    GossipMenuID?: string;
+    UiTextureKitID?: string;
+    CustomGossipDescriptionString_lang?: string;
+}
+interface GroupFinderActivityGrpDatabase{
+    ID?: string;
+    Name_lang?: string;
+    OrderIndex?: string;
+}
+interface GroundEffectTextureDatabase{
+    ID?: string;
+    DoodadID?: string;
+    DoodadWeight?: string;
+    Density?: string;
+    Sound?: string;
+    ContinentID?: string;
+    ZoneID?: string;
+    TextureID?: string;
+    TextureName?: string;
+    Datestamp?: string;
+    SplatDensity?: string;
+}
+interface GuildColorBorderDatabase{
     ColorID?: string;
     Red?: string;
     Green?: string;
@@ -3587,12 +3581,7 @@ interface GuildColorBackground{
     Padding_6_0_1_18179_004?: string;
     ID?: string;
 }
-interface GuildEmblem{
-    ID?: string;
-    EmblemID?: string;
-    TextureFileDataID?: string;
-}
-interface GuildColorEmblem{
+interface GuildColorEmblemDatabase{
     ColorID?: string;
     Red?: string;
     Green?: string;
@@ -3600,12 +3589,7 @@ interface GuildColorEmblem{
     Padding_6_0_1_18179_004?: string;
     ID?: string;
 }
-interface GuildPerkSpells{
-    ID?: string;
-    GuildLevel?: string;
-    SpellID?: string;
-}
-interface GuildColorBorder{
+interface GuildColorBackgroundDatabase{
     ColorID?: string;
     Red?: string;
     Green?: string;
@@ -3613,14 +3597,32 @@ interface GuildColorBorder{
     Padding_6_0_1_18179_004?: string;
     ID?: string;
 }
-interface GuildShirtBackground{
+interface GroupFinderCategoryDatabase{
+    Name_lang?: string;
+    ID?: string;
+    Flags?: string;
+    OrderIndex?: string;
+}
+interface GuildShirtBackgroundDatabase{
     ID?: string;
     Component?: string;
     FileDataID?: string;
     ShirtID?: string;
     Color?: string;
 }
-interface GuildTabardBorder{
+interface GuildTabardBackgroundDatabase{
+    ID?: string;
+    Tier?: string;
+    Component?: string;
+    FileDataID?: string;
+    Color?: string;
+}
+interface GuildEmblemDatabase{
+    ID?: string;
+    EmblemID?: string;
+    TextureFileDataID?: string;
+}
+interface GuildTabardBorderDatabase{
     ID?: string;
     BorderID?: string;
     Tier?: string;
@@ -3628,14 +3630,7 @@ interface GuildTabardBorder{
     FileDataID?: string;
     Color?: string;
 }
-interface GuildTabardBackground{
-    ID?: string;
-    Tier?: string;
-    Component?: string;
-    FileDataID?: string;
-    Color?: string;
-}
-interface GuildShirtBorder{
+interface GuildShirtBorderDatabase{
     ID?: string;
     Tier?: string;
     Component?: string;
@@ -3643,7 +3638,12 @@ interface GuildShirtBorder{
     FileDataID?: string;
     Color?: string;
 }
-interface Heirloom{
+interface GuildPerkSpellsDatabase{
+    ID?: string;
+    GuildLevel?: string;
+    SpellID?: string;
+}
+interface HeirloomDatabase{
     ID?: string;
     Flags?: string;
     ItemID?: string;
@@ -3655,27 +3655,27 @@ interface Heirloom{
     UpgradeItemBonusListID?: string;
     UpgradeItemID?: string;
 }
-interface GuildTabardEmblem{
+interface HelmetAnimScalingDatabase{
+    ID?: string;
+    HelmetGeosetVisDataID?: string;
+    RaceID?: string;
+    Amount?: string;
+}
+interface GuildTabardEmblemDatabase{
     ID?: string;
     Component?: string;
     Color?: string;
     FileDataID?: string;
     EmblemID?: string;
 }
-interface HelmetAnimScaling{
-    ID?: string;
-    HelmetGeosetVisDataID?: string;
-    RaceID?: string;
-    Amount?: string;
-}
-interface HelmetGeosetData{
+interface HelmetGeosetDataDatabase{
     ID?: string;
     RaceID?: string;
     HideGeosetGroup?: string;
     HelmetGeosetVisDataID?: string;
     RaceBitSelection?: string;
 }
-interface HelmetGeosetVisData{
+interface HelmetGeosetVisDataDatabase{
     ID?: string;
     HideGeoset?: string;
     DefaultFlags?: string;
@@ -3714,7 +3714,7 @@ interface HelmetGeosetVisData{
     Field_0_5_5_3494_031?: string;
     Field_0_5_5_3494_032?: string;
 }
-interface HighlightColor{
+interface HighlightColorDatabase{
     ID?: string;
     EndColor?: string;
     Flags?: string;
@@ -3722,21 +3722,17 @@ interface HighlightColor{
     StartColor?: string;
     Type?: string;
 }
-interface HolidayNames{
+interface HolidayDescriptionsDatabase{
     ID?: string;
-    Name_lang?: string;
+    Description_lang?: string;
 }
-interface Hotfix{
+interface HotfixDatabase{
     ID?: string;
     Flags?: string;
     Object_ID?: string;
     Tablename?: string;
 }
-interface HolidayDescriptions{
-    ID?: string;
-    Description_lang?: string;
-}
-interface Holidays{
+interface HolidaysDatabase{
     ID?: string;
     Duration?: string;
     Date?: string;
@@ -3752,66 +3748,25 @@ interface Holidays{
     TextureFileDataID?: string;
     Field_1_13_2_30073_008?: string;
 }
-interface ImportPriceShield{
-    ID?: string;
-    Data?: string;
-}
-interface ImportPriceArmor{
+interface ImportPriceArmorDatabase{
     ID?: string;
     ClothModifier?: string;
     LeatherModifier?: string;
     ChainModifier?: string;
     PlateModifier?: string;
 }
-interface ImportPriceWeapon{
+interface HolidayNamesDatabase{
     ID?: string;
-    Data?: string;
+    Name_lang?: string;
 }
-interface ImportPriceQuality{
-    ID?: string;
-    Data?: string;
-}
-interface Hotfixes{
+interface HotfixesDatabase{
     ID?: string;
     Flags?: string;
     Object_ID?: string;
     Tablename?: string;
     PushID?: string;
 }
-interface ItemAppearance{
-    ID?: string;
-    DefaultIconFileDataID?: string;
-    DisplayType?: string;
-    ItemDisplayInfoID?: string;
-    UiOrder?: string;
-    Field_8_2_5_31812_001?: string;
-    PlayerConditionID?: string;
-}
-interface Item{
-    ID?: string;
-    ClassID?: string;
-    IconFileDataID?: string;
-    InventoryType?: string;
-    ItemGroupSoundsID?: string;
-    Material?: string;
-    SheatheType?: string;
-    Sound_override_subclassID?: string;
-    SubclassID?: string;
-    DisplayInfoID?: string;
-    MaxDurability?: string;
-    AmmoType?: string;
-    DamageMin?: string;
-    DamageMax?: string;
-    DamageType?: string;
-    DefensiveStats?: string;
-    ModifiedCraftingReagentItemID?: string;
-    RequiredLevel?: string;
-    RandomSelect?: string;
-    ItemRandomSuffixGroupID?: string;
-    Field_2_5_1_38043_012?: string;
-    Field_2_5_1_38043_013?: string;
-}
-interface InvasionClientData{
+interface InvasionClientDataDatabase{
     ID?: string;
     AreaTableID?: string;
     IconLocation?: string;
@@ -3823,7 +3778,19 @@ interface InvasionClientData{
     WorldStateID?: string;
     WorldStateValue?: string;
 }
-interface Item_sparse{
+interface ImportPriceShieldDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface ImportPriceQualityDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface ImportPriceWeaponDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface Item_sparseDatabase{
     ID?: string;
     Field_6_0_1_18179_001?: string;
     Flags?: string;
@@ -3887,22 +3854,45 @@ interface Item_sparse{
     Field_6_0_1_18179_060?: string;
     Field_6_0_1_18179_061?: string;
 }
-interface ItemArmorShield{
+interface ItemAppearanceDatabase{
     ID?: string;
-    ItemLevel?: string;
-    Quality?: string;
+    DefaultIconFileDataID?: string;
+    DisplayType?: string;
+    ItemDisplayInfoID?: string;
+    UiOrder?: string;
+    Field_8_2_5_31812_001?: string;
+    PlayerConditionID?: string;
 }
-interface ItemArmorQuality{
+interface ItemDatabase{
     ID?: string;
-    Qualitymod?: string;
-    ItemLevel?: string;
+    ClassID?: string;
+    IconFileDataID?: string;
+    InventoryType?: string;
+    ItemGroupSoundsID?: string;
+    Material?: string;
+    SheatheType?: string;
+    Sound_override_subclassID?: string;
+    SubclassID?: string;
+    DisplayInfoID?: string;
+    MaxDurability?: string;
+    AmmoType?: string;
+    DamageMin?: string;
+    DamageMax?: string;
+    DamageType?: string;
+    DefensiveStats?: string;
+    ModifiedCraftingReagentItemID?: string;
+    RequiredLevel?: string;
+    RandomSelect?: string;
+    ItemRandomSuffixGroupID?: string;
+    Field_2_5_1_38043_012?: string;
+    Field_2_5_1_38043_013?: string;
 }
-interface ItemAppearanceXUiCamera{
+interface ItemAppearanceXUiCameraDatabase{
     ID?: string;
     ItemAppearanceID?: string;
     UiCameraID?: string;
 }
-interface ItemArmorTotal{
+interface ItemArmorTotalDatabase{
     ID?: string;
     ItemLevel?: string;
     Cloth?: string;
@@ -3910,33 +3900,26 @@ interface ItemArmorTotal{
     Mail?: string;
     Plate?: string;
 }
-interface ItemBonusList{
+interface ItemArmorShieldDatabase{
+    ID?: string;
+    ItemLevel?: string;
+    Quality?: string;
+}
+interface ItemArmorQualityDatabase{
+    ID?: string;
+    Qualitymod?: string;
+    ItemLevel?: string;
+}
+interface ItemBagFamilyDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface ItemBonusListDatabase{
     ID?: string;
     InternalName?: string;
     Flags?: string;
 }
-interface ItemBonusListGroup{
-    ID?: string;
-    SequenceSpellID?: string;
-    Field_9_1_0_38783_001?: string;
-}
-interface ItemBonus{
-    Field_6_0_1_18179_001?: string;
-    ID?: string;
-    OrderIndex?: string;
-    ParentItemBonusListID?: string;
-    Type?: string;
-    Value?: string;
-}
-interface ItemBagFamily{
-    ID?: string;
-    Name_lang?: string;
-}
-interface ItemBonusListLevelDelta{
-    ID?: string;
-    ItemLevelDelta?: string;
-}
-interface ItemBonusListGroupEntry{
+interface ItemBonusListGroupEntryDatabase{
     ID?: string;
     ItemBonusListID?: string;
     ItemLevelSelectorID?: string;
@@ -3946,7 +3929,38 @@ interface ItemBonusListGroupEntry{
     UnlockCondition?: string;
     Flags?: string;
 }
-interface ItemBonusTreeNode{
+interface ItemBonusDatabase{
+    Field_6_0_1_18179_001?: string;
+    ID?: string;
+    OrderIndex?: string;
+    ParentItemBonusListID?: string;
+    Type?: string;
+    Value?: string;
+}
+interface ItemBonusListGroupDatabase{
+    ID?: string;
+    SequenceSpellID?: string;
+    Field_9_1_0_38783_001?: string;
+}
+interface ItemBonusListWarforgeLevelDeltaDatabase{
+    ID?: string;
+    ItemLevelDelta?: string;
+}
+interface ItemBonusListLevelDeltaDatabase{
+    ID?: string;
+    ItemLevelDelta?: string;
+}
+interface ItemBonusTreeDatabase{
+    ID?: string;
+    Field_9_0_2_35854_000?: string;
+    InventoryTypeMask?: string;
+}
+interface ItemBonusSequenceSpellDatabase{
+    ID?: string;
+    SpellID?: string;
+    ItemID?: string;
+}
+interface ItemBonusTreeNodeDatabase{
     ID?: string;
     ChildItemBonusListID?: string;
     ChildItemBonusTreeID?: string;
@@ -3956,33 +3970,13 @@ interface ItemBonusTreeNode{
     ItemBonusListGroupID?: string;
     ParentItemBonusTreeNodeID?: string;
 }
-interface ItemBonusListWarforgeLevelDelta{
-    ID?: string;
-    ItemLevelDelta?: string;
-}
-interface ItemBonusSequenceSpell{
-    ID?: string;
-    SpellID?: string;
-    ItemID?: string;
-}
-interface ItemChildEquipment{
+interface ItemChildEquipmentDatabase{
     ID?: string;
     ChildItemEquipSlot?: string;
     ChildItemID?: string;
     ParentItemID?: string;
 }
-interface ItemBonusTree{
-    ID?: string;
-    Field_9_0_2_35854_000?: string;
-    InventoryTypeMask?: string;
-}
-interface ItemCondExtCosts{
-    ID?: string;
-    CondExtendedCost?: string;
-    ItemExtendedCostEntry?: string;
-    ArenaSeason?: string;
-}
-interface ItemClass{
+interface ItemClassDatabase{
     ClassID?: string;
     Flags?: string;
     PriceModifier?: string;
@@ -3990,11 +3984,23 @@ interface ItemClass{
     ID?: string;
     SubclassMapID?: string;
 }
-interface ItemCurrencyCost{
+interface ItemCurrencyCostDatabase{
     ID?: string;
     ItemID?: string;
 }
-interface ItemContextPickerEntry{
+interface ItemCurrencyValueDatabase{
+    ID?: string;
+    CurrencyValue?: string;
+    Currency?: string;
+    ItemID?: string;
+}
+interface ItemCondExtCostsDatabase{
+    ID?: string;
+    CondExtendedCost?: string;
+    ItemExtendedCostEntry?: string;
+    ArenaSeason?: string;
+}
+interface ItemContextPickerEntryDatabase{
     ID?: string;
     Flags?: string;
     ItemContextPickerID?: string;
@@ -4003,53 +4009,57 @@ interface ItemContextPickerEntry{
     PVal?: string;
     PlayerConditionID?: string;
 }
-interface ItemCurrencyValue{
-    ID?: string;
-    CurrencyValue?: string;
-    Currency?: string;
-    ItemID?: string;
-}
-interface ItemDamageAmmo{
+interface ItemDamageAmmoDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDamageOneHand{
+interface ItemDamageOneHandDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDamageRanged{
+interface ItemDamageRangedDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDamageOneHandCaster{
+interface ItemDamageOneHandCasterDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDamageThrown{
+interface ItemDamageThrownDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDamageTwoHand{
+interface ItemDamageTwoHandDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDamageTwoHandCaster{
+interface ItemDamageTwoHandCasterDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDamageWand{
+interface ItemDisenchantLootDatabase{
+    ID?: string;
+    Class?: string;
+    Subclass?: string;
+    Quality?: string;
+    MinLevel?: string;
+    MaxLevel?: string;
+    SkillRequired?: string;
+    ExpansionID?: string;
+}
+interface ItemDamageWandDatabase{
     ID?: string;
     Quality?: string;
     ItemLevel?: string;
 }
-interface ItemDisplayInfo{
+interface ItemDisplayInfoDatabase{
     ID?: string;
     ModelName?: string;
     ModelTexture?: string;
@@ -4077,28 +4087,12 @@ interface ItemDisplayInfo{
     HelmetGeosetVisID?: string;
     Field_8_2_0_30080_011?: string;
 }
-interface ItemDisenchantLoot{
-    ID?: string;
-    Class?: string;
-    Subclass?: string;
-    Quality?: string;
-    MinLevel?: string;
-    MaxLevel?: string;
-    SkillRequired?: string;
-    ExpansionID?: string;
-}
-interface ItemDisplayXUiCamera{
+interface ItemDisplayXUiCameraDatabase{
     ID?: string;
     ItemDisplayInfoID?: string;
     UiCameraID?: string;
 }
-interface ItemDisplayInfoMaterialRes{
-    ID?: string;
-    ComponentSection?: string;
-    ItemDisplayInfoID?: string;
-    MaterialResourcesID?: string;
-}
-interface ItemEffect{
+interface ItemEffectDatabase{
     ID?: string;
     CategoryCoolDownMSec?: string;
     Charges?: string;
@@ -4110,7 +4104,13 @@ interface ItemEffect{
     SpellID?: string;
     TriggerType?: string;
 }
-interface ItemExtendedCost{
+interface ItemDisplayInfoMaterialResDatabase{
+    ID?: string;
+    ComponentSection?: string;
+    ItemDisplayInfoID?: string;
+    MaterialResourcesID?: string;
+}
+interface ItemExtendedCostDatabase{
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
     Field_6_0_1_18179_007?: string;
@@ -4134,60 +4134,46 @@ interface ItemExtendedCost{
     ItemPurchaseGroup?: string;
     RequiredGuildLevel?: string;
 }
-interface ItemFallbackVisual{
-    ID?: string;
-    InventorySlot?: string;
-    ArmorSubClass?: string;
-    FallbackItemID?: string;
-}
-interface ItemLevelSelector{
+interface ItemLevelSelectorDatabase{
     ID?: string;
     ItemLevelSelectorQualitySetID?: string;
     MinItemLevel?: string;
     AzeriteUnlockMappingSetID?: string;
 }
-interface ItemLevelSelectorQuality{
+interface ItemFallbackVisualDatabase{
+    ID?: string;
+    InventorySlot?: string;
+    ArmorSubClass?: string;
+    FallbackItemID?: string;
+}
+interface ItemGroupSoundsDatabase{
+    ID?: string;
+    Sound?: string;
+}
+interface ItemLevelSelectorQualityDatabase{
     ID?: string;
     ParentILSQualitySetID?: string;
     Quality?: string;
     QualityItemBonusListID?: string;
 }
-interface ItemGroupSounds{
-    ID?: string;
-    Sound?: string;
-}
-interface ItemLimitCategory{
+interface ItemLimitCategoryDatabase{
     ID?: string;
     Name_lang?: string;
     Quantity?: string;
     Flags?: string;
 }
-interface ItemLevelSelectorQualitySet{
-    ID?: string;
-    IlvlEpic?: string;
-    IlvlRare?: string;
-}
-interface ItemModifiedAppearanceExtra{
-    ID?: string;
-    DisplayInventoryType?: string;
-    DisplayWeaponSubclassID?: string;
-    IconFileDataID?: string;
-    SheatheType?: string;
-    UnequippedIconFileDataID?: string;
-}
-interface ItemLimitCategoryCondition{
+interface ItemLimitCategoryConditionDatabase{
     ID?: string;
     AddQuantity?: string;
     ParentItemLimitCategoryID?: string;
     PlayerConditionID?: string;
 }
-interface ItemNameSlotOverride{
+interface ItemLevelSelectorQualitySetDatabase{
     ID?: string;
-    OverrideNameString_lang?: string;
-    SlotMask?: string;
-    ItemNameDescriptionID?: string;
+    IlvlEpic?: string;
+    IlvlRare?: string;
 }
-interface ItemModifiedAppearance{
+interface ItemModifiedAppearanceDatabase{
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
     Field_6_0_1_18179_003?: string;
@@ -4200,54 +4186,75 @@ interface ItemModifiedAppearance{
     OrderIndex?: string;
     TransmogSourceTypeEnum?: string;
 }
-interface ItemNameDescription{
+interface ItemModifiedAppearanceExtraDatabase{
+    ID?: string;
+    DisplayInventoryType?: string;
+    DisplayWeaponSubclassID?: string;
+    IconFileDataID?: string;
+    SheatheType?: string;
+    UnequippedIconFileDataID?: string;
+}
+interface ItemNameDescriptionDatabase{
     ID?: string;
     Description_lang?: string;
     Color?: string;
 }
-interface ItemPetFood{
+interface ItemNameSlotOverrideDatabase{
+    ID?: string;
+    OverrideNameString_lang?: string;
+    SlotMask?: string;
+    ItemNameDescriptionID?: string;
+}
+interface ItemPetFoodDatabase{
     ID?: string;
     Name_lang?: string;
 }
-interface ItemPriceBase{
+interface ItemPurchaseGroupDatabase{
+    ID?: string;
+    ItemID?: string;
+    Name_lang?: string;
+}
+interface ItemPriceBaseDatabase{
     ID?: string;
     ItemLevel?: string;
     Armor?: string;
     Weapon?: string;
 }
-interface ItemPurchaseGroup{
-    ID?: string;
-    ItemID?: string;
-    Name_lang?: string;
-}
-interface ItemRandomProperties{
-    ID?: string;
-    Name?: string;
-    Enchantment?: string;
-    Name_lang?: string;
-}
-interface ItemRandomSuffix{
-    ID?: string;
-    Name_lang?: string;
-    InternalName?: string;
-    Enchantment?: string;
-    AllocationPct?: string;
-}
-interface ItemRangedDisplayInfo{
+interface ItemRangedDisplayInfoDatabase{
     ID?: string;
     AutoAttackSpellVisualID?: string;
     CastSpellVisualID?: string;
     MissileSpellVisualEffectNameID?: string;
     QuiverFileDataID?: string;
 }
-interface ItemReforge{
+interface ItemRandomPropertiesDatabase{
+    ID?: string;
+    Name?: string;
+    Enchantment?: string;
+    Name_lang?: string;
+}
+interface ItemRandomSuffixDatabase{
+    ID?: string;
+    Name_lang?: string;
+    InternalName?: string;
+    Enchantment?: string;
+    AllocationPct?: string;
+}
+interface ItemReforgeDatabase{
     ID?: string;
     Source_stat?: string;
     Source_multiplier?: string;
     Target_stat?: string;
     Target_multiplier?: string;
 }
-interface ItemSet{
+interface ItemSetSpellDatabase{
+    ID?: string;
+    ItemSetID?: string;
+    SpellID?: string;
+    Threshold?: string;
+    ChrSpecID?: string;
+}
+interface ItemSetDatabase{
     ID?: string;
     Name_lang?: string;
     ItemID?: string;
@@ -4257,7 +4264,7 @@ interface ItemSet{
     SetSpellID?: string;
     SetThreshold?: string;
 }
-interface ItemSearchName{
+interface ItemSearchNameDatabase{
     ID?: string;
     AllowableClass?: string;
     AllowableRace?: string;
@@ -4274,14 +4281,12 @@ interface ItemSearchName{
     RequiredSkillRank?: string;
     Field_7_3_2_25549_009?: string;
 }
-interface ItemSetSpell{
+interface ItemSpecOverrideDatabase{
     ID?: string;
-    ItemSetID?: string;
-    SpellID?: string;
-    Threshold?: string;
-    ChrSpecID?: string;
+    ItemID?: string;
+    SpecID?: string;
 }
-interface ItemSparse{
+interface ItemSparseDatabase{
     ID?: string;
     AllowableClass?: string;
     AllowableRace?: string;
@@ -4360,7 +4365,7 @@ interface ItemSparse{
     Field_7_3_2_25549_048?: string;
     Field_7_3_2_25549_049?: string;
 }
-interface ItemSpec{
+interface ItemSpecDatabase{
     ID?: string;
     MinLevel?: string;
     MaxLevel?: string;
@@ -4369,12 +4374,13 @@ interface ItemSpec{
     SecondaryStat?: string;
     SpecializationID?: string;
 }
-interface ItemSpecOverride{
+interface ItemSubClassMaskDatabase{
+    ClassID?: string;
+    Mask?: string;
+    Name_lang?: string;
     ID?: string;
-    ItemID?: string;
-    SpecID?: string;
 }
-interface ItemSubClass{
+interface ItemSubClassDatabase{
     ClassID?: string;
     SubClassID?: string;
     PrerequisiteProficiency?: string;
@@ -4390,18 +4396,23 @@ interface ItemSubClass{
     ID?: string;
     AuctionHouseSortOrder?: string;
 }
-interface ItemToBattlePet{
+interface ItemToBattlePetDatabase{
     ItemID?: string;
     Field_6_0_1_18179_001?: string;
     SpeciesID?: string;
 }
-interface ItemSubClassMask{
-    ClassID?: string;
-    Mask?: string;
-    Name_lang?: string;
+interface ItemToMountSpellDatabase{
+    ItemID?: string;
+    SpellID?: string;
+}
+interface ItemUpgradePathDatabase{
     ID?: string;
 }
-interface ItemUpgrade{
+interface ItemVisualEffectsDatabase{
+    ID?: string;
+    Model?: string;
+}
+interface ItemUpgradeDatabase{
     ID?: string;
     CurrencyAmount?: string;
     CurrencyType?: string;
@@ -4409,18 +4420,14 @@ interface ItemUpgrade{
     ItemUpgradePathID?: string;
     PrerequisiteID?: string;
 }
-interface ItemUpgradePath{
+interface ItemVisualsDatabase{
     ID?: string;
+    Slot?: string;
+    ModelFileID?: string;
+    SpellVisualKitId1?: string;
+    SpellVisualKitId2?: string;
 }
-interface ItemVisualEffects{
-    ID?: string;
-    Model?: string;
-}
-interface ItemToMountSpell{
-    ItemID?: string;
-    SpellID?: string;
-}
-interface ItemVisualsXEffect{
+interface ItemVisualsXEffectDatabase{
     ID?: string;
     AttachmentID?: string;
     DisplayWeaponSubclassID?: string;
@@ -4429,24 +4436,17 @@ interface ItemVisualsXEffect{
     ItemVisualsID?: string;
     Scale?: string;
 }
-interface ItemXItemEffect{
-    ID?: string;
-    ItemEffectID?: string;
-    ItemID?: string;
-}
-interface ItemVisuals{
-    ID?: string;
-    Slot?: string;
-    ModelFileID?: string;
-    SpellVisualKitId1?: string;
-    SpellVisualKitId2?: string;
-}
-interface ItemXBonusTree{
+interface ItemXBonusTreeDatabase{
     ID?: string;
     ItemBonusTreeID?: string;
     ItemID?: string;
 }
-interface JournalEncounter{
+interface ItemXItemEffectDatabase{
+    ID?: string;
+    ItemEffectID?: string;
+    ItemID?: string;
+}
+interface JournalEncounterDatabase{
     ID?: string;
     DungeonMapID?: string;
     WorldMapAreaID?: string;
@@ -4462,7 +4462,30 @@ interface JournalEncounter{
     UiMapID?: string;
     DungeonEncounterID?: string;
 }
-interface JournalEncounterCreature{
+interface JournalEncounterItemDatabase{
+    ID?: string;
+    JournalEncounterID?: string;
+    ItemID?: string;
+    DifficultyMask?: string;
+    FactionMask?: string;
+    Flags?: string;
+}
+interface JournalEncounterXDifficultyDatabase{
+    ID?: string;
+    JournalEncounterID?: string;
+    DifficultyID?: string;
+}
+interface JournalEncounterXMapLocDatabase{
+    ID?: string;
+    DungeonMapID?: string;
+    Flags?: string;
+    JournalEncounterID?: string;
+    Map?: string;
+    MapDisplayConditionID?: string;
+    WorldMapAreaID?: string;
+    UiMapID?: string;
+}
+interface JournalEncounterCreatureDatabase{
     ID?: string;
     JournalEncounterID?: string;
     CreatureDisplayInfoID?: string;
@@ -4472,15 +4495,7 @@ interface JournalEncounterCreature{
     Description_lang?: string;
     UiModelSceneID?: string;
 }
-interface JournalEncounterItem{
-    ID?: string;
-    JournalEncounterID?: string;
-    ItemID?: string;
-    DifficultyMask?: string;
-    FactionMask?: string;
-    Flags?: string;
-}
-interface JournalEncounterSection{
+interface JournalEncounterSectionDatabase{
     ID?: string;
     JournalEncounterID?: string;
     NextSiblingSectionID?: string;
@@ -4498,22 +4513,12 @@ interface JournalEncounterSection{
     IconFileDataID?: string;
     UiModelSceneID?: string;
 }
-interface JournalEncounterXDifficulty{
+interface JournalItemXDifficultyDatabase{
     ID?: string;
-    JournalEncounterID?: string;
+    JournalEncounterItemID?: string;
     DifficultyID?: string;
 }
-interface JournalEncounterXMapLoc{
-    ID?: string;
-    DungeonMapID?: string;
-    Flags?: string;
-    JournalEncounterID?: string;
-    Map?: string;
-    MapDisplayConditionID?: string;
-    WorldMapAreaID?: string;
-    UiMapID?: string;
-}
-interface JournalInstance{
+interface JournalInstanceDatabase{
     ID?: string;
     MapID?: string;
     AreaID?: string;
@@ -4527,38 +4532,33 @@ interface JournalInstance{
     OrderIndex?: string;
     Field_4_2_0_14333_006?: string;
 }
-interface JournalItemXDifficulty{
+interface JournalSectionXDifficultyDatabase{
     ID?: string;
-    JournalEncounterItemID?: string;
+    JournalEncounterSectionID?: string;
     DifficultyID?: string;
 }
-interface JournalTier{
+interface JournalTierDatabase{
     ID?: string;
     Name_lang?: string;
     PlayerConditionID?: string;
     Expansion?: string;
 }
-interface JournalTierXInstance{
+interface JournalTierXInstanceDatabase{
     JournalTierID?: string;
     JournalInstanceID?: string;
     ID?: string;
 }
-interface JournalSectionXDifficulty{
-    ID?: string;
-    JournalEncounterSectionID?: string;
-    DifficultyID?: string;
-}
-interface Keychain{
+interface KeychainDatabase{
     ID?: string;
     Key?: string;
 }
-interface KeystoneAffix{
+interface KeystoneAffixDatabase{
     ID?: string;
     Description_lang?: string;
     FiledataID?: string;
     Name_lang?: string;
 }
-interface LFGDungeonExpansion{
+interface LFGDungeonExpansionDatabase{
     ID?: string;
     Lfg_ID?: string;
     Expansion_level?: string;
@@ -4568,19 +4568,14 @@ interface LFGDungeonExpansion{
     Target_level_min?: string;
     Target_level_max?: string;
 }
-interface LFGDungeonGroup{
+interface LFGDungeonGroupDatabase{
     ID?: string;
     Name_lang?: string;
     Order_index?: string;
     Parent_group_ID?: string;
     TypeID?: string;
 }
-interface LanguageWords{
-    ID?: string;
-    LanguageID?: string;
-    Word?: string;
-}
-interface LFGDungeons{
+interface LFGDungeonsDatabase{
     ID?: string;
     Name_lang?: string;
     MinLevel?: string;
@@ -4619,7 +4614,7 @@ interface LFGDungeons{
     Difficulty?: string;
     ContentTuningID?: string;
 }
-interface LFGRoleRequirement{
+interface LFGRoleRequirementDatabase{
     ID?: string;
     PlayerConditionID?: string;
     RoleType?: string;
@@ -4628,7 +4623,30 @@ interface LFGRoleRequirement{
     Field_6_0_1_18179_002?: string;
     Field_6_0_1_18179_003?: string;
 }
-interface LightData{
+interface LanguageWordsDatabase{
+    ID?: string;
+    LanguageID?: string;
+    Word?: string;
+}
+interface LanguagesDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface LfgDungeonsGroupingMapDatabase{
+    ID?: string;
+    LfgDungeonsID?: string;
+    Random_lfgDungeonsID?: string;
+    Group_ID?: string;
+}
+interface LightDatabase{
+    ID?: string;
+    ContinentID?: string;
+    LightParamsID?: string;
+    GameCoords?: string;
+    GameFalloffEnd?: string;
+    GameFalloffStart?: string;
+}
+interface LightDataDatabase{
     ID?: string;
     LightParamID?: string;
     Time?: string;
@@ -4676,37 +4694,19 @@ interface LightData{
     Field_9_1_0_38312_041?: string;
     Field_9_1_0_38312_044?: string;
 }
-interface Languages{
-    ID?: string;
-    Name_lang?: string;
-}
-interface LfgDungeonsGroupingMap{
-    ID?: string;
-    LfgDungeonsID?: string;
-    Random_lfgDungeonsID?: string;
-    Group_ID?: string;
-}
-interface LightFloatBand{
+interface LightIntBandDatabase{
     ID?: string;
     Num?: string;
     Time?: string;
     Data?: string;
 }
-interface Light{
-    ID?: string;
-    ContinentID?: string;
-    LightParamsID?: string;
-    GameCoords?: string;
-    GameFalloffEnd?: string;
-    GameFalloffStart?: string;
-}
-interface LightIntBand{
+interface LightFloatBandDatabase{
     ID?: string;
     Num?: string;
     Time?: string;
     Data?: string;
 }
-interface LightParams{
+interface LightParamsDatabase{
     ID?: string;
     HighlightSky?: string;
     LightSkyboxID?: string;
@@ -4720,14 +4720,14 @@ interface LightParams{
     OverrideCelestialSphere?: string;
     SsaoSettingsID?: string;
 }
-interface LightSkybox{
+interface LightSkyboxDatabase{
     ID?: string;
     Name?: string;
     Flags?: string;
     CelestialSkyboxFileDataID?: string;
     SkyboxFileDataID?: string;
 }
-interface Lightning{
+interface LightningDatabase{
     ID?: string;
     BoltBrightnessScalar?: string;
     BoltColor?: string;
@@ -4764,12 +4764,7 @@ interface Lightning{
     Field_1_13_2_30073_020Min?: string;
     Field_1_13_2_30073_021Max?: string;
 }
-interface LiquidMaterial{
-    ID?: string;
-    LVF?: string;
-    Flags?: string;
-}
-interface LiquidObject{
+interface LiquidObjectDatabase{
     ID?: string;
     FlowDirection?: string;
     FlowSpeed?: string;
@@ -4777,12 +4772,12 @@ interface LiquidObject{
     Fishable?: string;
     Reflection?: string;
 }
-interface LoadingScreenSkin{
+interface LiquidMaterialDatabase{
     ID?: string;
-    UiTextureAtlasElementID?: string;
-    FileDataID?: string;
+    LVF?: string;
+    Flags?: string;
 }
-interface LiquidType{
+interface LiquidTypeDatabase{
     ID?: string;
     Name?: string;
     Flags?: string;
@@ -4810,14 +4805,19 @@ interface LiquidType{
     HiDetail_ID?: string;
     Field_3_0_1_8334_006?: string;
 }
-interface LiquidTypeXTexture{
+interface LoadingScreenSkinDatabase{
+    ID?: string;
+    UiTextureAtlasElementID?: string;
+    FileDataID?: string;
+}
+interface LiquidTypeXTextureDatabase{
     ID?: string;
     FileDataID?: string;
     OrderIndex?: string;
     LiquidTypeID?: string;
     Type?: string;
 }
-interface LoadingScreenTaxiSplines{
+interface LoadingScreenTaxiSplinesDatabase{
     ID?: string;
     PathID?: string;
     Locx?: string;
@@ -4825,7 +4825,7 @@ interface LoadingScreenTaxiSplines{
     LegIndex?: string;
     LoadingScreenID?: string;
 }
-interface LoadingScreens{
+interface LoadingScreensDatabase{
     ID?: string;
     Name?: string;
     FileName?: string;
@@ -4841,7 +4841,12 @@ interface LoadingScreens{
     Field_8_1_5_28938_008?: string;
     Field_8_1_5_28938_009?: string;
 }
-interface Locale{
+interface LocationDatabase{
+    ID?: string;
+    Pos?: string;
+    Rot?: string;
+}
+interface LocaleDatabase{
     Field_6_0_1_18179_001?: string;
     ID?: string;
     ClientDisplayExpansion?: string;
@@ -4851,12 +4856,7 @@ interface Locale{
     Cfg_regionsID?: string;
     Field_5_0_2_15827_001?: string;
 }
-interface Location{
-    ID?: string;
-    Pos?: string;
-    Rot?: string;
-}
-interface Lock{
+interface LockDatabase{
     ID?: string;
     Type?: string;
     Index?: string;
@@ -4864,7 +4864,7 @@ interface Lock{
     Action?: string;
     Flags?: string;
 }
-interface LockType{
+interface LockTypeDatabase{
     ID?: string;
     Name_lang?: string;
     ResourceName_lang?: string;
@@ -4872,26 +4872,7 @@ interface LockType{
     CursorName?: string;
     EnumID?: string;
 }
-interface LoreText{
-    ID?: string;
-    Text_lang?: string;
-    Title_lang?: string;
-    ConditionID?: string;
-}
-interface LoreTextPublic{
-    LoreTextID?: string;
-    CampaignID?: string;
-    ConditionID?: string;
-    Flags?: string;
-    Order?: string;
-    ParentID?: string;
-}
-interface MCRSlotXMCRCategory{
-    ID?: string;
-    ModifiedCraftingCategoryID?: string;
-    ModifiedCraftingReagentSlotID?: string;
-}
-interface LookAtController{
+interface LookAtControllerDatabase{
     ID?: string;
     Flags?: string;
     HeadSpeedFactor?: string;
@@ -4912,7 +4893,31 @@ interface LookAtController{
     ReactionWarmUpTimeMSMin?: string;
     TorsoSpeedFactor?: string;
 }
-interface ManagedWorldState{
+interface LoreTextDatabase{
+    ID?: string;
+    Text_lang?: string;
+    Title_lang?: string;
+    ConditionID?: string;
+}
+interface LoreTextPublicDatabase{
+    LoreTextID?: string;
+    CampaignID?: string;
+    ConditionID?: string;
+    Flags?: string;
+    Order?: string;
+    ParentID?: string;
+}
+interface MailTemplateDatabase{
+    ID?: string;
+    Subject_lang?: string;
+    Body_lang?: string;
+}
+interface MCRSlotXMCRCategoryDatabase{
+    ID?: string;
+    ModifiedCraftingCategoryID?: string;
+    ModifiedCraftingReagentSlotID?: string;
+}
+interface ManagedWorldStateDatabase{
     ID?: string;
     CurrentStageWorldStateID?: string;
     OccurrencesWorldStateID?: string;
@@ -4925,49 +4930,57 @@ interface ManagedWorldState{
     UpTimeSecs?: string;
     Field_8_1_5_29418_009?: string;
 }
-interface ManagedWorldStateBuff{
+interface ManagedWorldStateBuffDatabase{
     ID?: string;
     BuffSpellID?: string;
     ManagedWorldStateID?: string;
     OccurrenceValue?: string;
     PlayerConditionID?: string;
 }
-interface ManagedWorldStateInput{
+interface ManagedWorldStateInputDatabase{
     ID?: string;
     ManagedWorldStateID?: string;
     QuestID?: string;
     ValidInputConditionID?: string;
 }
-interface MailTemplate{
-    ID?: string;
-    Subject_lang?: string;
-    Body_lang?: string;
-}
-interface ManifestInterfaceActionIcon{
+interface ManifestInterfaceActionIconDatabase{
     ID?: string;
 }
-interface ManifestInterfaceItemIcon{
-    ID?: string;
-}
-interface ManifestInterfaceData{
+interface ManifestInterfaceDataDatabase{
     ID?: string;
     FilePath?: string;
     FileName?: string;
 }
-interface ManifestInterfaceTOCData{
+interface ManifestInterfaceItemIconDatabase{
+    ID?: string;
+}
+interface ManifestInterfaceTOCDataDatabase{
     ID?: string;
     FilePath?: string;
 }
-interface ManifestMP3{
+interface ManifestMP3Database{
     ID?: string;
 }
-interface MapCelestialBody{
+interface MapChallengeModeDatabase{
+    Field_6_0_1_18179_002?: string;
+    Field_6_0_1_18179_003?: string;
+    ID?: string;
+    CriteriaCount?: string;
+    Flags?: string;
+    MapID?: string;
+    Name_lang?: string;
+    ExpansionLevel?: string;
+    Field_5_0_1_15464_002?: string;
+    Field_5_0_1_15464_003?: string;
+    Field_5_0_1_15464_004?: string;
+}
+interface MapCelestialBodyDatabase{
     ID?: string;
     CelestialBodyID?: string;
     MapID?: string;
     PlayerConditionID?: string;
 }
-interface Map{
+interface MapDatabase{
     ID?: string;
     Directory?: string;
     PVP?: string;
@@ -5023,20 +5036,7 @@ interface Map{
     Field_3_0_2_9056_021?: string;
     Field_1_7_0_4671_015?: string;
 }
-interface MapChallengeMode{
-    Field_6_0_1_18179_002?: string;
-    Field_6_0_1_18179_003?: string;
-    ID?: string;
-    CriteriaCount?: string;
-    Flags?: string;
-    MapID?: string;
-    Name_lang?: string;
-    ExpansionLevel?: string;
-    Field_5_0_1_15464_002?: string;
-    Field_5_0_1_15464_003?: string;
-    Field_5_0_1_15464_004?: string;
-}
-interface MapDifficulty{
+interface MapDifficultyDatabase{
     ID?: string;
     MapID?: string;
     DifficultyID?: string;
@@ -5052,14 +5052,14 @@ interface MapDifficulty{
     Difficultystring?: string;
     ContentTuningID?: string;
 }
-interface MapDifficultyXCondition{
+interface MapDifficultyXConditionDatabase{
     ID?: string;
     FailureDescription_lang?: string;
     MapDifficultyID?: string;
     OrderIndex?: string;
     PlayerConditionID?: string;
 }
-interface MapLoadingScreen{
+interface MapLoadingScreenDatabase{
     ID?: string;
     LoadingScreenID?: string;
     MapID?: string;
@@ -5067,20 +5067,7 @@ interface MapLoadingScreen{
     Min?: string;
     OrderIndex?: string;
 }
-interface MawPower{
-    ID?: string;
-    SpellID?: string;
-    MawPowerRarityID?: string;
-}
-interface Material{
-    ID?: string;
-    Flags?: string;
-    FoleySoundID?: string;
-    SheatheSoundID?: string;
-    UnsheatheSoundID?: string;
-    MaterialID?: string;
-}
-interface MarketingPromotionsXLocale{
+interface MarketingPromotionsXLocaleDatabase{
     ID?: string;
     AcceptButtonTexture?: string;
     AcceptURL?: string;
@@ -5090,24 +5077,20 @@ interface MarketingPromotionsXLocale{
     LogoTexture?: string;
     PromotionID?: string;
 }
-interface MawPowerRarity{
+interface MaterialDatabase{
     ID?: string;
-    Color?: string;
-    Border?: string;
+    Flags?: string;
+    FoleySoundID?: string;
+    SheatheSoundID?: string;
+    UnsheatheSoundID?: string;
+    MaterialID?: string;
 }
-interface ModelAnimCloakDampening{
+interface MawPowerDatabase{
     ID?: string;
-    AnimationDataID?: string;
-    CloakDampeningID?: string;
-    FileDataID?: string;
-}
-interface MinorTalent{
-    ID?: string;
-    ChrSpecializationID?: string;
     SpellID?: string;
-    OrderIndex?: string;
+    MawPowerRarityID?: string;
 }
-interface MissileTargeting{
+interface MissileTargetingDatabase{
     ID?: string;
     ArcRepeat?: string;
     ArcSpeed?: string;
@@ -5122,7 +5105,30 @@ interface MissileTargeting{
     PitchLingering?: string;
     TurnLingering?: string;
 }
-interface ModelManifest{
+interface MawPowerRarityDatabase{
+    ID?: string;
+    Color?: string;
+    Border?: string;
+}
+interface ModelAnimCloakDampeningDatabase{
+    ID?: string;
+    AnimationDataID?: string;
+    CloakDampeningID?: string;
+    FileDataID?: string;
+}
+interface MinorTalentDatabase{
+    ID?: string;
+    ChrSpecializationID?: string;
+    SpellID?: string;
+    OrderIndex?: string;
+}
+interface ModelFileDataDatabase{
+    FileDataID?: string;
+    Flags?: string;
+    LodCount?: string;
+    ModelResourcesID?: string;
+}
+interface ModelManifestDatabase{
     ID?: string;
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
@@ -5132,55 +5138,35 @@ interface ModelManifest{
     Field_6_0_1_18179_006?: string;
     Field_6_0_1_18179_007?: string;
 }
-interface ModelFileData{
-    FileDataID?: string;
-    Flags?: string;
-    LodCount?: string;
-    ModelResourcesID?: string;
-}
-interface ModelNameToManifest{
+interface ModelNameToManifestDatabase{
     ID?: string;
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
 }
-interface ModifiedCraftingCategory{
+interface ModifiedCraftingCategoryDatabase{
     ID?: string;
     DisplayName_lang?: string;
     Field_9_0_1_33978_001?: string;
 }
-interface ModelRibbonQuality{
+interface ModelRibbonQualityDatabase{
     ID?: string;
     FileDataID?: string;
     RibbonQualityID?: string;
 }
-interface ModifiedCraftingReagentItem{
-    ID?: string;
-    Description_lang?: string;
-    ModifiedCraftingCategoryID?: string;
-    ItemBonusTreeID?: string;
-    Flags?: string;
-    Field_9_1_0_38312_004?: string;
-    Field_9_1_0_38511_004?: string;
-    Field_9_1_0_38511_005?: string;
-}
-interface ModifiedCraftingReagentSlot{
+interface ModifiedCraftingReagentSlotDatabase{
     ID?: string;
     Name_lang?: string;
     Field_9_0_1_33978_001?: string;
     PlayerConditionID?: string;
 }
-interface ModifiedReagentItem{
-    ItemID?: string;
-    ModifiedCraftingReagentItemID?: string;
-}
-interface ModifiedCraftingSpellSlot{
+interface ModifiedCraftingSpellSlotDatabase{
     ID?: string;
     SpellID?: string;
     Slot?: string;
     ModifiedCraftingReagentSlotID?: string;
     Field_9_0_1_35679_003?: string;
 }
-interface ModifierTree{
+interface ModifierTreeDatabase{
     ID?: string;
     Type?: string;
     Asset?: string;
@@ -5190,25 +5176,21 @@ interface ModifierTree{
     Parent?: string;
     TertiaryAsset?: string;
 }
-interface MountCapability{
+interface ModifiedCraftingReagentItemDatabase{
     ID?: string;
+    Description_lang?: string;
+    ModifiedCraftingCategoryID?: string;
+    ItemBonusTreeID?: string;
     Flags?: string;
-    ReqRidingSkill?: string;
-    ReqAreaID?: string;
-    ReqSpellAuraID?: string;
-    ReqSpellKnownID?: string;
-    ModSpellAuraID?: string;
-    ReqMapID?: string;
-    PlayerConditionID?: string;
+    Field_9_1_0_38312_004?: string;
+    Field_9_1_0_38511_004?: string;
+    Field_9_1_0_38511_005?: string;
 }
-interface MountEquipment{
-    ID?: string;
-    Item?: string;
-    BuffSpell?: string;
-    Field_8_2_0_30080_002?: string;
-    LearnedBySpell?: string;
+interface ModifiedReagentItemDatabase{
+    ItemID?: string;
+    ModifiedCraftingReagentItemID?: string;
 }
-interface Mount{
+interface MountDatabase{
     CreatureDisplayInfoID?: string;
     Field_6_0_1_18179_007?: string;
     ID?: string;
@@ -5225,23 +5207,35 @@ interface Mount{
     MountSpecialRiderAnimKitID?: string;
     MountSpecialSpellVisualKitID?: string;
 }
-interface MountType{
+interface MountCapabilityDatabase{
+    ID?: string;
+    Flags?: string;
+    ReqRidingSkill?: string;
+    ReqAreaID?: string;
+    ReqSpellAuraID?: string;
+    ReqSpellKnownID?: string;
+    ModSpellAuraID?: string;
+    ReqMapID?: string;
+    PlayerConditionID?: string;
+}
+interface MountEquipmentDatabase{
+    ID?: string;
+    Item?: string;
+    BuffSpell?: string;
+    Field_8_2_0_30080_002?: string;
+    LearnedBySpell?: string;
+}
+interface MountTypeDatabase{
     ID?: string;
     Capability?: string;
 }
-interface MountTypeXCapability{
+interface MountTypeXCapabilityDatabase{
     ID?: string;
     MountCapabilityID?: string;
     MountTypeID?: string;
     OrderIndex?: string;
 }
-interface MountXDisplay{
-    ID?: string;
-    CreatureDisplayInfoID?: string;
-    MountID?: string;
-    PlayerConditionID?: string;
-}
-interface MountXSpellVisualKitPicker{
+interface MountXSpellVisualKitPickerDatabase{
     ID?: string;
     SpellVisualKitPickerID?: string;
     Index?: string;
@@ -5249,7 +5243,13 @@ interface MountXSpellVisualKitPicker{
     Priority?: string;
     MountID?: string;
 }
-interface Movie{
+interface MountXDisplayDatabase{
+    ID?: string;
+    CreatureDisplayInfoID?: string;
+    MountID?: string;
+    PlayerConditionID?: string;
+}
+interface MovieDatabase{
     ID?: string;
     Volume?: string;
     KeyID?: string;
@@ -5257,14 +5257,20 @@ interface Movie{
     SubtitleFileDataID?: string;
     Filename?: string;
 }
-interface MovieOverlays{
+interface MovieOverlaysDatabase{
     ID?: string;
     MovieID?: string;
     LocaleMask?: string;
     OverlayRangeBegin?: string;
     OverlayRangeEnd?: string;
 }
-interface MultiStateProperties{
+interface MovieVariationDatabase{
+    ID?: string;
+    MovieID?: string;
+    FileDataID?: string;
+    OverlayFileDataID?: string;
+}
+interface MultiStatePropertiesDatabase{
     ID?: string;
     CollisionHull?: string;
     Facing?: string;
@@ -5278,32 +5284,12 @@ interface MultiStateProperties{
     TransitionOutID?: string;
     SpellVisualKitID?: string;
 }
-interface MovieFileData{
+interface MovieFileDataDatabase{
     FileDataID?: string;
     Resolution?: string;
     ID?: string;
 }
-interface MultiTransitionProperties{
-    ID?: string;
-    DurationMS?: string;
-    TransitionType?: string;
-    Flags?: string;
-    StartSpellVisualKitID?: string;
-    EndSpellVisualKitID?: string;
-}
-interface MovieVariation{
-    ID?: string;
-    MovieID?: string;
-    FileDataID?: string;
-    OverlayFileDataID?: string;
-}
-interface MythicPlusSeason{
-    ID?: string;
-    Season?: string;
-    ExpansionLevel?: string;
-    SomeItemLevel?: string;
-}
-interface MythicPlusSeasonRewardLevels{
+interface MythicPlusSeasonRewardLevelsDatabase{
     ID?: string;
     DifficultyLevel?: string;
     WeeklyRewardLevel?: string;
@@ -5311,35 +5297,63 @@ interface MythicPlusSeasonRewardLevels{
     Season?: string;
     MythicPlusSeasonID?: string;
 }
-interface NameGen{
-    ID?: string;
-    Name?: string;
-    RaceID?: string;
-    Sex?: string;
-}
-interface MythicPlusSeasonTrackedAffix{
+interface MythicPlusSeasonTrackedAffixDatabase{
     ID?: string;
     KeystoneAffixID?: string;
     Season?: string;
     Field_9_1_0_38511_003?: string;
     Field_9_1_0_38511_004?: string;
 }
-interface NPCModelItemSlotDisplayInfo{
+interface MythicPlusSeasonDatabase{
+    ID?: string;
+    Season?: string;
+    ExpansionLevel?: string;
+    SomeItemLevel?: string;
+}
+interface MultiTransitionPropertiesDatabase{
+    ID?: string;
+    DurationMS?: string;
+    TransitionType?: string;
+    Flags?: string;
+    StartSpellVisualKitID?: string;
+    EndSpellVisualKitID?: string;
+}
+interface NPCModelItemSlotDisplayInfoDatabase{
     ID?: string;
     ItemDisplayInfoID?: string;
     ItemSlot?: string;
     NpcModelID?: string;
 }
-interface NPCSounds{
+interface NameGenDatabase{
+    ID?: string;
+    Name?: string;
+    RaceID?: string;
+    Sex?: string;
+}
+interface NPCSoundsDatabase{
     ID?: string;
     SoundID?: string;
 }
-interface NamesReserved{
+interface NamesProfanityDatabase{
     ID?: string;
     Name?: string;
     Language?: string;
 }
-interface NumTalentsAtLevel{
+interface NamesReservedLocaleDatabase{
+    ID?: string;
+    Name?: string;
+    LocaleMask?: string;
+}
+interface NamesReservedDatabase{
+    ID?: string;
+    Name?: string;
+    Language?: string;
+}
+interface ObjectEffectGroupDatabase{
+    ID?: string;
+    Name?: string;
+}
+interface NumTalentsAtLevelDatabase{
     ID?: string;
     NumTalents?: string;
     NumTalentsDeathKnight?: string;
@@ -5347,17 +5361,7 @@ interface NumTalentsAtLevel{
     Level?: string;
     NumberOfTalents?: string;
 }
-interface NamesReservedLocale{
-    ID?: string;
-    Name?: string;
-    LocaleMask?: string;
-}
-interface NamesProfanity{
-    ID?: string;
-    Name?: string;
-    Language?: string;
-}
-interface ObjectEffect{
+interface ObjectEffectDatabase{
     ID?: string;
     Name?: string;
     ObjectEffectGroupID?: string;
@@ -5369,26 +5373,39 @@ interface ObjectEffect{
     Offset?: string;
     ObjectEffectModifierID?: string;
 }
-interface ObjectEffectStateName{
-    Name?: string;
-    Value?: string;
-}
-interface ObjectEffectGroup{
+interface ObjectEffectPackageDatabase{
     ID?: string;
     Name?: string;
 }
-interface ObjectEffectModifier{
+interface ObjectEffectModifierDatabase{
     ID?: string;
     InputType?: string;
     MapType?: string;
     OutputType?: string;
     Param?: string;
 }
-interface ObjectEffectPackage{
+interface ObjectEffectPackageElemDatabase{
     ID?: string;
-    Name?: string;
+    ObjectEffectPackageID?: string;
+    ObjectEffectGroupID?: string;
+    StateType?: string;
 }
-interface OccluderCurtain{
+interface ObjectEffectStateNameDatabase{
+    Name?: string;
+    Value?: string;
+}
+interface OccluderDatabase{
+    ID?: string;
+    MapID?: string;
+    Type?: string;
+    SplineType?: string;
+    Red?: string;
+    Green?: string;
+    Blue?: string;
+    Alpha?: string;
+    Flags?: string;
+}
+interface OccluderCurtainDatabase{
     ID?: string;
     MapID?: string;
     Field_2_5_1_38043_001?: string;
@@ -5397,36 +5414,26 @@ interface OccluderCurtain{
     Field_2_5_1_38043_004?: string;
     Field_2_5_1_38043_005?: string;
 }
-interface Occluder{
-    ID?: string;
-    MapID?: string;
-    Type?: string;
-    SplineType?: string;
-    Red?: string;
-    Green?: string;
-    Blue?: string;
-    Alpha?: string;
-    Flags?: string;
-}
-interface OccluderLocation{
-    ID?: string;
-    MapID?: string;
-    Pos?: string;
-    Rot?: string;
-}
-interface ObjectEffectPackageElem{
-    ID?: string;
-    ObjectEffectPackageID?: string;
-    ObjectEffectGroupID?: string;
-    StateType?: string;
-}
-interface OccluderNode{
+interface OccluderNodeDatabase{
     ID?: string;
     OccluderID?: string;
     Sequence?: string;
     LocationID?: string;
 }
-interface OutlineEffect{
+interface OccluderLocationDatabase{
+    ID?: string;
+    MapID?: string;
+    Pos?: string;
+    Rot?: string;
+}
+interface OverrideSpellDataDatabase{
+    ID?: string;
+    Spells?: string;
+    Flags?: string;
+    PlayerActionbarFileDataID?: string;
+    PlayerActionbar?: string;
+}
+interface OutlineEffectDatabase{
     ID?: string;
     Flags?: string;
     HighlightColorID?: string;
@@ -5435,30 +5442,12 @@ interface OutlineEffect{
     Range?: string;
     UnitConditionID?: string;
 }
-interface PVPBracketTypes{
+interface PVPBracketTypesDatabase{
     ID?: string;
     BracketID?: string;
     WeeklyQuestID?: string;
 }
-interface OverrideSpellData{
-    ID?: string;
-    Spells?: string;
-    Flags?: string;
-    PlayerActionbarFileDataID?: string;
-    PlayerActionbar?: string;
-}
-interface PVPItem{
-    ID?: string;
-    ItemID?: string;
-    ItemLevelDelta?: string;
-}
-interface PVPScoreboardColumnHeader{
-    Tooltip_lang?: string;
-    Name_lang?: string;
-    ID?: string;
-    Field_8_2_0_30430_003?: string;
-}
-interface PVPDifficulty{
+interface PVPDifficultyDatabase{
     ID?: string;
     MapID?: string;
     RangeIndex?: string;
@@ -5466,47 +5455,69 @@ interface PVPDifficulty{
     MaxLevel?: string;
     Difficulty?: string;
 }
-interface PVPScoreboardCellInfo{
+interface PVPScoreboardCellInfoDatabase{
     ID?: string;
     PVPScoreboardColumnHeaderID?: string;
     Icon?: string;
     Team?: string;
 }
-interface PVPScoreboardLayout{
+interface PVPScoreboardColumnHeaderDatabase{
+    Tooltip_lang?: string;
+    Name_lang?: string;
+    ID?: string;
+    Field_8_2_0_30430_003?: string;
+}
+interface PVPItemDatabase{
+    ID?: string;
+    ItemID?: string;
+    ItemLevelDelta?: string;
+}
+interface PVPStatDatabase{
+    Description_lang?: string;
+    ID?: string;
+    MapID?: string;
+}
+interface PVPScoreboardLayoutDatabase{
     ID?: string;
     PVPStatID?: string;
     PVPScoreboardColumnHeaderID?: string;
     OrderIndex?: string;
 }
-interface PVPStat{
-    Description_lang?: string;
+interface PageTextMaterialDatabase{
     ID?: string;
-    MapID?: string;
+    Name?: string;
 }
-interface Package{
+interface PackageDatabase{
     ID?: string;
     Icon?: string;
     Cost?: string;
     Name_lang?: string;
 }
-interface PaperDollItemFrame{
+interface ParticleColorDatabase{
+    ID?: string;
+    Start?: string;
+    MID?: string;
+    End?: string;
+}
+interface ParagonReputationDatabase{
+    ID?: string;
+    FactionID?: string;
+    LevelThreshold?: string;
+    QuestID?: string;
+}
+interface PaperDollItemFrameDatabase{
     ItemButtonName?: string;
     SlotIcon?: string;
     SlotNumber?: string;
     ID?: string;
     SlotIconFileID?: string;
 }
-interface PageTextMaterial{
+interface ParticulateDatabase{
     ID?: string;
-    Name?: string;
+    MapID?: string;
+    PlayerConditionID?: string;
 }
-interface ParagonReputation{
-    ID?: string;
-    FactionID?: string;
-    LevelThreshold?: string;
-    QuestID?: string;
-}
-interface ParticulateSound{
+interface ParticulateSoundDatabase{
     ID?: string;
     ParticulateID?: string;
     DaySound?: string;
@@ -5514,29 +5525,7 @@ interface ParticulateSound{
     EnterSound?: string;
     ExitSound?: string;
 }
-interface PathEdge{
-    ID?: string;
-    PathNodeID?: string;
-    PathID?: string;
-}
-interface ParticleColor{
-    ID?: string;
-    Start?: string;
-    MID?: string;
-    End?: string;
-}
-interface Particulate{
-    ID?: string;
-    MapID?: string;
-    PlayerConditionID?: string;
-}
-interface PathNode{
-    ID?: string;
-    LocationID?: string;
-    PathID?: string;
-    Sequence?: string;
-}
-interface Path{
+interface PathDatabase{
     ID?: string;
     Alpha?: string;
     Blue?: string;
@@ -5546,15 +5535,18 @@ interface Path{
     SplineType?: string;
     Type?: string;
 }
-interface PetPersonality{
+interface PathEdgeDatabase{
     ID?: string;
-    Name_lang?: string;
-    HappinessThreshold?: string;
-    HappinessDamage?: string;
-    DamageModifier?: string;
-    Field_1_13_0_28211_003?: string;
+    PathNodeID?: string;
+    PathID?: string;
 }
-interface PathNodeProperty{
+interface PathNodeDatabase{
+    ID?: string;
+    LocationID?: string;
+    PathID?: string;
+    Sequence?: string;
+}
+interface PathNodePropertyDatabase{
     ID?: string;
     PathID?: string;
     PropertyIndex?: string;
@@ -5562,13 +5554,44 @@ interface PathNodeProperty{
     Value?: string;
     Field_8_1_0_27934_003?: string;
 }
-interface PathProperty{
+interface PathPropertyDatabase{
     ID?: string;
     PathID?: string;
     PropertyIndex?: string;
     Value?: string;
 }
-interface PhaseShiftZoneSounds{
+interface PetPersonalityDatabase{
+    ID?: string;
+    Name_lang?: string;
+    HappinessThreshold?: string;
+    HappinessDamage?: string;
+    DamageModifier?: string;
+    Field_1_13_0_28211_003?: string;
+}
+interface PetitionTypeDatabase{
+    ID?: string;
+    Name?: string;
+    Type?: string;
+}
+interface PetLoyaltyDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface PhaseDatabase{
+    ID?: string;
+    Name?: string;
+    Flags?: string;
+    MapID?: string;
+    PhaseShift?: string;
+    ChildMap?: string;
+    ParentMapID?: string;
+}
+interface PhaseXPhaseGroupDatabase{
+    ID?: string;
+    PhaseID?: string;
+    PhaseGroupID?: string;
+}
+interface PhaseShiftZoneSoundsDatabase{
     ID?: string;
     AreaID?: string;
     WMOAreaID?: string;
@@ -5584,30 +5607,40 @@ interface PhaseShiftZoneSounds{
     UWSoundAmbienceID?: string;
     UWSoundProviderPreferencesID?: string;
 }
-interface Phase{
+interface PositionerDatabase{
     ID?: string;
-    Name?: string;
+    FirstStateID?: string;
     Flags?: string;
-    MapID?: string;
-    PhaseShift?: string;
-    ChildMap?: string;
-    ParentMapID?: string;
+    StartLife?: string;
+    StartLifePercent?: string;
 }
-interface PetLoyalty{
+interface PositionerStateDatabase{
     ID?: string;
-    Name_lang?: string;
+    EndLife?: string;
+    EndLifePercent?: string;
+    Flags?: string;
+    NextStateID?: string;
+    PosEntryID?: string;
+    RotEntryID?: string;
+    ScaleEntryID?: string;
+    TransformMatrixID?: string;
 }
-interface PetitionType{
+interface PowerTypeDatabase{
     ID?: string;
-    Name?: string;
-    Type?: string;
+    CenterPower?: string;
+    CostGlobalStringTag?: string;
+    DefaultPower?: string;
+    DisplayModifier?: string;
+    Flags?: string;
+    MaxBasePower?: string;
+    MinPower?: string;
+    NameGlobalStringTag?: string;
+    PowerTypeEnum?: string;
+    RegenCombat?: string;
+    RegenInterruptTimeMS?: string;
+    RegenPeace?: string;
 }
-interface PhaseXPhaseGroup{
-    ID?: string;
-    PhaseID?: string;
-    PhaseGroupID?: string;
-}
-interface PlayerCondition{
+interface PlayerConditionDatabase{
     ID?: string;
     Flags?: string;
     MinLevel?: string;
@@ -5693,25 +5726,7 @@ interface PlayerCondition{
     CovenantID?: string;
     Field_7_3_2_25549_029?: string;
 }
-interface PositionerState{
-    ID?: string;
-    EndLife?: string;
-    EndLifePercent?: string;
-    Flags?: string;
-    NextStateID?: string;
-    PosEntryID?: string;
-    RotEntryID?: string;
-    ScaleEntryID?: string;
-    TransformMatrixID?: string;
-}
-interface Positioner{
-    ID?: string;
-    FirstStateID?: string;
-    Flags?: string;
-    StartLife?: string;
-    StartLifePercent?: string;
-}
-interface PositionerStateEntry{
+interface PositionerStateEntryDatabase{
     ID?: string;
     CurveID?: string;
     DstType?: string;
@@ -5725,16 +5740,7 @@ interface PositionerStateEntry{
     SrcValType?: string;
     Style?: string;
 }
-interface PrestigeLevelInfo{
-    ID?: string;
-    BadgeTextureFileDataID?: string;
-    Flags?: string;
-    Name_lang?: string;
-    PrestigeLevel?: string;
-    HonorLevel?: string;
-    AwardedAchievementID?: string;
-}
-interface PowerDisplay{
+interface PowerDisplayDatabase{
     ID?: string;
     ActualType?: string;
     GlobalStringBaseTag?: string;
@@ -5743,22 +5749,16 @@ interface PowerDisplay{
     Blue?: string;
     Padding_4_0_0_11792_006?: string;
 }
-interface PowerType{
+interface PrestigeLevelInfoDatabase{
     ID?: string;
-    CenterPower?: string;
-    CostGlobalStringTag?: string;
-    DefaultPower?: string;
-    DisplayModifier?: string;
+    BadgeTextureFileDataID?: string;
     Flags?: string;
-    MaxBasePower?: string;
-    MinPower?: string;
-    NameGlobalStringTag?: string;
-    PowerTypeEnum?: string;
-    RegenCombat?: string;
-    RegenInterruptTimeMS?: string;
-    RegenPeace?: string;
+    Name_lang?: string;
+    PrestigeLevel?: string;
+    HonorLevel?: string;
+    AwardedAchievementID?: string;
 }
-interface PvpBrawl{
+interface PvpBrawlDatabase{
     ID?: string;
     Name_lang?: string;
     Description_lang?: string;
@@ -5767,38 +5767,34 @@ interface PvpBrawl{
     LFGDungeonsID?: string;
     RewardsQuestID?: string;
 }
-interface PvpReward{
-    ID?: string;
-    HonorLevel?: string;
-    PrestigeLevel?: string;
-    RewardPackID?: string;
-}
-interface PvpScalingEffect{
+interface PvpScalingEffectDatabase{
     ID?: string;
     PvpScalingEffectTypeID?: string;
     SpecializationID?: string;
     Value?: string;
 }
-interface PvpScalingEffectType{
+interface PvpRewardDatabase{
+    ID?: string;
+    HonorLevel?: string;
+    PrestigeLevel?: string;
+    RewardPackID?: string;
+}
+interface PvpScalingEffectTypeDatabase{
     ID?: string;
     Name?: string;
 }
-interface PvpSeason{
-    ID?: string;
-    Season?: string;
-}
-interface PvpSeasonRewardLevels{
+interface PvpSeasonRewardLevelsDatabase{
     ID?: string;
     Tier?: string;
     EndOfMatchILvl?: string;
     WeeklyCacheILvl?: string;
     PvpSeasonID?: string;
 }
-interface PvpTalentCategory{
+interface PvpSeasonDatabase{
     ID?: string;
-    TalentSlotMask?: string;
+    Season?: string;
 }
-interface PvpTalent{
+interface PvpTalentDatabase{
     ID?: string;
     ActionBarSpellID?: string;
     Description_lang?: string;
@@ -5813,7 +5809,28 @@ interface PvpTalent{
     Field_1_13_0_28211_006?: string;
     Field_1_13_0_28211_010?: string;
 }
-interface PvpTier{
+interface PvpTalentCategoryDatabase{
+    ID?: string;
+    TalentSlotMask?: string;
+}
+interface PvpTalentUnlockDatabase{
+    ID?: string;
+    Field_1_13_0_28211_001?: string;
+    Field_1_13_0_28211_002?: string;
+    Field_1_13_0_28211_003?: string;
+}
+interface PvpTalentSlotUnlockDatabase{
+    ID?: string;
+    DeathKnightLevelRequired?: string;
+    DemonHunterLevelRequired?: string;
+    LevelRequired?: string;
+    Slot?: string;
+}
+interface QuestFactionRewardDatabase{
+    ID?: string;
+    Difficulty?: string;
+}
+interface PvpTierDatabase{
     ID?: string;
     Name_lang?: string;
     PrevTier?: string;
@@ -5824,24 +5841,14 @@ interface PvpTier{
     Rank?: string;
     RankIcon?: string;
 }
-interface PvpTalentUnlock{
-    ID?: string;
-    Field_1_13_0_28211_001?: string;
-    Field_1_13_0_28211_002?: string;
-    Field_1_13_0_28211_003?: string;
-}
-interface QuestFactionReward{
-    ID?: string;
-    Difficulty?: string;
-}
-interface QuestInfo{
+interface QuestInfoDatabase{
     ID?: string;
     InfoName_lang?: string;
     Modifiers?: string;
     Profession?: string;
     Type?: string;
 }
-interface QuestFeedbackEffect{
+interface QuestFeedbackEffectDatabase{
     ID?: string;
     FileDataID?: string;
     AttachPoint?: string;
@@ -5853,25 +5860,35 @@ interface QuestFeedbackEffect{
     InteractCursor?: string;
     SpellID?: string;
 }
-interface PvpTalentSlotUnlock{
-    ID?: string;
-    DeathKnightLevelRequired?: string;
-    DemonHunterLevelRequired?: string;
-    LevelRequired?: string;
-    Slot?: string;
-}
-interface QuestLine{
+interface QuestLineDatabase{
     Name_lang?: string;
     ID?: string;
     QuestID?: string;
     Description_lang?: string;
     PlayerConditionID?: string;
 }
-interface QuestMoneyReward{
+interface QuestLineXQuestDatabase{
+    ID?: string;
+    OrderIndex?: string;
+    QuestID?: string;
+    QuestLineID?: string;
+}
+interface QuestObjectiveDatabase{
+    ID?: string;
+    QuestID?: string;
+    OrderIndex?: string;
+    StorageIndex?: string;
+    Amount?: string;
+    Type?: string;
+    ObjectID?: string;
+    Description_lang?: string;
+    Flags?: string;
+}
+interface QuestMoneyRewardDatabase{
     ID?: string;
     Difficulty?: string;
 }
-interface QuestPOIBlob{
+interface QuestPOIBlobDatabase{
     ID?: string;
     NumPoints?: string;
     MapID?: string;
@@ -5884,56 +5901,30 @@ interface QuestPOIBlob{
     ObjectiveID?: string;
     Field_9_0_1_34490_008?: string;
 }
-interface QuestObjective{
-    ID?: string;
-    QuestID?: string;
-    OrderIndex?: string;
-    StorageIndex?: string;
-    Amount?: string;
-    Type?: string;
-    ObjectID?: string;
-    Description_lang?: string;
-    Flags?: string;
-}
-interface QuestPOIPoint{
-    ID?: string;
-    X?: string;
-    Y?: string;
-    QuestPOIBlobID?: string;
-    Z?: string;
-}
-interface QuestLineXQuest{
-    ID?: string;
-    OrderIndex?: string;
-    QuestID?: string;
-    QuestLineID?: string;
-}
-interface QuestSort{
-    ID?: string;
-    SortName_lang?: string;
-    UiOrderIndex?: string;
-}
-interface QuestPackageItem{
+interface QuestPackageItemDatabase{
     ID?: string;
     DisplayType?: string;
     ItemID?: string;
     ItemQuantity?: string;
     PackageID?: string;
 }
-interface QuestV2{
+interface QuestPOIPointDatabase{
+    ID?: string;
+    X?: string;
+    Y?: string;
+    QuestPOIBlobID?: string;
+    Z?: string;
+}
+interface QuestSortDatabase{
+    ID?: string;
+    SortName_lang?: string;
+    UiOrderIndex?: string;
+}
+interface QuestV2Database{
     ID?: string;
     UniqueBitFlag?: string;
 }
-interface QuestXGroupActivity{
-    ID?: string;
-    GroupFinderActivityID?: string;
-    QuestID?: string;
-}
-interface QuestXP{
-    ID?: string;
-    Difficulty?: string;
-}
-interface QuestV2CliTask{
+interface QuestV2CliTaskDatabase{
     ID?: string;
     BreadCrumbID?: string;
     QuestTitle_lang?: string;
@@ -5967,12 +5958,26 @@ interface QuestV2CliTask{
     Field_2_5_1_38043_021?: string;
     Field_2_5_1_38043_022?: string;
 }
-interface QuestXUiWidgetSet{
+interface QuestXGroupActivityDatabase{
+    ID?: string;
+    GroupFinderActivityID?: string;
+    QuestID?: string;
+}
+interface QuestXPDatabase{
+    ID?: string;
+    Difficulty?: string;
+}
+interface QuestXUIQuestDetailsThemeDatabase{
+    ID?: string;
+    QuestID?: string;
+    UiQuestDetailsThemeID?: string;
+}
+interface QuestXUiWidgetSetDatabase{
     ID?: string;
     QuestID?: string;
     UiWidgetSetID?: string;
 }
-interface RTPC{
+interface RTPCDatabase{
     ID?: string;
     SoundParameterID?: string;
     GameParameterID?: string;
@@ -5980,22 +5985,7 @@ interface RTPC{
     Field_9_0_1_33978_004?: string;
     SoundKitID?: string;
 }
-interface QuestXUIQuestDetailsTheme{
-    ID?: string;
-    QuestID?: string;
-    UiQuestDetailsThemeID?: string;
-}
-interface RafActivity{
-    ID?: string;
-    CriteriaTreeID?: string;
-    RewardQuestID?: string;
-}
-interface RacialMounts{
-    ID?: string;
-    Race?: string;
-    Spell_ID?: string;
-}
-interface RTPCData{
+interface RTPCDataDatabase{
     ID?: string;
     RTPCID?: string;
     Field_9_0_1_33978_001?: string;
@@ -6003,7 +5993,26 @@ interface RTPCData{
     SpellID?: string;
     Field_9_0_1_33978_004?: string;
 }
-interface RandPropPoints{
+interface RafActivityDatabase{
+    ID?: string;
+    CriteriaTreeID?: string;
+    RewardQuestID?: string;
+}
+interface RacialMountsDatabase{
+    ID?: string;
+    Race?: string;
+    Spell_ID?: string;
+}
+interface RecipeProgressionGroupEntryDatabase{
+    ID?: string;
+    RecipeProgressionGroupID?: string;
+    SkillLineAbilityID?: string;
+    Order?: string;
+    RequiredRecipeExperience?: string;
+    EarnedExperienceMask?: string;
+    Field_9_0_1_35256_005?: string;
+}
+interface RandPropPointsDatabase{
     ID?: string;
     Epic?: string;
     Superior?: string;
@@ -6016,30 +6025,7 @@ interface RandPropPoints{
     SuperiorF?: string;
     GoodF?: string;
 }
-interface RecipeProgressionGroupEntry{
-    ID?: string;
-    RecipeProgressionGroupID?: string;
-    SkillLineAbilityID?: string;
-    Order?: string;
-    RequiredRecipeExperience?: string;
-    EarnedExperienceMask?: string;
-    Field_9_0_1_35256_005?: string;
-}
-interface RelicSlotTierRequirement{
-    ID?: string;
-    PlayerConditionID?: string;
-    RelicIndex?: string;
-    RelicTier?: string;
-}
-interface RelicTalent{
-    ID?: string;
-    ArtifactPowerID?: string;
-    ArtifactPowerLabel?: string;
-    Flags?: string;
-    PVal?: string;
-    Type?: string;
-}
-interface RenownRewards{
+interface RenownRewardsDatabase{
     ID?: string;
     Name_lang?: string;
     Description_lang?: string;
@@ -6060,7 +6046,13 @@ interface RenownRewards{
     PlayerConditionID?: string;
     ToastDescription_lang?: string;
 }
-interface ResearchBranch{
+interface RelicSlotTierRequirementDatabase{
+    ID?: string;
+    PlayerConditionID?: string;
+    RelicIndex?: string;
+    RelicTier?: string;
+}
+interface ResearchBranchDatabase{
     ID?: string;
     Name_lang?: string;
     ResearchFieldID?: string;
@@ -6070,12 +6062,7 @@ interface ResearchBranch{
     BigTextureFileID?: string;
     TextureFileID?: string;
 }
-interface ResearchField{
-    ID?: string;
-    Name_lang?: string;
-    Slot?: string;
-}
-interface ResearchProject{
+interface ResearchProjectDatabase{
     ID?: string;
     Name_lang?: string;
     Description_lang?: string;
@@ -6088,26 +6075,26 @@ interface ResearchProject{
     TextureFileID?: string;
     Field_7_3_0_24473_003?: string;
 }
-interface ResearchSite{
+interface ResearchFieldDatabase{
     ID?: string;
-    MapID?: string;
-    QuestPOIBlobID?: string;
     Name_lang?: string;
-    AreaPOIIconEnum?: string;
+    Slot?: string;
 }
-interface Resistances{
+interface ResistancesDatabase{
     ID?: string;
     Flags?: string;
     FizzleSoundID?: string;
     Name_lang?: string;
 }
-interface RewardPackXCurrencyType{
+interface RelicTalentDatabase{
     ID?: string;
-    CurrencyTypeID?: string;
-    Quantity?: string;
-    RewardPackID?: string;
+    ArtifactPowerID?: string;
+    ArtifactPowerLabel?: string;
+    Flags?: string;
+    PVal?: string;
+    Type?: string;
 }
-interface RewardPack{
+interface RewardPackDatabase{
     ID?: string;
     ArtifactXPCategoryID?: string;
     ArtifactXPDifficulty?: string;
@@ -6116,13 +6103,34 @@ interface RewardPack{
     Money?: string;
     TreasurePickerID?: string;
 }
-interface RewardPackXItem{
+interface RibbonQualityDatabase{
+    ID?: string;
+    AngleThreshold?: string;
+    Flags?: string;
+    MaxSampleTimeDelta?: string;
+    MinDistancePerSlice?: string;
+    NumStrips?: string;
+}
+interface RewardPackXItemDatabase{
     ID?: string;
     ItemID?: string;
     ItemQuantity?: string;
     RewardPackID?: string;
 }
-interface RopeEffect{
+interface RewardPackXCurrencyTypeDatabase{
+    ID?: string;
+    CurrencyTypeID?: string;
+    Quantity?: string;
+    RewardPackID?: string;
+}
+interface ResearchSiteDatabase{
+    ID?: string;
+    MapID?: string;
+    QuestPOIBlobID?: string;
+    Name_lang?: string;
+    AreaPOIIconEnum?: string;
+}
+interface RopeEffectDatabase{
     ID?: string;
     Flags?: string;
     Field_8_3_0_32712_001?: string;
@@ -6134,42 +6142,20 @@ interface RopeEffect{
     Damping?: string;
     IntegrateAtJointIndex?: string;
 }
-interface RibbonQuality{
-    ID?: string;
-    AngleThreshold?: string;
-    Flags?: string;
-    MaxSampleTimeDelta?: string;
-    MinDistancePerSlice?: string;
-    NumStrips?: string;
-}
-interface RulesetRaidLootUpgrade{
+interface RulesetRaidLootUpgradeDatabase{
     ID?: string;
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
     ItemUpgradeID?: string;
     Field_6_0_1_18179_004?: string;
 }
-interface RulesetItemUpgrade{
+interface RulesetItemUpgradeDatabase{
     Field_6_0_1_18179_001?: string;
     ID?: string;
     ItemID?: string;
     ItemUpgradeID?: string;
 }
-interface SDReplacementModel{
-    ID?: string;
-    SdFileDataID?: string;
-}
-interface SSAOSettings{
-    ID?: string;
-    Field_8_2_0_30080_001?: string;
-    Field_8_2_0_30080_002?: string;
-    Field_8_2_0_30080_003?: string;
-    Radius?: string;
-    ShadowMult?: string;
-    ShadowPower?: string;
-    ShadowClamp?: string;
-}
-interface RulesetRaidOverride{
+interface RulesetRaidOverrideDatabase{
     ID?: string;
     MapID?: string;
     DifficultyID?: string;
@@ -6177,7 +6163,7 @@ interface RulesetRaidOverride{
     SharedLock?: string;
     Raidduration?: string;
 }
-interface RuneforgeLegendaryAbility{
+interface RuneforgeLegendaryAbilityDatabase{
     Name_lang?: string;
     ID?: string;
     SpecSetID?: string;
@@ -6190,7 +6176,27 @@ interface RuneforgeLegendaryAbility{
     CovenantID?: string;
     Field_9_1_0_38549_010?: string;
 }
-interface ScalingStatDistribution{
+interface SSAOSettingsDatabase{
+    ID?: string;
+    Field_8_2_0_30080_001?: string;
+    Field_8_2_0_30080_002?: string;
+    Field_8_2_0_30080_003?: string;
+    Radius?: string;
+    ShadowMult?: string;
+    ShadowPower?: string;
+    ShadowClamp?: string;
+}
+interface SDReplacementModelDatabase{
+    ID?: string;
+    SdFileDataID?: string;
+}
+interface SandboxScalingDatabase{
+    ID?: string;
+    Flags?: string;
+    MaxLevel?: string;
+    MinLevel?: string;
+}
+interface ScalingStatDistributionDatabase{
     ID?: string;
     StatID?: string;
     Bonus?: string;
@@ -6198,13 +6204,7 @@ interface ScalingStatDistribution{
     Maxlevel?: string;
     PlayerLevelToItemLevelCurveID?: string;
 }
-interface SandboxScaling{
-    ID?: string;
-    Flags?: string;
-    MaxLevel?: string;
-    MinLevel?: string;
-}
-interface ScalingStatValues{
+interface ScalingStatValuesDatabase{
     ID?: string;
     Charlevel?: string;
     EffectiveLevel?: string;
@@ -6286,7 +6286,15 @@ interface ScalingStatValues{
     Field_3_0_1_8885_018?: string;
     Field_3_2_0_10192_018?: string;
 }
-interface ScenarioStep{
+interface ScenarioDatabase{
+    ID?: string;
+    Name_lang?: string;
+    Flags?: string;
+    AreaTableID?: string;
+    Type?: string;
+    UiTextureKitID?: string;
+}
+interface ScenarioStepDatabase{
     ID?: string;
     CriteriatreeID?: string;
     ScenarioID?: string;
@@ -6300,48 +6308,40 @@ interface ScenarioStep{
     VisibilityPlayerConditionID?: string;
     WidgetSetID?: string;
 }
-interface Scenario{
-    ID?: string;
-    Name_lang?: string;
-    Flags?: string;
-    AreaTableID?: string;
-    Type?: string;
-    UiTextureKitID?: string;
-}
-interface ScenarioEventEntry{
+interface ScenarioEventEntryDatabase{
     ID?: string;
     TriggerType?: string;
     TriggerAsset?: string;
 }
-interface SceneScript{
+interface SceneScriptPackageDatabase{
+    Name?: string;
+    ID?: string;
+}
+interface SceneScriptGlobalTextDatabase{
+    ID?: string;
+    Name?: string;
+    Script?: string;
+}
+interface SceneScriptDatabase{
     Name?: string;
     Script?: string;
     ID?: string;
     FirstSceneScriptID?: string;
     NextSceneScriptID?: string;
 }
-interface SceneScriptGlobalText{
+interface SceneScriptTextDatabase{
     ID?: string;
     Name?: string;
     Script?: string;
 }
-interface SceneScriptPackage{
-    Name?: string;
-    ID?: string;
-}
-interface SceneScriptPackageMember{
+interface SceneScriptPackageMemberDatabase{
     ID?: string;
     ChildSceneScriptPackageID?: string;
     OrderIndex?: string;
     SceneScriptID?: string;
     SceneScriptPackageID?: string;
 }
-interface SceneScriptText{
-    ID?: string;
-    Name?: string;
-    Script?: string;
-}
-interface ScheduledInterval{
+interface ScheduledIntervalDatabase{
     ID?: string;
     DateAlignmentType?: string;
     DurationSecs?: string;
@@ -6349,15 +6349,7 @@ interface ScheduledInterval{
     OffsetSecs?: string;
     RepeatType?: string;
 }
-interface ScheduledWorldStateGroup{
-    ID?: string;
-    Flags?: string;
-    Priority?: string;
-    ScheduledIntervalID?: string;
-    SelectionCount?: string;
-    SelectionType?: string;
-}
-interface ScheduledWorldState{
+interface ScheduledWorldStateDatabase{
     ID?: string;
     DurationSecs?: string;
     Flags?: string;
@@ -6368,12 +6360,15 @@ interface ScheduledWorldState{
     Weight?: string;
     WorldStateID?: string;
 }
-interface ScheduledWorldStateXUniqCat{
+interface ScheduledWorldStateGroupDatabase{
     ID?: string;
-    ScheduledUniqueCategoryID?: string;
-    ScheduledWorldStateID?: string;
+    Flags?: string;
+    Priority?: string;
+    ScheduledIntervalID?: string;
+    SelectionCount?: string;
+    SelectionType?: string;
 }
-interface ScreenEffect{
+interface ScreenEffectDatabase{
     ID?: string;
     Name?: string;
     Effect?: string;
@@ -6389,19 +6384,37 @@ interface ScreenEffect{
     FullScreenEffectID?: string;
     Field_3_0_1_8303_001?: string;
 }
-interface ScreenLocation{
-    ID?: string;
-    Name?: string;
-}
-interface ScreenEffectType{
+interface ScreenEffectTypeDatabase{
     ID?: string;
     Priority?: string;
 }
-interface SeamlessSite{
+interface ScheduledWorldStateXUniqCatDatabase{
+    ID?: string;
+    ScheduledUniqueCategoryID?: string;
+    ScheduledWorldStateID?: string;
+}
+interface ScreenLocationDatabase{
+    ID?: string;
+    Name?: string;
+}
+interface SeamlessSiteDatabase{
     ID?: string;
     MapID?: string;
 }
-interface ShadowyEffect{
+interface SheatheSoundLookupsDatabase{
+    ID?: string;
+    ClassID?: string;
+    SubclassID?: string;
+    Material?: string;
+    CheckMaterial?: string;
+    SheatheSound?: string;
+    UnsheatheSound?: string;
+}
+interface ServerMessagesDatabase{
+    ID?: string;
+    Text_lang?: string;
+}
+interface ShadowyEffectDatabase{
     ID?: string;
     AttachPos?: string;
     CurveID?: string;
@@ -6417,36 +6430,19 @@ interface ShadowyEffect{
     SecondaryColor?: string;
     Value?: string;
 }
-interface ServerMessages{
-    ID?: string;
-    Text_lang?: string;
-}
-interface SheatheSoundLookups{
-    ID?: string;
-    ClassID?: string;
-    SubclassID?: string;
-    Material?: string;
-    CheckMaterial?: string;
-    SheatheSound?: string;
-    UnsheatheSound?: string;
-}
-interface SkillCostsData{
-    ID?: string;
-    SkillCostsID?: string;
-    Cost?: string;
-}
-interface SiegeableProperties{
+interface SiegeablePropertiesDatabase{
     ID?: string;
     DamageSpellVisualKitID?: string;
     Flags?: string;
     HealingSpellVisualKitID?: string;
     Health?: string;
 }
-interface SkillLineAbilitySortedSpell{
+interface SkillCostsDataDatabase{
     ID?: string;
-    Spell?: string;
+    SkillCostsID?: string;
+    Cost?: string;
 }
-interface SkillLine{
+interface SkillLineDatabase{
     ID?: string;
     CategoryID?: string;
     DisplayName_lang?: string;
@@ -6471,7 +6467,7 @@ interface SkillLine{
     NeutralDisplayName?: string;
     SpellBookSpellID?: string;
 }
-interface SkillLineAbility{
+interface SkillLineAbilityDatabase{
     ID?: string;
     SkillLine?: string;
     Spell?: string;
@@ -6494,7 +6490,21 @@ interface SkillLineAbility{
     Abandonable?: string;
     Field_0_5_5_3494_012?: string;
 }
-interface SkillRaceClassInfo{
+interface SkillLineAbilitySortedSpellDatabase{
+    ID?: string;
+    Spell?: string;
+}
+interface SkillLineCategoryDatabase{
+    ID?: string;
+    Name_lang?: string;
+    SortIndex?: string;
+}
+interface SkySceneXPlayerConditionDatabase{
+    ID?: string;
+    PlayerConditionID?: string;
+    SkySceneID?: string;
+}
+interface SkillRaceClassInfoDatabase{
     ID?: string;
     SkillID?: string;
     RaceMask?: string;
@@ -6505,17 +6515,17 @@ interface SkillRaceClassInfo{
     SkillTierID?: string;
     SkillCostIndex?: string;
 }
-interface SkillLineCategory{
-    ID?: string;
-    Name_lang?: string;
-    SortIndex?: string;
-}
-interface SkillTiers{
+interface SkillTiersDatabase{
     ID?: string;
     Value?: string;
     Cost?: string;
 }
-interface Soulbind{
+interface SoulbindConduitItemDatabase{
+    ID?: string;
+    ItemID?: string;
+    ConduitID?: string;
+}
+interface SoulbindDatabase{
     Name_lang?: string;
     ID?: string;
     CovenantID?: string;
@@ -6524,7 +6534,12 @@ interface Soulbind{
     GarrFollowerID?: string;
     PlayerConditionID?: string;
 }
-interface SoulbindConduit{
+interface SoulbindConduitEnhancedSocketDatabase{
+    ID?: string;
+    GarrTalentID?: string;
+    PlayerConditionID?: string;
+}
+interface SoulbindConduitDatabase{
     ID?: string;
     SpellID?: string;
     ConduitType?: string;
@@ -6532,35 +6547,30 @@ interface SoulbindConduit{
     SpecSetID?: string;
     Flags?: string;
 }
-interface SkySceneXPlayerCondition{
+interface SoulbindConduitRankPropertiesDatabase{
     ID?: string;
-    PlayerConditionID?: string;
-    SkySceneID?: string;
+    Rank?: string;
+    ItemLevel?: string;
+    QualityID?: string;
 }
-interface SoulbindConduitEnhancedSocket{
-    ID?: string;
-    GarrTalentID?: string;
-    PlayerConditionID?: string;
-}
-interface SoulbindConduitItem{
-    ID?: string;
-    ItemID?: string;
-    ConduitID?: string;
-}
-interface SoulbindConduitRank{
+interface SoulbindConduitRankDatabase{
     ID?: string;
     RankIndex?: string;
     SpellID?: string;
     AuraPointsOverride?: string;
     SoulbindConduitID?: string;
 }
-interface SoulbindConduitRankProperties{
+interface SoundAmbienceDatabase{
     ID?: string;
-    Rank?: string;
-    ItemLevel?: string;
-    QualityID?: string;
+    AmbienceID?: string;
+    Flags?: string;
+    FlavorSoundFilterID?: string;
+    SoundFilterID?: string;
+    AmbienceStartID?: string;
+    AmbienceStopID?: string;
+    SoundKitID?: string;
 }
-interface SoulbindUIDisplayInfo{
+interface SoulbindUIDisplayInfoDatabase{
     Description_lang?: string;
     ID?: string;
     SoulbindID?: string;
@@ -6572,27 +6582,17 @@ interface SoulbindUIDisplayInfo{
     GlobalOrderIndex?: string;
     ActivationSoundKitID?: string;
 }
-interface SoundAmbience{
-    ID?: string;
-    AmbienceID?: string;
-    Flags?: string;
-    FlavorSoundFilterID?: string;
-    SoundFilterID?: string;
-    AmbienceStartID?: string;
-    AmbienceStopID?: string;
-    SoundKitID?: string;
-}
-interface SoundAmbienceFlavor{
+interface SoundAmbienceFlavorDatabase{
     ID?: string;
     SoundAmbienceID?: string;
     SoundEntriesIDDay?: string;
     SoundEntriesIDNight?: string;
 }
-interface SoundBusName{
+interface SoundBusNameDatabase{
     EnumID?: string;
     Name?: string;
 }
-interface SoundBus{
+interface SoundBusDatabase{
     ID?: string;
     Parent?: string;
     DefaultPriority?: string;
@@ -6606,7 +6606,7 @@ interface SoundBus{
     BusEnumID?: string;
     Flags?: string;
 }
-interface SoundBusOverride{
+interface SoundBusOverrideDatabase{
     ID?: string;
     PlaybackLimit?: string;
     PlayerConditionID?: string;
@@ -6615,66 +6615,19 @@ interface SoundBusOverride{
     SoundBusID?: string;
     Volume?: string;
 }
-interface SoundEmitterPillPoints{
-    ID?: string;
-    SoundEmittersID?: string;
-    Position?: string;
-}
-interface SoundEntries{
-    ID?: string;
-    SoundType?: string;
-    Name?: string;
-    FileDataID?: string;
-    Freq?: string;
-    VolumeFloat?: string;
-    Flags?: string;
-    MinDistance?: string;
-    DistanceCutoff?: string;
-    EAXDef?: string;
-    SoundEntriesAdvancedID?: string;
-    Volumevariationplus?: string;
-    Volumevariationminus?: string;
-    Pitchvariationplus?: string;
-    Pitchvariationminus?: string;
-    PitchAdjust?: string;
-    Dialogtype?: string;
-    BusOverwriteID?: string;
-    File?: string;
-    DirectoryBase?: string;
-    Pitch?: string;
-    PitchVariation?: string;
-    Priority?: string;
-    Channel?: string;
-    MaxDistance?: string;
-}
-interface SoundCharacterMacroLines{
+interface SoundCharacterMacroLinesDatabase{
     ID?: string;
     Category?: string;
     Sex?: string;
     Race?: string;
     SoundID?: string;
 }
-interface SoundEmitters{
+interface SoundEmitterPillPointsDatabase{
     ID?: string;
+    SoundEmittersID?: string;
     Position?: string;
-    Direction?: string;
-    SoundEntriesID?: string;
-    MapID?: string;
-    Name?: string;
-    EmitterType?: string;
-    PhaseID?: string;
-    PhaseGroupID?: string;
-    PhaseUseFlags?: string;
-    Flags?: string;
-    WorldStateExpressionID?: string;
-    SoundEntryAdvancedID?: string;
 }
-interface SoundEntriesFallbacks{
-    ID?: string;
-    SoundEntriesID?: string;
-    FallbackSoundEntriesID?: string;
-}
-interface SoundEntriesAdvanced{
+interface SoundEntriesAdvancedDatabase{
     ID?: string;
     SoundEntryID?: string;
     InnerRadius2D?: string;
@@ -6709,18 +6662,16 @@ interface SoundEntriesAdvanced{
     Field_5_1_0_16309_025?: string;
     Field_5_1_0_16309_026?: string;
 }
-interface SoundFilter{
+interface SoundEntriesFallbacksDatabase{
+    ID?: string;
+    SoundEntriesID?: string;
+    FallbackSoundEntriesID?: string;
+}
+interface SoundFilterDatabase{
     ID?: string;
     Name?: string;
 }
-interface SoundFilterElem{
-    ID?: string;
-    SoundFilterID?: string;
-    OrderIndex?: string;
-    FilterType?: string;
-    Params?: string;
-}
-interface SoundEnvelope{
+interface SoundEnvelopeDatabase{
     ID?: string;
     CurveID?: string;
     DecayIndex?: string;
@@ -6730,12 +6681,33 @@ interface SoundEnvelope{
     SoundKitID?: string;
     SustainIndex?: string;
 }
-interface SoundKitChild{
+interface SoundFilterElemDatabase{
     ID?: string;
-    ParentSoundKitID?: string;
-    SoundKitID?: string;
+    SoundFilterID?: string;
+    OrderIndex?: string;
+    FilterType?: string;
+    Params?: string;
 }
-interface SoundKitAdvanced{
+interface SoundKitDatabase{
+    EAXDef?: string;
+    ID?: string;
+    BusOverwriteID?: string;
+    DialogType?: string;
+    DistanceCutoff?: string;
+    Flags?: string;
+    MaxInstances?: string;
+    MinDistance?: string;
+    PitchAdjust?: string;
+    PitchVariationMinus?: string;
+    PitchVariationPlus?: string;
+    SoundKitAdvancedID?: string;
+    SoundType?: string;
+    VolumeFloat?: string;
+    VolumeVariationMinus?: string;
+    VolumeVariationPlus?: string;
+    Field_7_3_0_24473_008?: string;
+}
+interface SoundKitAdvancedDatabase{
     ID?: string;
     ChanceToPlay?: string;
     DelayMax?: string;
@@ -6796,42 +6768,31 @@ interface SoundKitAdvanced{
     Field_9_1_0_38312_055?: string;
     Field_9_1_0_38312_056?: string;
 }
-interface SoundKitEntry{
+interface SoundKitChildDatabase{
     ID?: string;
-    FileDataID?: string;
+    ParentSoundKitID?: string;
     SoundKitID?: string;
-    Frequency?: string;
-    Volume?: string;
 }
-interface SoundKit{
-    EAXDef?: string;
+interface SoundKitNameDatabase{
     ID?: string;
-    BusOverwriteID?: string;
-    DialogType?: string;
-    DistanceCutoff?: string;
-    Flags?: string;
-    MaxInstances?: string;
-    MinDistance?: string;
-    PitchAdjust?: string;
-    PitchVariationMinus?: string;
-    PitchVariationPlus?: string;
-    SoundKitAdvancedID?: string;
-    SoundType?: string;
-    VolumeFloat?: string;
-    VolumeVariationMinus?: string;
-    VolumeVariationPlus?: string;
-    Field_7_3_0_24473_008?: string;
+    Name?: string;
 }
-interface SoundKitFallback{
+interface SoundKitFallbackDatabase{
     ID?: string;
     FallbackSoundKitID?: string;
     SoundKitID?: string;
 }
-interface SoundKitName{
+interface SoundOverrideDatabase{
     ID?: string;
-    Name?: string;
+    WowEditLock?: string;
+    WowEditLockUser?: string;
+    ZoneIntroMusicID?: string;
+    ZoneMusicID?: string;
+    SoundAmbienceID?: string;
+    SoundProviderPreferencesID?: string;
+    Flags?: string;
 }
-interface SoundParameter{
+interface SoundParameterDatabase{
     ID?: string;
     Field_9_0_1_33978_000?: string;
     Field_9_0_1_33978_001?: string;
@@ -6839,7 +6800,7 @@ interface SoundParameter{
     Field_9_0_1_33978_003?: string;
     Field_9_0_1_33978_004?: string;
 }
-interface SoundProviderPreferences{
+interface SoundProviderPreferencesDatabase{
     ID?: string;
     Description?: string;
     Flags?: string;
@@ -6867,34 +6828,76 @@ interface SoundProviderPreferences{
     EAXEffectVolume?: string;
     EAXDamping?: string;
 }
-interface SoundOverride{
+interface SoundEntriesDatabase{
     ID?: string;
-    WowEditLock?: string;
-    WowEditLockUser?: string;
-    ZoneIntroMusicID?: string;
-    ZoneMusicID?: string;
-    SoundAmbienceID?: string;
-    SoundProviderPreferencesID?: string;
+    SoundType?: string;
+    Name?: string;
+    FileDataID?: string;
+    Freq?: string;
+    VolumeFloat?: string;
     Flags?: string;
+    MinDistance?: string;
+    DistanceCutoff?: string;
+    EAXDef?: string;
+    SoundEntriesAdvancedID?: string;
+    Volumevariationplus?: string;
+    Volumevariationminus?: string;
+    Pitchvariationplus?: string;
+    Pitchvariationminus?: string;
+    PitchAdjust?: string;
+    Dialogtype?: string;
+    BusOverwriteID?: string;
+    File?: string;
+    DirectoryBase?: string;
+    Pitch?: string;
+    PitchVariation?: string;
+    Priority?: string;
+    Channel?: string;
+    MaxDistance?: string;
 }
-interface SpamMessages{
+interface SoundEmittersDatabase{
     ID?: string;
-    Text?: string;
+    Position?: string;
+    Direction?: string;
+    SoundEntriesID?: string;
+    MapID?: string;
+    Name?: string;
+    EmitterType?: string;
+    PhaseID?: string;
+    PhaseGroupID?: string;
+    PhaseUseFlags?: string;
+    Flags?: string;
+    WorldStateExpressionID?: string;
+    SoundEntryAdvancedID?: string;
 }
-interface SoundWaterType{
+interface SoundKitEntryDatabase{
+    ID?: string;
+    FileDataID?: string;
+    SoundKitID?: string;
+    Frequency?: string;
+    Volume?: string;
+}
+interface SoundWaterTypeDatabase{
     ID?: string;
     SoundType?: string;
     SoundSubtype?: string;
     SoundID?: string;
 }
-interface SourceInfo{
+interface SpecSetMemberDatabase{
     ID?: string;
-    PvpFaction?: string;
-    SourceText_lang?: string;
-    SourceTypeEnum?: string;
+    ChrSpecializationID?: string;
+    SpecSet?: string;
+}
+interface SpamMessagesDatabase{
+    ID?: string;
+    Text?: string;
+}
+interface SpecializationSpellsDisplayDatabase{
+    ID?: string;
+    SpecializationID?: string;
     SpellID?: string;
 }
-interface SoundSamplePreferences{
+interface SoundSamplePreferencesDatabase{
     ID?: string;
     EAX1EffectLevel?: string;
     EAX2SampleDirect?: string;
@@ -6928,17 +6931,7 @@ interface SoundSamplePreferences{
     Field_0_6_0_3592_015?: string;
     Field_0_6_0_3592_016?: string;
 }
-interface SpecSetMember{
-    ID?: string;
-    ChrSpecializationID?: string;
-    SpecSet?: string;
-}
-interface SpecializationSpellsDisplay{
-    ID?: string;
-    SpecializationID?: string;
-    SpellID?: string;
-}
-interface SpecializationSpells{
+interface SpecializationSpellsDatabase{
     ID?: string;
     SpecID?: string;
     SpellID?: string;
@@ -6947,31 +6940,36 @@ interface SpecializationSpells{
     DisplayOrder?: string;
     Field_5_0_1_15464_004?: string;
 }
-interface SpellActionBarPref{
+interface SourceInfoDatabase{
+    ID?: string;
+    PvpFaction?: string;
+    SourceText_lang?: string;
+    SourceTypeEnum?: string;
+    SpellID?: string;
+}
+interface SpellActionBarPrefDatabase{
     ID?: string;
     PreferredActionBarMask?: string;
     SpellID?: string;
 }
-interface SpellAuraNames{
+interface SpellAuraNamesDatabase{
     EnumID?: string;
     SpecialMiscValue?: string;
     Globalstrings_tag?: string;
     Name_lang?: string;
 }
-interface SpellActivationOverlay{
+interface SpellAuraOptionsDatabase{
     ID?: string;
     SpellID?: string;
-    OverlayFileDataID?: string;
-    ScreenLocationID?: string;
-    Color?: string;
-    Scale?: string;
-    IconHighlightSpellClassMask?: string;
-    TriggerType?: string;
-    SoundEntriesID?: string;
-    TriggerSpell?: string;
-    Field_4_0_0_12911_007?: string;
+    DifficultyID?: string;
+    CumulativeAura?: string;
+    ProcChance?: string;
+    ProcCharges?: string;
+    ProcTypeMask?: string;
+    ProcCategoryRecovery?: string;
+    SpellProcsPerMinuteID?: string;
 }
-interface Spell{
+interface SpellDatabase{
     ID?: string;
     Name_lang?: string;
     NameSubtext_lang?: string;
@@ -7119,28 +7117,20 @@ interface Spell{
     Field_4_0_0_11927_107?: string;
     Field_4_0_0_11927_108?: string;
 }
-interface SpellAuraOptions{
+interface SpellActivationOverlayDatabase{
     ID?: string;
     SpellID?: string;
-    DifficultyID?: string;
-    CumulativeAura?: string;
-    ProcChance?: string;
-    ProcCharges?: string;
-    ProcTypeMask?: string;
-    ProcCategoryRecovery?: string;
-    SpellProcsPerMinuteID?: string;
+    OverlayFileDataID?: string;
+    ScreenLocationID?: string;
+    Color?: string;
+    Scale?: string;
+    IconHighlightSpellClassMask?: string;
+    TriggerType?: string;
+    SoundEntriesID?: string;
+    TriggerSpell?: string;
+    Field_4_0_0_12911_007?: string;
 }
-interface SpellAuraRestrictionsDifficulty{
-    ID?: string;
-    SpellID?: string;
-    DifficultyID?: string;
-}
-interface SpellAuraVisXChrSpec{
-    ID?: string;
-    SpellAuraVisibilityID?: string;
-    ChrSpecializationID?: string;
-}
-interface SpellAuraRestrictions{
+interface SpellAuraRestrictionsDatabase{
     ID?: string;
     CasterAuraSpell?: string;
     CasterAuraState?: string;
@@ -7153,24 +7143,34 @@ interface SpellAuraRestrictions{
     TargetAuraSpell?: string;
     TargetAuraState?: string;
 }
-interface SpellAuraVisXTalentTab{
+interface SpellAuraRestrictionsDifficultyDatabase{
+    ID?: string;
+    SpellID?: string;
+    DifficultyID?: string;
+}
+interface SpellAuraVisXChrSpecDatabase{
+    ID?: string;
+    SpellAuraVisibilityID?: string;
+    ChrSpecializationID?: string;
+}
+interface SpellAuraVisXTalentTabDatabase{
     ID?: string;
     SpellAuraVisibilityID?: string;
     TalentTabID?: string;
 }
-interface SpellAuraVisibility{
+interface SpellAuraVisibilityDatabase{
     ID?: string;
     SpellID?: string;
     Type?: string;
     Flags?: string;
 }
-interface SpellCastTimes{
+interface SpellCastTimesDatabase{
     ID?: string;
     Base?: string;
     PerLevel?: string;
     Minimum?: string;
 }
-interface SpellCastingRequirements{
+interface SpellCastingRequirementsDatabase{
     ID?: string;
     FacingCasterFlags?: string;
     MinFactionID?: string;
@@ -7180,7 +7180,7 @@ interface SpellCastingRequirements{
     RequiresSpellFocus?: string;
     SpellID?: string;
 }
-interface SpellCategories{
+interface SpellCategoriesDatabase{
     ID?: string;
     SpellID?: string;
     DifficultyID?: string;
@@ -7192,7 +7192,17 @@ interface SpellCategories{
     StartRecoveryCategory?: string;
     ChargeCategory?: string;
 }
-interface SpellChainEffects{
+interface SpellCategoryDatabase{
+    ID?: string;
+    Flags?: string;
+    UsesPerWeek?: string;
+    Padding_6_0_1_18179_003?: string;
+    Name_lang?: string;
+    MaxCharges?: string;
+    ChargeRecoveryTime?: string;
+    TypeMask?: string;
+}
+interface SpellChainEffectsDatabase{
     ID?: string;
     AvgSegLen?: string;
     Width?: string;
@@ -7261,29 +7271,13 @@ interface SpellChainEffects{
     Padding_4_0_0_11792_044?: string;
     Combo?: string;
 }
-interface SpellCategory{
-    ID?: string;
-    Flags?: string;
-    UsesPerWeek?: string;
-    Padding_6_0_1_18179_003?: string;
-    Name_lang?: string;
-    MaxCharges?: string;
-    ChargeRecoveryTime?: string;
-    TypeMask?: string;
-}
-interface SpellClutterAreaEffectCounts{
+interface SpellClutterAreaEffectCountsDatabase{
     ID?: string;
     Level?: string;
     Min?: string;
     Max?: string;
 }
-interface SpellClutterFrameRates{
-    ID?: string;
-    Level?: string;
-    Min?: string;
-    Max?: string;
-}
-interface SpellClassOptions{
+interface SpellClassOptionsDatabase{
     SpellClassMask?: string;
     ID?: string;
     ModalNextSpell?: string;
@@ -7291,39 +7285,41 @@ interface SpellClassOptions{
     SpellID?: string;
     Description_lang?: string;
 }
-interface SpellClutterImpactModelCounts{
+interface SpellClutterFrameRatesDatabase{
     ID?: string;
     Level?: string;
     Min?: string;
     Max?: string;
 }
-interface SpellClutterKitDistances{
+interface SpellClutterImpactModelCountsDatabase{
     ID?: string;
     Level?: string;
     Min?: string;
     Max?: string;
 }
-interface SpellClutterMissileDist{
+interface SpellClutterKitDistancesDatabase{
     ID?: string;
     Level?: string;
     Min?: string;
     Max?: string;
 }
-interface SpellClutterWeaponTrailDist{
+interface SpellClutterWeaponTrailDistDatabase{
     ID?: string;
     Level?: string;
     Min?: string;
     Max?: string;
 }
-interface SpellCraftUI{
+interface SpellClutterMissileDistDatabase{
+    ID?: string;
+    Level?: string;
+    Min?: string;
+    Max?: string;
+}
+interface SpellCraftUIDatabase{
     ID?: string;
     CastUI?: string;
 }
-interface SpellDifficulty{
-    ID?: string;
-    DifficultySpellID?: string;
-}
-interface SpellCooldowns{
+interface SpellCooldownsDatabase{
     ID?: string;
     SpellID?: string;
     DifficultyID?: string;
@@ -7331,28 +7327,39 @@ interface SpellCooldowns{
     RecoveryTime?: string;
     StartRecoveryTime?: string;
 }
-interface SpellDescriptionVariables{
+interface SpellDescriptionVariablesDatabase{
     ID?: string;
     Variables?: string;
 }
-interface SpellDuration{
+interface SpellDifficultyDatabase{
     ID?: string;
-    Duration?: string;
-    DurationPerLevel?: string;
-    MaxDuration?: string;
+    DifficultySpellID?: string;
 }
-interface SpellDispelType{
+interface SpellDispelTypeDatabase{
     ID?: string;
     Name_lang?: string;
     Mask?: string;
     ImmunityPossible?: string;
     InternalName?: string;
 }
-interface SpellEffectCameraShakes{
+interface SpellDurationDatabase{
+    ID?: string;
+    Duration?: string;
+    DurationPerLevel?: string;
+    MaxDuration?: string;
+}
+interface SpellEffectCameraShakesDatabase{
     ID?: string;
     CameraShake?: string;
 }
-interface SpellEffectScaling{
+interface SpellEffectEmissionDatabase{
+    ID?: string;
+    AreaModelID?: string;
+    EmissionRate?: string;
+    Flags?: string;
+    ModelScale?: string;
+}
+interface SpellEffectScalingDatabase{
     ID?: string;
     Coefficient?: string;
     Variance?: string;
@@ -7360,20 +7367,11 @@ interface SpellEffectScaling{
     SpellEffectID?: string;
     Field_5_4_0_17266_004?: string;
 }
-interface SpellEffectAutoDescription{
-    ID?: string;
-    AuraDescription_lang?: string;
-    AuraEffectType?: string;
-    AuraOrderIndex?: string;
-    EffectDescription_lang?: string;
-    EffectOrderIndex?: string;
-    PointsSign?: string;
-    SchoolMask?: string;
-    SpellEffectType?: string;
-    TargetType?: string;
-    OrderIndex?: string;
+interface SpellEffectNamesDatabase{
+    EnumID?: string;
+    Name_lang?: string;
 }
-interface SpellEffect{
+interface SpellEffectDatabase{
     ID?: string;
     DifficultyID?: string;
     Effect?: string;
@@ -7408,23 +7406,18 @@ interface SpellEffect{
     Field_7_3_2_25549_010?: string;
     Field_9_1_0_38511_023?: string;
 }
-interface SpellEffectEmission{
-    ID?: string;
-    AreaModelID?: string;
-    EmissionRate?: string;
-    Flags?: string;
-    ModelScale?: string;
-}
-interface SpellEffectNames{
-    EnumID?: string;
-    Name_lang?: string;
-}
-interface SpellEffectGroupSize{
+interface SpellEffectGroupSizeDatabase{
     ID?: string;
     SpellEffectID?: string;
     Coefficient?: string;
 }
-interface SpellEquippedItems{
+interface SpellFlyoutItemDatabase{
+    ID?: string;
+    SpellFlyoutID?: string;
+    SpellID?: string;
+    Slot?: string;
+}
+interface SpellEquippedItemsDatabase{
     ID?: string;
     SpellID?: string;
     DifficultyID?: string;
@@ -7432,7 +7425,15 @@ interface SpellEquippedItems{
     EquippedItemInvTypes?: string;
     EquippedItemSubclass?: string;
 }
-interface SpellFlyout{
+interface SpellIconDatabase{
+    ID?: string;
+    TextureFilename?: string;
+}
+interface SpellFocusObjectDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface SpellFlyoutDatabase{
     ID?: string;
     Flags?: string;
     RaceMask?: string;
@@ -7442,21 +7443,7 @@ interface SpellFlyout{
     Description_lang?: string;
     SpellIconFileID?: string;
 }
-interface SpellFocusObject{
-    ID?: string;
-    Name_lang?: string;
-}
-interface SpellIcon{
-    ID?: string;
-    TextureFilename?: string;
-}
-interface SpellFlyoutItem{
-    ID?: string;
-    SpellFlyoutID?: string;
-    SpellID?: string;
-    Slot?: string;
-}
-interface SpellInterrupts{
+interface SpellInterruptsDatabase{
     ID?: string;
     SpellID?: string;
     DifficultyID?: string;
@@ -7464,30 +7451,7 @@ interface SpellInterrupts{
     ChannelInterruptFlags?: string;
     InterruptFlags?: string;
 }
-interface SpellLabel{
-    ID?: string;
-    LabelID?: string;
-    SpellID?: string;
-}
-interface SpellItemEnchantmentCondition{
-    ID?: string;
-    Lt_operandType?: string;
-    Padding_6_0_1_18179_002?: string;
-    Lt_operand?: string;
-    Operator?: string;
-    Rt_operandType?: string;
-    Padding_6_0_1_18179_006?: string;
-    Rt_operand?: string;
-    Logic?: string;
-    Padding_6_0_1_18179_009?: string;
-    Field_7_3_2_25549_000?: string;
-    Field_7_3_2_25549_001?: string;
-    Field_7_3_2_25549_002?: string;
-    Field_7_3_2_25549_003?: string;
-    Field_7_3_2_25549_004?: string;
-    Field_7_3_2_25549_005?: string;
-}
-interface SpellItemEnchantment{
+interface SpellItemEnchantmentDatabase{
     ID?: string;
     Charges?: string;
     Effect?: string;
@@ -7517,7 +7481,12 @@ interface SpellItemEnchantment{
     Field_5_0_1_15464_015?: string;
     Field_5_0_1_15464_016?: string;
 }
-interface SpellKeyboundOverride{
+interface SpellLabelDatabase{
+    ID?: string;
+    LabelID?: string;
+    SpellID?: string;
+}
+interface SpellKeyboundOverrideDatabase{
     ID?: string;
     Function?: string;
     Data?: string;
@@ -7526,38 +7495,31 @@ interface SpellKeyboundOverride{
     Field_5_0_1_15657_002?: string;
     Field_9_1_0_38709_003?: string;
 }
-interface SpellLearnSpell{
-    ID?: string;
-    LearnSpellID?: string;
-    OverridesSpellID?: string;
-    SpellID?: string;
-}
-interface SpellLevels{
-    ID?: string;
-    SpellID?: string;
-    DifficultyID?: string;
-    BaseLevel?: string;
-    MaxLevel?: string;
-    SpellLevel?: string;
-    MaxPassiveAuraLevel?: string;
-}
-interface SpellMastery{
+interface SpellMasteryDatabase{
     ID?: string;
     SpellID?: string;
     Page?: string;
     ClassID?: string;
 }
-interface SpellMechanic{
+interface SpellItemEnchantmentConditionDatabase{
     ID?: string;
-    StateName_lang?: string;
-    State?: string;
+    Lt_operandType?: string;
+    Padding_6_0_1_18179_002?: string;
+    Lt_operand?: string;
+    Operator?: string;
+    Rt_operandType?: string;
+    Padding_6_0_1_18179_006?: string;
+    Rt_operand?: string;
+    Logic?: string;
+    Padding_6_0_1_18179_009?: string;
+    Field_7_3_2_25549_000?: string;
+    Field_7_3_2_25549_001?: string;
+    Field_7_3_2_25549_002?: string;
+    Field_7_3_2_25549_003?: string;
+    Field_7_3_2_25549_004?: string;
+    Field_7_3_2_25549_005?: string;
 }
-interface SpellMiscDifficulty{
-    SpellID?: string;
-    DifficultyID?: string;
-    SpellMiscID?: string;
-}
-interface SpellMisc{
+interface SpellMiscDatabase{
     ID?: string;
     SpellID?: string;
     DifficultyID?: string;
@@ -7579,14 +7541,40 @@ interface SpellMisc{
     SpellVisualScript?: string;
     ActiveSpellVisualScript?: string;
 }
-interface SpellMissileMotion{
+interface SpellLevelsDatabase{
     ID?: string;
-    Flags?: string;
-    MissileCount?: string;
-    Name?: string;
-    ScriptBody?: string;
+    SpellID?: string;
+    DifficultyID?: string;
+    BaseLevel?: string;
+    MaxLevel?: string;
+    SpellLevel?: string;
+    MaxPassiveAuraLevel?: string;
 }
-interface SpellMissile{
+interface SpellLearnSpellDatabase{
+    ID?: string;
+    LearnSpellID?: string;
+    OverridesSpellID?: string;
+    SpellID?: string;
+}
+interface SpellMechanicDatabase{
+    ID?: string;
+    StateName_lang?: string;
+    State?: string;
+}
+interface SpellEffectAutoDescriptionDatabase{
+    ID?: string;
+    AuraDescription_lang?: string;
+    AuraEffectType?: string;
+    AuraOrderIndex?: string;
+    EffectDescription_lang?: string;
+    EffectOrderIndex?: string;
+    PointsSign?: string;
+    SchoolMask?: string;
+    SpellEffectType?: string;
+    TargetType?: string;
+    OrderIndex?: string;
+}
+interface SpellMissileDatabase{
     ID?: string;
     CollisionRadius?: string;
     DefaultPitchMax?: string;
@@ -7604,39 +7592,29 @@ interface SpellMissile{
     RandomizeSpeedMin?: string;
     SpellID?: string;
 }
-interface SpellOverrideName{
+interface SpellMissileMotionDatabase{
+    ID?: string;
+    Flags?: string;
+    MissileCount?: string;
+    Name?: string;
+    ScriptBody?: string;
+}
+interface SpellNameDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface SpellMiscDifficultyDatabase{
+    SpellID?: string;
+    DifficultyID?: string;
+    SpellMiscID?: string;
+}
+interface SpellOverrideNameDatabase{
     ID?: string;
     OverrideName_lang?: string;
     Flags?: string;
     Field_9_1_0_38709_001_lang?: string;
 }
-interface SpellProceduralEffect{
-    ID?: string;
-    Type?: string;
-    Value?: string;
-}
-interface SpellPowerDifficulty{
-    ID?: string;
-    DifficultyID?: string;
-    OrderIndex?: string;
-}
-interface SpellName{
-    ID?: string;
-    Name_lang?: string;
-}
-interface SpellProcsPerMinute{
-    ID?: string;
-    BaseProcRate?: string;
-    Flags?: string;
-}
-interface SpellProcsPerMinuteMod{
-    ID?: string;
-    Type?: string;
-    Param?: string;
-    Coeff?: string;
-    SpellProcsPerMinuteID?: string;
-}
-interface SpellPower{
+interface SpellPowerDatabase{
     Field_6_0_1_18179_012?: string;
     ID?: string;
     AltPowerBarID?: string;
@@ -7654,13 +7632,36 @@ interface SpellPower{
     SpellID?: string;
     PowerCost?: string;
 }
-interface SpellReagentsCurrency{
+interface SpellProceduralEffectDatabase{
     ID?: string;
-    CurrencyCount?: string;
-    CurrencyTypesID?: string;
-    SpellID?: string;
+    Type?: string;
+    Value?: string;
 }
-interface SpellRange{
+interface SpellPowerDifficultyDatabase{
+    ID?: string;
+    DifficultyID?: string;
+    OrderIndex?: string;
+}
+interface SpellProcsPerMinuteDatabase{
+    ID?: string;
+    BaseProcRate?: string;
+    Flags?: string;
+}
+interface SpellProcsPerMinuteModDatabase{
+    ID?: string;
+    Type?: string;
+    Param?: string;
+    Coeff?: string;
+    SpellProcsPerMinuteID?: string;
+}
+interface SpellRadiusDatabase{
+    ID?: string;
+    Radius?: string;
+    RadiusPerLevel?: string;
+    RadiusMin?: string;
+    RadiusMax?: string;
+}
+interface SpellRangeDatabase{
     ID?: string;
     RangeMin?: string;
     RangeMax?: string;
@@ -7668,30 +7669,7 @@ interface SpellRange{
     DisplayName_lang?: string;
     DisplayNameShort_lang?: string;
 }
-interface SpellRadius{
-    ID?: string;
-    Radius?: string;
-    RadiusPerLevel?: string;
-    RadiusMin?: string;
-    RadiusMax?: string;
-}
-interface SpellReagents{
-    ID?: string;
-    SpellID?: string;
-    Reagent?: string;
-    ReagentCount?: string;
-    CurrencyID?: string;
-    CurrencyCount?: string;
-}
-interface SpellScript{
-    Name?: string;
-    Script?: string;
-    LastEditUser?: string;
-    ID?: string;
-    Field_9_0_1_33978_004?: string;
-    Arguments?: string;
-}
-interface SpellRuneCost{
+interface SpellRuneCostDatabase{
     ID?: string;
     Blood?: string;
     Unholy?: string;
@@ -7700,7 +7678,21 @@ interface SpellRuneCost{
     RunicPower?: string;
     Field_3_0_1_8303_004?: string;
 }
-interface SpellScaling{
+interface SpellReagentsCurrencyDatabase{
+    ID?: string;
+    CurrencyCount?: string;
+    CurrencyTypesID?: string;
+    SpellID?: string;
+}
+interface SpellReagentsDatabase{
+    ID?: string;
+    SpellID?: string;
+    Reagent?: string;
+    ReagentCount?: string;
+    CurrencyID?: string;
+    CurrencyCount?: string;
+}
+interface SpellScalingDatabase{
     ID?: string;
     CastTimeMin?: string;
     CastTimeMax?: string;
@@ -7716,21 +7708,35 @@ interface SpellScaling{
     Variance?: string;
     ComboPointsCoefficient?: string;
 }
-interface SpellScriptText{
+interface SpellScriptDatabase{
+    Name?: string;
+    Script?: string;
+    LastEditUser?: string;
+    ID?: string;
+    Field_9_0_1_33978_004?: string;
+    Arguments?: string;
+}
+interface SpellScriptTextDatabase{
     Script?: string;
     ID?: string;
     PrevText?: string;
     NextText?: string;
     SpellScriptID?: string;
 }
-interface SpellShapeshift{
+interface SpellShapeshiftDatabase{
     ID?: string;
     ShapeshiftExclude?: string;
     ShapeshiftMask?: string;
     StanceBarOrder?: string;
     SpellID?: string;
 }
-interface SpellShapeshiftForm{
+interface SpellSpecialUnitEffectDatabase{
+    EnumID?: string;
+    SpellVisualEffectNameID?: string;
+    ID?: string;
+    PositionerID?: string;
+}
+interface SpellShapeshiftFormDatabase{
     ID?: string;
     BonusActionBar?: string;
     Name_lang?: string;
@@ -7745,13 +7751,7 @@ interface SpellShapeshiftForm{
     AttackIconFileID?: string;
     DamageVariance?: string;
 }
-interface SpellSpecialUnitEffect{
-    EnumID?: string;
-    SpellVisualEffectNameID?: string;
-    ID?: string;
-    PositionerID?: string;
-}
-interface SpellTargetRestrictions{
+interface SpellTargetRestrictionsDatabase{
     ID?: string;
     SpellID?: string;
     DifficultyID?: string;
@@ -7763,23 +7763,23 @@ interface SpellTargetRestrictions{
     Targets?: string;
     ConeDegrees?: string;
 }
-interface SpellTotems{
-    ID?: string;
-    RequiredTotemCategoryID?: string;
-    Totem?: string;
-    SpellID?: string;
-}
-interface SpellVisualAnimName{
-    AnimID?: string;
-    Name?: string;
-}
-interface SpellVisualAnim{
+interface SpellVisualAnimDatabase{
     ID?: string;
     AnimKitID?: string;
     InitialAnimID?: string;
     LoopAnimID?: string;
 }
-interface SpellVisual{
+interface SpellTotemsDatabase{
+    ID?: string;
+    RequiredTotemCategoryID?: string;
+    Totem?: string;
+    SpellID?: string;
+}
+interface SpellVisualAnimNameDatabase{
+    AnimID?: string;
+    Name?: string;
+}
+interface SpellVisualDatabase{
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_006?: string;
     Field_6_0_1_18179_007?: string;
@@ -7854,21 +7854,7 @@ interface SpellVisual{
     Field_5_4_0_17266_024?: string;
     ReducedUnexpectedCameraMovementSpellVisualID?: string;
 }
-interface SpellVisualColorEffect{
-    ID?: string;
-    AlphaCurveID?: string;
-    BlueCurveID?: string;
-    Color?: string;
-    ColorMultiplier?: string;
-    Duration?: string;
-    Flags?: string;
-    GreenCurveID?: string;
-    OpacityCurveID?: string;
-    PositionerID?: string;
-    RedCurveID?: string;
-    Type?: string;
-}
-interface SpellVisualEffectName{
+interface SpellVisualEffectNameDatabase{
     Padding_5_4_0_17266_007?: string;
     ID?: string;
     Alpha?: string;
@@ -7894,7 +7880,50 @@ interface SpellVisualEffectName{
     Field_2_0_0_6080_003?: string;
     Field_9_1_0_38549_014?: string;
 }
-interface SpellVisualKit{
+interface SpellVisualColorEffectDatabase{
+    ID?: string;
+    AlphaCurveID?: string;
+    BlueCurveID?: string;
+    Color?: string;
+    ColorMultiplier?: string;
+    Duration?: string;
+    Flags?: string;
+    GreenCurveID?: string;
+    OpacityCurveID?: string;
+    PositionerID?: string;
+    RedCurveID?: string;
+    Type?: string;
+}
+interface SpellVisualEventDatabase{
+    ID?: string;
+    EndEvent?: string;
+    EndMaxOffsetMs?: string;
+    EndMinOffsetMs?: string;
+    SpellVisualID?: string;
+    SpellVisualKitID?: string;
+    StartEvent?: string;
+    StartMaxOffsetMs?: string;
+    StartMinOffsetMs?: string;
+    TargetType?: string;
+}
+interface SpellVisualKitAreaModelDatabase{
+    ID?: string;
+    EmissionRate?: string;
+    Flags?: string;
+    LifeTime?: string;
+    ModelFileDataID?: string;
+    ModelScale?: string;
+    Spacing?: string;
+    Name?: string;
+    EnumID?: string;
+}
+interface SpellVisualKitEffectDatabase{
+    ID?: string;
+    Effect?: string;
+    EffectType?: string;
+    ParentSpellVisualKitID?: string;
+}
+interface SpellVisualKitDatabase{
     ID?: string;
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
@@ -7950,36 +7979,7 @@ interface SpellVisualKit{
     ClutterLevel?: string;
     Field_7_3_2_25549_001?: string;
 }
-interface SpellVisualEvent{
-    ID?: string;
-    EndEvent?: string;
-    EndMaxOffsetMs?: string;
-    EndMinOffsetMs?: string;
-    SpellVisualID?: string;
-    SpellVisualKitID?: string;
-    StartEvent?: string;
-    StartMaxOffsetMs?: string;
-    StartMinOffsetMs?: string;
-    TargetType?: string;
-}
-interface SpellVisualKitAreaModel{
-    ID?: string;
-    EmissionRate?: string;
-    Flags?: string;
-    LifeTime?: string;
-    ModelFileDataID?: string;
-    ModelScale?: string;
-    Spacing?: string;
-    Name?: string;
-    EnumID?: string;
-}
-interface SpellVisualKitEffect{
-    ID?: string;
-    Effect?: string;
-    EffectType?: string;
-    ParentSpellVisualKitID?: string;
-}
-interface SpellVisualKitModelAttach{
+interface SpellVisualKitModelAttachDatabase{
     Field_6_0_1_18179_008?: string;
     Field_6_0_1_18179_013?: string;
     Field_6_0_1_18179_014?: string;
@@ -8009,18 +8009,23 @@ interface SpellVisualKitModelAttach{
     Field_9_0_1_33978_021?: string;
     Field_7_3_2_25549_000?: string;
 }
-interface SpellVisualKitPicker{
-    ID?: string;
-    PlayerConditionID?: string;
-    Field_9_0_5_37503_002?: string;
-}
-interface SpellVisualKitPickerEntry{
+interface SpellVisualKitPickerEntryDatabase{
     ID?: string;
     SpellVisualKitID?: string;
     Probability?: string;
     SpellVisualKitPickerID?: string;
 }
-interface SpellVisualMissile{
+interface SpellVisualKitPickerDatabase{
+    ID?: string;
+    PlayerConditionID?: string;
+    Field_9_0_5_37503_002?: string;
+}
+interface SpellVisualPrecastTransitionsDatabase{
+    ID?: string;
+    PrecastLoadAnimName?: string;
+    PrecastHoldAnimName?: string;
+}
+interface SpellVisualMissileDatabase{
     ID?: string;
     AnimKitID?: string;
     Attachment?: string;
@@ -8041,31 +8046,21 @@ interface SpellVisualMissile{
     Field_9_0_1_33978_016?: string;
     Field_5_4_0_17266_006?: string;
 }
-interface SpellVisualPrecastTransitions{
-    ID?: string;
-    PrecastLoadAnimName?: string;
-    PrecastHoldAnimName?: string;
-}
-interface SpellVisualScreenEffect{
+interface SpellVisualScreenEffectDatabase{
     ID?: string;
     ScreenEffectID?: string;
     ScreenEffectTypeID?: string;
 }
-interface SpellXDescriptionVariables{
+interface SpellXDescriptionVariablesDatabase{
     ID?: string;
     SpellDescriptionVariablesID?: string;
     SpellID?: string;
 }
-interface StableSlotPrices{
+interface StableSlotPricesDatabase{
     ID?: string;
     Cost?: string;
 }
-interface Startup_Strings{
-    ID?: string;
-    Name?: string;
-    Message_lang?: string;
-}
-interface SpellXSpellVisual{
+interface SpellXSpellVisualDatabase{
     ID?: string;
     ActiveIconFileID?: string;
     CasterPlayerConditionID?: string;
@@ -8081,20 +8076,33 @@ interface SpellXSpellVisual{
     ViewerUnitConditionID?: string;
     Field_7_3_2_25549_003?: string;
 }
-interface StartupFiles{
+interface StartupFilesDatabase{
     ID?: string;
     BytesRequired?: string;
     FileDataID?: string;
     Locale?: string;
 }
-interface Stationery{
+interface Startup_StringsDatabase{
+    ID?: string;
+    Name?: string;
+    Message_lang?: string;
+}
+interface StationeryDatabase{
     ID?: string;
     ItemID?: string;
     Texture?: string;
     Flags?: string;
     TextureFileDataID?: string;
 }
-interface SummonProperties{
+interface StringLookupsDatabase{
+    ID?: string;
+    String?: string;
+}
+interface TabardBackgroundTexturesDatabase{
+    ID?: string;
+    TorsoTexture?: string;
+}
+interface SummonPropertiesDatabase{
     ID?: string;
     Control?: string;
     Faction?: string;
@@ -8102,23 +8110,33 @@ interface SummonProperties{
     Slot?: string;
     Flags?: string;
 }
-interface StringLookups{
-    ID?: string;
-    String?: string;
-}
-interface TabardBackgroundTextures{
-    ID?: string;
-    TorsoTexture?: string;
-}
-interface TabardEmblemTextures{
-    ID?: string;
-    TorsoTexture?: string;
-}
-interface TactKey{
+interface TactKeyDatabase{
     ID?: string;
     Key?: string;
 }
-interface Talent{
+interface TabardEmblemTexturesDatabase{
+    ID?: string;
+    TorsoTexture?: string;
+}
+interface TactKeyLookupDatabase{
+    ID?: string;
+    TACTID?: string;
+}
+interface TalentTabDatabase{
+    ID?: string;
+    Name_lang?: string;
+    SpellIconID?: string;
+    RaceMask?: string;
+    ClassMask?: string;
+    PetTalentMask?: string;
+    OrderIndex?: string;
+    BackgroundFile?: string;
+    CategoryEnumID?: string;
+    Description_lang?: string;
+    RoleMask?: string;
+    MasterySpellID?: string;
+}
+interface TalentDatabase{
     ID?: string;
     SpecID?: string;
     TierID?: string;
@@ -8135,17 +8153,13 @@ interface Talent{
     PrereqRank?: string;
     RequiredSpellID?: string;
 }
-interface TactKeyLookup{
-    ID?: string;
-    TACTID?: string;
-}
-interface TalentTreePrimarySpells{
+interface TalentTreePrimarySpellsDatabase{
     ID?: string;
     TalentTabID?: string;
     SpellID?: string;
     Flags?: string;
 }
-interface TaxiNodes{
+interface TaxiNodesDatabase{
     ID?: string;
     ContinentID?: string;
     Pos?: string;
@@ -8162,27 +8176,24 @@ interface TaxiNodes{
     MinimapAtlasMemberID?: string;
     VisibilityConditionID?: string;
 }
-interface TalentTab{
+interface TeamContributionPointsDatabase{
     ID?: string;
-    Name_lang?: string;
-    SpellIconID?: string;
-    RaceMask?: string;
-    ClassMask?: string;
-    PetTalentMask?: string;
-    OrderIndex?: string;
-    BackgroundFile?: string;
-    CategoryEnumID?: string;
-    Description_lang?: string;
-    RoleMask?: string;
-    MasterySpellID?: string;
+    Data?: string;
 }
-interface TaxiPath{
+interface TaxiPathDatabase{
     ID?: string;
     FromTaxiNode?: string;
     ToTaxiNode?: string;
     Cost?: string;
 }
-interface TaxiPathNode{
+interface TerrainColorGradingRampDatabase{
+    ID?: string;
+    Min?: string;
+    Max?: string;
+    Texture0?: string;
+    Texture1?: string;
+}
+interface TaxiPathNodeDatabase{
     ID?: string;
     PathID?: string;
     NodeIndex?: string;
@@ -8193,11 +8204,19 @@ interface TaxiPathNode{
     ArrivalEventID?: string;
     DepartureEventID?: string;
 }
-interface TeamContributionPoints{
+interface TerrainMaterialDatabase{
     ID?: string;
-    Data?: string;
+    Name?: string;
+    Shader?: string;
+    EnvMapPath?: string;
+    EnvMapDiffuseFileID?: string;
+    EnvMapSpecularFileID?: string;
 }
-interface TerrainType{
+interface TerrainTypeSoundsDatabase{
+    ID?: string;
+    Name?: string;
+}
+interface TerrainTypeDatabase{
     ID?: string;
     TerrainID?: string;
     TerrainDesc?: string;
@@ -8206,26 +8225,7 @@ interface TerrainType{
     SoundID?: string;
     Flags?: string;
 }
-interface TerrainMaterial{
-    ID?: string;
-    Name?: string;
-    Shader?: string;
-    EnvMapPath?: string;
-    EnvMapDiffuseFileID?: string;
-    EnvMapSpecularFileID?: string;
-}
-interface TerrainColorGradingRamp{
-    ID?: string;
-    Min?: string;
-    Max?: string;
-    Texture0?: string;
-    Texture1?: string;
-}
-interface TerrainTypeSounds{
-    ID?: string;
-    Name?: string;
-}
-interface TextureBlendSet{
+interface TextureBlendSetDatabase{
     ID?: string;
     ModX?: string;
     SwizzleAlpha?: string;
@@ -8239,7 +8239,7 @@ interface TextureBlendSet{
     TextureScrollRateV?: string;
     Flags?: string;
 }
-interface TextureFileData{
+interface TextureFileDataDatabase{
     Field_6_0_1_18179_000?: string;
     Field_6_0_1_18179_001?: string;
     Field_6_0_1_18179_002?: string;
@@ -8247,27 +8247,14 @@ interface TextureFileData{
     MaterialResourcesID?: string;
     UsageType?: string;
 }
-interface TierTransition{
+interface TierTransitionDatabase{
     ID?: string;
     Field_9_0_1_33978_000_tier?: string;
     Field_9_0_1_33978_001_animationdataID?: string;
     Field_9_0_1_33978_002_animationdataID?: string;
     Field_9_0_1_33978_003_milliseconds?: string;
 }
-interface TotemCategory{
-    ID?: string;
-    Name_lang?: string;
-    TotemCategoryType?: string;
-    TotemCategoryMask?: string;
-}
-interface Toy{
-    ID?: string;
-    Flags?: string;
-    ItemID?: string;
-    SourceText_lang?: string;
-    SourceTypeEnum?: string;
-}
-interface TradeSkillCategory{
+interface TradeSkillCategoryDatabase{
     ID?: string;
     SkillLineID?: string;
     ParentTradeSkillCategoryID?: string;
@@ -8276,7 +8263,31 @@ interface TradeSkillCategory{
     Flags?: string;
     HordeName_lang?: string;
 }
-interface TransformMatrix{
+interface TotemCategoryDatabase{
+    ID?: string;
+    Name_lang?: string;
+    TotemCategoryType?: string;
+    TotemCategoryMask?: string;
+}
+interface ToyDatabase{
+    ID?: string;
+    Flags?: string;
+    ItemID?: string;
+    SourceText_lang?: string;
+    SourceTypeEnum?: string;
+}
+interface TradeSkillItemDatabase{
+    ID?: string;
+    ItemLevel?: string;
+    RequiredLevel?: string;
+}
+interface TransmogDefaultLevelDatabase{
+    ID?: string;
+    ExpansionID?: string;
+    Characterlevel?: string;
+    PlayerConditionID?: string;
+}
+interface TransformMatrixDatabase{
     ID?: string;
     Pitch?: string;
     Pos?: string;
@@ -8284,33 +8295,11 @@ interface TransformMatrix{
     Scale?: string;
     Yaw?: string;
 }
-interface TradeSkillItem{
-    ID?: string;
-    ItemLevel?: string;
-    RequiredLevel?: string;
-}
-interface TransmogIllusion{
-    ID?: string;
-    UnlockConditionID?: string;
-    TransmogCost?: string;
-    SpellItemEnchantmentID?: string;
-    Flags?: string;
-}
-interface TransmogHoliday{
+interface TransmogHolidayDatabase{
     ID?: string;
     RequiredTransmogHoliday?: string;
 }
-interface TransmogDefaultLevel{
-    ID?: string;
-    ExpansionID?: string;
-    Characterlevel?: string;
-    PlayerConditionID?: string;
-}
-interface TransmogSetGroup{
-    ID?: string;
-    Name_lang?: string;
-}
-interface TransmogSet{
+interface TransmogSetDatabase{
     ID?: string;
     ClassMask?: string;
     ExpansionID?: string;
@@ -8325,7 +8314,24 @@ interface TransmogSet{
     PatchIntroduced?: string;
     ConditionID?: string;
 }
-interface TransportPhysics{
+interface TransmogIllusionDatabase{
+    ID?: string;
+    UnlockConditionID?: string;
+    TransmogCost?: string;
+    SpellItemEnchantmentID?: string;
+    Flags?: string;
+}
+interface TransmogSetItemDatabase{
+    ID?: string;
+    Flags?: string;
+    ItemModifiedAppearanceID?: string;
+    TransmogSetID?: string;
+}
+interface TransmogSetGroupDatabase{
+    ID?: string;
+    Name_lang?: string;
+}
+interface TransportPhysicsDatabase{
     ID?: string;
     WaveAmp?: string;
     WaveTimeScale?: string;
@@ -8338,60 +8344,27 @@ interface TransportPhysics{
     SpeedDampThresh?: string;
     SpeedDamp?: string;
 }
-interface TransportAnimation{
+interface TransportAnimationDatabase{
     ID?: string;
     TransportID?: string;
     TimeIndex?: string;
     Pos?: string;
     SequenceID?: string;
 }
-interface TransmogSetItem{
-    ID?: string;
-    Flags?: string;
-    ItemModifiedAppearanceID?: string;
-    TransmogSetID?: string;
-}
-interface TransportRotation{
+interface TransportRotationDatabase{
     ID?: string;
     GameObjectsID?: string;
     TimeIndex?: string;
     Rot?: string;
 }
-interface Trophy{
+interface TrophyDatabase{
     ID?: string;
     GameObjectDisplayInfoID?: string;
     Name_lang?: string;
     PlayerConditionID?: string;
     TrophyTypeID?: string;
 }
-interface UIChromieTimeExpansionInfo{
-    Name_lang?: string;
-    Description_lang?: string;
-    ID?: string;
-    SpellID?: string;
-    UiTextureAtlasElementLarge?: string;
-    UiTextureAtlasElementSmall?: string;
-    AlreadyOn?: string;
-    ExpansionLevelMask?: string;
-    ContentTuningID?: string;
-    Completed?: string;
-    DescriptionAlliance_lang?: string;
-    DescriptionHorde_lang?: string;
-}
-interface TrophyInstance{
-    ID?: string;
-}
-interface TrophyType{
-    ID?: string;
-}
-interface UICovenantAbility{
-    ID?: string;
-    CovenantPreviewID?: string;
-    SpellID?: string;
-    AbilityType?: string;
-    SoulbindDisplayInfoID?: string;
-}
-interface UICovenantPreview{
+interface UICovenantPreviewDatabase{
     ID?: string;
     CovenantID?: string;
     UiMapID?: string;
@@ -8409,7 +8382,27 @@ interface UICovenantPreview{
     FeatureDescription_lang?: string;
     FeatureTextureID?: string;
 }
-interface UIDungeonScoreRarity{
+interface TrophyInstanceDatabase{
+    ID?: string;
+}
+interface TrophyTypeDatabase{
+    ID?: string;
+}
+interface UIChromieTimeExpansionInfoDatabase{
+    Name_lang?: string;
+    Description_lang?: string;
+    ID?: string;
+    SpellID?: string;
+    UiTextureAtlasElementLarge?: string;
+    UiTextureAtlasElementSmall?: string;
+    AlreadyOn?: string;
+    ExpansionLevelMask?: string;
+    ContentTuningID?: string;
+    Completed?: string;
+    DescriptionAlliance_lang?: string;
+    DescriptionHorde_lang?: string;
+}
+interface UIDungeonScoreRarityDatabase{
     ID?: string;
     ScoreColor?: string;
     DungeonScoreMin?: string;
@@ -8422,7 +8415,54 @@ interface UIDungeonScoreRarity{
     Field_9_1_0_38950_009?: string;
     Field_9_1_0_38950_010?: string;
 }
-interface UIScriptedAnimationEffect{
+interface UICovenantAbilityDatabase{
+    ID?: string;
+    CovenantPreviewID?: string;
+    SpellID?: string;
+    AbilityType?: string;
+    SoulbindDisplayInfoID?: string;
+}
+interface UIEventToastDatabase{
+    Title_lang?: string;
+    Subtitle_lang?: string;
+    InstructionText_lang?: string;
+    SubIcon_lang?: string;
+    EventToastID?: string;
+    PlayerConditionID?: string;
+    UiTextureAtlasMemberID?: string;
+    UiTextureKitID?: string;
+    EventType?: string;
+    DisplayType?: string;
+    EventAsset?: string;
+    Field_9_1_0_38312_011?: string;
+    IconFileID?: string;
+    UiWidgetSetID?: string;
+    ExtraUiWidgetSetID?: string;
+    TitleTooltip_lang?: string;
+    SubtitleTooltip_lang?: string;
+    TitleTooltipUiWidgetSetID?: string;
+    SubtitleTooltipUiWidgetSetID?: string;
+    ShowSoundKitID?: string;
+    HideSoundKitID?: string;
+}
+interface UIExpansionDisplayInfoIconDatabase{
+    ID?: string;
+    FeatureDescription_lang?: string;
+    FeatureIcon?: string;
+    ParentID?: string;
+}
+interface UIExpansionDisplayInfoDatabase{
+    ID?: string;
+    ExpansionBanner?: string;
+    ExpansionLevel?: string;
+    ExpansionLogo?: string;
+}
+interface UISoundLookupsDatabase{
+    ID?: string;
+    SoundID?: string;
+    SoundName?: string;
+}
+interface UIScriptedAnimationEffectDatabase{
     ID?: string;
     Visual?: string;
     VisualScale?: string;
@@ -8451,47 +8491,7 @@ interface UIScriptedAnimationEffect{
     ParticleOverrideScale?: string;
     Flags?: string;
 }
-interface UIExpansionDisplayInfo{
-    ID?: string;
-    ExpansionBanner?: string;
-    ExpansionLevel?: string;
-    ExpansionLogo?: string;
-}
-interface UIExpansionDisplayInfoIcon{
-    ID?: string;
-    FeatureDescription_lang?: string;
-    FeatureIcon?: string;
-    ParentID?: string;
-}
-interface UISoundLookups{
-    ID?: string;
-    SoundID?: string;
-    SoundName?: string;
-}
-interface UIEventToast{
-    Title_lang?: string;
-    Subtitle_lang?: string;
-    InstructionText_lang?: string;
-    SubIcon_lang?: string;
-    EventToastID?: string;
-    PlayerConditionID?: string;
-    UiTextureAtlasMemberID?: string;
-    UiTextureKitID?: string;
-    EventType?: string;
-    DisplayType?: string;
-    EventAsset?: string;
-    Field_9_1_0_38312_011?: string;
-    IconFileID?: string;
-    UiWidgetSetID?: string;
-    ExtraUiWidgetSetID?: string;
-    TitleTooltip_lang?: string;
-    SubtitleTooltip_lang?: string;
-    TitleTooltipUiWidgetSetID?: string;
-    SubtitleTooltipUiWidgetSetID?: string;
-    ShowSoundKitID?: string;
-    HideSoundKitID?: string;
-}
-interface UiCamFbackTransmogChrRace{
+interface UiCamFbackTransmogChrRaceDatabase{
     ID?: string;
     ChrRaceID?: string;
     Gender?: string;
@@ -8499,7 +8499,7 @@ interface UiCamFbackTransmogChrRace{
     UiCameraID?: string;
     Variation?: string;
 }
-interface UISplashScreen{
+interface UISplashScreenDatabase{
     Header_lang?: string;
     TopLeftFeatureTitle_lang?: string;
     TopLeftFeatureDesc_lang?: string;
@@ -8517,14 +8517,14 @@ interface UISplashScreen{
     Field_9_0_1_33978_014?: string;
     Field_9_0_1_33978_015?: string;
 }
-interface UiCamFbackTransmogWeapon{
+interface UiCamFbackTransmogWeaponDatabase{
     ID?: string;
     InventoryType?: string;
     ItemClass?: string;
     ItemSubclass?: string;
     UiCameraID?: string;
 }
-interface UiCamera{
+interface UiCameraDatabase{
     ID?: string;
     AnimFrame?: string;
     AnimID?: string;
@@ -8536,12 +8536,33 @@ interface UiCamera{
     UiCameraTypeID?: string;
     Up?: string;
 }
-interface UiCanvas{
+interface UiCameraTypeDatabase{
+    ID?: string;
+    Height?: string;
+    Name?: string;
+    Width?: string;
+}
+interface UiCanvasDatabase{
     ID?: string;
     Height?: string;
     Width?: string;
 }
-interface UiItemInteraction{
+interface UiCovenantDisplayInfoDatabase{
+    ID?: string;
+    CovenantID?: string;
+    UiTextureKitID?: string;
+    CelebrationSoundKitID?: string;
+    AnimaChannelSelectSoundKitID?: string;
+    AnimaChannelActiveSoundKitID?: string;
+    AnimaGemsFullSoundKitID?: string;
+    AnimaNewGemSoundKitID?: string;
+    AnimaReinforceSelectSoundKitID?: string;
+    UpgradeTabSelectSoundKitID?: string;
+    ReservoirFullSoundKitID?: string;
+    BeginResearchSoundKitID?: string;
+    RenownFanfareSoundKitID?: string;
+}
+interface UiItemInteractionDatabase{
     ID?: string;
     CloseSoundKitID?: string;
     OpenSoundKitID?: string;
@@ -8558,28 +8579,7 @@ interface UiItemInteraction{
     TakeOutSlotSoundKitID?: string;
     DropInSlotSoundKitID?: string;
 }
-interface UiCovenantDisplayInfo{
-    ID?: string;
-    CovenantID?: string;
-    UiTextureKitID?: string;
-    CelebrationSoundKitID?: string;
-    AnimaChannelSelectSoundKitID?: string;
-    AnimaChannelActiveSoundKitID?: string;
-    AnimaGemsFullSoundKitID?: string;
-    AnimaNewGemSoundKitID?: string;
-    AnimaReinforceSelectSoundKitID?: string;
-    UpgradeTabSelectSoundKitID?: string;
-    ReservoirFullSoundKitID?: string;
-    BeginResearchSoundKitID?: string;
-    RenownFanfareSoundKitID?: string;
-}
-interface UiCameraType{
-    ID?: string;
-    Height?: string;
-    Name?: string;
-    Width?: string;
-}
-interface UiMap{
+interface UiMapDatabase{
     ID?: string;
     BkgFileDataID?: string;
     BountyDisplayLocation?: string;
@@ -8597,13 +8597,13 @@ interface UiMap{
     AlternateUiMapGroup?: string;
     ContentTuningID?: string;
 }
-interface UiMapArt{
+interface UiMapArtDatabase{
     ID?: string;
     HighlightFileDataID?: string;
     UiMapArtStyleID?: string;
     HighlightAtlasID?: string;
 }
-interface UiMapArtStyleLayer{
+interface UiMapArtStyleLayerDatabase{
     ID?: string;
     AdditionalZoomSteps?: string;
     LayerHeight?: string;
@@ -8615,7 +8615,7 @@ interface UiMapArtStyleLayer{
     TileWidth?: string;
     UiMapArtStyleID?: string;
 }
-interface UiMapAssignment{
+interface UiMapAssignmentDatabase{
     ID?: string;
     AreaID?: string;
     MapID?: string;
@@ -8627,7 +8627,7 @@ interface UiMapAssignment{
     WMODoodadPlacementID?: string;
     WMOGroupID?: string;
 }
-interface UiMapArtTile{
+interface UiMapArtTileDatabase{
     ID?: string;
     ColIndex?: string;
     FileDataID?: string;
@@ -8635,19 +8635,19 @@ interface UiMapArtTile{
     RowIndex?: string;
     UiMapArtID?: string;
 }
-interface UiMapFogOfWar{
+interface UiMapFogOfWarDatabase{
     ID?: string;
     PlayerConditionID?: string;
     UiMapFogOfWarVisID?: string;
     UiMapID?: string;
 }
-interface UiMapFogOfWarVisualization{
+interface UiMapFogOfWarVisualizationDatabase{
     ID?: string;
     BackgroundAtlasID?: string;
     MaskAtlasID?: string;
     MaskScalar?: string;
 }
-interface UiMapGroupMember{
+interface UiMapGroupMemberDatabase{
     ID?: string;
     FloorIndex?: string;
     Name_lang?: string;
@@ -8655,16 +8655,7 @@ interface UiMapGroupMember{
     UiMapGroupID?: string;
     UiMapID?: string;
 }
-interface UiMapPOI{
-    ID?: string;
-    ContinentID?: string;
-    Flags?: string;
-    PoiData?: string;
-    PoiDataType?: string;
-    UiTextureAtlasMemberID?: string;
-    WorldLoc?: string;
-}
-interface UiMapLink{
+interface UiMapLinkDatabase{
     ID?: string;
     ChildUiMapID?: string;
     OrderIndex?: string;
@@ -8675,18 +8666,27 @@ interface UiMapLink{
     OverrideHighlightAtlasID?: string;
     Flags?: string;
 }
-interface UiMapXMapArt{
+interface UiMapPOIDatabase{
+    ID?: string;
+    ContinentID?: string;
+    Flags?: string;
+    PoiData?: string;
+    PoiDataType?: string;
+    UiTextureAtlasMemberID?: string;
+    WorldLoc?: string;
+}
+interface UiMapXMapArtDatabase{
     ID?: string;
     PhaseID?: string;
     UiMapArtID?: string;
     UiMapID?: string;
 }
-interface UiModelScene{
+interface UiModelSceneDatabase{
     ID?: string;
     Flags?: string;
     UiSystemType?: string;
 }
-interface UiModelSceneActor{
+interface UiModelSceneActorDatabase{
     ID?: string;
     Flags?: string;
     NormalizedScale?: string;
@@ -8698,7 +8698,7 @@ interface UiModelSceneActor{
     UiModelSceneActorDisplayID?: string;
     UiModelSceneID?: string;
 }
-interface UiModelSceneActorDisplay{
+interface UiModelSceneActorDisplayDatabase{
     ID?: string;
     Alpha?: string;
     AnimSpeed?: string;
@@ -8708,24 +8708,7 @@ interface UiModelSceneActorDisplay{
     AnimKitID?: string;
     SpellVisualKitID?: string;
 }
-interface UiPartyPose{
-    ID?: string;
-    MapID?: string;
-    UiModelSceneID?: string;
-    UiWidgetSetID?: string;
-    VictoryUiModelSceneID?: string;
-    DefeatUiModelSceneID?: string;
-    VictorySoundKitID?: string;
-    DefeatSoundKitID?: string;
-}
-interface UiQuestDetailsTheme{
-    ID?: string;
-    Signature_lang?: string;
-    BackgroundTexture?: string;
-    SealTexture?: string;
-    PoiIcon?: string;
-}
-interface UiModelSceneCamera{
+interface UiModelSceneCameraDatabase{
     ID?: string;
     CameraType?: string;
     Flags?: string;
@@ -8743,27 +8726,36 @@ interface UiModelSceneCamera{
     ZoomedTargetOffset?: string;
     ZoomedYawOffset?: string;
 }
-interface UiTextureAtlas{
+interface UiPartyPoseDatabase{
+    ID?: string;
+    MapID?: string;
+    UiModelSceneID?: string;
+    UiWidgetSetID?: string;
+    VictoryUiModelSceneID?: string;
+    DefeatUiModelSceneID?: string;
+    VictorySoundKitID?: string;
+    DefeatSoundKitID?: string;
+}
+interface UiQuestDetailsThemeDatabase{
+    ID?: string;
+    Signature_lang?: string;
+    BackgroundTexture?: string;
+    SealTexture?: string;
+    PoiIcon?: string;
+}
+interface UiTextureAtlasDatabase{
     ID?: string;
     AtlasHeight?: string;
     AtlasWidth?: string;
     FileDataID?: string;
     UiCanvasID?: string;
 }
-interface UiTextureAtlasElement{
-    ID?: string;
-    Name?: string;
-}
-interface UiTextureAtlasElementOverride{
+interface UiTextureAtlasElementOverrideDatabase{
     ID?: string;
     UiTextureAtlasElement?: string;
     ReplacementElement?: string;
 }
-interface UiTextureKit{
-    KitPrefix?: string;
-    ID?: string;
-}
-interface UiTextureAtlasMember{
+interface UiTextureAtlasMemberDatabase{
     ID?: string;
     CommittedBottom?: string;
     CommittedFlags?: string;
@@ -8777,7 +8769,11 @@ interface UiTextureAtlasMember{
     OverrideWidth?: string;
     OverrideHeight?: string;
 }
-interface UiWidget{
+interface UiTextureAtlasElementDatabase{
+    ID?: string;
+    Name?: string;
+}
+interface UiWidgetDatabase{
     ID?: string;
     MapID?: string;
     OrderIndex?: string;
@@ -8788,30 +8784,35 @@ interface UiWidget{
     Field_8_2_5_31337_006?: string;
     LayoutDirection?: string;
 }
-interface UiWidgetConstantSource{
+interface UiTextureKitDatabase{
+    KitPrefix?: string;
     ID?: string;
-    ParentWidgetID?: string;
-    ReqID?: string;
-    Value?: string;
 }
-interface UiWidgetDataSource{
+interface UiWidgetDataSourceDatabase{
     ID?: string;
     ParentWidgetID?: string;
     ReqID?: string;
     SourceID?: string;
     SourceType?: string;
 }
-interface UiWidgetMap{
+interface UiWidgetConstantSourceDatabase{
     ID?: string;
     ParentWidgetID?: string;
-    MapID?: string;
+    ReqID?: string;
+    Value?: string;
 }
-interface UiWidgetSet{
+interface UiWidgetSetDatabase{
     ID?: string;
     LayoutDirection?: string;
     VerticalPadding?: string;
 }
-interface UiWidgetVisTypeDataReq{
+interface UiWidgetStringSourceDatabase{
+    ID?: string;
+    ParentWidgetID?: string;
+    ReqID?: string;
+    Value_lang?: string;
+}
+interface UiWidgetVisTypeDataReqDatabase{
     ID?: string;
     VisType?: string;
     ValueType?: string;
@@ -8819,13 +8820,17 @@ interface UiWidgetVisTypeDataReq{
     Name?: string;
     Default?: string;
 }
-interface UiWidgetStringSource{
+interface UiWidgetMapDatabase{
     ID?: string;
     ParentWidgetID?: string;
-    ReqID?: string;
-    Value_lang?: string;
+    MapID?: string;
 }
-interface UiWidgetVisualization{
+interface UiWidgetXWidgetSetDatabase{
+    ID?: string;
+    ParentSet?: string;
+    UiWidgetID?: string;
+}
+interface UiWidgetVisualizationDatabase{
     ID?: string;
     TextureKit?: string;
     VisType?: string;
@@ -8838,12 +8843,11 @@ interface UiWidgetVisualization{
     ScriptedAnimationEffectID?: string;
     ModelSceneLayer?: string;
 }
-interface UiWidgetXWidgetSet{
+interface UnitBloodLevelsDatabase{
     ID?: string;
-    ParentSet?: string;
-    UiWidgetID?: string;
+    Violencelevel?: string;
 }
-interface UnitBlood{
+interface UnitBloodDatabase{
     ID?: string;
     CombatBloodSpurtFront?: string;
     CombatBloodSpurtBack?: string;
@@ -8855,23 +8859,7 @@ interface UnitBlood{
     PlayerOmniCritBloodSpurtID?: string;
     PlayerOmniHitBloodSpurtID?: string;
 }
-interface UnitCondition{
-    ID?: string;
-    Flags?: string;
-    Variable?: string;
-    Op?: string;
-    Value?: string;
-}
-interface UnitBloodLevels{
-    ID?: string;
-    Violencelevel?: string;
-}
-interface UnitTestSparse{
-    ID?: string;
-    Field_0?: string;
-    Field_2?: string;
-}
-interface UnitPowerBar{
+interface UnitPowerBarDatabase{
     ID?: string;
     MinPower?: string;
     MaxPower?: string;
@@ -8890,22 +8878,26 @@ interface UnitPowerBar{
     StartInset?: string;
     EndInset?: string;
 }
-interface UnitTest{
+interface UnitConditionDatabase{
+    ID?: string;
+    Flags?: string;
+    Variable?: string;
+    Op?: string;
+    Value?: string;
+}
+interface UnitTestSparseDatabase{
+    ID?: string;
+    Field_0?: string;
+    Field_2?: string;
+}
+interface UnitTestDatabase{
     Field_1_13_0_28211_000?: string;
     Field_1_13_0_28211_001?: string;
     ID?: string;
     Field_1_13_0_28211_003?: string;
     Field_1_13_0_28211_004?: string;
 }
-interface VehiclePOIType{
-    ID?: string;
-    Flags?: string;
-    TextureWidth?: string;
-    TextureHeight?: string;
-    OccupiedTexture?: string;
-    UnoccupiedTexture?: string;
-}
-interface Vehicle{
+interface VehicleDatabase{
     ID?: string;
     Flags?: string;
     FlagsB?: string;
@@ -8951,19 +8943,19 @@ interface Vehicle{
     Field_3_0_1_8622_015?: string;
     Field_3_0_1_8622_016?: string;
 }
-interface VehicleUIIndicator{
-    ID?: string;
-    BackgroundTexture?: string;
-    BackgroundTextureFileID?: string;
-}
-interface VehicleUIIndSeat{
+interface VehicleUIIndSeatDatabase{
     ID?: string;
     VehicleUIIndicatorID?: string;
     VirtualSeatIndex?: string;
     XPos?: string;
     YPos?: string;
 }
-interface VehicleSeat{
+interface VehicleUIIndicatorDatabase{
+    ID?: string;
+    BackgroundTexture?: string;
+    BackgroundTextureFileID?: string;
+}
+interface VehicleSeatDatabase{
     ID?: string;
     Flags?: string;
     AttachmentID?: string;
@@ -9070,46 +9062,15 @@ interface VehicleSeat{
     Field_3_1_0_9767_054?: string;
     Field_3_1_0_9767_055?: string;
 }
-interface VirtualAttachment{
-    ID?: string;
-    Name?: string;
-    PositionerID?: string;
-}
-interface Vignette{
-    Name_lang?: string;
+interface VehiclePOITypeDatabase{
     ID?: string;
     Flags?: string;
-    MaxHeight?: string;
-    MinHeight?: string;
-    PlayerConditionID?: string;
-    QuestFeedbackEffectID?: string;
-    VisibleTrackingQuestID?: string;
-    VignetteType?: string;
-    RewardQuestID?: string;
-    UiWidgetSetID?: string;
+    TextureWidth?: string;
+    TextureHeight?: string;
+    OccupiedTexture?: string;
+    UnoccupiedTexture?: string;
 }
-interface VirtualAttachmentCustomization{
-    ID?: string;
-    FileDataID?: string;
-    PositionerID?: string;
-    VirtualAttachmentID?: string;
-}
-interface VocalUISounds{
-    ID?: string;
-    VocalUIEnum?: string;
-    RaceID?: string;
-    NormalSoundID?: string;
-    PissedSoundID?: string;
-    ClassID?: string;
-}
-interface VolumeFogCondition{
-    ID?: string;
-    PlayerConditionID?: string;
-    WhenFalse?: string;
-    WhenTrue?: string;
-    VFOG_uID?: string;
-}
-interface VideoHardware{
+interface VideoHardwareDatabase{
     ID?: string;
     VendorID?: string;
     DeviceID?: string;
@@ -9136,7 +9097,54 @@ interface VideoHardware{
     OglPixelShader?: string;
     D3dPixelShader?: string;
 }
-interface WMOAreaTable{
+interface VirtualAttachmentCustomizationDatabase{
+    ID?: string;
+    FileDataID?: string;
+    PositionerID?: string;
+    VirtualAttachmentID?: string;
+}
+interface VirtualAttachmentDatabase{
+    ID?: string;
+    Name?: string;
+    PositionerID?: string;
+}
+interface VignetteDatabase{
+    Name_lang?: string;
+    ID?: string;
+    Flags?: string;
+    MaxHeight?: string;
+    MinHeight?: string;
+    PlayerConditionID?: string;
+    QuestFeedbackEffectID?: string;
+    VisibleTrackingQuestID?: string;
+    VignetteType?: string;
+    RewardQuestID?: string;
+    UiWidgetSetID?: string;
+}
+interface VocalUISoundsDatabase{
+    ID?: string;
+    VocalUIEnum?: string;
+    RaceID?: string;
+    NormalSoundID?: string;
+    PissedSoundID?: string;
+    ClassID?: string;
+}
+interface VolumeFogConditionDatabase{
+    ID?: string;
+    PlayerConditionID?: string;
+    WhenFalse?: string;
+    WhenTrue?: string;
+    VFOG_uID?: string;
+}
+interface WMOMinimapTextureDatabase{
+    ID?: string;
+    WMOID?: string;
+    BlockX?: string;
+    BlockY?: string;
+    FileDataID?: string;
+    GroupNum?: string;
+}
+interface WMOAreaTableDatabase{
     ID?: string;
     WMOID?: string;
     NameSetID?: string;
@@ -9160,32 +9168,7 @@ interface WMOAreaTable{
     InlineWMOID?: string;
     Field_0_7_0_3694_010?: string;
 }
-interface WaypointEdge{
-    ID?: string;
-    Start?: string;
-    End?: string;
-    Flags?: string;
-    PlayerConditionID?: string;
-    Field_8_1_5_29281_005?: string;
-}
-interface WMOMinimapTexture{
-    ID?: string;
-    WMOID?: string;
-    BlockX?: string;
-    BlockY?: string;
-    FileDataID?: string;
-    GroupNum?: string;
-}
-interface WbAccessControlList{
-    RegionFlags?: string;
-    ID?: string;
-    URL?: string;
-    GrantFlags?: string;
-    RegionID?: string;
-    RevokeFlags?: string;
-    WowEditInternal?: string;
-}
-interface WaterfallData{
+interface WaterfallDataDatabase{
     ID?: string;
     Field_8_1_5_28938_000?: string;
     Field_8_1_5_28938_001?: string;
@@ -9207,12 +9190,20 @@ interface WaterfallData{
     Field_8_1_5_28938_017?: string;
     Field_8_1_5_28938_018?: string;
 }
-interface WaypointSafeLocs{
+interface WaypointSafeLocsDatabase{
     ID?: string;
     Pos?: string;
     MapID?: string;
 }
-interface WaypointNode{
+interface WaypointEdgeDatabase{
+    ID?: string;
+    Start?: string;
+    End?: string;
+    Flags?: string;
+    PlayerConditionID?: string;
+    Field_8_1_5_29281_005?: string;
+}
+interface WaypointNodeDatabase{
     Name_lang?: string;
     ID?: string;
     SafeLocID?: string;
@@ -9223,27 +9214,21 @@ interface WaypointNode{
     Field_8_2_0_30080_005?: string;
     Field_8_2_0_30080_006?: string;
 }
-interface WbCertBlacklist{
+interface WbCertBlacklistDatabase{
     ID?: string;
     Field_5_3_0_16965_001?: string;
     Field_5_3_0_16965_002?: string;
 }
-interface WbCertWhitelist{
-    Padding_5_3_0_16965_004?: string;
+interface WbAccessControlListDatabase{
+    RegionFlags?: string;
     ID?: string;
-    Domain?: string;
-    GrantAccess?: string;
-    RevokeAccess?: string;
+    URL?: string;
+    GrantFlags?: string;
+    RegionID?: string;
+    RevokeFlags?: string;
     WowEditInternal?: string;
 }
-interface WbPermissions{
-    ID?: string;
-    FilePath?: string;
-    GrantAccess?: string;
-    Field_5_3_0_16965_001?: string;
-    Field_5_3_0_16965_002?: string;
-}
-interface WeaponImpactSounds{
+interface WeaponImpactSoundsDatabase{
     ID?: string;
     WeaponSubClassID?: string;
     ParrySoundType?: string;
@@ -9253,7 +9238,28 @@ interface WeaponImpactSounds{
     PierceCritImpactSoundID?: string;
     PierceImpactSoundID?: string;
 }
-interface WeaponTrail{
+interface WbCertWhitelistDatabase{
+    Padding_5_3_0_16965_004?: string;
+    ID?: string;
+    Domain?: string;
+    GrantAccess?: string;
+    RevokeAccess?: string;
+    WowEditInternal?: string;
+}
+interface WeaponSwingSounds2Database{
+    ID?: string;
+    SwingType?: string;
+    Crit?: string;
+    SoundID?: string;
+}
+interface WbPermissionsDatabase{
+    ID?: string;
+    FilePath?: string;
+    GrantAccess?: string;
+    Field_5_3_0_16965_001?: string;
+    Field_5_3_0_16965_002?: string;
+}
+interface WeaponTrailDatabase{
     ID?: string;
     Field_6_0_1_18179_002?: string;
     Field_6_0_1_18179_004?: string;
@@ -9268,62 +9274,7 @@ interface WeaponTrail{
     TextureScrollRateV?: string;
     Yaw?: string;
 }
-interface WeaponSwingSounds2{
-    ID?: string;
-    SwingType?: string;
-    Crit?: string;
-    SoundID?: string;
-}
-interface WeaponTrailModelDef{
-    ID?: string;
-    AnimEnumID?: string;
-    LowDefFileDataID?: string;
-    WeaponTrailID?: string;
-    ModelFileDataID?: string;
-}
-interface WeaponTrailParam{
-    ID?: string;
-    Duration?: string;
-    EdgeLifeSpan?: string;
-    FadeOutTime?: string;
-    Flags?: string;
-    Hand?: string;
-    InitialDelay?: string;
-    OverrideAttachBot?: string;
-    OverrideAttachTop?: string;
-    SmoothSampleAngle?: string;
-    WeaponTrailID?: string;
-}
-interface WeatherXParticulate{
-    ID?: string;
-    FileDataID?: string;
-    ParentWeatherID?: string;
-}
-interface WindSettings{
-    ID?: string;
-    BaseDir?: string;
-    BaseMag?: string;
-    Duration?: string;
-    Flags?: string;
-    Frequency?: string;
-    MaxStepDir?: string;
-    MaxStepMag?: string;
-    VarianceDir?: string;
-    VarianceMagOver?: string;
-    VarianceMagUnder?: string;
-}
-interface WeeklyRewardChestThreshold{
-    ID?: string;
-    Type?: string;
-    Index?: string;
-    Threshold?: string;
-}
-interface WorldBossLockout{
-    Name_lang?: string;
-    ID?: string;
-    TrackingQuestID?: string;
-}
-interface Weather{
+interface WeatherDatabase{
     ID?: string;
     AmbienceID?: string;
     Type?: string;
@@ -9350,7 +9301,71 @@ interface Weather{
     OverrideColorIntensity?: string;
     Field_9_0_1_33978_001?: string;
 }
-interface WorldChunkSounds{
+interface WeaponTrailParamDatabase{
+    ID?: string;
+    Duration?: string;
+    EdgeLifeSpan?: string;
+    FadeOutTime?: string;
+    Flags?: string;
+    Hand?: string;
+    InitialDelay?: string;
+    OverrideAttachBot?: string;
+    OverrideAttachTop?: string;
+    SmoothSampleAngle?: string;
+    WeaponTrailID?: string;
+}
+interface WeatherXParticulateDatabase{
+    ID?: string;
+    FileDataID?: string;
+    ParentWeatherID?: string;
+}
+interface WindSettingsDatabase{
+    ID?: string;
+    BaseDir?: string;
+    BaseMag?: string;
+    Duration?: string;
+    Flags?: string;
+    Frequency?: string;
+    MaxStepDir?: string;
+    MaxStepMag?: string;
+    VarianceDir?: string;
+    VarianceMagOver?: string;
+    VarianceMagUnder?: string;
+}
+interface WeeklyRewardChestThresholdDatabase{
+    ID?: string;
+    Type?: string;
+    Index?: string;
+    Threshold?: string;
+}
+interface WeaponTrailModelDefDatabase{
+    ID?: string;
+    AnimEnumID?: string;
+    LowDefFileDataID?: string;
+    WeaponTrailID?: string;
+    ModelFileDataID?: string;
+}
+interface WorldElapsedTimerDatabase{
+    ID?: string;
+    Name_lang?: string;
+    Flags?: string;
+    Type?: string;
+}
+interface WorldEffectDatabase{
+    ID?: string;
+    TargetType?: string;
+    TargetAsset?: string;
+    QuestFeedbackEffectID?: string;
+    PlayerConditionID?: string;
+    CombatConditionID?: string;
+    WhenToDisplay?: string;
+}
+interface WorldBossLockoutDatabase{
+    Name_lang?: string;
+    ID?: string;
+    TrackingQuestID?: string;
+}
+interface WorldChunkSoundsDatabase{
     MapID?: string;
     ChunkX?: string;
     ChunkY?: string;
@@ -9364,38 +9379,15 @@ interface WorldChunkSounds{
     SoundAmbienceID?: string;
     SoundProviderPreferencesID?: string;
 }
-interface WorldEffect{
+interface WorldMapOverlayTileDatabase{
     ID?: string;
-    TargetType?: string;
-    TargetAsset?: string;
-    QuestFeedbackEffectID?: string;
-    PlayerConditionID?: string;
-    CombatConditionID?: string;
-    WhenToDisplay?: string;
+    ColIndex?: string;
+    FileDataID?: string;
+    LayerIndex?: string;
+    RowIndex?: string;
+    WorldMapOverlayID?: string;
 }
-interface WorldMapContinent{
-    ID?: string;
-    MapID?: string;
-    LeftBoundary?: string;
-    RightBoundary?: string;
-    TopBoundary?: string;
-    BottomBoundary?: string;
-    ContinentOffset?: string;
-    Scale?: string;
-    TaxiMin?: string;
-    TaxiMax?: string;
-    WorldMapID?: string;
-    Flags?: string;
-    ContinentOffsetX?: string;
-    ContinentOffsetY?: string;
-}
-interface WorldElapsedTimer{
-    ID?: string;
-    Name_lang?: string;
-    Flags?: string;
-    Type?: string;
-}
-interface WorldMapArea{
+interface WorldMapAreaDatabase{
     ID?: string;
     MapID?: string;
     AreaID?: string;
@@ -9418,15 +9410,23 @@ interface WorldMapArea{
     TopBoundary?: string;
     BottomBoundary?: string;
 }
-interface WorldMapOverlayTile{
+interface WorldMapContinentDatabase{
     ID?: string;
-    ColIndex?: string;
-    FileDataID?: string;
-    LayerIndex?: string;
-    RowIndex?: string;
-    WorldMapOverlayID?: string;
+    MapID?: string;
+    LeftBoundary?: string;
+    RightBoundary?: string;
+    TopBoundary?: string;
+    BottomBoundary?: string;
+    ContinentOffset?: string;
+    Scale?: string;
+    TaxiMin?: string;
+    TaxiMax?: string;
+    WorldMapID?: string;
+    Flags?: string;
+    ContinentOffsetX?: string;
+    ContinentOffsetY?: string;
 }
-interface WorldMapOverlay{
+interface WorldMapOverlayDatabase{
     ID?: string;
     MapAreaID?: string;
     AreaID?: string;
@@ -9446,7 +9446,7 @@ interface WorldMapOverlay{
     UiMapArtID?: string;
     Field_7_3_2_25549_012?: string;
 }
-interface WorldMapTransforms{
+interface WorldMapTransformsDatabase{
     ID?: string;
     MapID?: string;
     RegionMin?: string;
@@ -9461,17 +9461,14 @@ interface WorldMapTransforms{
     Priority?: string;
     Region?: string;
 }
-interface WorldState{
-    ID?: string;
-}
-interface WorldSafeLocs{
+interface WorldSafeLocsDatabase{
     ID?: string;
     Continent?: string;
     Loc?: string;
     Facing?: string;
     AreaName_lang?: string;
 }
-interface WorldStateUI{
+interface WorldStateUIDatabase{
     ID?: string;
     MapID?: string;
     AreaID?: string;
@@ -9493,11 +9490,40 @@ interface WorldStateUI{
     PhaseShift?: string;
     FactionID?: string;
 }
-interface WorldStateExpression{
+interface WorldStateDatabase{
+    ID?: string;
+}
+interface WorldStateExpressionDatabase{
     ID?: string;
     Expression?: string;
 }
-interface WorldStateZoneSounds{
+interface WowError_StringsDatabase{
+    ID?: string;
+    Name?: string;
+    Description_lang?: string;
+}
+interface World_PVP_AreaDatabase{
+    ID?: string;
+    Area_ID?: string;
+    Next_time_worldstate?: string;
+    Game_time_worldstate?: string;
+    Battle_populate_time?: string;
+    Min_level?: string;
+    Max_level?: string;
+    Map_ID?: string;
+}
+interface ZoneLightDatabase{
+    ID?: string;
+    Name?: string;
+    MapID?: string;
+    LightID?: string;
+    Flags?: string;
+    Zmin?: string;
+    Zmax?: string;
+    TransitionType?: string;
+    PlayerConditionID?: string;
+}
+interface WorldStateZoneSoundsDatabase{
     ID?: string;
     WorldStateID?: string;
     WorldStateValue?: string;
@@ -9509,28 +9535,33 @@ interface WorldStateZoneSounds{
     SoundProviderPreferencesID?: string;
     OrderBy?: string;
 }
-interface WowError_Strings{
+interface ZoneIntroMusicTableDatabase{
     ID?: string;
     Name?: string;
-    Description_lang?: string;
+    SoundID?: string;
+    Priority?: string;
+    MinDelayMinutes?: string;
 }
-interface World_PVP_Area{
+interface ZoneStoryDatabase{
     ID?: string;
-    Area_ID?: string;
-    Next_time_worldstate?: string;
-    Game_time_worldstate?: string;
-    Battle_populate_time?: string;
-    Min_level?: string;
-    Max_level?: string;
-    Map_ID?: string;
+    DisplayAchievementID?: string;
+    DisplayWorldMapAreaID?: string;
+    PlayerFactionGroupID?: string;
+    PlayerWorldMapAreaID?: string;
+    DisplayUIMapID?: string;
+    PlayerUIMapID?: string;
 }
-interface ZoneLightPoint{
+interface ZoneLightPointDatabase{
     ID?: string;
     ZoneLightID?: string;
     Pos?: string;
     PointOrder?: string;
 }
-interface ZoneMusic{
+interface gtBarberShopCostBaseDatabase{
+    Data?: string;
+    ID?: string;
+}
+interface ZoneMusicDatabase{
     ID?: string;
     SetName?: string;
     SilenceIntervalMin?: string;
@@ -9542,1103 +9573,1072 @@ interface ZoneMusic{
     SegmentPlayMin?: string;
     SegmentPlayMax?: string;
 }
-interface ZoneLight{
-    ID?: string;
-    Name?: string;
-    MapID?: string;
-    LightID?: string;
-    Flags?: string;
-    Zmin?: string;
-    Zmax?: string;
-    TransitionType?: string;
-    PlayerConditionID?: string;
-}
-interface ZoneStory{
-    ID?: string;
-    DisplayAchievementID?: string;
-    DisplayWorldMapAreaID?: string;
-    PlayerFactionGroupID?: string;
-    PlayerWorldMapAreaID?: string;
-    DisplayUIMapID?: string;
-    PlayerUIMapID?: string;
-}
-interface gtArmorMitigationByLvl{
+interface gtBattlePetXPDatabase{
     ID?: string;
     Data?: string;
 }
-interface gtBattlePetTypeDamageMod{
+interface gtBattlePetTypeDamageModDatabase{
     ID?: string;
     Data?: string;
 }
-interface gtChanceToMeleeCrit{
+interface gtChanceToMeleeCritBaseDatabase{
     Data?: string;
     ID?: string;
 }
-interface ZoneIntroMusicTable{
-    ID?: string;
-    Name?: string;
-    SoundID?: string;
-    Priority?: string;
-    MinDelayMinutes?: string;
-}
-interface gtBattlePetXP{
-    ID?: string;
-    Data?: string;
-}
-interface gtChanceToSpellCrit{
+interface gtChanceToMeleeCritDatabase{
     Data?: string;
     ID?: string;
 }
-interface gtBarberShopCostBase{
-    Data?: string;
-    ID?: string;
-}
-interface gtChanceToSpellCritBase{
-    Data?: string;
-    ID?: string;
-}
-interface gtChanceToMeleeCritBase{
-    Data?: string;
-    ID?: string;
-}
-interface gtItemSocketCostPerLevel{
+interface gtArmorMitigationByLvlDatabase{
     ID?: string;
     Data?: string;
 }
-interface gtOCTBaseHPByClass{
-    ID?: string;
-    Data?: string;
-}
-interface gtMasteryMultipliers{
-    ID?: string;
-    Data?: string;
-}
-interface gtCombatRatings{
+interface gtChanceToSpellCritBaseDatabase{
     Data?: string;
     ID?: string;
 }
-interface gtNPCManaCostScaler{
+interface gtChanceToSpellCritDatabase{
     Data?: string;
     ID?: string;
 }
-interface gtOCTBaseMPByClass{
-    ID?: string;
-    Data?: string;
-}
-interface gtOCTClassCombatRatingScalar{
-    ID?: string;
-    Data?: string;
-}
-interface gtOCTHpPerStamina{
-    ID?: string;
-    Data?: string;
-}
-interface gtOCTLevelExperience{
-    ID?: string;
-    Data?: string;
-}
-interface gtOCTRegenHP{
-    ID?: string;
-    Data?: string;
-}
-interface gtOCTRegenMP{
-    ID?: string;
-    Data?: string;
-}
-interface gtRegenHPPerSpt{
-    ID?: string;
-    Data?: string;
-}
-interface gtRegenMPPerSpt{
+interface gtCombatRatingsDatabase{
     Data?: string;
     ID?: string;
 }
-interface gtResilienceDR{
+interface gtMasteryMultipliersDatabase{
     ID?: string;
     Data?: string;
 }
-interface gtSpellScaling{
+interface gtItemSocketCostPerLevelDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtNPCManaCostScalerDatabase{
     Data?: string;
     ID?: string;
+}
+interface gtOCTBaseHPByClassDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtOCTBaseMPByClassDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtOCTHpPerStaminaDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtOCTRegenMPDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtOCTClassCombatRatingScalarDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtOCTLevelExperienceDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtOCTRegenHPDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtResilienceDRDatabase{
+    ID?: string;
+    Data?: string;
+}
+interface gtSpellScalingDatabase{
+    Data?: string;
+    ID?: string;
+}
+interface gtRegenMPPerSptDatabase{
+    Data?: string;
+    ID?: string;
+}
+interface gtRegenHPPerSptDatabase{
+    ID?: string;
+    Data?: string;
 }
 interface FetchDB2Func{
-    (db: 'Achievement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Achievement[]>;
-    (db: 'Achievement_Category', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Achievement_Category[]>;
-    (db: 'Achievement_Criteria', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Achievement_Criteria[]>;
-    (db: 'AdventureJournal', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AdventureJournal[]>;
-    (db: 'AdventureMapPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AdventureMapPOI[]>;
-    (db: 'AlliedRace', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AlliedRace[]>;
-    (db: 'AlliedRaceRacialAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AlliedRaceRacialAbility[]>;
-    (db: 'AnimKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKit[]>;
-    (db: 'AnimKitBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitBoneSet[]>;
-    (db: 'AnimKitBoneSetAlias', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitBoneSetAlias[]>;
-    (db: 'AnimKitConfig', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitConfig[]>;
-    (db: 'AnimKitConfigBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitConfigBoneSet[]>;
-    (db: 'AnimKitPriority', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitPriority[]>;
-    (db: 'AnimKitReplacement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitReplacement[]>;
-    (db: 'AnimKitSegment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitSegment[]>;
-    (db: 'AnimReplacement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimReplacement[]>;
-    (db: 'AnimReplacementSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimReplacementSet[]>;
-    (db: 'AnimaCable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimaCable[]>;
-    (db: 'AnimaCylinder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimaCylinder[]>;
-    (db: 'AnimaMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimaMaterial[]>;
-    (db: 'AnimationData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimationData[]>;
-    (db: 'AnimationNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimationNames[]>;
-    (db: 'AoiBox', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AoiBox[]>;
-    (db: 'AreaAssignment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaAssignment[]>;
-    (db: 'AreaConditionalData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaConditionalData[]>;
-    (db: 'AreaFarClipOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaFarClipOverride[]>;
-    (db: 'AreaGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaGroup[]>;
-    (db: 'AreaGroupMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaGroupMember[]>;
-    (db: 'AreaMIDIAmbiences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaMIDIAmbiences[]>;
-    (db: 'AreaPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaPOI[]>;
-    (db: 'AreaPOISortedWorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaPOISortedWorldState[]>;
-    (db: 'AreaPOIState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaPOIState[]>;
-    (db: 'AreaTable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTable[]>;
-    (db: 'AreaTrigger', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTrigger[]>;
-    (db: 'AreaTriggerActionSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerActionSet[]>;
-    (db: 'AreaTriggerBox', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerBox[]>;
-    (db: 'AreaTriggerCreateProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerCreateProperties[]>;
-    (db: 'AreaTriggerCylinder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerCylinder[]>;
-    (db: 'AreaTriggerSphere', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerSphere[]>;
-    (db: 'ArenaCcItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArenaCcItem[]>;
-    (db: 'ArmorLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArmorLocation[]>;
-    (db: 'Artifact', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Artifact[]>;
-    (db: 'ArtifactAppearance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactAppearance[]>;
-    (db: 'ArtifactAppearanceSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactAppearanceSet[]>;
-    (db: 'ArtifactCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactCategory[]>;
-    (db: 'ArtifactItemToTransmog', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactItemToTransmog[]>;
-    (db: 'ArtifactPower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPower[]>;
-    (db: 'ArtifactPowerLink', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPowerLink[]>;
-    (db: 'ArtifactPowerPicker', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPowerPicker[]>;
-    (db: 'ArtifactPowerRank', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPowerRank[]>;
-    (db: 'ArtifactQuestXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactQuestXP[]>;
-    (db: 'ArtifactTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactTier[]>;
-    (db: 'ArtifactUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactUnlock[]>;
-    (db: 'AttackAnimKits', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AttackAnimKits[]>;
-    (db: 'AttackAnimTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AttackAnimTypes[]>;
-    (db: 'AuctionHouse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AuctionHouse[]>;
-    (db: 'AzeriteEmpoweredItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteEmpoweredItem[]>;
-    (db: 'AzeriteEssence', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteEssence[]>;
-    (db: 'AzeriteEssencePower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteEssencePower[]>;
-    (db: 'AzeriteItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteItem[]>;
-    (db: 'AzeriteItemMilestonePower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteItemMilestonePower[]>;
-    (db: 'AzeriteKnowledgeMultiplier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteKnowledgeMultiplier[]>;
-    (db: 'AzeriteLevelInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteLevelInfo[]>;
-    (db: 'AzeritePower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeritePower[]>;
-    (db: 'AzeritePowerSetMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeritePowerSetMember[]>;
-    (db: 'AzeriteTierUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteTierUnlock[]>;
-    (db: 'AzeriteTierUnlockSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteTierUnlockSet[]>;
-    (db: 'AzeriteUnlockMapping', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteUnlockMapping[]>;
-    (db: 'BankBagSlotPrices', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BankBagSlotPrices[]>;
-    (db: 'BannedAddons', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BannedAddons[]>;
-    (db: 'BarberShopStyle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BarberShopStyle[]>;
-    (db: 'BarrageEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BarrageEffect[]>;
-    (db: 'BattlePetAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbility[]>;
-    (db: 'BattlePetAbilityEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbilityEffect[]>;
-    (db: 'BattlePetAbilityState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbilityState[]>;
-    (db: 'BattlePetAbilityTurn', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbilityTurn[]>;
-    (db: 'BattlePetBreedQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetBreedQuality[]>;
-    (db: 'BattlePetBreedState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetBreedState[]>;
-    (db: 'BattlePetDisplayOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetDisplayOverride[]>;
-    (db: 'BattlePetEffectProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetEffectProperties[]>;
-    (db: 'BattlePetNPCTeamMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetNPCTeamMember[]>;
-    (db: 'BattlePetSpecies', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpecies[]>;
-    (db: 'BattlePetSpeciesState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpeciesState[]>;
-    (db: 'BattlePetSpeciesXAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpeciesXAbility[]>;
-    (db: 'BattlePetSpeciesXCovenant', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpeciesXCovenant[]>;
-    (db: 'BattlePetState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetState[]>;
-    (db: 'BattlePetVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetVisual[]>;
-    (db: 'BattlemasterList', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlemasterList[]>;
-    (db: 'BeamEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BeamEffect[]>;
-    (db: 'BeckonTrigger', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BeckonTrigger[]>;
-    (db: 'BoneWindModifierModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BoneWindModifierModel[]>;
-    (db: 'BoneWindModifiers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BoneWindModifiers[]>;
-    (db: 'BonusRoll', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BonusRoll[]>;
-    (db: 'Bounty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Bounty[]>;
-    (db: 'BountySet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BountySet[]>;
-    (db: 'BroadcastText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastText[]>;
-    (db: 'BroadcastTextDuration', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastTextDuration[]>;
-    (db: 'BroadcastTextSoundState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastTextSoundState[]>;
-    (db: 'BroadcastTextVOState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastTextVOState[]>;
-    (db: 'CameraEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraEffect[]>;
-    (db: 'CameraEffectEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraEffectEntry[]>;
-    (db: 'CameraMode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraMode[]>;
-    (db: 'CameraShakes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraShakes[]>;
-    (db: 'Campaign', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Campaign[]>;
-    (db: 'CampaignXCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CampaignXCondition[]>;
-    (db: 'CampaignXQuestLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CampaignXQuestLine[]>;
-    (db: 'CastableRaidBuffs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CastableRaidBuffs[]>;
-    (db: 'CelestialBody', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CelestialBody[]>;
-    (db: 'Cfg_Categories', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Cfg_Categories[]>;
-    (db: 'Cfg_Configs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Cfg_Configs[]>;
-    (db: 'Cfg_Regions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Cfg_Regions[]>;
-    (db: 'ChallengeModeItemBonusOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChallengeModeItemBonusOverride[]>;
-    (db: 'CharBaseInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharBaseInfo[]>;
-    (db: 'CharBaseSection', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharBaseSection[]>;
-    (db: 'CharComponentTextureLayouts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharComponentTextureLayouts[]>;
-    (db: 'CharComponentTextureSections', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharComponentTextureSections[]>;
-    (db: 'CharHairGeosets', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharHairGeosets[]>;
-    (db: 'CharHairTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharHairTextures[]>;
-    (db: 'CharSectionCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharSectionCondition[]>;
-    (db: 'CharSections', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharSections[]>;
-    (db: 'CharShipment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharShipment[]>;
-    (db: 'CharShipmentContainer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharShipmentContainer[]>;
-    (db: 'CharStartKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharStartKit[]>;
-    (db: 'CharStartOutfit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharStartOutfit[]>;
-    (db: 'CharTextureVariationsV2', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharTextureVariationsV2[]>;
-    (db: 'CharTitles', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharTitles[]>;
-    (db: 'CharVariations', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharVariations[]>;
-    (db: 'CharacterCreateCameras', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterCreateCameras[]>;
-    (db: 'CharacterFaceBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterFaceBoneSet[]>;
-    (db: 'CharacterFacialHairStyles', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterFacialHairStyles[]>;
-    (db: 'CharacterLoadout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterLoadout[]>;
-    (db: 'CharacterLoadoutItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterLoadoutItem[]>;
-    (db: 'CharacterLoadoutPet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterLoadoutPet[]>;
-    (db: 'CharacterServiceInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterServiceInfo[]>;
-    (db: 'ChatChannels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChatChannels[]>;
-    (db: 'ChatProfanity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChatProfanity[]>;
-    (db: 'ChrClassRaceSex', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassRaceSex[]>;
-    (db: 'ChrClassTitle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassTitle[]>;
-    (db: 'ChrClassUIChrModelInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassUIChrModelInfo[]>;
-    (db: 'ChrClassUIDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassUIDisplay[]>;
-    (db: 'ChrClassVillain', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassVillain[]>;
-    (db: 'ChrClasses', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClasses[]>;
-    (db: 'ChrClassesXPowerTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassesXPowerTypes[]>;
-    (db: 'ChrCreateClassAnimTarget', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCreateClassAnimTarget[]>;
-    (db: 'ChrCreateClassAnimTargetInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCreateClassAnimTargetInfo[]>;
-    (db: 'ChrCustClientChoiceConversion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustClientChoiceConversion[]>;
-    (db: 'ChrCustItemGeoModify', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustItemGeoModify[]>;
-    (db: 'ChrCustomization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomization[]>;
-    (db: 'ChrCustomizationBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationBoneSet[]>;
-    (db: 'ChrCustomizationCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationCategory[]>;
-    (db: 'ChrCustomizationChoice', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationChoice[]>;
-    (db: 'ChrCustomizationCondModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationCondModel[]>;
-    (db: 'ChrCustomizationConversion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationConversion[]>;
-    (db: 'ChrCustomizationDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationDisplayInfo[]>;
-    (db: 'ChrCustomizationElement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationElement[]>;
-    (db: 'ChrCustomizationGeoset', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationGeoset[]>;
-    (db: 'ChrCustomizationMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationMaterial[]>;
-    (db: 'ChrCustomizationOption', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationOption[]>;
-    (db: 'ChrCustomizationReq', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationReq[]>;
-    (db: 'ChrCustomizationReqChoice', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationReqChoice[]>;
-    (db: 'ChrCustomizationSkinnedModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationSkinnedModel[]>;
-    (db: 'ChrModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModel[]>;
-    (db: 'ChrModelMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModelMaterial[]>;
-    (db: 'ChrModelTextureLayer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModelTextureLayer[]>;
-    (db: 'ChrModelTextureTarget', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModelTextureTarget[]>;
-    (db: 'ChrProficiency', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrProficiency[]>;
-    (db: 'ChrRaceRacialAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrRaceRacialAbility[]>;
-    (db: 'ChrRaceXChrModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrRaceXChrModel[]>;
-    (db: 'ChrRaces', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrRaces[]>;
-    (db: 'ChrSpecialization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrSpecialization[]>;
-    (db: 'ChrUpgradeBucket', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrUpgradeBucket[]>;
-    (db: 'ChrUpgradeBucketSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrUpgradeBucketSpell[]>;
-    (db: 'ChrUpgradeTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrUpgradeTier[]>;
-    (db: 'Cinematic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Cinematic[]>;
-    (db: 'CinematicCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CinematicCamera[]>;
-    (db: 'CinematicSequences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CinematicSequences[]>;
-    (db: 'CinematicSubtitle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CinematicSubtitle[]>;
-    (db: 'ClientSceneEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ClientSceneEffect[]>;
-    (db: 'CloakDampening', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CloakDampening[]>;
-    (db: 'CloneEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CloneEffect[]>;
-    (db: 'ColorBanding', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ColorBanding[]>;
-    (db: 'CombatCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CombatCondition[]>;
-    (db: 'CommentatorIndirectSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommentatorIndirectSpell[]>;
-    (db: 'CommentatorStartLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommentatorStartLocation[]>;
-    (db: 'CommentatorTrackedCooldown', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommentatorTrackedCooldown[]>;
-    (db: 'CommunityIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommunityIcon[]>;
-    (db: 'ComponentModelFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ComponentModelFileData[]>;
-    (db: 'ComponentTextureFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ComponentTextureFileData[]>;
-    (db: 'ConditionalContentTuning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConditionalContentTuning[]>;
-    (db: 'ConfigurationWarning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConfigurationWarning[]>;
-    (db: 'ConsoleScripts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConsoleScripts[]>;
-    (db: 'ContentTuning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuning[]>;
-    (db: 'ContentTuningDescription', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuningDescription[]>;
-    (db: 'ContentTuningXExpected', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuningXExpected[]>;
-    (db: 'ContentTuningXExpectedStatMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuningXExpectedStatMod[]>;
-    (db: 'Contribution', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Contribution[]>;
-    (db: 'ContributionStyle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContributionStyle[]>;
-    (db: 'ContributionStyleContainer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContributionStyleContainer[]>;
-    (db: 'ConversationLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConversationLine[]>;
-    (db: 'CorruptionEffects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CorruptionEffects[]>;
-    (db: 'Covenant', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Covenant[]>;
-    (db: 'Creature', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Creature[]>;
-    (db: 'CreatureDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDifficulty[]>;
-    (db: 'CreatureDispXUiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDispXUiCamera[]>;
-    (db: 'CreatureDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfo[]>;
-    (db: 'CreatureDisplayInfoCond', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoCond[]>;
-    (db: 'CreatureDisplayInfoCondXChoice', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoCondXChoice[]>;
-    (db: 'CreatureDisplayInfoEvt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoEvt[]>;
-    (db: 'CreatureDisplayInfoExtra', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoExtra[]>;
-    (db: 'CreatureDisplayInfoGeosetData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoGeosetData[]>;
-    (db: 'CreatureDisplayInfoOption', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoOption[]>;
-    (db: 'CreatureDisplayInfoTrn', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoTrn[]>;
-    (db: 'CreatureFamily', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureFamily[]>;
-    (db: 'CreatureImmunities', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureImmunities[]>;
-    (db: 'CreatureModelData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureModelData[]>;
-    (db: 'CreatureMovementInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureMovementInfo[]>;
-    (db: 'CreatureSoundData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureSoundData[]>;
-    (db: 'CreatureSpellData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureSpellData[]>;
-    (db: 'CreatureType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureType[]>;
-    (db: 'CreatureXContribution', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureXContribution[]>;
-    (db: 'CreatureXDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureXDisplayInfo[]>;
-    (db: 'CreatureXUiWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureXUiWidgetSet[]>;
-    (db: 'Criteria', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Criteria[]>;
-    (db: 'CriteriaTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CriteriaTree[]>;
-    (db: 'CriteriaTreeXEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CriteriaTreeXEffect[]>;
-    (db: 'CurrencyCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurrencyCategory[]>;
-    (db: 'CurrencyContainer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurrencyContainer[]>;
-    (db: 'CurrencyTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurrencyTypes[]>;
-    (db: 'Curve', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Curve[]>;
-    (db: 'CurvePoint', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurvePoint[]>;
-    (db: 'DanceMoves', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DanceMoves[]>;
-    (db: 'DeathThudLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeathThudLookups[]>;
-    (db: 'DecalProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DecalProperties[]>;
-    (db: 'DeclinedWord', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeclinedWord[]>;
-    (db: 'DeclinedWordCases', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeclinedWordCases[]>;
-    (db: 'DestructibleModelData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DestructibleModelData[]>;
-    (db: 'DeviceBlacklist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeviceBlacklist[]>;
-    (db: 'DeviceDefaultSettings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeviceDefaultSettings[]>;
-    (db: 'Difficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Difficulty[]>;
-    (db: 'DissolveEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DissolveEffect[]>;
-    (db: 'DriverBlacklist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DriverBlacklist[]>;
-    (db: 'DungeonEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DungeonEncounter[]>;
-    (db: 'DungeonMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DungeonMap[]>;
-    (db: 'DungeonMapChunk', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DungeonMapChunk[]>;
-    (db: 'DurabilityCosts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DurabilityCosts[]>;
-    (db: 'DurabilityQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DurabilityQuality[]>;
-    (db: 'EdgeGlowEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EdgeGlowEffect[]>;
-    (db: 'EmoteAnims', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmoteAnims[]>;
-    (db: 'Emotes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Emotes[]>;
-    (db: 'EmotesText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmotesText[]>;
-    (db: 'EmotesTextData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmotesTextData[]>;
-    (db: 'EmotesTextSound', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmotesTextSound[]>;
-    (db: 'EnumeratedString', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EnumeratedString[]>;
-    (db: 'EnvironmentalDamage', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EnvironmentalDamage[]>;
-    (db: 'Exhaustion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Exhaustion[]>;
-    (db: 'ExpectedStat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ExpectedStat[]>;
-    (db: 'ExpectedStatMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ExpectedStatMod[]>;
-    (db: 'ExtraAbilityInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ExtraAbilityInfo[]>;
-    (db: 'Faction', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Faction[]>;
-    (db: 'FactionGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FactionGroup[]>;
-    (db: 'FactionTemplate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FactionTemplate[]>;
-    (db: 'FileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FileData[]>;
-    (db: 'FileDataComplete', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FileDataComplete[]>;
-    (db: 'FilePaths', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FilePaths[]>;
-    (db: 'FootprintTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FootprintTextures[]>;
-    (db: 'FootstepTerrainLookup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FootstepTerrainLookup[]>;
-    (db: 'FriendshipRepReaction', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FriendshipRepReaction[]>;
-    (db: 'FriendshipReputation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FriendshipReputation[]>;
-    (db: 'FullScreenEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FullScreenEffect[]>;
-    (db: 'GMSurveyAnswers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveyAnswers[]>;
-    (db: 'GMSurveyCurrentSurvey', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveyCurrentSurvey[]>;
-    (db: 'GMSurveyQuestions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveyQuestions[]>;
-    (db: 'GMSurveySurveys', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveySurveys[]>;
-    (db: 'GMTicketCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMTicketCategory[]>;
-    (db: 'GameClockDebug', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameClockDebug[]>;
-    (db: 'GameObjectAnimGroupMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectAnimGroupMember[]>;
-    (db: 'GameObjectArtKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectArtKit[]>;
-    (db: 'GameObjectDiffAnimMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectDiffAnimMap[]>;
-    (db: 'GameObjectDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectDisplayInfo[]>;
-    (db: 'GameObjectDisplayInfoXSoundKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectDisplayInfoXSoundKit[]>;
-    (db: 'GameObjects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjects[]>;
-    (db: 'GameObjectsClient', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectsClient[]>;
-    (db: 'GameParameter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameParameter[]>;
-    (db: 'GameTables', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameTables[]>;
-    (db: 'GameTips', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameTips[]>;
-    (db: 'GarrAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAbility[]>;
-    (db: 'GarrAbilityCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAbilityCategory[]>;
-    (db: 'GarrAbilityEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAbilityEffect[]>;
-    (db: 'GarrAutoCombatant', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAutoCombatant[]>;
-    (db: 'GarrAutoSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAutoSpell[]>;
-    (db: 'GarrAutoSpellEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAutoSpellEffect[]>;
-    (db: 'GarrBuilding', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrBuilding[]>;
-    (db: 'GarrBuildingDoodadSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrBuildingDoodadSet[]>;
-    (db: 'GarrBuildingPlotInst', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrBuildingPlotInst[]>;
-    (db: 'GarrClassSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrClassSpec[]>;
-    (db: 'GarrClassSpecPlayerCond', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrClassSpecPlayerCond[]>;
-    (db: 'GarrEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrEncounter[]>;
-    (db: 'GarrEncounterSetXEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrEncounterSetXEncounter[]>;
-    (db: 'GarrEncounterXMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrEncounterXMechanic[]>;
-    (db: 'GarrFamilyName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFamilyName[]>;
-    (db: 'GarrFollItemSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollItemSet[]>;
-    (db: 'GarrFollItemSetMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollItemSetMember[]>;
-    (db: 'GarrFollSupportSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollSupportSpell[]>;
-    (db: 'GarrFollower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollower[]>;
-    (db: 'GarrFollowerLevelXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerLevelXP[]>;
-    (db: 'GarrFollowerQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerQuality[]>;
-    (db: 'GarrFollowerSetXFollower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerSetXFollower[]>;
-    (db: 'GarrFollowerType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerType[]>;
-    (db: 'GarrFollowerUICreature', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerUICreature[]>;
-    (db: 'GarrFollowerXAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerXAbility[]>;
-    (db: 'GarrGivenName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrGivenName[]>;
-    (db: 'GarrItemLevelUpgradeData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrItemLevelUpgradeData[]>;
-    (db: 'GarrMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMechanic[]>;
-    (db: 'GarrMechanicSetXMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMechanicSetXMechanic[]>;
-    (db: 'GarrMechanicType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMechanicType[]>;
-    (db: 'GarrMission', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMission[]>;
-    (db: 'GarrMissionSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionSet[]>;
-    (db: 'GarrMissionTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionTexture[]>;
-    (db: 'GarrMissionType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionType[]>;
-    (db: 'GarrMissionXEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionXEncounter[]>;
-    (db: 'GarrMissionXFollower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionXFollower[]>;
-    (db: 'GarrMssnBonusAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMssnBonusAbility[]>;
-    (db: 'GarrPlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlot[]>;
-    (db: 'GarrPlotBuilding', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlotBuilding[]>;
-    (db: 'GarrPlotInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlotInstance[]>;
-    (db: 'GarrPlotUICategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlotUICategory[]>;
-    (db: 'GarrSiteLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrSiteLevel[]>;
-    (db: 'GarrSiteLevelPlotInst', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrSiteLevelPlotInst[]>;
-    (db: 'GarrSpecialization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrSpecialization[]>;
-    (db: 'GarrString', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrString[]>;
-    (db: 'GarrTalTreeXGarrTalResearch', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalTreeXGarrTalResearch[]>;
-    (db: 'GarrTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalent[]>;
-    (db: 'GarrTalentCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentCost[]>;
-    (db: 'GarrTalentMapPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentMapPOI[]>;
-    (db: 'GarrTalentRank', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentRank[]>;
-    (db: 'GarrTalentResearch', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentResearch[]>;
-    (db: 'GarrTalentSocketProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentSocketProperties[]>;
-    (db: 'GarrTalentTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentTree[]>;
-    (db: 'GarrType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrType[]>;
-    (db: 'GarrUiAnimClassInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrUiAnimClassInfo[]>;
-    (db: 'GarrUiAnimRaceInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrUiAnimRaceInfo[]>;
-    (db: 'GemProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GemProperties[]>;
-    (db: 'GlobalCurve', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalCurve[]>;
-    (db: 'GlobalGameContentTuning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalGameContentTuning[]>;
-    (db: 'GlobalPlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalPlayerCondition[]>;
-    (db: 'GlobalPlayerConditionSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalPlayerConditionSet[]>;
-    (db: 'GlobalStrings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalStrings[]>;
-    (db: 'GlobalTable_PlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalTable_PlayerCondition[]>;
-    (db: 'GlueScreenEmote', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlueScreenEmote[]>;
-    (db: 'GlyphBindableSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphBindableSpell[]>;
-    (db: 'GlyphExclusiveCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphExclusiveCategory[]>;
-    (db: 'GlyphProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphProperties[]>;
-    (db: 'GlyphRequiredSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphRequiredSpec[]>;
-    (db: 'GlyphSlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphSlot[]>;
-    (db: 'GossipXUIDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GossipXUIDisplayInfo[]>;
-    (db: 'GradientEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GradientEffect[]>;
-    (db: 'GroundEffectDoodad', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroundEffectDoodad[]>;
-    (db: 'GroundEffectTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroundEffectTexture[]>;
-    (db: 'GroupFinderActivity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroupFinderActivity[]>;
-    (db: 'GroupFinderActivityGrp', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroupFinderActivityGrp[]>;
-    (db: 'GroupFinderCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroupFinderCategory[]>;
-    (db: 'GuildColorBackground', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildColorBackground[]>;
-    (db: 'GuildColorBorder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildColorBorder[]>;
-    (db: 'GuildColorEmblem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildColorEmblem[]>;
-    (db: 'GuildEmblem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildEmblem[]>;
-    (db: 'GuildPerkSpells', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildPerkSpells[]>;
-    (db: 'GuildShirtBackground', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildShirtBackground[]>;
-    (db: 'GuildShirtBorder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildShirtBorder[]>;
-    (db: 'GuildTabardBackground', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildTabardBackground[]>;
-    (db: 'GuildTabardBorder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildTabardBorder[]>;
-    (db: 'GuildTabardEmblem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildTabardEmblem[]>;
-    (db: 'Heirloom', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Heirloom[]>;
-    (db: 'HelmetAnimScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HelmetAnimScaling[]>;
-    (db: 'HelmetGeosetData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HelmetGeosetData[]>;
-    (db: 'HelmetGeosetVisData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HelmetGeosetVisData[]>;
-    (db: 'HighlightColor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HighlightColor[]>;
-    (db: 'HolidayDescriptions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HolidayDescriptions[]>;
-    (db: 'HolidayNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HolidayNames[]>;
-    (db: 'Holidays', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Holidays[]>;
-    (db: 'Hotfix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Hotfix[]>;
-    (db: 'Hotfixes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Hotfixes[]>;
-    (db: 'ImportPriceArmor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceArmor[]>;
-    (db: 'ImportPriceQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceQuality[]>;
-    (db: 'ImportPriceShield', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceShield[]>;
-    (db: 'ImportPriceWeapon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceWeapon[]>;
-    (db: 'InvasionClientData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<InvasionClientData[]>;
-    (db: 'Item-sparse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Item_sparse[]>;
-    (db: 'Item', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Item[]>;
-    (db: 'ItemAppearance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemAppearance[]>;
-    (db: 'ItemAppearanceXUiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemAppearanceXUiCamera[]>;
-    (db: 'ItemArmorQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemArmorQuality[]>;
-    (db: 'ItemArmorShield', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemArmorShield[]>;
-    (db: 'ItemArmorTotal', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemArmorTotal[]>;
-    (db: 'ItemBagFamily', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBagFamily[]>;
-    (db: 'ItemBonus', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonus[]>;
-    (db: 'ItemBonusList', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusList[]>;
-    (db: 'ItemBonusListGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListGroup[]>;
-    (db: 'ItemBonusListGroupEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListGroupEntry[]>;
-    (db: 'ItemBonusListLevelDelta', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListLevelDelta[]>;
-    (db: 'ItemBonusListWarforgeLevelDelta', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListWarforgeLevelDelta[]>;
-    (db: 'ItemBonusSequenceSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusSequenceSpell[]>;
-    (db: 'ItemBonusTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusTree[]>;
-    (db: 'ItemBonusTreeNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusTreeNode[]>;
-    (db: 'ItemChildEquipment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemChildEquipment[]>;
-    (db: 'ItemClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemClass[]>;
-    (db: 'ItemCondExtCosts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemCondExtCosts[]>;
-    (db: 'ItemContextPickerEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemContextPickerEntry[]>;
-    (db: 'ItemCurrencyCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemCurrencyCost[]>;
-    (db: 'ItemCurrencyValue', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemCurrencyValue[]>;
-    (db: 'ItemDamageAmmo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageAmmo[]>;
-    (db: 'ItemDamageOneHand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageOneHand[]>;
-    (db: 'ItemDamageOneHandCaster', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageOneHandCaster[]>;
-    (db: 'ItemDamageRanged', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageRanged[]>;
-    (db: 'ItemDamageThrown', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageThrown[]>;
-    (db: 'ItemDamageTwoHand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageTwoHand[]>;
-    (db: 'ItemDamageTwoHandCaster', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageTwoHandCaster[]>;
-    (db: 'ItemDamageWand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageWand[]>;
-    (db: 'ItemDisenchantLoot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisenchantLoot[]>;
-    (db: 'ItemDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisplayInfo[]>;
-    (db: 'ItemDisplayInfoMaterialRes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisplayInfoMaterialRes[]>;
-    (db: 'ItemDisplayXUiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisplayXUiCamera[]>;
-    (db: 'ItemEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemEffect[]>;
-    (db: 'ItemExtendedCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemExtendedCost[]>;
-    (db: 'ItemFallbackVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemFallbackVisual[]>;
-    (db: 'ItemGroupSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemGroupSounds[]>;
-    (db: 'ItemLevelSelector', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLevelSelector[]>;
-    (db: 'ItemLevelSelectorQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLevelSelectorQuality[]>;
-    (db: 'ItemLevelSelectorQualitySet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLevelSelectorQualitySet[]>;
-    (db: 'ItemLimitCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLimitCategory[]>;
-    (db: 'ItemLimitCategoryCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLimitCategoryCondition[]>;
-    (db: 'ItemModifiedAppearance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemModifiedAppearance[]>;
-    (db: 'ItemModifiedAppearanceExtra', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemModifiedAppearanceExtra[]>;
-    (db: 'ItemNameDescription', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemNameDescription[]>;
-    (db: 'ItemNameSlotOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemNameSlotOverride[]>;
-    (db: 'ItemPetFood', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemPetFood[]>;
-    (db: 'ItemPriceBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemPriceBase[]>;
-    (db: 'ItemPurchaseGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemPurchaseGroup[]>;
-    (db: 'ItemRandomProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemRandomProperties[]>;
-    (db: 'ItemRandomSuffix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemRandomSuffix[]>;
-    (db: 'ItemRangedDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemRangedDisplayInfo[]>;
-    (db: 'ItemReforge', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemReforge[]>;
-    (db: 'ItemSearchName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSearchName[]>;
-    (db: 'ItemSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSet[]>;
-    (db: 'ItemSetSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSetSpell[]>;
-    (db: 'ItemSparse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSparse[]>;
-    (db: 'ItemSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSpec[]>;
-    (db: 'ItemSpecOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSpecOverride[]>;
-    (db: 'ItemSubClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSubClass[]>;
-    (db: 'ItemSubClassMask', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSubClassMask[]>;
-    (db: 'ItemToBattlePet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemToBattlePet[]>;
-    (db: 'ItemToMountSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemToMountSpell[]>;
-    (db: 'ItemUpgrade', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemUpgrade[]>;
-    (db: 'ItemUpgradePath', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemUpgradePath[]>;
-    (db: 'ItemVisualEffects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemVisualEffects[]>;
-    (db: 'ItemVisuals', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemVisuals[]>;
-    (db: 'ItemVisualsXEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemVisualsXEffect[]>;
-    (db: 'ItemXBonusTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemXBonusTree[]>;
-    (db: 'ItemXItemEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemXItemEffect[]>;
-    (db: 'JournalEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounter[]>;
-    (db: 'JournalEncounterCreature', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterCreature[]>;
-    (db: 'JournalEncounterItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterItem[]>;
-    (db: 'JournalEncounterSection', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterSection[]>;
-    (db: 'JournalEncounterXDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterXDifficulty[]>;
-    (db: 'JournalEncounterXMapLoc', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterXMapLoc[]>;
-    (db: 'JournalInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalInstance[]>;
-    (db: 'JournalItemXDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalItemXDifficulty[]>;
-    (db: 'JournalSectionXDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalSectionXDifficulty[]>;
-    (db: 'JournalTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalTier[]>;
-    (db: 'JournalTierXInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalTierXInstance[]>;
-    (db: 'Keychain', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Keychain[]>;
-    (db: 'KeystoneAffix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<KeystoneAffix[]>;
-    (db: 'LFGDungeonExpansion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGDungeonExpansion[]>;
-    (db: 'LFGDungeonGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGDungeonGroup[]>;
-    (db: 'LFGDungeons', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGDungeons[]>;
-    (db: 'LFGRoleRequirement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGRoleRequirement[]>;
-    (db: 'LanguageWords', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LanguageWords[]>;
-    (db: 'Languages', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Languages[]>;
-    (db: 'LfgDungeonsGroupingMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LfgDungeonsGroupingMap[]>;
-    (db: 'Light', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Light[]>;
-    (db: 'LightData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightData[]>;
-    (db: 'LightFloatBand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightFloatBand[]>;
-    (db: 'LightIntBand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightIntBand[]>;
-    (db: 'LightParams', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightParams[]>;
-    (db: 'LightSkybox', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightSkybox[]>;
-    (db: 'Lightning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Lightning[]>;
-    (db: 'LiquidMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidMaterial[]>;
-    (db: 'LiquidObject', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidObject[]>;
-    (db: 'LiquidType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidType[]>;
-    (db: 'LiquidTypeXTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidTypeXTexture[]>;
-    (db: 'LoadingScreenSkin', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoadingScreenSkin[]>;
-    (db: 'LoadingScreenTaxiSplines', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoadingScreenTaxiSplines[]>;
-    (db: 'LoadingScreens', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoadingScreens[]>;
-    (db: 'Locale', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Locale[]>;
-    (db: 'Location', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Location[]>;
-    (db: 'Lock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Lock[]>;
-    (db: 'LockType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LockType[]>;
-    (db: 'LookAtController', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LookAtController[]>;
-    (db: 'LoreText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoreText[]>;
-    (db: 'LoreTextPublic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoreTextPublic[]>;
-    (db: 'MCRSlotXMCRCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MCRSlotXMCRCategory[]>;
-    (db: 'MailTemplate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MailTemplate[]>;
-    (db: 'ManagedWorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManagedWorldState[]>;
-    (db: 'ManagedWorldStateBuff', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManagedWorldStateBuff[]>;
-    (db: 'ManagedWorldStateInput', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManagedWorldStateInput[]>;
-    (db: 'ManifestInterfaceActionIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceActionIcon[]>;
-    (db: 'ManifestInterfaceData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceData[]>;
-    (db: 'ManifestInterfaceItemIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceItemIcon[]>;
-    (db: 'ManifestInterfaceTOCData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceTOCData[]>;
-    (db: 'ManifestMP3', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestMP3[]>;
-    (db: 'Map', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Map[]>;
-    (db: 'MapCelestialBody', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapCelestialBody[]>;
-    (db: 'MapChallengeMode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapChallengeMode[]>;
-    (db: 'MapDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapDifficulty[]>;
-    (db: 'MapDifficultyXCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapDifficultyXCondition[]>;
-    (db: 'MapLoadingScreen', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapLoadingScreen[]>;
-    (db: 'MarketingPromotionsXLocale', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MarketingPromotionsXLocale[]>;
-    (db: 'Material', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Material[]>;
-    (db: 'MawPower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MawPower[]>;
-    (db: 'MawPowerRarity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MawPowerRarity[]>;
-    (db: 'MinorTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MinorTalent[]>;
-    (db: 'MissileTargeting', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MissileTargeting[]>;
-    (db: 'ModelAnimCloakDampening', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelAnimCloakDampening[]>;
-    (db: 'ModelFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelFileData[]>;
-    (db: 'ModelManifest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelManifest[]>;
-    (db: 'ModelNameToManifest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelNameToManifest[]>;
-    (db: 'ModelRibbonQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelRibbonQuality[]>;
-    (db: 'ModifiedCraftingCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingCategory[]>;
-    (db: 'ModifiedCraftingReagentItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingReagentItem[]>;
-    (db: 'ModifiedCraftingReagentSlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingReagentSlot[]>;
-    (db: 'ModifiedCraftingSpellSlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingSpellSlot[]>;
-    (db: 'ModifiedReagentItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedReagentItem[]>;
-    (db: 'ModifierTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifierTree[]>;
-    (db: 'Mount', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Mount[]>;
-    (db: 'MountCapability', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountCapability[]>;
-    (db: 'MountEquipment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountEquipment[]>;
-    (db: 'MountType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountType[]>;
-    (db: 'MountTypeXCapability', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountTypeXCapability[]>;
-    (db: 'MountXDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountXDisplay[]>;
-    (db: 'MountXSpellVisualKitPicker', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountXSpellVisualKitPicker[]>;
-    (db: 'Movie', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Movie[]>;
-    (db: 'MovieFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MovieFileData[]>;
-    (db: 'MovieOverlays', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MovieOverlays[]>;
-    (db: 'MovieVariation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MovieVariation[]>;
-    (db: 'MultiStateProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MultiStateProperties[]>;
-    (db: 'MultiTransitionProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MultiTransitionProperties[]>;
-    (db: 'MythicPlusSeason', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MythicPlusSeason[]>;
-    (db: 'MythicPlusSeasonRewardLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MythicPlusSeasonRewardLevels[]>;
-    (db: 'MythicPlusSeasonTrackedAffix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MythicPlusSeasonTrackedAffix[]>;
-    (db: 'NPCModelItemSlotDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NPCModelItemSlotDisplayInfo[]>;
-    (db: 'NPCSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NPCSounds[]>;
-    (db: 'NameGen', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NameGen[]>;
-    (db: 'NamesProfanity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NamesProfanity[]>;
-    (db: 'NamesReserved', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NamesReserved[]>;
-    (db: 'NamesReservedLocale', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NamesReservedLocale[]>;
-    (db: 'NumTalentsAtLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NumTalentsAtLevel[]>;
-    (db: 'ObjectEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffect[]>;
-    (db: 'ObjectEffectGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectGroup[]>;
-    (db: 'ObjectEffectModifier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectModifier[]>;
-    (db: 'ObjectEffectPackage', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectPackage[]>;
-    (db: 'ObjectEffectPackageElem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectPackageElem[]>;
-    (db: 'ObjectEffectStateName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectStateName[]>;
-    (db: 'Occluder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Occluder[]>;
-    (db: 'OccluderCurtain', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OccluderCurtain[]>;
-    (db: 'OccluderLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OccluderLocation[]>;
-    (db: 'OccluderNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OccluderNode[]>;
-    (db: 'OutlineEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OutlineEffect[]>;
-    (db: 'OverrideSpellData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OverrideSpellData[]>;
-    (db: 'PVPBracketTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPBracketTypes[]>;
-    (db: 'PVPDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPDifficulty[]>;
-    (db: 'PVPItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPItem[]>;
-    (db: 'PVPScoreboardCellInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPScoreboardCellInfo[]>;
-    (db: 'PVPScoreboardColumnHeader', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPScoreboardColumnHeader[]>;
-    (db: 'PVPScoreboardLayout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPScoreboardLayout[]>;
-    (db: 'PVPStat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPStat[]>;
-    (db: 'Package', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Package[]>;
-    (db: 'PageTextMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PageTextMaterial[]>;
-    (db: 'PaperDollItemFrame', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PaperDollItemFrame[]>;
-    (db: 'ParagonReputation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ParagonReputation[]>;
-    (db: 'ParticleColor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ParticleColor[]>;
-    (db: 'Particulate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Particulate[]>;
-    (db: 'ParticulateSound', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ParticulateSound[]>;
-    (db: 'Path', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Path[]>;
-    (db: 'PathEdge', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathEdge[]>;
-    (db: 'PathNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathNode[]>;
-    (db: 'PathNodeProperty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathNodeProperty[]>;
-    (db: 'PathProperty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathProperty[]>;
-    (db: 'PetLoyalty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PetLoyalty[]>;
-    (db: 'PetPersonality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PetPersonality[]>;
-    (db: 'PetitionType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PetitionType[]>;
-    (db: 'Phase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Phase[]>;
-    (db: 'PhaseShiftZoneSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PhaseShiftZoneSounds[]>;
-    (db: 'PhaseXPhaseGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PhaseXPhaseGroup[]>;
-    (db: 'PlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PlayerCondition[]>;
-    (db: 'Positioner', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Positioner[]>;
-    (db: 'PositionerState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PositionerState[]>;
-    (db: 'PositionerStateEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PositionerStateEntry[]>;
-    (db: 'PowerDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PowerDisplay[]>;
-    (db: 'PowerType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PowerType[]>;
-    (db: 'PrestigeLevelInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PrestigeLevelInfo[]>;
-    (db: 'PvpBrawl', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpBrawl[]>;
-    (db: 'PvpReward', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpReward[]>;
-    (db: 'PvpScalingEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpScalingEffect[]>;
-    (db: 'PvpScalingEffectType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpScalingEffectType[]>;
-    (db: 'PvpSeason', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpSeason[]>;
-    (db: 'PvpSeasonRewardLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpSeasonRewardLevels[]>;
-    (db: 'PvpTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalent[]>;
-    (db: 'PvpTalentCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalentCategory[]>;
-    (db: 'PvpTalentSlotUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalentSlotUnlock[]>;
-    (db: 'PvpTalentUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalentUnlock[]>;
-    (db: 'PvpTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTier[]>;
-    (db: 'QuestFactionReward', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestFactionReward[]>;
-    (db: 'QuestFeedbackEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestFeedbackEffect[]>;
-    (db: 'QuestInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestInfo[]>;
-    (db: 'QuestLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestLine[]>;
-    (db: 'QuestLineXQuest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestLineXQuest[]>;
-    (db: 'QuestMoneyReward', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestMoneyReward[]>;
-    (db: 'QuestObjective', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestObjective[]>;
-    (db: 'QuestPOIBlob', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestPOIBlob[]>;
-    (db: 'QuestPOIPoint', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestPOIPoint[]>;
-    (db: 'QuestPackageItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestPackageItem[]>;
-    (db: 'QuestSort', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestSort[]>;
-    (db: 'QuestV2', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestV2[]>;
-    (db: 'QuestV2CliTask', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestV2CliTask[]>;
-    (db: 'QuestXGroupActivity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXGroupActivity[]>;
-    (db: 'QuestXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXP[]>;
-    (db: 'QuestXUIQuestDetailsTheme', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXUIQuestDetailsTheme[]>;
-    (db: 'QuestXUiWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXUiWidgetSet[]>;
-    (db: 'RTPC', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RTPC[]>;
-    (db: 'RTPCData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RTPCData[]>;
-    (db: 'RacialMounts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RacialMounts[]>;
-    (db: 'RafActivity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RafActivity[]>;
-    (db: 'RandPropPoints', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RandPropPoints[]>;
-    (db: 'RecipeProgressionGroupEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RecipeProgressionGroupEntry[]>;
-    (db: 'RelicSlotTierRequirement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RelicSlotTierRequirement[]>;
-    (db: 'RelicTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RelicTalent[]>;
-    (db: 'RenownRewards', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RenownRewards[]>;
-    (db: 'ResearchBranch', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchBranch[]>;
-    (db: 'ResearchField', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchField[]>;
-    (db: 'ResearchProject', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchProject[]>;
-    (db: 'ResearchSite', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchSite[]>;
-    (db: 'Resistances', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Resistances[]>;
-    (db: 'RewardPack', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RewardPack[]>;
-    (db: 'RewardPackXCurrencyType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RewardPackXCurrencyType[]>;
-    (db: 'RewardPackXItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RewardPackXItem[]>;
-    (db: 'RibbonQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RibbonQuality[]>;
-    (db: 'RopeEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RopeEffect[]>;
-    (db: 'RulesetItemUpgrade', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RulesetItemUpgrade[]>;
-    (db: 'RulesetRaidLootUpgrade', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RulesetRaidLootUpgrade[]>;
-    (db: 'RulesetRaidOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RulesetRaidOverride[]>;
-    (db: 'RuneforgeLegendaryAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RuneforgeLegendaryAbility[]>;
-    (db: 'SDReplacementModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SDReplacementModel[]>;
-    (db: 'SSAOSettings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SSAOSettings[]>;
-    (db: 'SandboxScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SandboxScaling[]>;
-    (db: 'ScalingStatDistribution', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScalingStatDistribution[]>;
-    (db: 'ScalingStatValues', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScalingStatValues[]>;
-    (db: 'Scenario', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Scenario[]>;
-    (db: 'ScenarioEventEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScenarioEventEntry[]>;
-    (db: 'ScenarioStep', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScenarioStep[]>;
-    (db: 'SceneScript', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScript[]>;
-    (db: 'SceneScriptGlobalText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptGlobalText[]>;
-    (db: 'SceneScriptPackage', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptPackage[]>;
-    (db: 'SceneScriptPackageMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptPackageMember[]>;
-    (db: 'SceneScriptText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptText[]>;
-    (db: 'ScheduledInterval', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledInterval[]>;
-    (db: 'ScheduledWorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledWorldState[]>;
-    (db: 'ScheduledWorldStateGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledWorldStateGroup[]>;
-    (db: 'ScheduledWorldStateXUniqCat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledWorldStateXUniqCat[]>;
-    (db: 'ScreenEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScreenEffect[]>;
-    (db: 'ScreenEffectType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScreenEffectType[]>;
-    (db: 'ScreenLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScreenLocation[]>;
-    (db: 'SeamlessSite', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SeamlessSite[]>;
-    (db: 'ServerMessages', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ServerMessages[]>;
-    (db: 'ShadowyEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ShadowyEffect[]>;
-    (db: 'SheatheSoundLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SheatheSoundLookups[]>;
-    (db: 'SiegeableProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SiegeableProperties[]>;
-    (db: 'SkillCostsData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillCostsData[]>;
-    (db: 'SkillLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLine[]>;
-    (db: 'SkillLineAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLineAbility[]>;
-    (db: 'SkillLineAbilitySortedSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLineAbilitySortedSpell[]>;
-    (db: 'SkillLineCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLineCategory[]>;
-    (db: 'SkillRaceClassInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillRaceClassInfo[]>;
-    (db: 'SkillTiers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillTiers[]>;
-    (db: 'SkySceneXPlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkySceneXPlayerCondition[]>;
-    (db: 'Soulbind', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Soulbind[]>;
-    (db: 'SoulbindConduit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduit[]>;
-    (db: 'SoulbindConduitEnhancedSocket', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitEnhancedSocket[]>;
-    (db: 'SoulbindConduitItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitItem[]>;
-    (db: 'SoulbindConduitRank', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitRank[]>;
-    (db: 'SoulbindConduitRankProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitRankProperties[]>;
-    (db: 'SoulbindUIDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindUIDisplayInfo[]>;
-    (db: 'SoundAmbience', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundAmbience[]>;
-    (db: 'SoundAmbienceFlavor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundAmbienceFlavor[]>;
-    (db: 'SoundBus', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundBus[]>;
-    (db: 'SoundBusName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundBusName[]>;
-    (db: 'SoundBusOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundBusOverride[]>;
-    (db: 'SoundCharacterMacroLines', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundCharacterMacroLines[]>;
-    (db: 'SoundEmitterPillPoints', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEmitterPillPoints[]>;
-    (db: 'SoundEmitters', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEmitters[]>;
-    (db: 'SoundEntries', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEntries[]>;
-    (db: 'SoundEntriesAdvanced', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEntriesAdvanced[]>;
-    (db: 'SoundEntriesFallbacks', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEntriesFallbacks[]>;
-    (db: 'SoundEnvelope', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEnvelope[]>;
-    (db: 'SoundFilter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundFilter[]>;
-    (db: 'SoundFilterElem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundFilterElem[]>;
-    (db: 'SoundKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKit[]>;
-    (db: 'SoundKitAdvanced', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitAdvanced[]>;
-    (db: 'SoundKitChild', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitChild[]>;
-    (db: 'SoundKitEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitEntry[]>;
-    (db: 'SoundKitFallback', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitFallback[]>;
-    (db: 'SoundKitName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitName[]>;
-    (db: 'SoundOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundOverride[]>;
-    (db: 'SoundParameter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundParameter[]>;
-    (db: 'SoundProviderPreferences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundProviderPreferences[]>;
-    (db: 'SoundSamplePreferences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundSamplePreferences[]>;
-    (db: 'SoundWaterType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundWaterType[]>;
-    (db: 'SourceInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SourceInfo[]>;
-    (db: 'SpamMessages', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpamMessages[]>;
-    (db: 'SpecSetMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpecSetMember[]>;
-    (db: 'SpecializationSpells', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpecializationSpells[]>;
-    (db: 'SpecializationSpellsDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpecializationSpellsDisplay[]>;
-    (db: 'Spell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Spell[]>;
-    (db: 'SpellActionBarPref', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellActionBarPref[]>;
-    (db: 'SpellActivationOverlay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellActivationOverlay[]>;
-    (db: 'SpellAuraNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraNames[]>;
-    (db: 'SpellAuraOptions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraOptions[]>;
-    (db: 'SpellAuraRestrictions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraRestrictions[]>;
-    (db: 'SpellAuraRestrictionsDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraRestrictionsDifficulty[]>;
-    (db: 'SpellAuraVisXChrSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraVisXChrSpec[]>;
-    (db: 'SpellAuraVisXTalentTab', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraVisXTalentTab[]>;
-    (db: 'SpellAuraVisibility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraVisibility[]>;
-    (db: 'SpellCastTimes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCastTimes[]>;
-    (db: 'SpellCastingRequirements', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCastingRequirements[]>;
-    (db: 'SpellCategories', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCategories[]>;
-    (db: 'SpellCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCategory[]>;
-    (db: 'SpellChainEffects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellChainEffects[]>;
-    (db: 'SpellClassOptions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClassOptions[]>;
-    (db: 'SpellClutterAreaEffectCounts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterAreaEffectCounts[]>;
-    (db: 'SpellClutterFrameRates', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterFrameRates[]>;
-    (db: 'SpellClutterImpactModelCounts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterImpactModelCounts[]>;
-    (db: 'SpellClutterKitDistances', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterKitDistances[]>;
-    (db: 'SpellClutterMissileDist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterMissileDist[]>;
-    (db: 'SpellClutterWeaponTrailDist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterWeaponTrailDist[]>;
-    (db: 'SpellCooldowns', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCooldowns[]>;
-    (db: 'SpellCraftUI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCraftUI[]>;
-    (db: 'SpellDescriptionVariables', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDescriptionVariables[]>;
-    (db: 'SpellDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDifficulty[]>;
-    (db: 'SpellDispelType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDispelType[]>;
-    (db: 'SpellDuration', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDuration[]>;
-    (db: 'SpellEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffect[]>;
-    (db: 'SpellEffectAutoDescription', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectAutoDescription[]>;
-    (db: 'SpellEffectCameraShakes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectCameraShakes[]>;
-    (db: 'SpellEffectEmission', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectEmission[]>;
-    (db: 'SpellEffectGroupSize', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectGroupSize[]>;
-    (db: 'SpellEffectNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectNames[]>;
-    (db: 'SpellEffectScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectScaling[]>;
-    (db: 'SpellEquippedItems', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEquippedItems[]>;
-    (db: 'SpellFlyout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellFlyout[]>;
-    (db: 'SpellFlyoutItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellFlyoutItem[]>;
-    (db: 'SpellFocusObject', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellFocusObject[]>;
-    (db: 'SpellIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellIcon[]>;
-    (db: 'SpellInterrupts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellInterrupts[]>;
-    (db: 'SpellItemEnchantment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellItemEnchantment[]>;
-    (db: 'SpellItemEnchantmentCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellItemEnchantmentCondition[]>;
-    (db: 'SpellKeyboundOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellKeyboundOverride[]>;
-    (db: 'SpellLabel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellLabel[]>;
-    (db: 'SpellLearnSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellLearnSpell[]>;
-    (db: 'SpellLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellLevels[]>;
-    (db: 'SpellMastery', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMastery[]>;
-    (db: 'SpellMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMechanic[]>;
-    (db: 'SpellMisc', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMisc[]>;
-    (db: 'SpellMiscDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMiscDifficulty[]>;
-    (db: 'SpellMissile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMissile[]>;
-    (db: 'SpellMissileMotion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMissileMotion[]>;
-    (db: 'SpellName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellName[]>;
-    (db: 'SpellOverrideName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellOverrideName[]>;
-    (db: 'SpellPower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellPower[]>;
-    (db: 'SpellPowerDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellPowerDifficulty[]>;
-    (db: 'SpellProceduralEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellProceduralEffect[]>;
-    (db: 'SpellProcsPerMinute', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellProcsPerMinute[]>;
-    (db: 'SpellProcsPerMinuteMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellProcsPerMinuteMod[]>;
-    (db: 'SpellRadius', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellRadius[]>;
-    (db: 'SpellRange', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellRange[]>;
-    (db: 'SpellReagents', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellReagents[]>;
-    (db: 'SpellReagentsCurrency', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellReagentsCurrency[]>;
-    (db: 'SpellRuneCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellRuneCost[]>;
-    (db: 'SpellScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellScaling[]>;
-    (db: 'SpellScript', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellScript[]>;
-    (db: 'SpellScriptText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellScriptText[]>;
-    (db: 'SpellShapeshift', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellShapeshift[]>;
-    (db: 'SpellShapeshiftForm', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellShapeshiftForm[]>;
-    (db: 'SpellSpecialUnitEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellSpecialUnitEffect[]>;
-    (db: 'SpellTargetRestrictions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellTargetRestrictions[]>;
-    (db: 'SpellTotems', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellTotems[]>;
-    (db: 'SpellVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisual[]>;
-    (db: 'SpellVisualAnim', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualAnim[]>;
-    (db: 'SpellVisualAnimName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualAnimName[]>;
-    (db: 'SpellVisualColorEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualColorEffect[]>;
-    (db: 'SpellVisualEffectName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualEffectName[]>;
-    (db: 'SpellVisualEvent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualEvent[]>;
-    (db: 'SpellVisualKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKit[]>;
-    (db: 'SpellVisualKitAreaModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitAreaModel[]>;
-    (db: 'SpellVisualKitEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitEffect[]>;
-    (db: 'SpellVisualKitModelAttach', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitModelAttach[]>;
-    (db: 'SpellVisualKitPicker', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitPicker[]>;
-    (db: 'SpellVisualKitPickerEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitPickerEntry[]>;
-    (db: 'SpellVisualMissile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualMissile[]>;
-    (db: 'SpellVisualPrecastTransitions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualPrecastTransitions[]>;
-    (db: 'SpellVisualScreenEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualScreenEffect[]>;
-    (db: 'SpellXDescriptionVariables', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellXDescriptionVariables[]>;
-    (db: 'SpellXSpellVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellXSpellVisual[]>;
-    (db: 'StableSlotPrices', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<StableSlotPrices[]>;
-    (db: 'StartupFiles', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<StartupFiles[]>;
-    (db: 'Startup_Strings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Startup_Strings[]>;
-    (db: 'Stationery', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Stationery[]>;
-    (db: 'StringLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<StringLookups[]>;
-    (db: 'SummonProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SummonProperties[]>;
-    (db: 'TabardBackgroundTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TabardBackgroundTextures[]>;
-    (db: 'TabardEmblemTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TabardEmblemTextures[]>;
-    (db: 'TactKey', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TactKey[]>;
-    (db: 'TactKeyLookup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TactKeyLookup[]>;
-    (db: 'Talent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Talent[]>;
-    (db: 'TalentTab', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TalentTab[]>;
-    (db: 'TalentTreePrimarySpells', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TalentTreePrimarySpells[]>;
-    (db: 'TaxiNodes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TaxiNodes[]>;
-    (db: 'TaxiPath', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TaxiPath[]>;
-    (db: 'TaxiPathNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TaxiPathNode[]>;
-    (db: 'TeamContributionPoints', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TeamContributionPoints[]>;
-    (db: 'TerrainColorGradingRamp', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainColorGradingRamp[]>;
-    (db: 'TerrainMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainMaterial[]>;
-    (db: 'TerrainType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainType[]>;
-    (db: 'TerrainTypeSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainTypeSounds[]>;
-    (db: 'TextureBlendSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TextureBlendSet[]>;
-    (db: 'TextureFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TextureFileData[]>;
-    (db: 'TierTransition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TierTransition[]>;
-    (db: 'TotemCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TotemCategory[]>;
-    (db: 'Toy', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Toy[]>;
-    (db: 'TradeSkillCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TradeSkillCategory[]>;
-    (db: 'TradeSkillItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TradeSkillItem[]>;
-    (db: 'TransformMatrix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransformMatrix[]>;
-    (db: 'TransmogDefaultLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogDefaultLevel[]>;
-    (db: 'TransmogHoliday', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogHoliday[]>;
-    (db: 'TransmogIllusion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogIllusion[]>;
-    (db: 'TransmogSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogSet[]>;
-    (db: 'TransmogSetGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogSetGroup[]>;
-    (db: 'TransmogSetItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogSetItem[]>;
-    (db: 'TransportAnimation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransportAnimation[]>;
-    (db: 'TransportPhysics', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransportPhysics[]>;
-    (db: 'TransportRotation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransportRotation[]>;
-    (db: 'Trophy', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Trophy[]>;
-    (db: 'TrophyInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TrophyInstance[]>;
-    (db: 'TrophyType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TrophyType[]>;
-    (db: 'UIChromieTimeExpansionInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIChromieTimeExpansionInfo[]>;
-    (db: 'UICovenantAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UICovenantAbility[]>;
-    (db: 'UICovenantPreview', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UICovenantPreview[]>;
-    (db: 'UIDungeonScoreRarity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIDungeonScoreRarity[]>;
-    (db: 'UIEventToast', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIEventToast[]>;
-    (db: 'UIExpansionDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIExpansionDisplayInfo[]>;
-    (db: 'UIExpansionDisplayInfoIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIExpansionDisplayInfoIcon[]>;
-    (db: 'UIScriptedAnimationEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIScriptedAnimationEffect[]>;
-    (db: 'UISoundLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UISoundLookups[]>;
-    (db: 'UISplashScreen', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UISplashScreen[]>;
-    (db: 'UiCamFbackTransmogChrRace', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCamFbackTransmogChrRace[]>;
-    (db: 'UiCamFbackTransmogWeapon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCamFbackTransmogWeapon[]>;
-    (db: 'UiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCamera[]>;
-    (db: 'UiCameraType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCameraType[]>;
-    (db: 'UiCanvas', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCanvas[]>;
-    (db: 'UiCovenantDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCovenantDisplayInfo[]>;
-    (db: 'UiItemInteraction', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiItemInteraction[]>;
-    (db: 'UiMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMap[]>;
-    (db: 'UiMapArt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapArt[]>;
-    (db: 'UiMapArtStyleLayer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapArtStyleLayer[]>;
-    (db: 'UiMapArtTile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapArtTile[]>;
-    (db: 'UiMapAssignment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapAssignment[]>;
-    (db: 'UiMapFogOfWar', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapFogOfWar[]>;
-    (db: 'UiMapFogOfWarVisualization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapFogOfWarVisualization[]>;
-    (db: 'UiMapGroupMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapGroupMember[]>;
-    (db: 'UiMapLink', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapLink[]>;
-    (db: 'UiMapPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapPOI[]>;
-    (db: 'UiMapXMapArt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapXMapArt[]>;
-    (db: 'UiModelScene', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelScene[]>;
-    (db: 'UiModelSceneActor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelSceneActor[]>;
-    (db: 'UiModelSceneActorDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelSceneActorDisplay[]>;
-    (db: 'UiModelSceneCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelSceneCamera[]>;
-    (db: 'UiPartyPose', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiPartyPose[]>;
-    (db: 'UiQuestDetailsTheme', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiQuestDetailsTheme[]>;
-    (db: 'UiTextureAtlas', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlas[]>;
-    (db: 'UiTextureAtlasElement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlasElement[]>;
-    (db: 'UiTextureAtlasElementOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlasElementOverride[]>;
-    (db: 'UiTextureAtlasMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlasMember[]>;
-    (db: 'UiTextureKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureKit[]>;
-    (db: 'UiWidget', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidget[]>;
-    (db: 'UiWidgetConstantSource', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetConstantSource[]>;
-    (db: 'UiWidgetDataSource', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetDataSource[]>;
-    (db: 'UiWidgetMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetMap[]>;
-    (db: 'UiWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetSet[]>;
-    (db: 'UiWidgetStringSource', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetStringSource[]>;
-    (db: 'UiWidgetVisTypeDataReq', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetVisTypeDataReq[]>;
-    (db: 'UiWidgetVisualization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetVisualization[]>;
-    (db: 'UiWidgetXWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetXWidgetSet[]>;
-    (db: 'UnitBlood', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitBlood[]>;
-    (db: 'UnitBloodLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitBloodLevels[]>;
-    (db: 'UnitCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitCondition[]>;
-    (db: 'UnitPowerBar', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitPowerBar[]>;
-    (db: 'UnitTest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitTest[]>;
-    (db: 'UnitTestSparse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitTestSparse[]>;
-    (db: 'Vehicle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Vehicle[]>;
-    (db: 'VehiclePOIType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehiclePOIType[]>;
-    (db: 'VehicleSeat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehicleSeat[]>;
-    (db: 'VehicleUIIndSeat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehicleUIIndSeat[]>;
-    (db: 'VehicleUIIndicator', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehicleUIIndicator[]>;
-    (db: 'VideoHardware', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VideoHardware[]>;
-    (db: 'Vignette', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Vignette[]>;
-    (db: 'VirtualAttachment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VirtualAttachment[]>;
-    (db: 'VirtualAttachmentCustomization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VirtualAttachmentCustomization[]>;
-    (db: 'VocalUISounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VocalUISounds[]>;
-    (db: 'VolumeFogCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VolumeFogCondition[]>;
-    (db: 'WMOAreaTable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WMOAreaTable[]>;
-    (db: 'WMOMinimapTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WMOMinimapTexture[]>;
-    (db: 'WaterfallData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaterfallData[]>;
-    (db: 'WaypointEdge', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaypointEdge[]>;
-    (db: 'WaypointNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaypointNode[]>;
-    (db: 'WaypointSafeLocs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaypointSafeLocs[]>;
-    (db: 'WbAccessControlList', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbAccessControlList[]>;
-    (db: 'WbCertBlacklist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbCertBlacklist[]>;
-    (db: 'WbCertWhitelist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbCertWhitelist[]>;
-    (db: 'WbPermissions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbPermissions[]>;
-    (db: 'WeaponImpactSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponImpactSounds[]>;
-    (db: 'WeaponSwingSounds2', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponSwingSounds2[]>;
-    (db: 'WeaponTrail', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponTrail[]>;
-    (db: 'WeaponTrailModelDef', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponTrailModelDef[]>;
-    (db: 'WeaponTrailParam', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponTrailParam[]>;
-    (db: 'Weather', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Weather[]>;
-    (db: 'WeatherXParticulate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeatherXParticulate[]>;
-    (db: 'WeeklyRewardChestThreshold', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeeklyRewardChestThreshold[]>;
-    (db: 'WindSettings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WindSettings[]>;
-    (db: 'WorldBossLockout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldBossLockout[]>;
-    (db: 'WorldChunkSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldChunkSounds[]>;
-    (db: 'WorldEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldEffect[]>;
-    (db: 'WorldElapsedTimer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldElapsedTimer[]>;
-    (db: 'WorldMapArea', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapArea[]>;
-    (db: 'WorldMapContinent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapContinent[]>;
-    (db: 'WorldMapOverlay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapOverlay[]>;
-    (db: 'WorldMapOverlayTile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapOverlayTile[]>;
-    (db: 'WorldMapTransforms', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapTransforms[]>;
-    (db: 'WorldSafeLocs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldSafeLocs[]>;
-    (db: 'WorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldState[]>;
-    (db: 'WorldStateExpression', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldStateExpression[]>;
-    (db: 'WorldStateUI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldStateUI[]>;
-    (db: 'WorldStateZoneSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldStateZoneSounds[]>;
-    (db: 'World_PVP_Area', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<World_PVP_Area[]>;
-    (db: 'WowError_Strings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WowError_Strings[]>;
-    (db: 'ZoneIntroMusicTable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneIntroMusicTable[]>;
-    (db: 'ZoneLight', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneLight[]>;
-    (db: 'ZoneLightPoint', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneLightPoint[]>;
-    (db: 'ZoneMusic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneMusic[]>;
-    (db: 'ZoneStory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneStory[]>;
-    (db: 'gtArmorMitigationByLvl', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtArmorMitigationByLvl[]>;
-    (db: 'gtBarberShopCostBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtBarberShopCostBase[]>;
-    (db: 'gtBattlePetTypeDamageMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtBattlePetTypeDamageMod[]>;
-    (db: 'gtBattlePetXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtBattlePetXP[]>;
-    (db: 'gtChanceToMeleeCrit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToMeleeCrit[]>;
-    (db: 'gtChanceToMeleeCritBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToMeleeCritBase[]>;
-    (db: 'gtChanceToSpellCrit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToSpellCrit[]>;
-    (db: 'gtChanceToSpellCritBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToSpellCritBase[]>;
-    (db: 'gtCombatRatings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtCombatRatings[]>;
-    (db: 'gtItemSocketCostPerLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtItemSocketCostPerLevel[]>;
-    (db: 'gtMasteryMultipliers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtMasteryMultipliers[]>;
-    (db: 'gtNPCManaCostScaler', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtNPCManaCostScaler[]>;
-    (db: 'gtOCTBaseHPByClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTBaseHPByClass[]>;
-    (db: 'gtOCTBaseMPByClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTBaseMPByClass[]>;
-    (db: 'gtOCTClassCombatRatingScalar', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTClassCombatRatingScalar[]>;
-    (db: 'gtOCTHpPerStamina', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTHpPerStamina[]>;
-    (db: 'gtOCTLevelExperience', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTLevelExperience[]>;
-    (db: 'gtOCTRegenHP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTRegenHP[]>;
-    (db: 'gtOCTRegenMP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTRegenMP[]>;
-    (db: 'gtRegenHPPerSpt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtRegenHPPerSpt[]>;
-    (db: 'gtRegenMPPerSpt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtRegenMPPerSpt[]>;
-    (db: 'gtResilienceDR', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtResilienceDR[]>;
-    (db: 'gtSpellScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtSpellScaling[]>;
+    (db: 'Achievement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AchievementDatabase[]>;
+    (db: 'Achievement_Category', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Achievement_CategoryDatabase[]>;
+    (db: 'Achievement_Criteria', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Achievement_CriteriaDatabase[]>;
+    (db: 'AdventureJournal', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AdventureJournalDatabase[]>;
+    (db: 'AdventureMapPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AdventureMapPOIDatabase[]>;
+    (db: 'AlliedRace', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AlliedRaceDatabase[]>;
+    (db: 'AlliedRaceRacialAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AlliedRaceRacialAbilityDatabase[]>;
+    (db: 'AnimKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitDatabase[]>;
+    (db: 'AnimKitBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitBoneSetDatabase[]>;
+    (db: 'AnimKitBoneSetAlias', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitBoneSetAliasDatabase[]>;
+    (db: 'AnimKitConfig', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitConfigDatabase[]>;
+    (db: 'AnimKitConfigBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitConfigBoneSetDatabase[]>;
+    (db: 'AnimKitPriority', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitPriorityDatabase[]>;
+    (db: 'AnimKitReplacement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitReplacementDatabase[]>;
+    (db: 'AnimKitSegment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimKitSegmentDatabase[]>;
+    (db: 'AnimReplacement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimReplacementDatabase[]>;
+    (db: 'AnimReplacementSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimReplacementSetDatabase[]>;
+    (db: 'AnimaCable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimaCableDatabase[]>;
+    (db: 'AnimaCylinder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimaCylinderDatabase[]>;
+    (db: 'AnimaMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimaMaterialDatabase[]>;
+    (db: 'AnimationData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimationDataDatabase[]>;
+    (db: 'AnimationNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AnimationNamesDatabase[]>;
+    (db: 'AoiBox', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AoiBoxDatabase[]>;
+    (db: 'AreaAssignment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaAssignmentDatabase[]>;
+    (db: 'AreaConditionalData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaConditionalDataDatabase[]>;
+    (db: 'AreaFarClipOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaFarClipOverrideDatabase[]>;
+    (db: 'AreaGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaGroupDatabase[]>;
+    (db: 'AreaGroupMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaGroupMemberDatabase[]>;
+    (db: 'AreaMIDIAmbiences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaMIDIAmbiencesDatabase[]>;
+    (db: 'AreaPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaPOIDatabase[]>;
+    (db: 'AreaPOISortedWorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaPOISortedWorldStateDatabase[]>;
+    (db: 'AreaPOIState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaPOIStateDatabase[]>;
+    (db: 'AreaTable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTableDatabase[]>;
+    (db: 'AreaTrigger', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerDatabase[]>;
+    (db: 'AreaTriggerActionSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerActionSetDatabase[]>;
+    (db: 'AreaTriggerBox', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerBoxDatabase[]>;
+    (db: 'AreaTriggerCreateProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerCreatePropertiesDatabase[]>;
+    (db: 'AreaTriggerCylinder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerCylinderDatabase[]>;
+    (db: 'AreaTriggerSphere', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AreaTriggerSphereDatabase[]>;
+    (db: 'ArenaCcItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArenaCcItemDatabase[]>;
+    (db: 'ArmorLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArmorLocationDatabase[]>;
+    (db: 'Artifact', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactDatabase[]>;
+    (db: 'ArtifactAppearance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactAppearanceDatabase[]>;
+    (db: 'ArtifactAppearanceSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactAppearanceSetDatabase[]>;
+    (db: 'ArtifactCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactCategoryDatabase[]>;
+    (db: 'ArtifactItemToTransmog', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactItemToTransmogDatabase[]>;
+    (db: 'ArtifactPower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPowerDatabase[]>;
+    (db: 'ArtifactPowerLink', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPowerLinkDatabase[]>;
+    (db: 'ArtifactPowerPicker', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPowerPickerDatabase[]>;
+    (db: 'ArtifactPowerRank', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactPowerRankDatabase[]>;
+    (db: 'ArtifactQuestXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactQuestXPDatabase[]>;
+    (db: 'ArtifactTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactTierDatabase[]>;
+    (db: 'ArtifactUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ArtifactUnlockDatabase[]>;
+    (db: 'AttackAnimKits', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AttackAnimKitsDatabase[]>;
+    (db: 'AttackAnimTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AttackAnimTypesDatabase[]>;
+    (db: 'AuctionHouse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AuctionHouseDatabase[]>;
+    (db: 'AzeriteEmpoweredItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteEmpoweredItemDatabase[]>;
+    (db: 'AzeriteEssence', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteEssenceDatabase[]>;
+    (db: 'AzeriteEssencePower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteEssencePowerDatabase[]>;
+    (db: 'AzeriteItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteItemDatabase[]>;
+    (db: 'AzeriteItemMilestonePower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteItemMilestonePowerDatabase[]>;
+    (db: 'AzeriteKnowledgeMultiplier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteKnowledgeMultiplierDatabase[]>;
+    (db: 'AzeriteLevelInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteLevelInfoDatabase[]>;
+    (db: 'AzeritePower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeritePowerDatabase[]>;
+    (db: 'AzeritePowerSetMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeritePowerSetMemberDatabase[]>;
+    (db: 'AzeriteTierUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteTierUnlockDatabase[]>;
+    (db: 'AzeriteTierUnlockSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteTierUnlockSetDatabase[]>;
+    (db: 'AzeriteUnlockMapping', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<AzeriteUnlockMappingDatabase[]>;
+    (db: 'BankBagSlotPrices', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BankBagSlotPricesDatabase[]>;
+    (db: 'BannedAddons', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BannedAddonsDatabase[]>;
+    (db: 'BarberShopStyle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BarberShopStyleDatabase[]>;
+    (db: 'BarrageEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BarrageEffectDatabase[]>;
+    (db: 'BattlePetAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbilityDatabase[]>;
+    (db: 'BattlePetAbilityEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbilityEffectDatabase[]>;
+    (db: 'BattlePetAbilityState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbilityStateDatabase[]>;
+    (db: 'BattlePetAbilityTurn', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetAbilityTurnDatabase[]>;
+    (db: 'BattlePetBreedQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetBreedQualityDatabase[]>;
+    (db: 'BattlePetBreedState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetBreedStateDatabase[]>;
+    (db: 'BattlePetDisplayOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetDisplayOverrideDatabase[]>;
+    (db: 'BattlePetEffectProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetEffectPropertiesDatabase[]>;
+    (db: 'BattlePetNPCTeamMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetNPCTeamMemberDatabase[]>;
+    (db: 'BattlePetSpecies', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpeciesDatabase[]>;
+    (db: 'BattlePetSpeciesState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpeciesStateDatabase[]>;
+    (db: 'BattlePetSpeciesXAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpeciesXAbilityDatabase[]>;
+    (db: 'BattlePetSpeciesXCovenant', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetSpeciesXCovenantDatabase[]>;
+    (db: 'BattlePetState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetStateDatabase[]>;
+    (db: 'BattlePetVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlePetVisualDatabase[]>;
+    (db: 'BattlemasterList', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BattlemasterListDatabase[]>;
+    (db: 'BeamEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BeamEffectDatabase[]>;
+    (db: 'BeckonTrigger', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BeckonTriggerDatabase[]>;
+    (db: 'BoneWindModifierModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BoneWindModifierModelDatabase[]>;
+    (db: 'BoneWindModifiers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BoneWindModifiersDatabase[]>;
+    (db: 'BonusRoll', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BonusRollDatabase[]>;
+    (db: 'Bounty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BountyDatabase[]>;
+    (db: 'BountySet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BountySetDatabase[]>;
+    (db: 'BroadcastText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastTextDatabase[]>;
+    (db: 'BroadcastTextDuration', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastTextDurationDatabase[]>;
+    (db: 'BroadcastTextSoundState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastTextSoundStateDatabase[]>;
+    (db: 'BroadcastTextVOState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<BroadcastTextVOStateDatabase[]>;
+    (db: 'CameraEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraEffectDatabase[]>;
+    (db: 'CameraEffectEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraEffectEntryDatabase[]>;
+    (db: 'CameraMode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraModeDatabase[]>;
+    (db: 'CameraShakes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CameraShakesDatabase[]>;
+    (db: 'Campaign', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CampaignDatabase[]>;
+    (db: 'CampaignXCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CampaignXConditionDatabase[]>;
+    (db: 'CampaignXQuestLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CampaignXQuestLineDatabase[]>;
+    (db: 'CastableRaidBuffs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CastableRaidBuffsDatabase[]>;
+    (db: 'CelestialBody', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CelestialBodyDatabase[]>;
+    (db: 'Cfg_Categories', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Cfg_CategoriesDatabase[]>;
+    (db: 'Cfg_Configs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Cfg_ConfigsDatabase[]>;
+    (db: 'Cfg_Regions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Cfg_RegionsDatabase[]>;
+    (db: 'ChallengeModeItemBonusOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChallengeModeItemBonusOverrideDatabase[]>;
+    (db: 'CharBaseInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharBaseInfoDatabase[]>;
+    (db: 'CharBaseSection', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharBaseSectionDatabase[]>;
+    (db: 'CharComponentTextureLayouts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharComponentTextureLayoutsDatabase[]>;
+    (db: 'CharComponentTextureSections', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharComponentTextureSectionsDatabase[]>;
+    (db: 'CharHairGeosets', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharHairGeosetsDatabase[]>;
+    (db: 'CharHairTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharHairTexturesDatabase[]>;
+    (db: 'CharSectionCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharSectionConditionDatabase[]>;
+    (db: 'CharSections', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharSectionsDatabase[]>;
+    (db: 'CharShipment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharShipmentDatabase[]>;
+    (db: 'CharShipmentContainer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharShipmentContainerDatabase[]>;
+    (db: 'CharStartKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharStartKitDatabase[]>;
+    (db: 'CharStartOutfit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharStartOutfitDatabase[]>;
+    (db: 'CharTextureVariationsV2', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharTextureVariationsV2Database[]>;
+    (db: 'CharTitles', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharTitlesDatabase[]>;
+    (db: 'CharVariations', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharVariationsDatabase[]>;
+    (db: 'CharacterCreateCameras', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterCreateCamerasDatabase[]>;
+    (db: 'CharacterFaceBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterFaceBoneSetDatabase[]>;
+    (db: 'CharacterFacialHairStyles', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterFacialHairStylesDatabase[]>;
+    (db: 'CharacterLoadout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterLoadoutDatabase[]>;
+    (db: 'CharacterLoadoutItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterLoadoutItemDatabase[]>;
+    (db: 'CharacterLoadoutPet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterLoadoutPetDatabase[]>;
+    (db: 'CharacterServiceInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CharacterServiceInfoDatabase[]>;
+    (db: 'ChatChannels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChatChannelsDatabase[]>;
+    (db: 'ChatProfanity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChatProfanityDatabase[]>;
+    (db: 'ChrClassRaceSex', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassRaceSexDatabase[]>;
+    (db: 'ChrClassTitle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassTitleDatabase[]>;
+    (db: 'ChrClassUIChrModelInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassUIChrModelInfoDatabase[]>;
+    (db: 'ChrClassUIDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassUIDisplayDatabase[]>;
+    (db: 'ChrClassVillain', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassVillainDatabase[]>;
+    (db: 'ChrClasses', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassesDatabase[]>;
+    (db: 'ChrClassesXPowerTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrClassesXPowerTypesDatabase[]>;
+    (db: 'ChrCreateClassAnimTarget', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCreateClassAnimTargetDatabase[]>;
+    (db: 'ChrCreateClassAnimTargetInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCreateClassAnimTargetInfoDatabase[]>;
+    (db: 'ChrCustClientChoiceConversion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustClientChoiceConversionDatabase[]>;
+    (db: 'ChrCustItemGeoModify', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustItemGeoModifyDatabase[]>;
+    (db: 'ChrCustomization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationDatabase[]>;
+    (db: 'ChrCustomizationBoneSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationBoneSetDatabase[]>;
+    (db: 'ChrCustomizationCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationCategoryDatabase[]>;
+    (db: 'ChrCustomizationChoice', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationChoiceDatabase[]>;
+    (db: 'ChrCustomizationCondModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationCondModelDatabase[]>;
+    (db: 'ChrCustomizationConversion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationConversionDatabase[]>;
+    (db: 'ChrCustomizationDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationDisplayInfoDatabase[]>;
+    (db: 'ChrCustomizationElement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationElementDatabase[]>;
+    (db: 'ChrCustomizationGeoset', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationGeosetDatabase[]>;
+    (db: 'ChrCustomizationMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationMaterialDatabase[]>;
+    (db: 'ChrCustomizationOption', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationOptionDatabase[]>;
+    (db: 'ChrCustomizationReq', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationReqDatabase[]>;
+    (db: 'ChrCustomizationReqChoice', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationReqChoiceDatabase[]>;
+    (db: 'ChrCustomizationSkinnedModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrCustomizationSkinnedModelDatabase[]>;
+    (db: 'ChrModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModelDatabase[]>;
+    (db: 'ChrModelMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModelMaterialDatabase[]>;
+    (db: 'ChrModelTextureLayer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModelTextureLayerDatabase[]>;
+    (db: 'ChrModelTextureTarget', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrModelTextureTargetDatabase[]>;
+    (db: 'ChrProficiency', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrProficiencyDatabase[]>;
+    (db: 'ChrRaceRacialAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrRaceRacialAbilityDatabase[]>;
+    (db: 'ChrRaceXChrModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrRaceXChrModelDatabase[]>;
+    (db: 'ChrRaces', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrRacesDatabase[]>;
+    (db: 'ChrSpecialization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrSpecializationDatabase[]>;
+    (db: 'ChrUpgradeBucket', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrUpgradeBucketDatabase[]>;
+    (db: 'ChrUpgradeBucketSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrUpgradeBucketSpellDatabase[]>;
+    (db: 'ChrUpgradeTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ChrUpgradeTierDatabase[]>;
+    (db: 'Cinematic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CinematicDatabase[]>;
+    (db: 'CinematicCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CinematicCameraDatabase[]>;
+    (db: 'CinematicSequences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CinematicSequencesDatabase[]>;
+    (db: 'CinematicSubtitle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CinematicSubtitleDatabase[]>;
+    (db: 'ClientSceneEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ClientSceneEffectDatabase[]>;
+    (db: 'CloakDampening', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CloakDampeningDatabase[]>;
+    (db: 'CloneEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CloneEffectDatabase[]>;
+    (db: 'ColorBanding', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ColorBandingDatabase[]>;
+    (db: 'CombatCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CombatConditionDatabase[]>;
+    (db: 'CommentatorIndirectSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommentatorIndirectSpellDatabase[]>;
+    (db: 'CommentatorStartLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommentatorStartLocationDatabase[]>;
+    (db: 'CommentatorTrackedCooldown', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommentatorTrackedCooldownDatabase[]>;
+    (db: 'CommunityIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CommunityIconDatabase[]>;
+    (db: 'ComponentModelFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ComponentModelFileDataDatabase[]>;
+    (db: 'ComponentTextureFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ComponentTextureFileDataDatabase[]>;
+    (db: 'ConditionalContentTuning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConditionalContentTuningDatabase[]>;
+    (db: 'ConfigurationWarning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConfigurationWarningDatabase[]>;
+    (db: 'ConsoleScripts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConsoleScriptsDatabase[]>;
+    (db: 'ContentTuning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuningDatabase[]>;
+    (db: 'ContentTuningDescription', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuningDescriptionDatabase[]>;
+    (db: 'ContentTuningXExpected', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuningXExpectedDatabase[]>;
+    (db: 'ContentTuningXExpectedStatMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContentTuningXExpectedStatModDatabase[]>;
+    (db: 'Contribution', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContributionDatabase[]>;
+    (db: 'ContributionStyle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContributionStyleDatabase[]>;
+    (db: 'ContributionStyleContainer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ContributionStyleContainerDatabase[]>;
+    (db: 'ConversationLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ConversationLineDatabase[]>;
+    (db: 'CorruptionEffects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CorruptionEffectsDatabase[]>;
+    (db: 'Covenant', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CovenantDatabase[]>;
+    (db: 'Creature', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDatabase[]>;
+    (db: 'CreatureDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDifficultyDatabase[]>;
+    (db: 'CreatureDispXUiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDispXUiCameraDatabase[]>;
+    (db: 'CreatureDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoDatabase[]>;
+    (db: 'CreatureDisplayInfoCond', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoCondDatabase[]>;
+    (db: 'CreatureDisplayInfoCondXChoice', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoCondXChoiceDatabase[]>;
+    (db: 'CreatureDisplayInfoEvt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoEvtDatabase[]>;
+    (db: 'CreatureDisplayInfoExtra', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoExtraDatabase[]>;
+    (db: 'CreatureDisplayInfoGeosetData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoGeosetDataDatabase[]>;
+    (db: 'CreatureDisplayInfoOption', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoOptionDatabase[]>;
+    (db: 'CreatureDisplayInfoTrn', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureDisplayInfoTrnDatabase[]>;
+    (db: 'CreatureFamily', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureFamilyDatabase[]>;
+    (db: 'CreatureImmunities', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureImmunitiesDatabase[]>;
+    (db: 'CreatureModelData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureModelDataDatabase[]>;
+    (db: 'CreatureMovementInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureMovementInfoDatabase[]>;
+    (db: 'CreatureSoundData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureSoundDataDatabase[]>;
+    (db: 'CreatureSpellData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureSpellDataDatabase[]>;
+    (db: 'CreatureType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureTypeDatabase[]>;
+    (db: 'CreatureXContribution', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureXContributionDatabase[]>;
+    (db: 'CreatureXDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureXDisplayInfoDatabase[]>;
+    (db: 'CreatureXUiWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CreatureXUiWidgetSetDatabase[]>;
+    (db: 'Criteria', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CriteriaDatabase[]>;
+    (db: 'CriteriaTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CriteriaTreeDatabase[]>;
+    (db: 'CriteriaTreeXEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CriteriaTreeXEffectDatabase[]>;
+    (db: 'CurrencyCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurrencyCategoryDatabase[]>;
+    (db: 'CurrencyContainer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurrencyContainerDatabase[]>;
+    (db: 'CurrencyTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurrencyTypesDatabase[]>;
+    (db: 'Curve', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurveDatabase[]>;
+    (db: 'CurvePoint', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<CurvePointDatabase[]>;
+    (db: 'DanceMoves', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DanceMovesDatabase[]>;
+    (db: 'DeathThudLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeathThudLookupsDatabase[]>;
+    (db: 'DecalProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DecalPropertiesDatabase[]>;
+    (db: 'DeclinedWord', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeclinedWordDatabase[]>;
+    (db: 'DeclinedWordCases', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeclinedWordCasesDatabase[]>;
+    (db: 'DestructibleModelData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DestructibleModelDataDatabase[]>;
+    (db: 'DeviceBlacklist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeviceBlacklistDatabase[]>;
+    (db: 'DeviceDefaultSettings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DeviceDefaultSettingsDatabase[]>;
+    (db: 'Difficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DifficultyDatabase[]>;
+    (db: 'DissolveEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DissolveEffectDatabase[]>;
+    (db: 'DriverBlacklist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DriverBlacklistDatabase[]>;
+    (db: 'DungeonEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DungeonEncounterDatabase[]>;
+    (db: 'DungeonMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DungeonMapDatabase[]>;
+    (db: 'DungeonMapChunk', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DungeonMapChunkDatabase[]>;
+    (db: 'DurabilityCosts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DurabilityCostsDatabase[]>;
+    (db: 'DurabilityQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<DurabilityQualityDatabase[]>;
+    (db: 'EdgeGlowEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EdgeGlowEffectDatabase[]>;
+    (db: 'EmoteAnims', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmoteAnimsDatabase[]>;
+    (db: 'Emotes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmotesDatabase[]>;
+    (db: 'EmotesText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmotesTextDatabase[]>;
+    (db: 'EmotesTextData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmotesTextDataDatabase[]>;
+    (db: 'EmotesTextSound', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EmotesTextSoundDatabase[]>;
+    (db: 'EnumeratedString', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EnumeratedStringDatabase[]>;
+    (db: 'EnvironmentalDamage', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<EnvironmentalDamageDatabase[]>;
+    (db: 'Exhaustion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ExhaustionDatabase[]>;
+    (db: 'ExpectedStat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ExpectedStatDatabase[]>;
+    (db: 'ExpectedStatMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ExpectedStatModDatabase[]>;
+    (db: 'ExtraAbilityInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ExtraAbilityInfoDatabase[]>;
+    (db: 'Faction', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FactionDatabase[]>;
+    (db: 'FactionGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FactionGroupDatabase[]>;
+    (db: 'FactionTemplate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FactionTemplateDatabase[]>;
+    (db: 'FileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FileDataDatabase[]>;
+    (db: 'FileDataComplete', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FileDataCompleteDatabase[]>;
+    (db: 'FilePaths', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FilePathsDatabase[]>;
+    (db: 'FootprintTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FootprintTexturesDatabase[]>;
+    (db: 'FootstepTerrainLookup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FootstepTerrainLookupDatabase[]>;
+    (db: 'FriendshipRepReaction', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FriendshipRepReactionDatabase[]>;
+    (db: 'FriendshipReputation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FriendshipReputationDatabase[]>;
+    (db: 'FullScreenEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<FullScreenEffectDatabase[]>;
+    (db: 'GMSurveyAnswers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveyAnswersDatabase[]>;
+    (db: 'GMSurveyCurrentSurvey', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveyCurrentSurveyDatabase[]>;
+    (db: 'GMSurveyQuestions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveyQuestionsDatabase[]>;
+    (db: 'GMSurveySurveys', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMSurveySurveysDatabase[]>;
+    (db: 'GMTicketCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GMTicketCategoryDatabase[]>;
+    (db: 'GameClockDebug', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameClockDebugDatabase[]>;
+    (db: 'GameObjectAnimGroupMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectAnimGroupMemberDatabase[]>;
+    (db: 'GameObjectArtKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectArtKitDatabase[]>;
+    (db: 'GameObjectDiffAnimMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectDiffAnimMapDatabase[]>;
+    (db: 'GameObjectDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectDisplayInfoDatabase[]>;
+    (db: 'GameObjectDisplayInfoXSoundKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectDisplayInfoXSoundKitDatabase[]>;
+    (db: 'GameObjects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectsDatabase[]>;
+    (db: 'GameObjectsClient', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameObjectsClientDatabase[]>;
+    (db: 'GameParameter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameParameterDatabase[]>;
+    (db: 'GameTables', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameTablesDatabase[]>;
+    (db: 'GameTips', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GameTipsDatabase[]>;
+    (db: 'GarrAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAbilityDatabase[]>;
+    (db: 'GarrAbilityCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAbilityCategoryDatabase[]>;
+    (db: 'GarrAbilityEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAbilityEffectDatabase[]>;
+    (db: 'GarrAutoCombatant', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAutoCombatantDatabase[]>;
+    (db: 'GarrAutoSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAutoSpellDatabase[]>;
+    (db: 'GarrAutoSpellEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrAutoSpellEffectDatabase[]>;
+    (db: 'GarrBuilding', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrBuildingDatabase[]>;
+    (db: 'GarrBuildingDoodadSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrBuildingDoodadSetDatabase[]>;
+    (db: 'GarrBuildingPlotInst', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrBuildingPlotInstDatabase[]>;
+    (db: 'GarrClassSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrClassSpecDatabase[]>;
+    (db: 'GarrClassSpecPlayerCond', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrClassSpecPlayerCondDatabase[]>;
+    (db: 'GarrEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrEncounterDatabase[]>;
+    (db: 'GarrEncounterSetXEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrEncounterSetXEncounterDatabase[]>;
+    (db: 'GarrEncounterXMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrEncounterXMechanicDatabase[]>;
+    (db: 'GarrFamilyName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFamilyNameDatabase[]>;
+    (db: 'GarrFollItemSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollItemSetDatabase[]>;
+    (db: 'GarrFollItemSetMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollItemSetMemberDatabase[]>;
+    (db: 'GarrFollSupportSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollSupportSpellDatabase[]>;
+    (db: 'GarrFollower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerDatabase[]>;
+    (db: 'GarrFollowerLevelXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerLevelXPDatabase[]>;
+    (db: 'GarrFollowerQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerQualityDatabase[]>;
+    (db: 'GarrFollowerSetXFollower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerSetXFollowerDatabase[]>;
+    (db: 'GarrFollowerType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerTypeDatabase[]>;
+    (db: 'GarrFollowerUICreature', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerUICreatureDatabase[]>;
+    (db: 'GarrFollowerXAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrFollowerXAbilityDatabase[]>;
+    (db: 'GarrGivenName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrGivenNameDatabase[]>;
+    (db: 'GarrItemLevelUpgradeData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrItemLevelUpgradeDataDatabase[]>;
+    (db: 'GarrMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMechanicDatabase[]>;
+    (db: 'GarrMechanicSetXMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMechanicSetXMechanicDatabase[]>;
+    (db: 'GarrMechanicType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMechanicTypeDatabase[]>;
+    (db: 'GarrMission', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionDatabase[]>;
+    (db: 'GarrMissionSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionSetDatabase[]>;
+    (db: 'GarrMissionTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionTextureDatabase[]>;
+    (db: 'GarrMissionType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionTypeDatabase[]>;
+    (db: 'GarrMissionXEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionXEncounterDatabase[]>;
+    (db: 'GarrMissionXFollower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMissionXFollowerDatabase[]>;
+    (db: 'GarrMssnBonusAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrMssnBonusAbilityDatabase[]>;
+    (db: 'GarrPlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlotDatabase[]>;
+    (db: 'GarrPlotBuilding', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlotBuildingDatabase[]>;
+    (db: 'GarrPlotInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlotInstanceDatabase[]>;
+    (db: 'GarrPlotUICategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrPlotUICategoryDatabase[]>;
+    (db: 'GarrSiteLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrSiteLevelDatabase[]>;
+    (db: 'GarrSiteLevelPlotInst', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrSiteLevelPlotInstDatabase[]>;
+    (db: 'GarrSpecialization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrSpecializationDatabase[]>;
+    (db: 'GarrString', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrStringDatabase[]>;
+    (db: 'GarrTalTreeXGarrTalResearch', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalTreeXGarrTalResearchDatabase[]>;
+    (db: 'GarrTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentDatabase[]>;
+    (db: 'GarrTalentCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentCostDatabase[]>;
+    (db: 'GarrTalentMapPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentMapPOIDatabase[]>;
+    (db: 'GarrTalentRank', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentRankDatabase[]>;
+    (db: 'GarrTalentResearch', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentResearchDatabase[]>;
+    (db: 'GarrTalentSocketProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentSocketPropertiesDatabase[]>;
+    (db: 'GarrTalentTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTalentTreeDatabase[]>;
+    (db: 'GarrType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrTypeDatabase[]>;
+    (db: 'GarrUiAnimClassInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrUiAnimClassInfoDatabase[]>;
+    (db: 'GarrUiAnimRaceInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GarrUiAnimRaceInfoDatabase[]>;
+    (db: 'GemProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GemPropertiesDatabase[]>;
+    (db: 'GlobalCurve', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalCurveDatabase[]>;
+    (db: 'GlobalGameContentTuning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalGameContentTuningDatabase[]>;
+    (db: 'GlobalPlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalPlayerConditionDatabase[]>;
+    (db: 'GlobalPlayerConditionSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalPlayerConditionSetDatabase[]>;
+    (db: 'GlobalStrings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalStringsDatabase[]>;
+    (db: 'GlobalTable_PlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlobalTable_PlayerConditionDatabase[]>;
+    (db: 'GlueScreenEmote', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlueScreenEmoteDatabase[]>;
+    (db: 'GlyphBindableSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphBindableSpellDatabase[]>;
+    (db: 'GlyphExclusiveCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphExclusiveCategoryDatabase[]>;
+    (db: 'GlyphProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphPropertiesDatabase[]>;
+    (db: 'GlyphRequiredSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphRequiredSpecDatabase[]>;
+    (db: 'GlyphSlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GlyphSlotDatabase[]>;
+    (db: 'GossipXUIDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GossipXUIDisplayInfoDatabase[]>;
+    (db: 'GradientEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GradientEffectDatabase[]>;
+    (db: 'GroundEffectDoodad', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroundEffectDoodadDatabase[]>;
+    (db: 'GroundEffectTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroundEffectTextureDatabase[]>;
+    (db: 'GroupFinderActivity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroupFinderActivityDatabase[]>;
+    (db: 'GroupFinderActivityGrp', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroupFinderActivityGrpDatabase[]>;
+    (db: 'GroupFinderCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GroupFinderCategoryDatabase[]>;
+    (db: 'GuildColorBackground', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildColorBackgroundDatabase[]>;
+    (db: 'GuildColorBorder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildColorBorderDatabase[]>;
+    (db: 'GuildColorEmblem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildColorEmblemDatabase[]>;
+    (db: 'GuildEmblem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildEmblemDatabase[]>;
+    (db: 'GuildPerkSpells', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildPerkSpellsDatabase[]>;
+    (db: 'GuildShirtBackground', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildShirtBackgroundDatabase[]>;
+    (db: 'GuildShirtBorder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildShirtBorderDatabase[]>;
+    (db: 'GuildTabardBackground', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildTabardBackgroundDatabase[]>;
+    (db: 'GuildTabardBorder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildTabardBorderDatabase[]>;
+    (db: 'GuildTabardEmblem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<GuildTabardEmblemDatabase[]>;
+    (db: 'Heirloom', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HeirloomDatabase[]>;
+    (db: 'HelmetAnimScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HelmetAnimScalingDatabase[]>;
+    (db: 'HelmetGeosetData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HelmetGeosetDataDatabase[]>;
+    (db: 'HelmetGeosetVisData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HelmetGeosetVisDataDatabase[]>;
+    (db: 'HighlightColor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HighlightColorDatabase[]>;
+    (db: 'HolidayDescriptions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HolidayDescriptionsDatabase[]>;
+    (db: 'HolidayNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HolidayNamesDatabase[]>;
+    (db: 'Holidays', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HolidaysDatabase[]>;
+    (db: 'Hotfix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HotfixDatabase[]>;
+    (db: 'Hotfixes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<HotfixesDatabase[]>;
+    (db: 'ImportPriceArmor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceArmorDatabase[]>;
+    (db: 'ImportPriceQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceQualityDatabase[]>;
+    (db: 'ImportPriceShield', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceShieldDatabase[]>;
+    (db: 'ImportPriceWeapon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ImportPriceWeaponDatabase[]>;
+    (db: 'InvasionClientData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<InvasionClientDataDatabase[]>;
+    (db: 'Item-sparse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Item_sparseDatabase[]>;
+    (db: 'Item', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDatabase[]>;
+    (db: 'ItemAppearance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemAppearanceDatabase[]>;
+    (db: 'ItemAppearanceXUiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemAppearanceXUiCameraDatabase[]>;
+    (db: 'ItemArmorQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemArmorQualityDatabase[]>;
+    (db: 'ItemArmorShield', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemArmorShieldDatabase[]>;
+    (db: 'ItemArmorTotal', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemArmorTotalDatabase[]>;
+    (db: 'ItemBagFamily', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBagFamilyDatabase[]>;
+    (db: 'ItemBonus', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusDatabase[]>;
+    (db: 'ItemBonusList', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListDatabase[]>;
+    (db: 'ItemBonusListGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListGroupDatabase[]>;
+    (db: 'ItemBonusListGroupEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListGroupEntryDatabase[]>;
+    (db: 'ItemBonusListLevelDelta', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListLevelDeltaDatabase[]>;
+    (db: 'ItemBonusListWarforgeLevelDelta', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusListWarforgeLevelDeltaDatabase[]>;
+    (db: 'ItemBonusSequenceSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusSequenceSpellDatabase[]>;
+    (db: 'ItemBonusTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusTreeDatabase[]>;
+    (db: 'ItemBonusTreeNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemBonusTreeNodeDatabase[]>;
+    (db: 'ItemChildEquipment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemChildEquipmentDatabase[]>;
+    (db: 'ItemClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemClassDatabase[]>;
+    (db: 'ItemCondExtCosts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemCondExtCostsDatabase[]>;
+    (db: 'ItemContextPickerEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemContextPickerEntryDatabase[]>;
+    (db: 'ItemCurrencyCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemCurrencyCostDatabase[]>;
+    (db: 'ItemCurrencyValue', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemCurrencyValueDatabase[]>;
+    (db: 'ItemDamageAmmo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageAmmoDatabase[]>;
+    (db: 'ItemDamageOneHand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageOneHandDatabase[]>;
+    (db: 'ItemDamageOneHandCaster', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageOneHandCasterDatabase[]>;
+    (db: 'ItemDamageRanged', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageRangedDatabase[]>;
+    (db: 'ItemDamageThrown', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageThrownDatabase[]>;
+    (db: 'ItemDamageTwoHand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageTwoHandDatabase[]>;
+    (db: 'ItemDamageTwoHandCaster', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageTwoHandCasterDatabase[]>;
+    (db: 'ItemDamageWand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDamageWandDatabase[]>;
+    (db: 'ItemDisenchantLoot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisenchantLootDatabase[]>;
+    (db: 'ItemDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisplayInfoDatabase[]>;
+    (db: 'ItemDisplayInfoMaterialRes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisplayInfoMaterialResDatabase[]>;
+    (db: 'ItemDisplayXUiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemDisplayXUiCameraDatabase[]>;
+    (db: 'ItemEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemEffectDatabase[]>;
+    (db: 'ItemExtendedCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemExtendedCostDatabase[]>;
+    (db: 'ItemFallbackVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemFallbackVisualDatabase[]>;
+    (db: 'ItemGroupSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemGroupSoundsDatabase[]>;
+    (db: 'ItemLevelSelector', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLevelSelectorDatabase[]>;
+    (db: 'ItemLevelSelectorQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLevelSelectorQualityDatabase[]>;
+    (db: 'ItemLevelSelectorQualitySet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLevelSelectorQualitySetDatabase[]>;
+    (db: 'ItemLimitCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLimitCategoryDatabase[]>;
+    (db: 'ItemLimitCategoryCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemLimitCategoryConditionDatabase[]>;
+    (db: 'ItemModifiedAppearance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemModifiedAppearanceDatabase[]>;
+    (db: 'ItemModifiedAppearanceExtra', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemModifiedAppearanceExtraDatabase[]>;
+    (db: 'ItemNameDescription', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemNameDescriptionDatabase[]>;
+    (db: 'ItemNameSlotOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemNameSlotOverrideDatabase[]>;
+    (db: 'ItemPetFood', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemPetFoodDatabase[]>;
+    (db: 'ItemPriceBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemPriceBaseDatabase[]>;
+    (db: 'ItemPurchaseGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemPurchaseGroupDatabase[]>;
+    (db: 'ItemRandomProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemRandomPropertiesDatabase[]>;
+    (db: 'ItemRandomSuffix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemRandomSuffixDatabase[]>;
+    (db: 'ItemRangedDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemRangedDisplayInfoDatabase[]>;
+    (db: 'ItemReforge', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemReforgeDatabase[]>;
+    (db: 'ItemSearchName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSearchNameDatabase[]>;
+    (db: 'ItemSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSetDatabase[]>;
+    (db: 'ItemSetSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSetSpellDatabase[]>;
+    (db: 'ItemSparse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSparseDatabase[]>;
+    (db: 'ItemSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSpecDatabase[]>;
+    (db: 'ItemSpecOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSpecOverrideDatabase[]>;
+    (db: 'ItemSubClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSubClassDatabase[]>;
+    (db: 'ItemSubClassMask', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemSubClassMaskDatabase[]>;
+    (db: 'ItemToBattlePet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemToBattlePetDatabase[]>;
+    (db: 'ItemToMountSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemToMountSpellDatabase[]>;
+    (db: 'ItemUpgrade', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemUpgradeDatabase[]>;
+    (db: 'ItemUpgradePath', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemUpgradePathDatabase[]>;
+    (db: 'ItemVisualEffects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemVisualEffectsDatabase[]>;
+    (db: 'ItemVisuals', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemVisualsDatabase[]>;
+    (db: 'ItemVisualsXEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemVisualsXEffectDatabase[]>;
+    (db: 'ItemXBonusTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemXBonusTreeDatabase[]>;
+    (db: 'ItemXItemEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ItemXItemEffectDatabase[]>;
+    (db: 'JournalEncounter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterDatabase[]>;
+    (db: 'JournalEncounterCreature', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterCreatureDatabase[]>;
+    (db: 'JournalEncounterItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterItemDatabase[]>;
+    (db: 'JournalEncounterSection', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterSectionDatabase[]>;
+    (db: 'JournalEncounterXDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterXDifficultyDatabase[]>;
+    (db: 'JournalEncounterXMapLoc', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalEncounterXMapLocDatabase[]>;
+    (db: 'JournalInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalInstanceDatabase[]>;
+    (db: 'JournalItemXDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalItemXDifficultyDatabase[]>;
+    (db: 'JournalSectionXDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalSectionXDifficultyDatabase[]>;
+    (db: 'JournalTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalTierDatabase[]>;
+    (db: 'JournalTierXInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<JournalTierXInstanceDatabase[]>;
+    (db: 'Keychain', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<KeychainDatabase[]>;
+    (db: 'KeystoneAffix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<KeystoneAffixDatabase[]>;
+    (db: 'LFGDungeonExpansion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGDungeonExpansionDatabase[]>;
+    (db: 'LFGDungeonGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGDungeonGroupDatabase[]>;
+    (db: 'LFGDungeons', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGDungeonsDatabase[]>;
+    (db: 'LFGRoleRequirement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LFGRoleRequirementDatabase[]>;
+    (db: 'LanguageWords', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LanguageWordsDatabase[]>;
+    (db: 'Languages', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LanguagesDatabase[]>;
+    (db: 'LfgDungeonsGroupingMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LfgDungeonsGroupingMapDatabase[]>;
+    (db: 'Light', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightDatabase[]>;
+    (db: 'LightData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightDataDatabase[]>;
+    (db: 'LightFloatBand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightFloatBandDatabase[]>;
+    (db: 'LightIntBand', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightIntBandDatabase[]>;
+    (db: 'LightParams', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightParamsDatabase[]>;
+    (db: 'LightSkybox', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightSkyboxDatabase[]>;
+    (db: 'Lightning', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LightningDatabase[]>;
+    (db: 'LiquidMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidMaterialDatabase[]>;
+    (db: 'LiquidObject', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidObjectDatabase[]>;
+    (db: 'LiquidType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidTypeDatabase[]>;
+    (db: 'LiquidTypeXTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LiquidTypeXTextureDatabase[]>;
+    (db: 'LoadingScreenSkin', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoadingScreenSkinDatabase[]>;
+    (db: 'LoadingScreenTaxiSplines', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoadingScreenTaxiSplinesDatabase[]>;
+    (db: 'LoadingScreens', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoadingScreensDatabase[]>;
+    (db: 'Locale', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LocaleDatabase[]>;
+    (db: 'Location', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LocationDatabase[]>;
+    (db: 'Lock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LockDatabase[]>;
+    (db: 'LockType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LockTypeDatabase[]>;
+    (db: 'LookAtController', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LookAtControllerDatabase[]>;
+    (db: 'LoreText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoreTextDatabase[]>;
+    (db: 'LoreTextPublic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<LoreTextPublicDatabase[]>;
+    (db: 'MCRSlotXMCRCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MCRSlotXMCRCategoryDatabase[]>;
+    (db: 'MailTemplate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MailTemplateDatabase[]>;
+    (db: 'ManagedWorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManagedWorldStateDatabase[]>;
+    (db: 'ManagedWorldStateBuff', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManagedWorldStateBuffDatabase[]>;
+    (db: 'ManagedWorldStateInput', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManagedWorldStateInputDatabase[]>;
+    (db: 'ManifestInterfaceActionIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceActionIconDatabase[]>;
+    (db: 'ManifestInterfaceData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceDataDatabase[]>;
+    (db: 'ManifestInterfaceItemIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceItemIconDatabase[]>;
+    (db: 'ManifestInterfaceTOCData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestInterfaceTOCDataDatabase[]>;
+    (db: 'ManifestMP3', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ManifestMP3Database[]>;
+    (db: 'Map', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapDatabase[]>;
+    (db: 'MapCelestialBody', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapCelestialBodyDatabase[]>;
+    (db: 'MapChallengeMode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapChallengeModeDatabase[]>;
+    (db: 'MapDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapDifficultyDatabase[]>;
+    (db: 'MapDifficultyXCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapDifficultyXConditionDatabase[]>;
+    (db: 'MapLoadingScreen', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MapLoadingScreenDatabase[]>;
+    (db: 'MarketingPromotionsXLocale', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MarketingPromotionsXLocaleDatabase[]>;
+    (db: 'Material', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MaterialDatabase[]>;
+    (db: 'MawPower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MawPowerDatabase[]>;
+    (db: 'MawPowerRarity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MawPowerRarityDatabase[]>;
+    (db: 'MinorTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MinorTalentDatabase[]>;
+    (db: 'MissileTargeting', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MissileTargetingDatabase[]>;
+    (db: 'ModelAnimCloakDampening', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelAnimCloakDampeningDatabase[]>;
+    (db: 'ModelFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelFileDataDatabase[]>;
+    (db: 'ModelManifest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelManifestDatabase[]>;
+    (db: 'ModelNameToManifest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelNameToManifestDatabase[]>;
+    (db: 'ModelRibbonQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModelRibbonQualityDatabase[]>;
+    (db: 'ModifiedCraftingCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingCategoryDatabase[]>;
+    (db: 'ModifiedCraftingReagentItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingReagentItemDatabase[]>;
+    (db: 'ModifiedCraftingReagentSlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingReagentSlotDatabase[]>;
+    (db: 'ModifiedCraftingSpellSlot', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedCraftingSpellSlotDatabase[]>;
+    (db: 'ModifiedReagentItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifiedReagentItemDatabase[]>;
+    (db: 'ModifierTree', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ModifierTreeDatabase[]>;
+    (db: 'Mount', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountDatabase[]>;
+    (db: 'MountCapability', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountCapabilityDatabase[]>;
+    (db: 'MountEquipment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountEquipmentDatabase[]>;
+    (db: 'MountType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountTypeDatabase[]>;
+    (db: 'MountTypeXCapability', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountTypeXCapabilityDatabase[]>;
+    (db: 'MountXDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountXDisplayDatabase[]>;
+    (db: 'MountXSpellVisualKitPicker', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MountXSpellVisualKitPickerDatabase[]>;
+    (db: 'Movie', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MovieDatabase[]>;
+    (db: 'MovieFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MovieFileDataDatabase[]>;
+    (db: 'MovieOverlays', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MovieOverlaysDatabase[]>;
+    (db: 'MovieVariation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MovieVariationDatabase[]>;
+    (db: 'MultiStateProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MultiStatePropertiesDatabase[]>;
+    (db: 'MultiTransitionProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MultiTransitionPropertiesDatabase[]>;
+    (db: 'MythicPlusSeason', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MythicPlusSeasonDatabase[]>;
+    (db: 'MythicPlusSeasonRewardLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MythicPlusSeasonRewardLevelsDatabase[]>;
+    (db: 'MythicPlusSeasonTrackedAffix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<MythicPlusSeasonTrackedAffixDatabase[]>;
+    (db: 'NPCModelItemSlotDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NPCModelItemSlotDisplayInfoDatabase[]>;
+    (db: 'NPCSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NPCSoundsDatabase[]>;
+    (db: 'NameGen', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NameGenDatabase[]>;
+    (db: 'NamesProfanity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NamesProfanityDatabase[]>;
+    (db: 'NamesReserved', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NamesReservedDatabase[]>;
+    (db: 'NamesReservedLocale', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NamesReservedLocaleDatabase[]>;
+    (db: 'NumTalentsAtLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<NumTalentsAtLevelDatabase[]>;
+    (db: 'ObjectEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectDatabase[]>;
+    (db: 'ObjectEffectGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectGroupDatabase[]>;
+    (db: 'ObjectEffectModifier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectModifierDatabase[]>;
+    (db: 'ObjectEffectPackage', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectPackageDatabase[]>;
+    (db: 'ObjectEffectPackageElem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectPackageElemDatabase[]>;
+    (db: 'ObjectEffectStateName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ObjectEffectStateNameDatabase[]>;
+    (db: 'Occluder', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OccluderDatabase[]>;
+    (db: 'OccluderCurtain', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OccluderCurtainDatabase[]>;
+    (db: 'OccluderLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OccluderLocationDatabase[]>;
+    (db: 'OccluderNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OccluderNodeDatabase[]>;
+    (db: 'OutlineEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OutlineEffectDatabase[]>;
+    (db: 'OverrideSpellData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<OverrideSpellDataDatabase[]>;
+    (db: 'PVPBracketTypes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPBracketTypesDatabase[]>;
+    (db: 'PVPDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPDifficultyDatabase[]>;
+    (db: 'PVPItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPItemDatabase[]>;
+    (db: 'PVPScoreboardCellInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPScoreboardCellInfoDatabase[]>;
+    (db: 'PVPScoreboardColumnHeader', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPScoreboardColumnHeaderDatabase[]>;
+    (db: 'PVPScoreboardLayout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPScoreboardLayoutDatabase[]>;
+    (db: 'PVPStat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PVPStatDatabase[]>;
+    (db: 'Package', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PackageDatabase[]>;
+    (db: 'PageTextMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PageTextMaterialDatabase[]>;
+    (db: 'PaperDollItemFrame', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PaperDollItemFrameDatabase[]>;
+    (db: 'ParagonReputation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ParagonReputationDatabase[]>;
+    (db: 'ParticleColor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ParticleColorDatabase[]>;
+    (db: 'Particulate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ParticulateDatabase[]>;
+    (db: 'ParticulateSound', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ParticulateSoundDatabase[]>;
+    (db: 'Path', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathDatabase[]>;
+    (db: 'PathEdge', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathEdgeDatabase[]>;
+    (db: 'PathNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathNodeDatabase[]>;
+    (db: 'PathNodeProperty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathNodePropertyDatabase[]>;
+    (db: 'PathProperty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PathPropertyDatabase[]>;
+    (db: 'PetLoyalty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PetLoyaltyDatabase[]>;
+    (db: 'PetPersonality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PetPersonalityDatabase[]>;
+    (db: 'PetitionType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PetitionTypeDatabase[]>;
+    (db: 'Phase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PhaseDatabase[]>;
+    (db: 'PhaseShiftZoneSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PhaseShiftZoneSoundsDatabase[]>;
+    (db: 'PhaseXPhaseGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PhaseXPhaseGroupDatabase[]>;
+    (db: 'PlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PlayerConditionDatabase[]>;
+    (db: 'Positioner', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PositionerDatabase[]>;
+    (db: 'PositionerState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PositionerStateDatabase[]>;
+    (db: 'PositionerStateEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PositionerStateEntryDatabase[]>;
+    (db: 'PowerDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PowerDisplayDatabase[]>;
+    (db: 'PowerType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PowerTypeDatabase[]>;
+    (db: 'PrestigeLevelInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PrestigeLevelInfoDatabase[]>;
+    (db: 'PvpBrawl', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpBrawlDatabase[]>;
+    (db: 'PvpReward', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpRewardDatabase[]>;
+    (db: 'PvpScalingEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpScalingEffectDatabase[]>;
+    (db: 'PvpScalingEffectType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpScalingEffectTypeDatabase[]>;
+    (db: 'PvpSeason', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpSeasonDatabase[]>;
+    (db: 'PvpSeasonRewardLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpSeasonRewardLevelsDatabase[]>;
+    (db: 'PvpTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalentDatabase[]>;
+    (db: 'PvpTalentCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalentCategoryDatabase[]>;
+    (db: 'PvpTalentSlotUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalentSlotUnlockDatabase[]>;
+    (db: 'PvpTalentUnlock', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTalentUnlockDatabase[]>;
+    (db: 'PvpTier', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<PvpTierDatabase[]>;
+    (db: 'QuestFactionReward', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestFactionRewardDatabase[]>;
+    (db: 'QuestFeedbackEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestFeedbackEffectDatabase[]>;
+    (db: 'QuestInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestInfoDatabase[]>;
+    (db: 'QuestLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestLineDatabase[]>;
+    (db: 'QuestLineXQuest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestLineXQuestDatabase[]>;
+    (db: 'QuestMoneyReward', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestMoneyRewardDatabase[]>;
+    (db: 'QuestObjective', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestObjectiveDatabase[]>;
+    (db: 'QuestPOIBlob', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestPOIBlobDatabase[]>;
+    (db: 'QuestPOIPoint', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestPOIPointDatabase[]>;
+    (db: 'QuestPackageItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestPackageItemDatabase[]>;
+    (db: 'QuestSort', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestSortDatabase[]>;
+    (db: 'QuestV2', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestV2Database[]>;
+    (db: 'QuestV2CliTask', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestV2CliTaskDatabase[]>;
+    (db: 'QuestXGroupActivity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXGroupActivityDatabase[]>;
+    (db: 'QuestXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXPDatabase[]>;
+    (db: 'QuestXUIQuestDetailsTheme', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXUIQuestDetailsThemeDatabase[]>;
+    (db: 'QuestXUiWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<QuestXUiWidgetSetDatabase[]>;
+    (db: 'RTPC', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RTPCDatabase[]>;
+    (db: 'RTPCData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RTPCDataDatabase[]>;
+    (db: 'RacialMounts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RacialMountsDatabase[]>;
+    (db: 'RafActivity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RafActivityDatabase[]>;
+    (db: 'RandPropPoints', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RandPropPointsDatabase[]>;
+    (db: 'RecipeProgressionGroupEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RecipeProgressionGroupEntryDatabase[]>;
+    (db: 'RelicSlotTierRequirement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RelicSlotTierRequirementDatabase[]>;
+    (db: 'RelicTalent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RelicTalentDatabase[]>;
+    (db: 'RenownRewards', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RenownRewardsDatabase[]>;
+    (db: 'ResearchBranch', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchBranchDatabase[]>;
+    (db: 'ResearchField', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchFieldDatabase[]>;
+    (db: 'ResearchProject', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchProjectDatabase[]>;
+    (db: 'ResearchSite', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResearchSiteDatabase[]>;
+    (db: 'Resistances', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ResistancesDatabase[]>;
+    (db: 'RewardPack', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RewardPackDatabase[]>;
+    (db: 'RewardPackXCurrencyType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RewardPackXCurrencyTypeDatabase[]>;
+    (db: 'RewardPackXItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RewardPackXItemDatabase[]>;
+    (db: 'RibbonQuality', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RibbonQualityDatabase[]>;
+    (db: 'RopeEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RopeEffectDatabase[]>;
+    (db: 'RulesetItemUpgrade', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RulesetItemUpgradeDatabase[]>;
+    (db: 'RulesetRaidLootUpgrade', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RulesetRaidLootUpgradeDatabase[]>;
+    (db: 'RulesetRaidOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RulesetRaidOverrideDatabase[]>;
+    (db: 'RuneforgeLegendaryAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<RuneforgeLegendaryAbilityDatabase[]>;
+    (db: 'SDReplacementModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SDReplacementModelDatabase[]>;
+    (db: 'SSAOSettings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SSAOSettingsDatabase[]>;
+    (db: 'SandboxScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SandboxScalingDatabase[]>;
+    (db: 'ScalingStatDistribution', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScalingStatDistributionDatabase[]>;
+    (db: 'ScalingStatValues', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScalingStatValuesDatabase[]>;
+    (db: 'Scenario', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScenarioDatabase[]>;
+    (db: 'ScenarioEventEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScenarioEventEntryDatabase[]>;
+    (db: 'ScenarioStep', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScenarioStepDatabase[]>;
+    (db: 'SceneScript', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptDatabase[]>;
+    (db: 'SceneScriptGlobalText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptGlobalTextDatabase[]>;
+    (db: 'SceneScriptPackage', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptPackageDatabase[]>;
+    (db: 'SceneScriptPackageMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptPackageMemberDatabase[]>;
+    (db: 'SceneScriptText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SceneScriptTextDatabase[]>;
+    (db: 'ScheduledInterval', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledIntervalDatabase[]>;
+    (db: 'ScheduledWorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledWorldStateDatabase[]>;
+    (db: 'ScheduledWorldStateGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledWorldStateGroupDatabase[]>;
+    (db: 'ScheduledWorldStateXUniqCat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScheduledWorldStateXUniqCatDatabase[]>;
+    (db: 'ScreenEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScreenEffectDatabase[]>;
+    (db: 'ScreenEffectType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScreenEffectTypeDatabase[]>;
+    (db: 'ScreenLocation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ScreenLocationDatabase[]>;
+    (db: 'SeamlessSite', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SeamlessSiteDatabase[]>;
+    (db: 'ServerMessages', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ServerMessagesDatabase[]>;
+    (db: 'ShadowyEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ShadowyEffectDatabase[]>;
+    (db: 'SheatheSoundLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SheatheSoundLookupsDatabase[]>;
+    (db: 'SiegeableProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SiegeablePropertiesDatabase[]>;
+    (db: 'SkillCostsData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillCostsDataDatabase[]>;
+    (db: 'SkillLine', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLineDatabase[]>;
+    (db: 'SkillLineAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLineAbilityDatabase[]>;
+    (db: 'SkillLineAbilitySortedSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLineAbilitySortedSpellDatabase[]>;
+    (db: 'SkillLineCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillLineCategoryDatabase[]>;
+    (db: 'SkillRaceClassInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillRaceClassInfoDatabase[]>;
+    (db: 'SkillTiers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkillTiersDatabase[]>;
+    (db: 'SkySceneXPlayerCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SkySceneXPlayerConditionDatabase[]>;
+    (db: 'Soulbind', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindDatabase[]>;
+    (db: 'SoulbindConduit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitDatabase[]>;
+    (db: 'SoulbindConduitEnhancedSocket', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitEnhancedSocketDatabase[]>;
+    (db: 'SoulbindConduitItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitItemDatabase[]>;
+    (db: 'SoulbindConduitRank', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitRankDatabase[]>;
+    (db: 'SoulbindConduitRankProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindConduitRankPropertiesDatabase[]>;
+    (db: 'SoulbindUIDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoulbindUIDisplayInfoDatabase[]>;
+    (db: 'SoundAmbience', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundAmbienceDatabase[]>;
+    (db: 'SoundAmbienceFlavor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundAmbienceFlavorDatabase[]>;
+    (db: 'SoundBus', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundBusDatabase[]>;
+    (db: 'SoundBusName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundBusNameDatabase[]>;
+    (db: 'SoundBusOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundBusOverrideDatabase[]>;
+    (db: 'SoundCharacterMacroLines', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundCharacterMacroLinesDatabase[]>;
+    (db: 'SoundEmitterPillPoints', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEmitterPillPointsDatabase[]>;
+    (db: 'SoundEmitters', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEmittersDatabase[]>;
+    (db: 'SoundEntries', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEntriesDatabase[]>;
+    (db: 'SoundEntriesAdvanced', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEntriesAdvancedDatabase[]>;
+    (db: 'SoundEntriesFallbacks', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEntriesFallbacksDatabase[]>;
+    (db: 'SoundEnvelope', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundEnvelopeDatabase[]>;
+    (db: 'SoundFilter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundFilterDatabase[]>;
+    (db: 'SoundFilterElem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundFilterElemDatabase[]>;
+    (db: 'SoundKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitDatabase[]>;
+    (db: 'SoundKitAdvanced', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitAdvancedDatabase[]>;
+    (db: 'SoundKitChild', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitChildDatabase[]>;
+    (db: 'SoundKitEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitEntryDatabase[]>;
+    (db: 'SoundKitFallback', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitFallbackDatabase[]>;
+    (db: 'SoundKitName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundKitNameDatabase[]>;
+    (db: 'SoundOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundOverrideDatabase[]>;
+    (db: 'SoundParameter', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundParameterDatabase[]>;
+    (db: 'SoundProviderPreferences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundProviderPreferencesDatabase[]>;
+    (db: 'SoundSamplePreferences', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundSamplePreferencesDatabase[]>;
+    (db: 'SoundWaterType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SoundWaterTypeDatabase[]>;
+    (db: 'SourceInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SourceInfoDatabase[]>;
+    (db: 'SpamMessages', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpamMessagesDatabase[]>;
+    (db: 'SpecSetMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpecSetMemberDatabase[]>;
+    (db: 'SpecializationSpells', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpecializationSpellsDatabase[]>;
+    (db: 'SpecializationSpellsDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpecializationSpellsDisplayDatabase[]>;
+    (db: 'Spell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDatabase[]>;
+    (db: 'SpellActionBarPref', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellActionBarPrefDatabase[]>;
+    (db: 'SpellActivationOverlay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellActivationOverlayDatabase[]>;
+    (db: 'SpellAuraNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraNamesDatabase[]>;
+    (db: 'SpellAuraOptions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraOptionsDatabase[]>;
+    (db: 'SpellAuraRestrictions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraRestrictionsDatabase[]>;
+    (db: 'SpellAuraRestrictionsDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraRestrictionsDifficultyDatabase[]>;
+    (db: 'SpellAuraVisXChrSpec', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraVisXChrSpecDatabase[]>;
+    (db: 'SpellAuraVisXTalentTab', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraVisXTalentTabDatabase[]>;
+    (db: 'SpellAuraVisibility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellAuraVisibilityDatabase[]>;
+    (db: 'SpellCastTimes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCastTimesDatabase[]>;
+    (db: 'SpellCastingRequirements', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCastingRequirementsDatabase[]>;
+    (db: 'SpellCategories', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCategoriesDatabase[]>;
+    (db: 'SpellCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCategoryDatabase[]>;
+    (db: 'SpellChainEffects', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellChainEffectsDatabase[]>;
+    (db: 'SpellClassOptions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClassOptionsDatabase[]>;
+    (db: 'SpellClutterAreaEffectCounts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterAreaEffectCountsDatabase[]>;
+    (db: 'SpellClutterFrameRates', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterFrameRatesDatabase[]>;
+    (db: 'SpellClutterImpactModelCounts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterImpactModelCountsDatabase[]>;
+    (db: 'SpellClutterKitDistances', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterKitDistancesDatabase[]>;
+    (db: 'SpellClutterMissileDist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterMissileDistDatabase[]>;
+    (db: 'SpellClutterWeaponTrailDist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellClutterWeaponTrailDistDatabase[]>;
+    (db: 'SpellCooldowns', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCooldownsDatabase[]>;
+    (db: 'SpellCraftUI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellCraftUIDatabase[]>;
+    (db: 'SpellDescriptionVariables', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDescriptionVariablesDatabase[]>;
+    (db: 'SpellDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDifficultyDatabase[]>;
+    (db: 'SpellDispelType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDispelTypeDatabase[]>;
+    (db: 'SpellDuration', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellDurationDatabase[]>;
+    (db: 'SpellEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectDatabase[]>;
+    (db: 'SpellEffectAutoDescription', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectAutoDescriptionDatabase[]>;
+    (db: 'SpellEffectCameraShakes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectCameraShakesDatabase[]>;
+    (db: 'SpellEffectEmission', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectEmissionDatabase[]>;
+    (db: 'SpellEffectGroupSize', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectGroupSizeDatabase[]>;
+    (db: 'SpellEffectNames', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectNamesDatabase[]>;
+    (db: 'SpellEffectScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEffectScalingDatabase[]>;
+    (db: 'SpellEquippedItems', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellEquippedItemsDatabase[]>;
+    (db: 'SpellFlyout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellFlyoutDatabase[]>;
+    (db: 'SpellFlyoutItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellFlyoutItemDatabase[]>;
+    (db: 'SpellFocusObject', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellFocusObjectDatabase[]>;
+    (db: 'SpellIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellIconDatabase[]>;
+    (db: 'SpellInterrupts', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellInterruptsDatabase[]>;
+    (db: 'SpellItemEnchantment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellItemEnchantmentDatabase[]>;
+    (db: 'SpellItemEnchantmentCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellItemEnchantmentConditionDatabase[]>;
+    (db: 'SpellKeyboundOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellKeyboundOverrideDatabase[]>;
+    (db: 'SpellLabel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellLabelDatabase[]>;
+    (db: 'SpellLearnSpell', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellLearnSpellDatabase[]>;
+    (db: 'SpellLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellLevelsDatabase[]>;
+    (db: 'SpellMastery', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMasteryDatabase[]>;
+    (db: 'SpellMechanic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMechanicDatabase[]>;
+    (db: 'SpellMisc', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMiscDatabase[]>;
+    (db: 'SpellMiscDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMiscDifficultyDatabase[]>;
+    (db: 'SpellMissile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMissileDatabase[]>;
+    (db: 'SpellMissileMotion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellMissileMotionDatabase[]>;
+    (db: 'SpellName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellNameDatabase[]>;
+    (db: 'SpellOverrideName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellOverrideNameDatabase[]>;
+    (db: 'SpellPower', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellPowerDatabase[]>;
+    (db: 'SpellPowerDifficulty', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellPowerDifficultyDatabase[]>;
+    (db: 'SpellProceduralEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellProceduralEffectDatabase[]>;
+    (db: 'SpellProcsPerMinute', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellProcsPerMinuteDatabase[]>;
+    (db: 'SpellProcsPerMinuteMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellProcsPerMinuteModDatabase[]>;
+    (db: 'SpellRadius', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellRadiusDatabase[]>;
+    (db: 'SpellRange', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellRangeDatabase[]>;
+    (db: 'SpellReagents', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellReagentsDatabase[]>;
+    (db: 'SpellReagentsCurrency', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellReagentsCurrencyDatabase[]>;
+    (db: 'SpellRuneCost', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellRuneCostDatabase[]>;
+    (db: 'SpellScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellScalingDatabase[]>;
+    (db: 'SpellScript', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellScriptDatabase[]>;
+    (db: 'SpellScriptText', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellScriptTextDatabase[]>;
+    (db: 'SpellShapeshift', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellShapeshiftDatabase[]>;
+    (db: 'SpellShapeshiftForm', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellShapeshiftFormDatabase[]>;
+    (db: 'SpellSpecialUnitEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellSpecialUnitEffectDatabase[]>;
+    (db: 'SpellTargetRestrictions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellTargetRestrictionsDatabase[]>;
+    (db: 'SpellTotems', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellTotemsDatabase[]>;
+    (db: 'SpellVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualDatabase[]>;
+    (db: 'SpellVisualAnim', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualAnimDatabase[]>;
+    (db: 'SpellVisualAnimName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualAnimNameDatabase[]>;
+    (db: 'SpellVisualColorEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualColorEffectDatabase[]>;
+    (db: 'SpellVisualEffectName', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualEffectNameDatabase[]>;
+    (db: 'SpellVisualEvent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualEventDatabase[]>;
+    (db: 'SpellVisualKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitDatabase[]>;
+    (db: 'SpellVisualKitAreaModel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitAreaModelDatabase[]>;
+    (db: 'SpellVisualKitEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitEffectDatabase[]>;
+    (db: 'SpellVisualKitModelAttach', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitModelAttachDatabase[]>;
+    (db: 'SpellVisualKitPicker', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitPickerDatabase[]>;
+    (db: 'SpellVisualKitPickerEntry', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualKitPickerEntryDatabase[]>;
+    (db: 'SpellVisualMissile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualMissileDatabase[]>;
+    (db: 'SpellVisualPrecastTransitions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualPrecastTransitionsDatabase[]>;
+    (db: 'SpellVisualScreenEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellVisualScreenEffectDatabase[]>;
+    (db: 'SpellXDescriptionVariables', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellXDescriptionVariablesDatabase[]>;
+    (db: 'SpellXSpellVisual', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SpellXSpellVisualDatabase[]>;
+    (db: 'StableSlotPrices', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<StableSlotPricesDatabase[]>;
+    (db: 'StartupFiles', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<StartupFilesDatabase[]>;
+    (db: 'Startup_Strings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<Startup_StringsDatabase[]>;
+    (db: 'Stationery', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<StationeryDatabase[]>;
+    (db: 'StringLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<StringLookupsDatabase[]>;
+    (db: 'SummonProperties', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<SummonPropertiesDatabase[]>;
+    (db: 'TabardBackgroundTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TabardBackgroundTexturesDatabase[]>;
+    (db: 'TabardEmblemTextures', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TabardEmblemTexturesDatabase[]>;
+    (db: 'TactKey', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TactKeyDatabase[]>;
+    (db: 'TactKeyLookup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TactKeyLookupDatabase[]>;
+    (db: 'Talent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TalentDatabase[]>;
+    (db: 'TalentTab', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TalentTabDatabase[]>;
+    (db: 'TalentTreePrimarySpells', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TalentTreePrimarySpellsDatabase[]>;
+    (db: 'TaxiNodes', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TaxiNodesDatabase[]>;
+    (db: 'TaxiPath', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TaxiPathDatabase[]>;
+    (db: 'TaxiPathNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TaxiPathNodeDatabase[]>;
+    (db: 'TeamContributionPoints', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TeamContributionPointsDatabase[]>;
+    (db: 'TerrainColorGradingRamp', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainColorGradingRampDatabase[]>;
+    (db: 'TerrainMaterial', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainMaterialDatabase[]>;
+    (db: 'TerrainType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainTypeDatabase[]>;
+    (db: 'TerrainTypeSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TerrainTypeSoundsDatabase[]>;
+    (db: 'TextureBlendSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TextureBlendSetDatabase[]>;
+    (db: 'TextureFileData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TextureFileDataDatabase[]>;
+    (db: 'TierTransition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TierTransitionDatabase[]>;
+    (db: 'TotemCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TotemCategoryDatabase[]>;
+    (db: 'Toy', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ToyDatabase[]>;
+    (db: 'TradeSkillCategory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TradeSkillCategoryDatabase[]>;
+    (db: 'TradeSkillItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TradeSkillItemDatabase[]>;
+    (db: 'TransformMatrix', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransformMatrixDatabase[]>;
+    (db: 'TransmogDefaultLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogDefaultLevelDatabase[]>;
+    (db: 'TransmogHoliday', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogHolidayDatabase[]>;
+    (db: 'TransmogIllusion', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogIllusionDatabase[]>;
+    (db: 'TransmogSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogSetDatabase[]>;
+    (db: 'TransmogSetGroup', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogSetGroupDatabase[]>;
+    (db: 'TransmogSetItem', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransmogSetItemDatabase[]>;
+    (db: 'TransportAnimation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransportAnimationDatabase[]>;
+    (db: 'TransportPhysics', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransportPhysicsDatabase[]>;
+    (db: 'TransportRotation', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TransportRotationDatabase[]>;
+    (db: 'Trophy', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TrophyDatabase[]>;
+    (db: 'TrophyInstance', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TrophyInstanceDatabase[]>;
+    (db: 'TrophyType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<TrophyTypeDatabase[]>;
+    (db: 'UIChromieTimeExpansionInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIChromieTimeExpansionInfoDatabase[]>;
+    (db: 'UICovenantAbility', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UICovenantAbilityDatabase[]>;
+    (db: 'UICovenantPreview', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UICovenantPreviewDatabase[]>;
+    (db: 'UIDungeonScoreRarity', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIDungeonScoreRarityDatabase[]>;
+    (db: 'UIEventToast', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIEventToastDatabase[]>;
+    (db: 'UIExpansionDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIExpansionDisplayInfoDatabase[]>;
+    (db: 'UIExpansionDisplayInfoIcon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIExpansionDisplayInfoIconDatabase[]>;
+    (db: 'UIScriptedAnimationEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UIScriptedAnimationEffectDatabase[]>;
+    (db: 'UISoundLookups', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UISoundLookupsDatabase[]>;
+    (db: 'UISplashScreen', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UISplashScreenDatabase[]>;
+    (db: 'UiCamFbackTransmogChrRace', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCamFbackTransmogChrRaceDatabase[]>;
+    (db: 'UiCamFbackTransmogWeapon', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCamFbackTransmogWeaponDatabase[]>;
+    (db: 'UiCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCameraDatabase[]>;
+    (db: 'UiCameraType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCameraTypeDatabase[]>;
+    (db: 'UiCanvas', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCanvasDatabase[]>;
+    (db: 'UiCovenantDisplayInfo', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiCovenantDisplayInfoDatabase[]>;
+    (db: 'UiItemInteraction', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiItemInteractionDatabase[]>;
+    (db: 'UiMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapDatabase[]>;
+    (db: 'UiMapArt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapArtDatabase[]>;
+    (db: 'UiMapArtStyleLayer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapArtStyleLayerDatabase[]>;
+    (db: 'UiMapArtTile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapArtTileDatabase[]>;
+    (db: 'UiMapAssignment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapAssignmentDatabase[]>;
+    (db: 'UiMapFogOfWar', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapFogOfWarDatabase[]>;
+    (db: 'UiMapFogOfWarVisualization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapFogOfWarVisualizationDatabase[]>;
+    (db: 'UiMapGroupMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapGroupMemberDatabase[]>;
+    (db: 'UiMapLink', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapLinkDatabase[]>;
+    (db: 'UiMapPOI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapPOIDatabase[]>;
+    (db: 'UiMapXMapArt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiMapXMapArtDatabase[]>;
+    (db: 'UiModelScene', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelSceneDatabase[]>;
+    (db: 'UiModelSceneActor', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelSceneActorDatabase[]>;
+    (db: 'UiModelSceneActorDisplay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelSceneActorDisplayDatabase[]>;
+    (db: 'UiModelSceneCamera', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiModelSceneCameraDatabase[]>;
+    (db: 'UiPartyPose', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiPartyPoseDatabase[]>;
+    (db: 'UiQuestDetailsTheme', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiQuestDetailsThemeDatabase[]>;
+    (db: 'UiTextureAtlas', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlasDatabase[]>;
+    (db: 'UiTextureAtlasElement', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlasElementDatabase[]>;
+    (db: 'UiTextureAtlasElementOverride', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlasElementOverrideDatabase[]>;
+    (db: 'UiTextureAtlasMember', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureAtlasMemberDatabase[]>;
+    (db: 'UiTextureKit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiTextureKitDatabase[]>;
+    (db: 'UiWidget', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetDatabase[]>;
+    (db: 'UiWidgetConstantSource', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetConstantSourceDatabase[]>;
+    (db: 'UiWidgetDataSource', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetDataSourceDatabase[]>;
+    (db: 'UiWidgetMap', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetMapDatabase[]>;
+    (db: 'UiWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetSetDatabase[]>;
+    (db: 'UiWidgetStringSource', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetStringSourceDatabase[]>;
+    (db: 'UiWidgetVisTypeDataReq', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetVisTypeDataReqDatabase[]>;
+    (db: 'UiWidgetVisualization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetVisualizationDatabase[]>;
+    (db: 'UiWidgetXWidgetSet', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UiWidgetXWidgetSetDatabase[]>;
+    (db: 'UnitBlood', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitBloodDatabase[]>;
+    (db: 'UnitBloodLevels', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitBloodLevelsDatabase[]>;
+    (db: 'UnitCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitConditionDatabase[]>;
+    (db: 'UnitPowerBar', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitPowerBarDatabase[]>;
+    (db: 'UnitTest', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitTestDatabase[]>;
+    (db: 'UnitTestSparse', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<UnitTestSparseDatabase[]>;
+    (db: 'Vehicle', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehicleDatabase[]>;
+    (db: 'VehiclePOIType', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehiclePOITypeDatabase[]>;
+    (db: 'VehicleSeat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehicleSeatDatabase[]>;
+    (db: 'VehicleUIIndSeat', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehicleUIIndSeatDatabase[]>;
+    (db: 'VehicleUIIndicator', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VehicleUIIndicatorDatabase[]>;
+    (db: 'VideoHardware', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VideoHardwareDatabase[]>;
+    (db: 'Vignette', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VignetteDatabase[]>;
+    (db: 'VirtualAttachment', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VirtualAttachmentDatabase[]>;
+    (db: 'VirtualAttachmentCustomization', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VirtualAttachmentCustomizationDatabase[]>;
+    (db: 'VocalUISounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VocalUISoundsDatabase[]>;
+    (db: 'VolumeFogCondition', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<VolumeFogConditionDatabase[]>;
+    (db: 'WMOAreaTable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WMOAreaTableDatabase[]>;
+    (db: 'WMOMinimapTexture', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WMOMinimapTextureDatabase[]>;
+    (db: 'WaterfallData', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaterfallDataDatabase[]>;
+    (db: 'WaypointEdge', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaypointEdgeDatabase[]>;
+    (db: 'WaypointNode', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaypointNodeDatabase[]>;
+    (db: 'WaypointSafeLocs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WaypointSafeLocsDatabase[]>;
+    (db: 'WbAccessControlList', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbAccessControlListDatabase[]>;
+    (db: 'WbCertBlacklist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbCertBlacklistDatabase[]>;
+    (db: 'WbCertWhitelist', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbCertWhitelistDatabase[]>;
+    (db: 'WbPermissions', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WbPermissionsDatabase[]>;
+    (db: 'WeaponImpactSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponImpactSoundsDatabase[]>;
+    (db: 'WeaponSwingSounds2', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponSwingSounds2Database[]>;
+    (db: 'WeaponTrail', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponTrailDatabase[]>;
+    (db: 'WeaponTrailModelDef', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponTrailModelDefDatabase[]>;
+    (db: 'WeaponTrailParam', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeaponTrailParamDatabase[]>;
+    (db: 'Weather', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeatherDatabase[]>;
+    (db: 'WeatherXParticulate', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeatherXParticulateDatabase[]>;
+    (db: 'WeeklyRewardChestThreshold', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WeeklyRewardChestThresholdDatabase[]>;
+    (db: 'WindSettings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WindSettingsDatabase[]>;
+    (db: 'WorldBossLockout', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldBossLockoutDatabase[]>;
+    (db: 'WorldChunkSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldChunkSoundsDatabase[]>;
+    (db: 'WorldEffect', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldEffectDatabase[]>;
+    (db: 'WorldElapsedTimer', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldElapsedTimerDatabase[]>;
+    (db: 'WorldMapArea', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapAreaDatabase[]>;
+    (db: 'WorldMapContinent', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapContinentDatabase[]>;
+    (db: 'WorldMapOverlay', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapOverlayDatabase[]>;
+    (db: 'WorldMapOverlayTile', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapOverlayTileDatabase[]>;
+    (db: 'WorldMapTransforms', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldMapTransformsDatabase[]>;
+    (db: 'WorldSafeLocs', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldSafeLocsDatabase[]>;
+    (db: 'WorldState', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldStateDatabase[]>;
+    (db: 'WorldStateExpression', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldStateExpressionDatabase[]>;
+    (db: 'WorldStateUI', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldStateUIDatabase[]>;
+    (db: 'WorldStateZoneSounds', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WorldStateZoneSoundsDatabase[]>;
+    (db: 'World_PVP_Area', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<World_PVP_AreaDatabase[]>;
+    (db: 'WowError_Strings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<WowError_StringsDatabase[]>;
+    (db: 'ZoneIntroMusicTable', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneIntroMusicTableDatabase[]>;
+    (db: 'ZoneLight', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneLightDatabase[]>;
+    (db: 'ZoneLightPoint', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneLightPointDatabase[]>;
+    (db: 'ZoneMusic', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneMusicDatabase[]>;
+    (db: 'ZoneStory', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<ZoneStoryDatabase[]>;
+    (db: 'gtArmorMitigationByLvl', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtArmorMitigationByLvlDatabase[]>;
+    (db: 'gtBarberShopCostBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtBarberShopCostBaseDatabase[]>;
+    (db: 'gtBattlePetTypeDamageMod', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtBattlePetTypeDamageModDatabase[]>;
+    (db: 'gtBattlePetXP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtBattlePetXPDatabase[]>;
+    (db: 'gtChanceToMeleeCrit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToMeleeCritDatabase[]>;
+    (db: 'gtChanceToMeleeCritBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToMeleeCritBaseDatabase[]>;
+    (db: 'gtChanceToSpellCrit', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToSpellCritDatabase[]>;
+    (db: 'gtChanceToSpellCritBase', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtChanceToSpellCritBaseDatabase[]>;
+    (db: 'gtCombatRatings', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtCombatRatingsDatabase[]>;
+    (db: 'gtItemSocketCostPerLevel', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtItemSocketCostPerLevelDatabase[]>;
+    (db: 'gtMasteryMultipliers', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtMasteryMultipliersDatabase[]>;
+    (db: 'gtNPCManaCostScaler', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtNPCManaCostScalerDatabase[]>;
+    (db: 'gtOCTBaseHPByClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTBaseHPByClassDatabase[]>;
+    (db: 'gtOCTBaseMPByClass', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTBaseMPByClassDatabase[]>;
+    (db: 'gtOCTClassCombatRatingScalar', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTClassCombatRatingScalarDatabase[]>;
+    (db: 'gtOCTHpPerStamina', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTHpPerStaminaDatabase[]>;
+    (db: 'gtOCTLevelExperience', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTLevelExperienceDatabase[]>;
+    (db: 'gtOCTRegenHP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTRegenHPDatabase[]>;
+    (db: 'gtOCTRegenMP', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtOCTRegenMPDatabase[]>;
+    (db: 'gtRegenHPPerSpt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtRegenHPPerSptDatabase[]>;
+    (db: 'gtRegenMPPerSpt', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtRegenMPPerSptDatabase[]>;
+    (db: 'gtResilienceDR', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtResilienceDRDatabase[]>;
+    (db: 'gtSpellScaling', {version, hotfix} ?: {version?: string, hotfix?: boolean}): Promise<gtSpellScalingDatabase[]>;
 }

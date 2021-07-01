@@ -35,17 +35,17 @@ const handleFile = async (path: string): Promise<string[]> => {
     return fields;
 };
 
-writeStream.write("/* eslint max-len: 0 */\n");
-writeStream.write("/* eslint camelcase: 0 */\n\n");
+writeStream.write('/* eslint max-len: 0 */\n');
+writeStream.write('/* eslint camelcase: 0 */\n\n');
 
 Promise.all(files.map(async (file) => {
     const databaseName = file.split('.').slice(0, -1).join('.');
-    const className = databaseName.replace('-', '_');
+    const className = databaseName.replace('-', '_') + 'Database';
     const fields = await handleFile(path.resolve(definitions, file));
 
     if (fields.length === 0) return;
 
-    let content = `interface ${className}{\n`
+    let content = `interface ${className}{\n`;
     fields.forEach((value) => {
         content += `    ${value}?: string;\n`;
     });
@@ -55,7 +55,7 @@ Promise.all(files.map(async (file) => {
 
     return [databaseName, className];
 })).then((results) => {
-    let content = `interface FetchDB2Func{\n`
+    let content = `interface FetchDB2Func{\n`;
     results.forEach((value) => {
         if (value) {
             const [databaseName, className] = value;
