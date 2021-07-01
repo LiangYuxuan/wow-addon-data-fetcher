@@ -73,14 +73,14 @@ const CSVCache: Map<string, any[]> = new Map();
 export const fetchDB2: FetchDB2Func = async (db: string, {version = 'ptr', hotfix = false} = {}): Promise<any[]> => {
     if (!/^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/.test(version)) {
         const build = await fetchLatestBuild(version);
-        if (!build) {
+        if (build === undefined) {
             throw new Error(`failing to fetch version ${version}`);
         }
         version = build;
     }
 
     const buildID = version.match(/\d+$/)?.[0];
-    if (!buildID) {
+    if (buildID === undefined) {
         throw new Error(`failing to fetch build id of version ${version}`);
     }
 
@@ -88,7 +88,7 @@ export const fetchDB2: FetchDB2Func = async (db: string, {version = 'ptr', hotfi
     const filePath = path.resolve(cachePath, `${db}_${buildID}_${pushID}.csv`);
 
     let buildInfos = storage.get(db);
-    if (!buildInfos?.get(buildID)?.get(pushID)) {
+    if (buildInfos?.get(buildID)?.get(pushID) === undefined) {
         const res = await fetch(
             `https://wow.tools/dbc/api/export/?name=${db}&build=${version}&useHotfixes=${hotfix}`,
             {headers: headers}

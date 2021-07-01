@@ -8,7 +8,8 @@
     ],
     "plugins": ["mocha"],
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "rules": {
         "eqeqeq": ["error", "smart"],
@@ -18,6 +19,10 @@
             "ignoreStrings": true,
             "ignoreTemplateLiterals": true,
             "ignoreRegExpLiterals": true
+        }],
+        "@typescript-eslint/strict-boolean-expressions": ["error", {
+            "allowString": false,
+            "allowNumber": false
         }]
     }
 }
