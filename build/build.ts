@@ -9,28 +9,43 @@ const files = fs.readdirSync(definitions);
 const writeStream = fs.createWriteStream(targetFile);
 
 const handleFile = async (path: string): Promise<string[]> => {
-    const fileStream = fs.createReadStream(path);
-
-    const rl = readline.createInterface({
-        input: fileStream,
-        crlfDelay: Infinity,
-    });
-
-    let header = false;
     const fields: string[] = [];
-    for await (const line of rl) {
-        if (line === 'COLUMNS') {
-            header = true;
-        } else if (line.length === 0) {
-            break;
-        } else if (header) {
-            const result = line.match(/(\S+) (\S+)/);
-            if (result) {
-                const field = result[2].replace(/\?$/, '');
-                fields.push(field);
-            }
+
+    const content = fs.readFileSync(path).toString('ascii');
+    const block = content.split('\n\n');
+    block.forEach((value) => {
+        const lines = value.split('\n');
+        if (lines[0].match(/^LAYOUT .*$/) || lines[0].match(/^BUILD .*$/)) {
+            lines.forEach((value, index) => {
+                if (index === 0) return;
+                if (value.length === 0) return;
+                if (value.match(/^BUILD .*$/)) return;
+                if (value.match(/^COMMENT .*$/)) return;
+
+                const result = value.match(/^(\$.*\$)?(\w+)(<u?\d+>)?(\[(\d+)\])?(\W*\/\/.*)?$/);
+                if (result) {
+                    const name = result[2];
+                    const lengthString = result[5];
+
+                    if (lengthString === undefined) {
+                        if (!fields.includes(name)) {
+                            fields.push(name);
+                        }
+                    } else {
+                        const length = parseInt(lengthString);
+                        for (let i = 0; i < length; ++i) {
+                            const key = `'${name}[${i}]'`;
+                            if (!fields.includes(key)) {
+                                fields.push(key);
+                            }
+                        }
+                    }
+                } else {
+                    throw new Error(`Failing to parse line ${value}`);
+                }
+            });
         }
-    }
+    });
 
     return fields;
 };
@@ -49,7 +64,7 @@ Promise.all(files.map(async (file) => {
     fields.forEach((value) => {
         content += `    ${value}?: string;\n`;
     });
-    content += `}\n`;
+    content += `}\n\n`;
 
     writeStream.write(content);
 
