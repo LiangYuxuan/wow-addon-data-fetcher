@@ -12,6 +12,7 @@
         "project": "./tsconfig.json"
     },
     "rules": {
+        "no-unused-vars": "warn",
         "eqeqeq": ["error", "smart"],
         "indent": ["error", 4],
         "max-len": ["error", 100, {
