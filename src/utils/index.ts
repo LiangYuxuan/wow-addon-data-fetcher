@@ -1,5 +1,26 @@
 import {fetchDB2} from '../core/fetcher';
 
+export const fetchJournalTiers = async (): Promise<Map<number, JournalTier>> => {
+    const tier = await fetchDB2('JournalTier');
+
+    const result: Map<number, JournalTier> = new Map();
+    tier.forEach((value) => {
+        if (
+            value.ID !== undefined &&
+            value.Expansion !== undefined &&
+            value.Name_lang !== undefined
+        ) {
+            result.set(parseInt(value.ID), {
+                id: parseInt(value.ID),
+                expansion: parseInt(value.Expansion),
+                name: value.Name_lang,
+            });
+        }
+    });
+
+    return result;
+};
+
 export const findLatestJournalTier = async (): Promise<number | undefined> => {
     const tier = await fetchDB2('JournalTier');
 
