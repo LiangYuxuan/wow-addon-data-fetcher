@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import readline from 'readline';
 
 const definitions = path.resolve(__dirname, 'WoWDBDefs', 'definitions');
 const targetFile = path.resolve(__dirname, '..', 'src', 'types', 'db2', 'index.d.ts');
