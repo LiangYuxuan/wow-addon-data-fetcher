@@ -17,7 +17,11 @@ import {buildMapList} from './../modules/ElvUI_RhythmBox/MythicPlus';
     let mapText = 'local challengeMapIDs = {\n';
     for (const [expansionID, data] of mapList) {
         const expansion = tier.get(expansionID)?.name;
-        mapText += `    -- ${expansion ?? 'Unknown'}\n`;
+        if (expansion === undefined) {
+            throw new Error(`Unknown name of expansionID ${expansionID}`);
+        }
+
+        mapText += `    -- ${expansion}\n`;
         for (const [id, name] of data) {
             mapText += `    ${(id.toString() + ',').padEnd(maxLength + 1)} -- ${name}\n`;
         }

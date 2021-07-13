@@ -15,16 +15,19 @@ export const buildInstanceID = async (expansionID: number): Promise<{
             const id = map[i].ID;
             const name = map[i].MapName_lang;
             const type = map[i].InstanceType;
-            if (id !== undefined && name !== undefined && type !== undefined) {
-                if (name.match(/\[(NOT USED|DEV|NYI)\]/i)) {
-                    continue;
-                }
 
-                if (type === '1') {
-                    dungeons.set(parseInt(id), name);
-                } else if (type === '2') {
-                    raids.set(parseInt(id), name);
-                }
+            if (id === undefined || name === undefined || type === undefined) {
+                throw new Error(`Missing column from Map at index ${i}`);
+            }
+
+            if (name.match(/\[(NOT USED|DEV|NYI)\]/i)) {
+                continue;
+            }
+
+            if (type === '1') {
+                dungeons.set(parseInt(id), name);
+            } else if (type === '2') {
+                raids.set(parseInt(id), name);
             }
         }
     }

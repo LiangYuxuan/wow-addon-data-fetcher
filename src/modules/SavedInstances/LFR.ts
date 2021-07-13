@@ -39,13 +39,15 @@ const findEncounters = (
             const id = dungeonEncounter[i].ID;
             const name = dungeonEncounter[i].Name_lang;
             const orderIndex = dungeonEncounter[i].OrderIndex;
-            if (id !== undefined && name !== undefined && orderIndex !== undefined) {
-                encounter.push({
-                    id: parseInt(id),
-                    name: name,
-                    orderIndex: parseInt(orderIndex),
-                });
+            if (id === undefined || name === undefined || orderIndex === undefined) {
+                throw new Error(`Missing column from DungeonEncounter at index ${i}`);
             }
+
+            encounter.push({
+                id: parseInt(id),
+                name: name,
+                orderIndex: parseInt(orderIndex),
+            });
         }
     }
     encounter.sort((left, right) => left.orderIndex - right.orderIndex);
@@ -92,12 +94,16 @@ export const buildLFR = async (info: InstanceInfo): Promise<WingInfo[]> => {
     const wings: WingInfo[] = [];
     const wingNameMap: Map<string, number> = new Map();
     let maxInstanceID = 0;
-    dungeons.forEach((value) => {
+    dungeons.forEach((value, index) => {
         if (
-            value.MapID === info.mapID.toString() &&
-            value.ID !== undefined && value.Order_index !== undefined &&
-            value.Name_lang !== undefined
+            value.ID === undefined ||
+            value.Order_index === undefined ||
+            value.Name_lang === undefined
         ) {
+            throw new Error(`Missing column from LFGDungeons at index ${index}`);
+        }
+
+        if (value.MapID === info.mapID.toString()) {
             const id = parseInt(value.ID);
             if (value.DifficultyID === '17') {
                 wings.push({
@@ -122,31 +128,39 @@ export const buildLFR = async (info: InstanceInfo): Promise<WingInfo[]> => {
         wingNameMap.set(value.wingName, index);
     });
 
-    scenarios.forEach((value) => {
-        const flag = parseInt(value.Flags ?? '0');
-        if (value.Type === '3' && (flag & 0x8) > 0 && value.Name_lang !== undefined) {
+    scenarios.forEach((value, index) => {
+        if (value.Name_lang === undefined || value.Flags === undefined || value.ID === undefined) {
+            throw new Error(`Missing column from Scenario at index ${index}`);
+        }
+
+        const flag = parseInt(value.Flags);
+        if (value.Type === '3' && (flag & 0x8) > 0) {
             if (value.Name_lang === info.name) {
                 // use raid name but not wing name as scenario name
                 const scenarioID = value.ID;
-                if (scenarioID !== undefined) {
-                    const title = findScenarioStepTitle(steps, scenarioID);
-                    if (title !== undefined) {
-                        const index = wingNameMap.get(title);
-                        if (index !== undefined) {
-                            wings[index].encounters =
-                                findEncounters(
-                                    steps, criteriaTree, criteria, encounter, scenarioID, info
-                                );
-                        }
-                    }
+                const title = findScenarioStepTitle(steps, scenarioID);
+                if (title === undefined) {
+                    throw new Error(`Failing to find step title of Scenario ${scenarioID}`);
                 }
+
+                const index = wingNameMap.get(title);
+                if (index === undefined) {
+                    throw new Error(`Failing to find wing by title ${title}`);
+                }
+
+                wings[index].encounters =
+                    findEncounters(
+                        steps, criteriaTree, criteria, encounter, scenarioID, info
+                    );
             } else if (wingNameMap.has(value.Name_lang)) {
-                const index = wingNameMap.get(value.Name_lang);
                 const scenarioID = value.ID;
-                if (index !== undefined && scenarioID !== undefined) {
-                    wings[index].encounters =
-                        findEncounters(steps, criteriaTree, criteria, encounter, scenarioID, info);
+                const index = wingNameMap.get(value.Name_lang);
+                if (index === undefined) {
+                    throw new Error(`Unexpected failing to find wing by title ${value.Name_lang}`);
                 }
+
+                wings[index].encounters =
+                    findEncounters(steps, criteriaTree, criteria, encounter, scenarioID, info);
             }
         }
     });

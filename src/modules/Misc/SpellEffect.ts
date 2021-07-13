@@ -35,9 +35,11 @@ export const parseSpellEffect = async (spellID: number): Promise<Spell> => {
     for (let i = 0; i < spell.length; ++i) {
         if (spell[i].ID === spellIDString) {
             const curr = spell[i].Name_lang;
-            if (curr !== undefined) {
-                spellName = curr;
+            if (curr === undefined) {
+                throw new Error(`Missing column Name_lang from SpellName at index ${i}`);
             }
+
+            spellName = curr;
         }
     }
 
@@ -45,15 +47,17 @@ export const parseSpellEffect = async (spellID: number): Promise<Spell> => {
     for (let i = 0; i < specSpell.length; ++i) {
         if (specSpell[i].SpellID === spellIDString) {
             const spellSpec = specSpell[i].SpecID;
-            if (spellSpec !== undefined) {
-                for (let j = 0; j < spec.length; ++j) {
-                    if (spec[j].ID === spellSpec) {
-                        classID = spec[j].ClassID;
-                        break;
-                    }
-                }
-                break;
+            if (spellSpec === undefined) {
+                throw new Error(`Missing column SpecID from SpecializationSpells at index ${i}`);
             }
+
+            for (let j = 0; j < spec.length; ++j) {
+                if (spec[j].ID === spellSpec) {
+                    classID = spec[j].ClassID;
+                    break;
+                }
+            }
+            break;
         }
     }
     if (classID === undefined) {
@@ -64,10 +68,12 @@ export const parseSpellEffect = async (spellID: number): Promise<Spell> => {
     for (let i = 0; i < classData.length; ++i) {
         if (classData[i].ID === classID) {
             const curr = classData[i].Name_lang;
-            if (curr !== undefined) {
-                className = curr;
-                break;
+            if (curr === undefined) {
+                throw new Error(`Missing column Name_lang from ChrClasses at index ${i}`);
             }
+
+            className = curr;
+            break;
         }
     }
 
@@ -82,15 +88,18 @@ export const parseSpellEffect = async (spellID: number): Promise<Spell> => {
     }
 
     const effect: SpellEffect[] = [];
-    spellEffect.forEach((value) => {
-        if (
-            value.SpellID === spellIDString && value.EffectIndex !== undefined &&
-            value.Effect !== undefined && value.EffectAura !== undefined &&
-            value.EffectBasePointsF !== undefined &&
-            value['EffectMiscValue[0]'] !== undefined && value['EffectMiscValue[1]'] !== undefined &&
-            value['EffectSpellClassMask[0]'] !== undefined && value['EffectSpellClassMask[1]'] !== undefined &&
-            value['EffectSpellClassMask[2]'] !== undefined && value['EffectSpellClassMask[3]'] !== undefined
-        ) {
+    spellEffect.forEach((value, index) => {
+        if (value.SpellID === spellIDString) {
+            if (value.EffectIndex === undefined ||
+                value.Effect === undefined || value.EffectAura === undefined ||
+                value.EffectBasePointsF === undefined ||
+                value['EffectMiscValue[0]'] === undefined || value['EffectMiscValue[1]'] === undefined ||
+                value['EffectSpellClassMask[0]'] === undefined || value['EffectSpellClassMask[1]'] === undefined ||
+                value['EffectSpellClassMask[2]'] === undefined || value['EffectSpellClassMask[3]'] === undefined
+            ) {
+                throw new Error(`Missing column from SpellEffect at index ${index}`);
+            }
+
             effect.push({
                 effect: parseInt(value.Effect),
                 effectAura: parseInt(value.EffectAura),
@@ -114,11 +123,14 @@ export const parseSpellEffect = async (spellID: number): Promise<Spell> => {
     effect.forEach((value) => {
         for (let i = 0; i < spellClass.length; ++i) {
             const currSpell = spellClass[i];
-            if (
-                currSpell.SpellClassSet === spellClassSetID && currSpell.SpellID !== undefined &&
-                currSpell['SpellClassMask[0]'] !== undefined && currSpell['SpellClassMask[1]'] !== undefined &&
-                currSpell['SpellClassMask[2]'] !== undefined && currSpell['SpellClassMask[3]'] !== undefined
-            ) {
+            if (currSpell.SpellClassSet === spellClassSetID) {
+                if (currSpell.SpellID === undefined ||
+                    currSpell['SpellClassMask[0]'] === undefined || currSpell['SpellClassMask[1]'] === undefined ||
+                    currSpell['SpellClassMask[2]'] === undefined || currSpell['SpellClassMask[3]'] === undefined
+                ) {
+                    throw new Error(`Missing column from SpellClassOptions at index ${i}`);
+                }
+
                 const masks = [
                     parseInt(currSpell['SpellClassMask[0]']),
                     parseInt(currSpell['SpellClassMask[1]']),
@@ -133,10 +145,11 @@ export const parseSpellEffect = async (spellID: number): Promise<Spell> => {
                     let currName = 'Unknown';
                     for (let j = 0; j < spell.length; ++j) {
                         const spellInfo = spell[j];
-                        if (
-                            currSpell.SpellID === spellInfo.ID &&
-                            spellInfo.Name_lang !== undefined
-                        ) {
+                        if (spellInfo.Name_lang === undefined) {
+                            throw new Error(`Missing column Name_lang from SpellName at index ${j}`);
+                        }
+
+                        if (currSpell.SpellID === spellInfo.ID) {
                             currName = spellInfo.Name_lang;
                             break;
                         }
