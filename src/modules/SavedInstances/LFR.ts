@@ -10,7 +10,10 @@ interface WingInfo {
     orderIndex: number,
     instanceID: number,
     wingName: string,
+    expansionLevel: number,
     parent?: number,
+    level?: number,
+    soloID?: number,
     encounters?: EncounterInfo[]
 }
 
@@ -81,7 +84,7 @@ const findEncounters = (
 };
 
 export const buildLFR = async (info: InstanceInfo): Promise<WingInfo[]> => {
-    const [dungeons, scenarios, steps, criteriaTree, criteria, encounter] =
+    const [dungeons, scenarios, steps, criteriaTree, criteria, encounter, contentTuning] =
         await Promise.all([
             fetchDB2('LFGDungeons'),
             fetchDB2('Scenario'),
@@ -89,6 +92,7 @@ export const buildLFR = async (info: InstanceInfo): Promise<WingInfo[]> => {
             fetchDB2('CriteriaTree'),
             fetchDB2('Criteria'),
             fetchDB2('DungeonEncounter'),
+            fetchDB2('ContentTuning'),
         ]);
 
     const wings: WingInfo[] = [];
@@ -99,22 +103,58 @@ export const buildLFR = async (info: InstanceInfo): Promise<WingInfo[]> => {
             value.ID === undefined ||
             value.Order_index === undefined ||
             value.Name_lang === undefined ||
-            value.ExpansionLevel === undefined
+            value.ExpansionLevel === undefined ||
+            value.ContentTuningID === undefined ||
+            value['Flags[1]'] === undefined
         ) {
             throw new Error(`Missing column from LFGDungeons at index ${index}`);
         }
 
         if (value.MapID === info.mapID.toString()) {
             const id = parseInt(value.ID);
-            if (value.DifficultyID === '17') {
+
+            if (value.DifficultyID === '7' || value.DifficultyID === '17') {
+                const flag = parseInt(value['Flags[1]']);
+                if ((flag & 0x20) > 0) {
+                    for (let i = 0; i < wings.length; ++i) {
+                        if (wings[i].wingName === value.Name_lang) {
+                            wings[i].soloID = id;
+
+                            for (let j = 0; j < contentTuning.length; ++j) {
+                                if (contentTuning[j].ID === value.ContentTuningID) {
+                                    const level = contentTuning[j].MinLevel;
+                                    if (level === undefined) {
+                                        throw new Error(`Missing column MinLevel from ContentTuning at index ${j}`);
+                                    }
+
+                                    wings[i].level = parseInt(level);
+                                    break;
+                                }
+                            }
+                            return;
+                        }
+                    }
+                }
                 wings.push({
                     orderIndex: parseInt(value.Order_index),
                     instanceID: id,
                     wingName: value.Name_lang,
                     expansionLevel: parseInt(value.ExpansionLevel),
                 });
-            }
-            if (id > maxInstanceID) {
+                if (value.ContentTuningID !== '949') {
+                    for (let i = 0; i < contentTuning.length; ++i) {
+                        if (contentTuning[i].ID === value.ContentTuningID) {
+                            const level = contentTuning[i].MinLevel;
+                            if (level === undefined) {
+                                throw new Error(`Missing column MinLevel from ContentTuning at index ${i}`);
+                            }
+
+                            wings[wings.length - 1].level = parseInt(level);
+                            break;
+                        }
+                    }
+                }
+            } else if (id > maxInstanceID) {
                 maxInstanceID = id;
             }
         }
