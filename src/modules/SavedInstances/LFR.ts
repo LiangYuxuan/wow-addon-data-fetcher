@@ -98,7 +98,8 @@ export const buildLFR = async (info: InstanceInfo): Promise<WingInfo[]> => {
         if (
             value.ID === undefined ||
             value.Order_index === undefined ||
-            value.Name_lang === undefined
+            value.Name_lang === undefined ||
+            value.ExpansionLevel === undefined
         ) {
             throw new Error(`Missing column from LFGDungeons at index ${index}`);
         }
@@ -110,6 +111,7 @@ export const buildLFR = async (info: InstanceInfo): Promise<WingInfo[]> => {
                     orderIndex: parseInt(value.Order_index),
                     instanceID: id,
                     wingName: value.Name_lang,
+                    expansionLevel: parseInt(value.ExpansionLevel),
                 });
             }
             if (id > maxInstanceID) {
